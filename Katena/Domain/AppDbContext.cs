@@ -1,8 +1,8 @@
-﻿using ASPLearn.Domain.Entities;
+﻿using Katena.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using static ASPLearn.Domain.Entities.QuestionBase;
+using static Katena.Domain.Entities.QuestionBase;
 
 namespace Katena.Domain
 {
@@ -140,8 +140,7 @@ namespace Katena.Domain
 							{"Охотник","Decription"
 							}
 						} }
-					}
-					}
+					}}
 				}
 			});
 

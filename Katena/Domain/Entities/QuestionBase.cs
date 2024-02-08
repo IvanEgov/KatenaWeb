@@ -1,7 +1,7 @@
 ﻿using Microsoft.Identity.Client;
 using System.ComponentModel.DataAnnotations;
 
-namespace ASPLearn.Domain.Entities
+namespace Katena.Domain.Entities
 {
 	//Представление вопроссов, а также структура ответа: вес и тип, т.е. к какому типу относится этот ответ.
 	public class QuestionBase

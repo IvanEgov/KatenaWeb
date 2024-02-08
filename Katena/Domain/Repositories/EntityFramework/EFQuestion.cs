@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Katena.Domain;
-using ASPLearn.Domain.Repositories.Abstruct;
-using ASPLearn.Domain.Entities;
+using Katena.Domain.Repositories.Abstruct;
+using Katena.Domain.Entities;
 
-namespace ASPLearn.Domain.Repositories.EntietyFramework
+namespace Katena.Domain.Repositories.EntietyFramework
 {
+	//Функционал Questions через бд
 	public class EFQuestion : IQuestion
 	{
 		private readonly AppDbContext context;
@@ -39,8 +40,13 @@ namespace ASPLearn.Domain.Repositories.EntietyFramework
 
 		public void DeleteQuestion(Guid id)
 		{
-			_ = context.Questions.Remove(new QuestionBase() { Id = id });
+			context.Questions.Remove(new QuestionBase() { Id = id });
 			context.SaveChanges();
 		}
-	}
+
+        public IQueryable<QuestionBase> GetAnswer()
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

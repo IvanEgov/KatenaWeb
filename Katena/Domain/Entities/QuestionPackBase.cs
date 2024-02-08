@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Numerics;
-using static ASPLearn.Domain.Entities.QuestionBase;
+using static Katena.Domain.Entities.QuestionBase;
 
-namespace ASPLearn.Domain.Entities
+namespace Katena.Domain.Entities
 {
 	//Класс, хранящий пак вопросов для теста с id, названием, описанием и т.д., а также результаты теста.
 	public class QuestionPackBase

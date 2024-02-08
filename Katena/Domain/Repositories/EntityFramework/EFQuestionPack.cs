@@ -1,10 +1,11 @@
-﻿using ASPLearn.Domain.Entities;
-using ASPLearn.Domain.Repositories.Abstruct;
+﻿using Katena.Domain.Entities;
+using Katena.Domain.Repositories.Abstruct;
 using Katena.Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace ASPLearn.Domain.Repositories.EntietyFramework
+namespace Katena.Domain.Repositories.EntietyFramework
 {
+	//Функционал QuestionsPack через бд
 	public class EFQuestionPack : IQuestionPack
 	{
 		private readonly AppDbContext context;

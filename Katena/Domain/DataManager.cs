@@ -1,7 +1,7 @@
-﻿using ASPLearn.Domain.Entities;
-using ASPLearn.Domain.Repositories;
-using ASPLearn.Domain.Repositories.Abstruct;
-namespace ASPLearn.Domain
+﻿using Katena.Domain.Entities;
+using Katena.Domain.Repositories;
+using Katena.Domain.Repositories.Abstruct;
+namespace Katena.Domain
 {
 	public class DataManager
 	{

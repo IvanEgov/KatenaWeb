@@ -8,10 +8,10 @@
 				<header id="header">
 					<h1><a href="/" id="logo">@Configuration.GetSection("Project")["Company"]</a></h1>
 					<nav id="nav">
-						<a href="/">Главная</a>
-						<a href="/Tests">Тесты</a>
-						<a href="/Abilities">Возможности</a>
-						<a href="/Contacts">Контакты</a>
+						<a asp-area="" asp-controller="Home" asp-action="Index">Главная</a>
+						<a asp-area="" asp-controller="Tests" asp-action="Index" asp-route-id="">Тесты</a>
+						<a asp-area="" asp-controller="Abilities" asp-action="Index" asp-route-id="">Возможности</a>
+						<a asp-area="" asp-controller="Contacts" asp-action="Index" asp-route-id="">Контакты</a>
 					</nav>
 				</header>
 

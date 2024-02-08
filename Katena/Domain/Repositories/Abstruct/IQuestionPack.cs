@@ -1,6 +1,6 @@
-﻿using ASPLearn.Domain.Entities;
+﻿using Katena.Domain.Entities;
 
-namespace ASPLearn.Domain.Repositories.Abstruct
+namespace Katena.Domain.Repositories.Abstruct
 {
 	public interface IQuestionPack
 	{
