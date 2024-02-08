@@ -2,6 +2,7 @@
 using Katena.Domain;
 using Katena.Domain.Repositories.Abstruct;
 using Katena.Domain.Entities;
+using Microsoft.Identity.Client;
 
 namespace Katena.Domain.Repositories.EntietyFramework
 {
@@ -47,6 +48,11 @@ namespace Katena.Domain.Repositories.EntietyFramework
         public IQueryable<QuestionBase> GetAnswer()
         {
             throw new NotImplementedException();
+        }
+
+		public QuestionBase.Answer GetAnswer(Guid Id, string KeyAction, string KeyReason)
+		{
+			return GetQuestionById(Id).Answers[KeyAction][KeyReason];
         }
     }
 }

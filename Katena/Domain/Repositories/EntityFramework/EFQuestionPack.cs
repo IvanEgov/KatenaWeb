@@ -41,5 +41,10 @@ namespace Katena.Domain.Repositories.EntietyFramework
 			context.Packs.Remove(new QuestionPackBase() { Id = id });
 			context.SaveChanges();
 		}
+
+		public string GetResault(Guid Id, string KeyGender, string KeyStyle, string KeyType)
+		{
+			return GetPackById(Id).Resaults[KeyGender][KeyStyle][KeyType];
+        }
 	}
 }
