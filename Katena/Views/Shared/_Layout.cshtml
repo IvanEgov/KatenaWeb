@@ -16,11 +16,12 @@
             <div class="container">
                 <div class="row main-row">
                     <div class="col-8 col-12-medium">
-                        @RenderBody()
+                        @await Html.PartialAsync("SidebarPartial")
                     </div>
                     <!--Sidebar-->
                 </div>
-                @await Html.PartialAsync("SidebarPartial")
+                
+                @RenderBody()
             </div>
         </div>
         <!--Footer-->

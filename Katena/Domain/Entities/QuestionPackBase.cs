@@ -1,6 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Numerics;
-using static Katena.Domain.Entities.QuestionBase;
 
 namespace Katena.Domain.Entities
 {
@@ -14,11 +12,9 @@ namespace Katena.Domain.Entities
 		[Display(Name = "Название теста")]
 		public string PackName { get; set; }
 
-		[Required]
 		[Display(Name = "Описание теста")]
 		public string Description { get; set; }
 
-		[Required]
 		[Display(Name = "Инструкции выполнения")]
 		public string Instructions { get; set; }
 
