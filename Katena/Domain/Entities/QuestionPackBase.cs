@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Katena.Domain.Entities
 {
@@ -21,6 +22,7 @@ namespace Katena.Domain.Entities
 		public List<Guid> QuestionsIds { get; set; }
 
 		//Хранит результаты: пол, стиль, типаж, описание
+		[NotMapped]
 		public Dictionary<string, Dictionary<string, Dictionary<string, string>>> Resaults { get; set; }
 	}
 }

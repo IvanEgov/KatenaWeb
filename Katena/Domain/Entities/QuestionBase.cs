@@ -1,5 +1,6 @@
 ﻿using Microsoft.Identity.Client;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Katena.Domain.Entities
 {
@@ -18,7 +19,7 @@ namespace Katena.Domain.Entities
             integrator
         }
 
-        public double weight { get; set; } = 0;
+        public double weight { get; set; }
         public Type type { get; set; }
         public Answer(double Weight = 0, Type t = 0)
         {
@@ -35,7 +36,8 @@ namespace Katena.Domain.Entities
 		[Display(Name = "Введите вопрос")]
 		public string Quest { get; set; }
 
-		//Хранит действие, мотив и ответ
+        //Хранит действие, мотив и ответ
+        [NotMapped]
 		public Dictionary<string, Dictionary<string, Answer>> Answers { get; set; }
 	}
 }

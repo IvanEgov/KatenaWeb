@@ -26,7 +26,12 @@ namespace Katena.Domain.Repositories.EntietyFramework
 			return context.Questions.FirstOrDefault(x => x.Id == id);
 		}
 
-		public void SaveQuestion(QuestionBase entity) 
+        public Answer GetAnswer(Guid Id, string KeyAction, string KeyReason)
+        {
+            return GetQuestionById(Id).Answers[KeyAction][KeyReason];
+        }
+
+        public void SaveQuestion(QuestionBase entity) 
 		{
 			if (entity.Id == default) 
 			{
@@ -46,14 +51,9 @@ namespace Katena.Domain.Repositories.EntietyFramework
 			context.SaveChanges();
 		}
 
-        public IQueryable<QuestionBase> GetAnswer()
+/*        public IQueryable<QuestionBase> GetAnswer()
         {
             throw new NotImplementedException();
-        }
-
-		public Answer GetAnswer(Guid Id, string KeyAction, string KeyReason)
-		{
-			return GetQuestionById(Id).Answers[KeyAction][KeyReason];
-        }
+        }*/
     }
 }
