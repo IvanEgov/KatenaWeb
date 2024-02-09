@@ -1,6 +1,7 @@
 using Katena.Domain;
 using Katena.Domain.Repositories.Abstruct;
 using Katena.Domain.Repositories.EntietyFramework;
+using Katena.Domain.Repositories.EntityFramework;
 using Katena.Service;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
@@ -12,6 +13,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IQuestion, EFQuestion>();
 builder.Services.AddScoped<IQuestionPack, EFQuestionPack>();
+builder.Services.AddScoped<ITextField, EFTextField>();
 builder.Services.AddScoped<DataManager>();
 
 builder.Services.AddDbContext<AppDbContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("Default")));

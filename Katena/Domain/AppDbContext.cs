@@ -6,10 +6,11 @@ using static Katena.Domain.Entities.QuestionBase;
 
 namespace Katena.Domain
 {
-	//Представление личного кабинета админа и теста в бд
+	//Представление личного кабинета админа, заполнения страниц и теста в бд
 	public class AppDbContext : IdentityDbContext<IdentityUser>
 	{
 		public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+		public DbSet<TextField> TextFields { get; set; }
 		public DbSet<QuestionPackBase> Packs { get; set; }
 		public DbSet<QuestionBase> Questions { get; set; }
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -39,6 +40,31 @@ namespace Katena.Domain
 			{
 				RoleId = "358f7a09-da5c-4c70-a4ee-265de54b9382",
 				UserId = "09cd0a02-4235-4ba8-84ca-4267ed4b5484"
+			});
+
+			modelBuilder.Entity<TextField>().HasData(new TextField
+			{
+				Id = new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"),
+				CodeWord = "PageIndex",
+				Title = "Главная"
+			});
+			modelBuilder.Entity<TextField>().HasData(new TextField
+			{
+				Id = new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"),
+				CodeWord = "PageTests",
+				Title = "Тесты"
+			});
+			modelBuilder.Entity<TextField>().HasData(new TextField
+			{
+				Id = new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"),
+				CodeWord = "PageAbilities",
+				Title = "Возможности"
+			});
+			modelBuilder.Entity<TextField>().HasData(new TextField
+			{
+				Id = new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"),
+				CodeWord = "PageContacts",
+				Title = "Контакты"
 			});
 
 			modelBuilder.Entity<QuestionPackBase>().HasData(new QuestionPackBase

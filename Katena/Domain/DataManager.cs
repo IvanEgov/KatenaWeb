@@ -7,11 +7,13 @@ namespace Katena.Domain
 	{
 		public IQuestionPack Packs { get; set; }
 		public IQuestion QuestionBase { get; set; }
+		public ITextField TextFields { get; set; }
 
-		public DataManager(IQuestionPack packs, IQuestion questionBase)
+		public DataManager(IQuestionPack packs, IQuestion questionBase, ITextField textFields)
 		{
 			Packs = packs;
 			QuestionBase = questionBase;
+			TextFields = textFields;
 		}
 	}
 }
