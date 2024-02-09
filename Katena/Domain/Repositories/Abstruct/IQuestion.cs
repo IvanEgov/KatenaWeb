@@ -1,4 +1,5 @@
 ﻿using Katena.Domain.Entities;
+using static Katena.Domain.Entities.QuestionBase;
 
 namespace Katena.Domain.Repositories.Abstruct
 {
@@ -8,7 +9,7 @@ namespace Katena.Domain.Repositories.Abstruct
 	{
 		IQueryable<QuestionBase> GetAllQuestions();
 		QuestionBase GetQuestionById(Guid Id);
-		QuestionBase.Answer GetAnswer(Guid Id, string KeyAction, string KeyReason);
+		Answer GetAnswer(Guid Id, string KeyAction, string KeyReason);
 		void SaveQuestion(QuestionBase entity);
 		void DeleteQuestion(Guid Id);
 	}
