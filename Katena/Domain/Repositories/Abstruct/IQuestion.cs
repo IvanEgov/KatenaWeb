@@ -1,5 +1,4 @@
 ﻿using Katena.Domain.Entities;
-using static Katena.Domain.Entities.QuestionBase;
 
 namespace Katena.Domain.Repositories.Abstruct
 {
@@ -7,10 +6,10 @@ namespace Katena.Domain.Repositories.Abstruct
 	//Сохранить новый вопрос(или изменение в старом), удалить вопрос по Id
 	public interface IQuestion
 	{
-		IQueryable<Question> GetAllQuestions();
-		Question GetQuestionById(Guid Id);
-		Question.Answers GetAnswer(Guid Id, string KeyAction, string KeyReason);
-		void SaveQuestion(Question entity);
+		IQueryable<QuestionBase> GetAllQuestions();
+		QuestionBase GetQuestionById(Guid Id);
+		AnswersBase GetAnswer(Guid Id, string KeyAction, string KeyReason);
+		void SaveQuestion(QuestionBase entity);
 		void DeleteQuestion(Guid Id);
 	}
 }

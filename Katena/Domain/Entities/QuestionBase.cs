@@ -6,6 +6,13 @@ namespace Katena.Domain.Entities
 {
     public class QuestionBase
     {
-        public virtual Question Quest { get; set; }
+        [Required]
+        public Guid Id { get; set; }
+
+        [Required]
+        [Display(Name = "Вопрос")]
+        public string Name { get; set; }
+
+        public List <Guid> AnswerId { get; set; }
     }
 }

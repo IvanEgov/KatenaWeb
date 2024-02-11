@@ -6,22 +6,22 @@ namespace Katena.Domain.Entities
     {
         //Id Ответа
         [Required]
-        Guid Id { get; set; }
+        public Guid Id { get; set; }
 
         //Действие
         [Required]
-        string Action { get; set; }
+        public string Action { get; set; }
 
         //Мотив
         [Required]
-        string Reason { get; set; }
+        public string Reason { get; set; }
 
         //Тип личности
         [Required]
-        string Type { get; set; }
+        public string Type { get; set; }
 
         //Вес
         [Required]
-        double Weight { get; set; }
+        public double Weight { get; set; }
     }
 }

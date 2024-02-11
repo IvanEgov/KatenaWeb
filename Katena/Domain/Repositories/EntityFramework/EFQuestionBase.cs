@@ -1,9 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Katena.Domain;
 using Katena.Domain.Repositories.Abstruct;
 using Katena.Domain.Entities;
-using Microsoft.Identity.Client;
-using static Katena.Domain.Entities.QuestionBase;
 
 namespace Katena.Domain.Repositories.EntietyFramework
 {
@@ -16,22 +13,31 @@ namespace Katena.Domain.Repositories.EntietyFramework
 			this.context = context;
 		}
 
-		public IQueryable<Question> GetAllQuestions()
+		public IQueryable<QuestionBase> GetAllQuestions()
 		{
 			return context.Questions;
 		}
 
-		public Question GetQuestionById(Guid id) 
+		public QuestionBase GetQuestionById(Guid id) 
 		{
 			return context.Questions.FirstOrDefault(x => x.Id == id);
 		}
 
-        public Question.Answer GetAnswer(Guid Id, string KeyAction, string KeyReason)
+        public AnswersBase GetAnswer(Guid id, string KeyAction, string KeyReason)
         {
-			return GetQuestionById(Id).Answers[KeyAction][KeyReason];
+			QuestionBase question = GetQuestionById(id);
+			foreach(Guid Id in question.AnswerId)
+			{
+				AnswersBase answer = context.Answers.FirstOrDefault(x => x.Id == Id);
+				if (answer.Action == KeyAction && answer.Reason == KeyReason)
+				{
+					return answer;
+				}
+			}
+			return new AnswersBase();
         }
 
-        public void SaveQuestion(Question entity) 
+        public void SaveQuestion(QuestionBase entity) 
 		{
 			if (entity.Id == default) 
 			{
@@ -47,13 +53,8 @@ namespace Katena.Domain.Repositories.EntietyFramework
 
 		public void DeleteQuestion(Guid id)
 		{
-			context.Questions.Remove(new Question {Id = id });
+			context.Questions.Remove(new QuestionBase {Id = id });
 			context.SaveChanges();
 		}
-
-/*        public IQueryable<QuestionBase> GetAnswer()
-        {
-            throw new NotImplementedException();
-        }*/
     }
 }

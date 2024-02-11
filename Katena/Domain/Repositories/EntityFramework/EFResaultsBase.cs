@@ -4,20 +4,20 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Katena.Domain.Repositories.EntityFramework
 {
-    public class EFAnswersBase : IAnswers
+    public class EFResaultsBase : IResaults
     {
         private readonly AppDbContext context;
-        public IQueryable<AnswersBase> GetAllAnswers()
+        public IQueryable<ResaultsBase> GetAllResaults()
         {
-            return context.Answers;
+            return context.Resaults;
         }
 
-        public AnswersBase GetAnswerById(Guid id)
+        public ResaultsBase GetResaultById(Guid id)
         {
-            return context.Answers.FirstOrDefault(x => x.Id == id);
+            return context.Resaults.FirstOrDefault(x => x.Id == id);
         }
 
-        public void SaveAnswer(AnswersBase entity)
+        public void SaveResault(ResaultsBase entity)
         {
             if (entity.Id == default)
             {
@@ -31,9 +31,9 @@ namespace Katena.Domain.Repositories.EntityFramework
             context.SaveChanges();
         }
 
-        public void DeleteAnswerById(Guid id)
+        public void DeleteResaultById(Guid id)
         {
-            context.Answers.Remove(new AnswersBase { Id = id });
+            context.Resaults.Remove(new ResaultsBase { Id = id });
             context.SaveChanges();
         }
     }

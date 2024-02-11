@@ -44,7 +44,16 @@ namespace Katena.Domain.Repositories.EntietyFramework
 
 		public string GetResault(Guid Id, string KeyGender, string KeyStyle, string KeyType)
 		{
-			return GetPackById(Id).Resaults[KeyGender][KeyStyle][KeyType];
+			QuestionPackBase pack = GetPackById(Id);
+			foreach(Guid id in pack.ResaultsId)
+			{
+				ResaultsBase resault = context.Resaults.FirstOrDefault(x => x.Id == id);
+				if (resault.Gender == KeyGender && resault.Style == KeyStyle && resault.Type == KeyType)
+				{
+					return resault.Resault;
+				}
+			}
+            return "none";
         }
 	}
 }

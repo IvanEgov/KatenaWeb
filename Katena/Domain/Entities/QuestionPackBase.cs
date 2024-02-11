@@ -11,7 +11,7 @@ namespace Katena.Domain.Entities
 
 		[Required]
 		[Display(Name = "Название теста")]
-		public string PackName { get; set; }
+		public string Name { get; set; }
 
 		[Display(Name = "Описание теста")]
 		public string Description { get; set; }
@@ -21,7 +21,6 @@ namespace Katena.Domain.Entities
 
 		public List<Guid> QuestionsIds { get; set; }
 
-		//Хранит результаты: пол, стиль, типаж, описание
-		public Dictionary<string, Dictionary<string, Dictionary<string, string>>> Resaults { get; set; }
+		public List <Guid> ResaultsId { get; set; }
 	}
 }
