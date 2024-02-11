@@ -12,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddScoped<IQuestion, EFQuestion>();
+builder.Services.AddScoped<IQuestion, EFQuestionBase>();
 builder.Services.AddScoped<IQuestionPack, EFQuestionPack>();
 builder.Services.AddScoped<ITextField, EFTextField>();
 builder.Services.AddScoped<DataManager>();

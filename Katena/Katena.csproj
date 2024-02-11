@@ -9,11 +9,13 @@
   <ItemGroup>
     <Content Remove="bundleconfig.json" />
     <Content Remove="compilerconfig.json" />
+    <Content Remove="Domain\Entities\Answers.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="bundleconfig.json" />
     <None Include="compilerconfig.json" />
+    <None Include="Domain\Entities\Answers.cshtml" />
   </ItemGroup>
 
   <ItemGroup>

@@ -7,10 +7,10 @@ namespace Katena.Domain.Repositories.Abstruct
 	//Сохранить новый вопрос(или изменение в старом), удалить вопрос по Id
 	public interface IQuestion
 	{
-		IQueryable<QuestionBase> GetAllQuestions();
-		QuestionBase GetQuestionById(Guid Id);
-		Answer GetAnswer(Guid Id, string KeyAction, string KeyReason);
-		void SaveQuestion(QuestionBase entity);
+		IQueryable<Question> GetAllQuestions();
+		Question GetQuestionById(Guid Id);
+		Question.Answers GetAnswer(Guid Id, string KeyAction, string KeyReason);
+		void SaveQuestion(Question entity);
 		void DeleteQuestion(Guid Id);
 	}
 }

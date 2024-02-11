@@ -8,30 +8,30 @@ using static Katena.Domain.Entities.QuestionBase;
 namespace Katena.Domain.Repositories.EntietyFramework
 {
 	//Функционал Questions через бд
-	public class EFQuestion : IQuestion
+	public class EFQuestionBase : IQuestion
 	{
 		private readonly AppDbContext context;
-		public EFQuestion(AppDbContext context)
+		public EFQuestionBase(AppDbContext context)
 		{
 			this.context = context;
 		}
 
-		public IQueryable<QuestionBase> GetAllQuestions()
+		public IQueryable<Question> GetAllQuestions()
 		{
 			return context.Questions;
 		}
 
-		public QuestionBase GetQuestionById(Guid id) 
+		public Question GetQuestionById(Guid id) 
 		{
 			return context.Questions.FirstOrDefault(x => x.Id == id);
 		}
 
-        public Answer GetAnswer(Guid Id, string KeyAction, string KeyReason)
+        public Question.Answer GetAnswer(Guid Id, string KeyAction, string KeyReason)
         {
-            return GetQuestionById(Id).Answers[KeyAction][KeyReason];
+			return GetQuestionById(Id).Answers[KeyAction][KeyReason];
         }
 
-        public void SaveQuestion(QuestionBase entity) 
+        public void SaveQuestion(Question entity) 
 		{
 			if (entity.Id == default) 
 			{
@@ -47,7 +47,7 @@ namespace Katena.Domain.Repositories.EntietyFramework
 
 		public void DeleteQuestion(Guid id)
 		{
-			context.Questions.Remove(new QuestionBase() { Id = id });
+			context.Questions.Remove(new Question {Id = id });
 			context.SaveChanges();
 		}
 
