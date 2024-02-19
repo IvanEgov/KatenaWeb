@@ -4,6 +4,7 @@ using Katena.Domain.Repositories.EntietyFramework;
 using Katena.Domain.Repositories.EntityFramework;
 using Katena.Service;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
 
@@ -45,6 +46,20 @@ builder.Services.ConfigureApplicationCookie(options =>
 	options.SlidingExpiration = true;
 });
 
+//Ќастраиваем политику авторизации дл€ Admin area
+builder.Services.AddAuthorization(x =>
+{
+	x.AddPolicy("AdminArea", policy => { policy.RequireRole("admin"); });
+});
+
+//ƒобавл€ем сервисы дл€ контроллеров и представлений (MVC)
+builder.Services.AddControllersWithViews(x =>
+{
+	x.Conventions.Add(new AdminAreaAuthorization("Admin", "AdminArea"));
+})
+	//выставл€ем совместимость с asp.net core 3.0
+  .SetCompatibilityVersion(CompatibilityVersion.Version_3_0).AddSessionStateTempDataProvider();
+
 var app = builder.Build();
 
 IConfiguration configuration = app.Configuration;
@@ -68,7 +83,11 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
+    name: "admin",
+    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+app.MapControllerRoute(
 	name: "default",
 	pattern: "{controller=Home}/{action=Index}/{id?}");
+
 
 app.Run();

@@ -1,7 +1,9 @@
-﻿@{
-    ViewData["Title"] = "Контакты";
+﻿@model TextField
+@{
+	ViewBag.Title = Model.Title;
+	ViewBag.Text = Model.Text;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Контакт</h1>
+<div>
+	@Html.Raw(Model.Text)
 </div>

@@ -1,5 +1,7 @@
+using Katena.Domain;
 using Katena.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Storage;
 using System.Diagnostics;
 
 namespace Katena.Controllers
@@ -7,15 +9,16 @@ namespace Katena.Controllers
 	public class HomeController : Controller
 	{
 		private readonly ILogger<HomeController> _logger;
-
-		public HomeController(ILogger<HomeController> logger)
+		private readonly DataManager dataManager;
+		public HomeController(ILogger<HomeController> logger, DataManager DataManager)
 		{
 			_logger = logger;
+			dataManager = DataManager;
 		}
 
 		public IActionResult Index()
 		{
-			return View();
+			return View(dataManager.TextFields.GetTextFieldByCodeWord("PageIndex"));
 		}
 
 		public IActionResult Privacy()

@@ -1,4 +1,5 @@
-﻿using Katena.Models;
+﻿using Katena.Domain;
+using Katena.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -6,9 +7,21 @@ namespace Katena.Controllers
 {
 	public class TestsController : Controller
 	{
-		public IActionResult Index()
+		private readonly DataManager dataManager;
+
+		public TestsController(DataManager dataManager)
 		{
-			return View();
+			this.dataManager = dataManager;
+		}
+
+		public IActionResult Index(Guid id)
+		{
+			if (id != default)
+			{
+				return View("Show", dataManager.Packs.GetPackById(id));
+			}
+/*			ViewBag.TextField = dataManager.TextFields.GetTextFieldByCodeWord("PageTests");*/
+			return View(dataManager.TextFields.GetTextFieldByCodeWord("PageTests"));
 		}
 	}
 }
