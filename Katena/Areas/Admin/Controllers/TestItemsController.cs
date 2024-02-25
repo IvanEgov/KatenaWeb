@@ -19,7 +19,22 @@ namespace Katena.Areas.Admin.Controllers
 
 		public IActionResult Edit(Guid id)
 		{
-			var entity = id == default ? new QuestionPackBase() : dataManager.Packs.GetPackById(id);
+			QuestionPackBase entity;
+			if (id == default)
+			{
+				entity = new QuestionPackBase();
+				entity.Name = "Введите имя";
+				entity.Description = "Введите описание";
+				entity.Instructions = "Введите инструкцию";
+				entity.QuestionsIds = new List<Guid> {Guid.NewGuid()};
+				entity.ResaultsId = new List<Guid> {Guid.NewGuid()};
+				dataManager.Packs.SavePack(entity);
+				entity.Id = Guid.NewGuid();
+			}
+			else
+			{
+				entity = dataManager.Packs.GetPackById(id);
+			}
 			return View(entity);
 		}
 
@@ -33,6 +48,13 @@ namespace Katena.Areas.Admin.Controllers
             }
             return View(model);
         }
+
+		[HttpPost]
+		public IActionResult AddQuestion(Guid id, QuestionPackBase model)
+		{
+			model.QuestionsIds.Add(id);
+			return View(model);
+		}
 
         [HttpPost]
 		public IActionResult Delete(Guid id)

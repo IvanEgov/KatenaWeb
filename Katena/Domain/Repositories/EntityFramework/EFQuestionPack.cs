@@ -23,6 +23,18 @@ namespace Katena.Domain.Repositories.EntietyFramework
 			return context.Packs.FirstOrDefault(x => x.Id == id);
 		}
 
+		public void AddQuestion(QuestionPackBase pack, QuestionBase entity)
+		{
+			pack.QuestionsIds.Add(entity.Id);
+			context.SaveChanges();
+		}
+
+		public void AddResault(QuestionPackBase pack, ResaultsBase entity) 
+		{
+			pack.ResaultsId.Add(entity.Id);
+			context.SaveChanges();
+		}
+
 		public void SavePack(QuestionPackBase entity)
 		{
 			if (entity.Id == default) 

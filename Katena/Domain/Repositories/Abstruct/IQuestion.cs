@@ -9,6 +9,7 @@ namespace Katena.Domain.Repositories.Abstruct
 		IQueryable<QuestionBase> GetAllQuestions();
 		QuestionBase GetQuestionById(Guid Id);
 		AnswersBase GetAnswer(Guid Id, string KeyAction, string KeyReason);
+		void AddAnswer(QuestionBase question, AnswersBase answer);
 		void SaveQuestion(QuestionBase entity);
 		void DeleteQuestion(Guid Id);
 	}

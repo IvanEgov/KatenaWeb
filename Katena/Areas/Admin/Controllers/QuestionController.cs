@@ -16,10 +16,21 @@ namespace Katena.Areas.Admin.Controllers
 			this.dataManager = dataManager;
 			this.hostingEnvironment = hostingEnvironment;
 		}
-
-		public IActionResult Edit(Guid id)
+        public IActionResult Edit(Guid id)
 		{
-			var entity = id == default ? new QuestionBase() : dataManager.QuestionBase.GetQuestionById(id);
+			QuestionBase entity;
+			if (id == default)
+			{
+				entity = new QuestionBase();
+				entity.Name = string.Empty;
+                entity.AnswerId = new List<Guid> { };
+                dataManager.QuestionBase.SaveQuestion(entity);
+				entity.Id = Guid.NewGuid();
+			}
+			else
+			{
+				entity = dataManager.QuestionBase.GetQuestionById(id);
+            }
 			return View(entity);
 		}
 

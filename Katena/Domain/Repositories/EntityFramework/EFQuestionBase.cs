@@ -37,6 +37,12 @@ namespace Katena.Domain.Repositories.EntietyFramework
 			return new AnswersBase();
         }
 
+		public void AddAnswer(QuestionBase question, AnswersBase answer) 
+		{
+			question.AnswerId.Add(answer.Id);
+			context.SaveChanges();
+		}
+
         public void SaveQuestion(QuestionBase entity) 
 		{
 			if (entity.Id == default) 

@@ -3,7 +3,7 @@
     string strTitle = "Редактировать запись";
     ViewBag.Title = strTitle;
 }
-
+@inject DataManager model;
 <script src="~/js/ckeditor/ckeditor.js"></script>
 
 <div>
@@ -27,6 +27,52 @@
                 <label asp-for="Instructions"></label>
                 <input asp-for="Instructions">
                 <span asp-validation-for="Instructions"></span>
+            </div>
+            <div class="div-box">
+                <a asp-area="Admin" asp-controller="Question" asp-action="Edit" asp-route-id="">Добавить Вопрос</a>
+            </div>
+            <div>
+                @foreach (QuestionBase entity in model.QuestionBase.GetAllQuestions())
+                {
+                    <div>
+                        <a asp-area="Admin" asp-controller="Question" asp-action="Edit" asp-route-id="@entity.Id">редактировать</a>
+                        |
+                        <form style="display: inline-block;" id="form-@entity.Id" asp-area="Admin" asp-controller="Question" asp-action="Delete" method="post">
+                            <input type="hidden" name="id" value="@entity.Id">
+                            <a href="#" onclick="document.getElementById('form-@entity.Id').submit();">удалить</a>
+                        </form>
+                        |
+                        <form style="display: inline-block;" id="form-@entity.Id" asp-area="Admin" asp-controller="TestItems" asp-action="AddQuestion" method="post">
+                            <input type="hidden" name="id" value="@entity.Id">
+                            <input type="hidden" name="model" value="@Model">
+                            <a href="#" onclick="document.getElementById('form-@Model.Id').submit();">Сохранить в тест</a>
+                        </form>
+                        |
+                        <a asp-area="" asp-controller="Question" asp-action="Edit" asp-route-id="@entity.Id">
+                            @($"{entity.Name}")
+                        </a>
+                    </div>
+                }
+            </div>
+            <div class="div-box">
+                <a asp-area="Admin" asp-controller="Resault" asp-action="Edit" asp-route-id="">Добавить Результат</a>
+            </div>
+            <div>
+                @foreach (ResaultsBase entity in model.Resaults.GetAllResaults())
+                {
+                    <div>
+                        <a asp-area="Admin" asp-controller="Resault" asp-action="Edit" asp-route-id="@entity.Id">редактировать</a>
+                        |
+                        <form style="display: inline-block;" id="form-@entity.Id" asp-area="Admin" asp-controller="Resault" asp-action="Delete" method="post">
+                            <input type="hidden" name="id" value="@entity.Id">
+                            <a href="#" onclick="document.getElementById('form-@entity.Id').submit();">удалить</a>
+                        </form>
+                        |
+                        <a asp-area="" asp-controller="Home" asp-action="Index" asp-route-id="@entity.Id">
+                            @($"{entity.Resault}")
+                        </a>
+                    </div>
+                }
             </div>
             <input type="submit" value="Сохранить" />
         </form>

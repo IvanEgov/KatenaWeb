@@ -18,9 +18,24 @@ namespace Katena.Areas.Admin.Controllers
 			this.hostingEnvironment = hostingEnvironment;
 		}
 
-		public IActionResult Edit(Guid id)
+		public IActionResult Edit(Guid id, QuestionBase @question)
 		{
-			var entity = id == default ? new AnswersBase() : dataManager.Answers.GetAnswerById(id);
+			AnswersBase entity;
+			if (id == default)
+			{
+				entity = new AnswersBase();
+				entity.Action = string.Empty;
+				entity.Type = string.Empty;
+				entity.Weight = 0;
+				entity.Reason = string.Empty;
+				dataManager.Answers.SaveAnswer(entity);
+				entity.Id = Guid.NewGuid();
+				/*dataManager.QuestionBase.AddAnswer(question, entity);*/
+			}
+			else
+			{
+				entity = dataManager.Answers.GetAnswerById(id);
+			}
 			return View(entity);
 		}
 

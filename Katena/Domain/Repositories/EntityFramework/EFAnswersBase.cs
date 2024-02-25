@@ -7,6 +7,11 @@ namespace Katena.Domain.Repositories.EntityFramework
     public class EFAnswersBase : IAnswers
     {
         private readonly AppDbContext context;
+
+        public EFAnswersBase(AppDbContext context)
+        {
+            this.context = context;
+        }
         public IQueryable<AnswersBase> GetAllAnswers()
         {
             return context.Answers;

@@ -15,6 +15,8 @@
             @foreach (QuestionPackBase entity in Model.Packs.GetAllPacks())
             {
                 <div>
+                    <h3>@entity.Name</h3>
+                    |
                     <a asp-area="Admin" asp-controller="TestItems" asp-action="Edit" asp-route-id="@entity.Id">редактировать</a>
                     |
                     <form style="display: inline-block;" id="form-@entity.Id" asp-area="Admin" asp-controller="TestItems" asp-action="Delete" method="post">

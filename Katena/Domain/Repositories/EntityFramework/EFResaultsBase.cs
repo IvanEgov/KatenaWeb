@@ -7,6 +7,11 @@ namespace Katena.Domain.Repositories.EntityFramework
     public class EFResaultsBase : IResaults
     {
         private readonly AppDbContext context;
+
+        public EFResaultsBase(AppDbContext context)
+        {
+            this.context = context;
+        }
         public IQueryable<ResaultsBase> GetAllResaults()
         {
             return context.Resaults;

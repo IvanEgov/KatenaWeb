@@ -3,7 +3,7 @@
     string strTitle = "Редактировать запись";
     ViewBag.Title = strTitle;
 }
-
+@inject DataManager model;
 <script src="~/js/ckeditor/ckeditor.js"></script>
 
 <div>
@@ -17,6 +17,26 @@
                 <label asp-for="Name"></label>
                 <input asp-for="Name" />
                 <span asp-validation-for="Name"></span>
+            </div>
+            <div class="div-box">
+                <a asp-area="Admin" asp-controller="Answer" asp-action="Edit" asp-route-id="">Добавить Ответ</a>
+            </div>
+            <div>
+                @foreach (AnswersBase entity in model.Answers.GetAllAnswers())
+                {
+                    <div>
+                        <a asp-area="Admin" asp-controller="Answer" asp-action="Edit" asp-route-id="@entity.Id">редактировать</a>
+                        |
+                        <form style="display: inline-block;" id="form-@entity.Id" asp-area="Admin" asp-controller="Answer" asp-action="Delete" method="post">
+                            <input type="hidden" name="id" value="@entity.Id">
+                            <a href="#" onclick="document.getElementById('form-@entity.Id').submit();">удалить</a>
+                        </form>
+                        |
+                        <a asp-area="" asp-controller="Home" asp-action="Index" asp-route-id="@entity.Id">
+                            @($"{entity.Action}")
+                        </a>
+                    </div>
+                }
             </div>
             <div class="div-box">
                 <label asp-for="AnswerId"></label>
