@@ -11,6 +11,7 @@
     <div>
         <form asp-area="Admin" asp-controller="Question" asp-action="Edit" method="post" enctype="multipart/form-data">
             <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="AnswerId" />
 
             <div asp-validation-summary="All"></div>
             <div class="div-box">
@@ -18,18 +19,28 @@
                 <input asp-for="Name" />
                 <span asp-validation-for="Name"></span>
             </div>
-            <div class="div-box">
-                <a asp-area="Admin" asp-controller="Answer" asp-action="Edit" asp-route-id="">Добавить Ответ</a>
-            </div>
+            <input type="submit" value="Сохранить" />
+            <form style ="display: inline-block;" id="form-@Model.Id" asp-area="Admin" asp-controller="Answer" asp-action="Edit">
+                <input type="submit" value="Добавить ответ">
+            </form>
             <div>
                 @foreach (AnswersBase entity in model.Answers.GetAllAnswers())
                 {
                     <div>
-                        <a asp-area="Admin" asp-controller="Answer" asp-action="Edit" asp-route-id="@entity.Id">редактировать</a>
+                        <form style="display: inline-block;" id="from-@entity.Id" asp-area="Admin" asp-controller="Answer" asp-action="Edit" asp-route-id="@entity.Id">
+                            <input type="submit" value="Редактировать" />
+                        </form>
                         |
-                        <form style="display: inline-block;" id="form-@entity.Id" asp-area="Admin" asp-controller="Answer" asp-action="Delete" method="post">
+                        <form style="display: inline-block;" id="form-@entity.Id" asp-area="Admin" asp-controller="Question" asp-action="AddAnswer" method="post">
+                            <input type="hidden" name="questionId" value="@Model.Id">
+                            <input type="hidden" name="answerId" value="@entity.Id">
+                            <input type="submit" value="Сохранить в вопрос">
+                        </form>
+                        |
+                        <form style="display: inline-block;" id="form-@entity.Id" asp-area="Admin" asp-controller="Question" asp-action="Delete" method="post">
                             <input type="hidden" name="id" value="@entity.Id">
-                            <a href="#" onclick="document.getElementById('form-@entity.Id').submit();">удалить</a>
+                            <input type="hidden" name="questionId" value="@Model.Id">
+                            <input type="submit" value="Удалить">
                         </form>
                         |
                         <a asp-area="" asp-controller="Home" asp-action="Index" asp-route-id="@entity.Id">
@@ -38,12 +49,9 @@
                     </div>
                 }
             </div>
-            <div class="div-box">
-                <label asp-for="AnswerId"></label>
-                <input type="hidden" asp-for="AnswerId">
-                <span asp-validation-for="AnswerId"></span>
-            </div>
-            <input type="submit" value="Сохранить" />
+            <form style="display: inline-block;" id="form-@Model.Id" asp-area="Admin" asp-controller="TestItems" asp-action="ReturnHome" method="post">
+                <input type="submit" value="Вернуться на главную страницу">
+            </form>
         </form>
     </div>
 </div>

@@ -17,7 +17,7 @@ namespace Katena.Areas.Admin.Controllers
 			this.hostingEnvironment = hostingEnvironment;
 		}
 
-		public IActionResult Edit(Guid id, QuestionPackBase pack)
+		public IActionResult Edit(Guid id)
 		{
 			ResaultsBase entity;
 			if (id == default)
@@ -29,21 +29,12 @@ namespace Katena.Areas.Admin.Controllers
 				entity.Style = string.Empty;
 				dataManager.Resaults.SaveResault(entity);
 				entity.Id = Guid.NewGuid();
-				/*dataManager.Packs.AddResault(pack, entity);*/
 			}
 			else
 			{
 				entity = dataManager.Resaults.GetResaultById(id);
-                /*dataManager.Packs.AddResault(pack, entity);*/
             }
 			return View(entity);
-		}
-
-		[HttpPost]
-		public IActionResult Delete(Guid id)
-		{
-			dataManager.Resaults.DeleteResaultById(id);
-			return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
 		}
 	}
 }

@@ -9,8 +9,10 @@ namespace Katena.Domain.Repositories.Abstruct
 		IQueryable<QuestionPackBase> GetAllPacks();
 		QuestionPackBase GetPackById(Guid Id);
 		string GetResault(Guid Id, string KeyGender, string KeyStyle, string KeyType);
-		void AddQuestion(QuestionPackBase pack, QuestionBase entity);
-		void AddResault(QuestionPackBase pack, ResaultsBase entity);
+		void AddQuestion(QuestionPackBase pack, Guid questionId);
+		void DeleteQuestion(QuestionPackBase pack, Guid questionId);
+		void AddResault(QuestionPackBase pack, Guid resultId);
+		void DeleteResult(QuestionPackBase pack, Guid resultId);
 		void SavePack(QuestionPackBase entity);
 		void DeletePack(Guid Id);
 	}

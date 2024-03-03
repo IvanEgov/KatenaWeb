@@ -23,13 +23,12 @@ namespace Katena.Areas.Admin.Controllers
 			if (id == default)
 			{
 				entity = new QuestionPackBase();
-				entity.Name = "Введите имя";
-				entity.Description = "Введите описание";
-				entity.Instructions = "Введите инструкцию";
-				entity.QuestionsIds = new List<Guid> {Guid.NewGuid()};
-				entity.ResaultsId = new List<Guid> {Guid.NewGuid()};
+				entity.Name = "Название еще не задано";
+				entity.Description = "Описание еще не задано";
+				entity.Instructions = "Инструкция еще не задана";
+				entity.QuestionsIds = new List<Guid> {Guid.Empty};
+				entity.ResaultsId = new List<Guid> {Guid.Empty};
 				dataManager.Packs.SavePack(entity);
-				entity.Id = Guid.NewGuid();
 			}
 			else
 			{
@@ -41,19 +40,49 @@ namespace Katena.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Edit(QuestionPackBase model)
         {
-            if (ModelState.IsValid)
-            {
-                dataManager.Packs.SavePack(model);
-                return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
-            }
-            return View(model);
+            dataManager.Packs.SavePack(model);
+            return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
         }
 
-		[HttpPost]
-		public IActionResult AddQuestion(Guid id, QuestionPackBase model)
+        [HttpPost]
+        public IActionResult AddQuestion(Guid questionId, Guid testId)
+        {
+			QuestionPackBase pack = dataManager.Packs.GetPackById(testId);
+            dataManager.Packs.AddQuestion(pack, questionId);
+            return View("Edit", pack);
+        }
+
+        [HttpPost]
+        public IActionResult DeleteQuestion(Guid id, Guid testId)
+        {
+			QuestionPackBase pack = dataManager.Packs.GetPackById(testId);
+            dataManager.Packs.DeleteQuestion(pack, id);
+            dataManager.QuestionBase.DeleteQuestion(id);
+            return View("Edit", pack);
+        }
+
+        [HttpPost]
+        public IActionResult AddResault(Guid testId, Guid resaultId)
+        {
+			QuestionPackBase pack = dataManager.Packs.GetPackById(testId);
+            dataManager.Packs.AddResault(pack, resaultId);
+            return View("Edit", pack);
+        }
+
+        [HttpPost]
+        public IActionResult DeleteResult(Guid id, Guid testId)
+        {
+			QuestionPackBase pack = dataManager.Packs.GetPackById(testId);
+            dataManager.Packs.DeleteResult(pack, id);
+            dataManager.Resaults.DeleteResaultById(id);
+            return View("Edit", pack);
+        }
+
+        [HttpPost]
+
+		public IActionResult ReturnHome()
 		{
-			model.QuestionsIds.Add(id);
-			return View(model);
+			return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
 		}
 
         [HttpPost]

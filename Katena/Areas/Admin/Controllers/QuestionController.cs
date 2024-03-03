@@ -16,29 +16,46 @@ namespace Katena.Areas.Admin.Controllers
 			this.dataManager = dataManager;
 			this.hostingEnvironment = hostingEnvironment;
 		}
-        public IActionResult Edit(Guid id)
+
+		public IActionResult Edit(Guid id)
 		{
 			QuestionBase entity;
 			if (id == default)
 			{
 				entity = new QuestionBase();
-				entity.Name = string.Empty;
-                entity.AnswerId = new List<Guid> { };
-                dataManager.QuestionBase.SaveQuestion(entity);
-				entity.Id = Guid.NewGuid();
+				entity.Name = "Вопрос еще не задан";
+				entity.AnswerId = new List<Guid> {Guid.Empty};
+				dataManager.QuestionBase.SaveQuestion(entity);
 			}
 			else
 			{
 				entity = dataManager.QuestionBase.GetQuestionById(id);
-            }
+			}
 			return View(entity);
 		}
 
-		[HttpPost]
-		public IActionResult Delete(Guid id)
+        [HttpPost]
+        public IActionResult Edit(QuestionBase model)
+        {
+            dataManager.QuestionBase.SaveQuestion(model);
+            return View(model);
+        }
+
+        [HttpPost]
+		public IActionResult AddAnswer(Guid questionId, Guid answerId)
 		{
-			dataManager.QuestionBase.DeleteQuestion(id);
-			return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
-		}
-	}
+			QuestionBase question = dataManager.QuestionBase.GetQuestionById(questionId);
+			dataManager.QuestionBase.AddAnswer(question, answerId);
+			return View("Edit", question);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Guid id, Guid questionId)
+        {
+			QuestionBase question = dataManager.QuestionBase.GetQuestionById(questionId);
+            dataManager.QuestionBase.DeleteAnswer(question, id);
+            dataManager.Answers.DeleteAnswerById(id);
+            return View("Edit", question);
+        }
+    }
 }

@@ -15,18 +15,14 @@
             @foreach (QuestionPackBase entity in Model.Packs.GetAllPacks())
             {
                 <div>
-                    <h3>@entity.Name</h3>
+                    @entity.Name
                     |
-                    <a asp-area="Admin" asp-controller="TestItems" asp-action="Edit" asp-route-id="@entity.Id">редактировать</a>
+                    <button><a asp-area="Admin" asp-controller="TestItems" asp-action="Edit" asp-route-id="@entity.Id">редактировать</a></button>
                     |
                     <form style="display: inline-block;" id="form-@entity.Id" asp-area="Admin" asp-controller="TestItems" asp-action="Delete" method="post">
                         <input type="hidden" name="id" value="@entity.Id">
-                        <a href="#" onclick="document.getElementById('form-@entity.Id').submit();">удалить</a>
+                        <button><a href="#" onclick="document.getElementById('form-@entity.Id').submit();">удалить</a></button>
                     </form>
-                    |
-                    <a asp-area="" asp-controller="Home" asp-action="Index" asp-route-id="@entity.Id">
-                        @($"{entity.Name}")
-                    </a>
                 </div>
                 }
         </div>

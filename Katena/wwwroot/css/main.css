@@ -147,7 +147,7 @@ ul {
 
 a {
   color: #5d93a2;
-  text-decoration: underline;
+  text-decoration: none;
 }
 a:hover {
   text-decoration: none;
