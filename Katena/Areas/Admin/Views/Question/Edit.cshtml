@@ -20,38 +20,34 @@
                 <span asp-validation-for="Name"></span>
             </div>
             <input type="submit" value="Сохранить" />
-            <form style ="display: inline-block;" id="form-@Model.Id" asp-area="Admin" asp-controller="Answer" asp-action="Edit">
-                <input type="submit" value="Добавить ответ">
-            </form>
-            <div>
-                @foreach (AnswersBase entity in model.Answers.GetAllAnswers())
-                {
-                    <div>
-                        <form style="display: inline-block;" id="from-@entity.Id" asp-area="Admin" asp-controller="Answer" asp-action="Edit" asp-route-id="@entity.Id">
-                            <input type="submit" value="Редактировать" />
-                        </form>
-                        |
-                        <form style="display: inline-block;" id="form-@entity.Id" asp-area="Admin" asp-controller="Question" asp-action="AddAnswer" method="post">
+        </form>
+        
+        <button><a asp-area="Admin" asp-controller="Answer" asp-action="Edit" asp-rout-id="">Добавить ответ</a></button>
+        <div>
+            @foreach (AnswersBase entity in model.Answers.GetAllAnswers())
+            {
+                <div>
+                    <button><a asp-area="Admin" asp-controller="Answer" asp-action="Edit" asp-route-id="@entity.Id">Редактировать</a></button>
+                    |
+                    <form style="display: inline-block;" id="form-@entity.Id" asp-area="Admin" asp-controller="Question" asp-action="DeleteAnswer" method="post">
+                        <input type="hidden" name="id" value="@entity.Id">
+                        <input type="hidden" name="questionId" value="@Model.Id">
+                        <button><a href="#" onclick="document.getElementById('form-@entity.Id').submit();">Удалить</a></button>
+                    </form>
+                    |
+                    @if (Model.AnswerId.FirstOrDefault<Guid>(x => x == entity.Id, Guid.Empty) == Guid.Empty)
+                    {
+                        <form style="display: inline-block;" id="form-@Model.Id" asp-area="Admin" asp-controller="Question" asp-action="AddAnswer" method="post">
                             <input type="hidden" name="questionId" value="@Model.Id">
                             <input type="hidden" name="answerId" value="@entity.Id">
-                            <input type="submit" value="Сохранить в вопрос">
+                            <button><a href="#" onclick="document.getElementById('form-@Model.Id').submit();">Сохранить в вопрос</a></button>
                         </form>
-                        |
-                        <form style="display: inline-block;" id="form-@entity.Id" asp-area="Admin" asp-controller="Question" asp-action="Delete" method="post">
-                            <input type="hidden" name="id" value="@entity.Id">
-                            <input type="hidden" name="questionId" value="@Model.Id">
-                            <input type="submit" value="Удалить">
-                        </form>
-                        |
-                        <a asp-area="" asp-controller="Home" asp-action="Index" asp-route-id="@entity.Id">
-                            @($"{entity.Action}")
-                        </a>
-                    </div>
-                }
-            </div>
-            <form style="display: inline-block;" id="form-@Model.Id" asp-area="Admin" asp-controller="TestItems" asp-action="ReturnHome" method="post">
-                <input type="submit" value="Вернуться на главную страницу">
-            </form>
+                    }
+                </div>
+            }
+        </div>
+        <form style="display: inline-block;" id="form-@Model.Id" asp-area="Admin" asp-controller="TestItems" asp-action="ReturnHome" method="post">
+            <input type="submit" value="Вернуться на главную страницу">
         </form>
     </div>
 </div>

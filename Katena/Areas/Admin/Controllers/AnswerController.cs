@@ -18,7 +18,7 @@ namespace Katena.Areas.Admin.Controllers
 			this.hostingEnvironment = hostingEnvironment;
 		}
 
-		public IActionResult Edit(Guid id, QuestionBase question)
+		public IActionResult Edit(Guid id)
 		{
 			AnswersBase entity;
 			if (id == default)
@@ -36,5 +36,18 @@ namespace Katena.Areas.Admin.Controllers
 			}
 			return View(entity);
 		}
+
+        [HttpPost]
+        public IActionResult Edit(AnswersBase model)
+        {
+            dataManager.Answers.SaveAnswer(model);
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult ReturnHome()
+        {
+            return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
+        }
     }
 }

@@ -135,40 +135,7 @@ namespace Katena.Domain
                         Reason = "Никто не должен видеть меня в таком виде",
                         Type = "Finder",
                         Weight = 0
-                    },
-					new AnswersBase
-                    {
-                        Id = new Guid("c407f32a-9fbf-486e-b744-c69f4961e58e"),
-                        Action = "Do something",
-                        Reason = "To do something",
-                        Type = "Genius",
-                        Weight = 0
-                    },
-					new AnswersBase
-                    {
-                        Id = new Guid("0429066e-201f-4b2a-97fe-d15448bc4876"),
-                        Action = "Do something",
-                        Reason = "To do something",
-                        Type = "Genius",
-                        Weight = 0
-                    },
-					new AnswersBase
-                    {
-                        Id = new Guid("6b39f0ec-0314-41c3-84f1-3b892bef6545"),
-                        Action = "Do something",
-                        Reason = "To do something",
-                        Type = "Genius",
-                        Weight = 0
-                    },
-					new AnswersBase
-                    {
-                        Id = new Guid("1b08ffbf-6ae8-46b2-a058-10f742cbb3d4"),
-                        Action = "Do something",
-                        Reason = "To do something",
-                        Type = "Genius",
-                        Weight = 0
                     }
-
                 ]);
 
 			modelBuilder.Entity<QuestionBase>().HasData(

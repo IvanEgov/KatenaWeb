@@ -28,7 +28,6 @@ namespace Katena.Areas.Admin.Controllers
 				entity.Resault =  string.Empty;
 				entity.Style = string.Empty;
 				dataManager.Resaults.SaveResault(entity);
-				entity.Id = Guid.NewGuid();
 			}
 			else
 			{
@@ -36,5 +35,14 @@ namespace Katena.Areas.Admin.Controllers
             }
 			return View(entity);
 		}
-	}
+
+        [HttpPost]
+        public IActionResult Edit(ResaultsBase model)
+        {
+            dataManager.Resaults.SaveResault(model);
+            return View(model);
+        }
+    }
+
+ 
 }

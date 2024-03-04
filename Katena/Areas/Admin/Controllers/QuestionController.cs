@@ -50,7 +50,7 @@ namespace Katena.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public IActionResult Delete(Guid id, Guid questionId)
+        public IActionResult DeleteAnswer(Guid id, Guid questionId)
         {
 			QuestionBase question = dataManager.QuestionBase.GetQuestionById(questionId);
             dataManager.QuestionBase.DeleteAnswer(question, id);

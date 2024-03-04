@@ -39,7 +39,9 @@ namespace Katena.Domain.Repositories.EntietyFramework
 
 		public void AddAnswer(QuestionBase question, Guid answerId) 
 		{
-			if (question.AnswerId.FirstOrDefault(x => x == answerId, Guid.Empty) == Guid.Empty)
+			Guid check = question.AnswerId.FirstOrDefault(x => x == answerId);
+
+            if (check == Guid.Empty)
 			{
                 question.AnswerId.Add(answerId);
             }

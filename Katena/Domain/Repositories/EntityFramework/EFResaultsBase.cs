@@ -27,6 +27,7 @@ namespace Katena.Domain.Repositories.EntityFramework
             if (entity.Id == default)
             {
                 context.Entry(entity).State = EntityState.Added;
+                entity.Id = Guid.NewGuid();
             }
             else
             {
