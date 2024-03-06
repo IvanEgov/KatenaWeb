@@ -23,9 +23,9 @@ namespace Katena.Areas.Admin.Controllers
 			if (id == default)
 			{
 				entity = new QuestionPackBase();
-				entity.Name = "Название еще не задано";
-				entity.Description = "Описание еще не задано";
-				entity.Instructions = "Инструкция еще не задана";
+				entity.Name = string.Empty;
+				entity.Description = string.Empty;
+				entity.Instructions = string.Empty;
 				entity.QuestionsIds = new List<Guid> {Guid.Empty};
 				entity.ResaultsId = new List<Guid> {Guid.Empty};
 				dataManager.Packs.SavePack(entity);

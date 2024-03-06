@@ -6,7 +6,6 @@ using Katena.Service;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Identity.Client;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +21,7 @@ builder.Services.AddScoped<DataManager>();
 
 //Подключаем контекст БД
 builder.Services.AddDbContext<AppDbContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
