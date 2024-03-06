@@ -18,7 +18,7 @@ namespace Katena.Areas.Admin.Controllers
 			this.hostingEnvironment = hostingEnvironment;
 		}
 
-		public IActionResult Edit(Guid id, QuestionBase @question)
+		public IActionResult Edit(Guid id)
 		{
 			AnswersBase entity;
 			if (id == default)
@@ -29,8 +29,6 @@ namespace Katena.Areas.Admin.Controllers
 				entity.Weight = 0;
 				entity.Reason = string.Empty;
 				dataManager.Answers.SaveAnswer(entity);
-				entity.Id = Guid.NewGuid();
-				/*dataManager.QuestionBase.AddAnswer(question, entity);*/
 			}
 			else
 			{
@@ -39,11 +37,17 @@ namespace Katena.Areas.Admin.Controllers
 			return View(entity);
 		}
 
-		[HttpPost]
-		public IActionResult Delete(Guid id)
-		{
-			dataManager.Answers.DeleteAnswerById(id);
-			return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
-		}
-	}
+        [HttpPost]
+        public IActionResult Edit(AnswersBase model)
+        {
+            dataManager.Answers.SaveAnswer(model);
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult ReturnHome()
+        {
+            return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
+        }
+    }
 }

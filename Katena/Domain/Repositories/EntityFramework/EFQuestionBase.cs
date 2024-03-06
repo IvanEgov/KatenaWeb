@@ -37,9 +37,20 @@ namespace Katena.Domain.Repositories.EntietyFramework
 			return new AnswersBase();
         }
 
-		public void AddAnswer(QuestionBase question, AnswersBase answer) 
+		public void AddAnswer(QuestionBase question, Guid answerId) 
 		{
-			question.AnswerId.Add(answer.Id);
+			Guid check = question.AnswerId.FirstOrDefault(x => x == answerId);
+
+            if (check == Guid.Empty)
+			{
+                question.AnswerId.Add(answerId);
+            }
+			context.SaveChanges();
+		}
+		
+		public void DeleteAnswer(QuestionBase question, Guid answerId)
+		{
+			question.AnswerId.Remove(answerId);
 			context.SaveChanges();
 		}
 
@@ -48,7 +59,8 @@ namespace Katena.Domain.Repositories.EntietyFramework
 			if (entity.Id == default) 
 			{
 				context.Entry(entity).State = EntityState.Added;
-			}
+                entity.Id = Guid.NewGuid();
+            }
 			else
 			{
 				context.Entry(entity).State = EntityState.Modified;

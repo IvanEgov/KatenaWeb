@@ -23,15 +23,36 @@ namespace Katena.Domain.Repositories.EntietyFramework
 			return context.Packs.FirstOrDefault(x => x.Id == id);
 		}
 
-		public void AddQuestion(QuestionPackBase pack, QuestionBase entity)
+		public void AddQuestion(QuestionPackBase pack, Guid questionId)
 		{
-			pack.QuestionsIds.Add(entity.Id);
+			Guid check = pack.QuestionsIds.FirstOrDefault(x => x == questionId);
+			if (check == Guid.Empty) 
+			{
+                pack.QuestionsIds.Add(questionId);
+            }
 			context.SaveChanges();
 		}
 
-		public void AddResault(QuestionPackBase pack, ResaultsBase entity) 
+		public void DeleteQuestion(QuestionPackBase pack, Guid questionId)
 		{
-			pack.ResaultsId.Add(entity.Id);
+			pack.QuestionsIds.Remove(questionId);
+			context.SaveChanges();
+		}
+
+		public void AddResault(QuestionPackBase pack, Guid resultId) 
+		{
+			Guid check = pack.ResaultsId.FirstOrDefault(x => x == resultId);
+			if (check == Guid.Empty) 
+			{
+                pack.ResaultsId.Add(resultId);
+            }
+            context.SaveChanges();
+
+		}
+
+		public void DeleteResult(QuestionPackBase pack, Guid resultId)
+		{
+			pack.ResaultsId.Remove(resultId);
 			context.SaveChanges();
 		}
 
@@ -40,6 +61,7 @@ namespace Katena.Domain.Repositories.EntietyFramework
 			if (entity.Id == default) 
 			{
 				context.Entry(entity).State = EntityState.Added;
+				entity.Id = Guid.NewGuid();
 			}
 			else
 			{
