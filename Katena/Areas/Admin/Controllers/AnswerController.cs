@@ -26,7 +26,7 @@ namespace Katena.Areas.Admin.Controllers
 				entity = new AnswersBase();
 				entity.Action = string.Empty;
 				entity.Type = string.Empty;
-				entity.Weight = 0;
+				entity.Weight = 0.0;
 				entity.Reason = string.Empty;
 				dataManager.Answers.SaveAnswer(entity);
 			}
