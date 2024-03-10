@@ -4,7 +4,9 @@ namespace Katena.Domain.Entities
 {
 	public class EntityBase
 	{
-		[Required]
+        protected EntityBase() => DateAdded = DateTime.UtcNow;
+
+        [Required]
 		public Guid Id { get; set; }
 
 		[Display(Name = "Название (заголовок)")]
@@ -13,5 +15,11 @@ namespace Katena.Domain.Entities
 		[Display(Name = "Полное описание")]
 		public virtual string Text { get; set; }
 
-	}
+        [Display(Name = "Титульная картинка")]
+        public virtual string TitleImagePath { get; set; }
+
+        [DataType(DataType.Time)]
+        public DateTime DateAdded { get; set; }
+
+    }
 }
