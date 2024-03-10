@@ -72,6 +72,13 @@ namespace Katena.Domain
 				Title = "Контакты",
                 TitleImagePath = ""
             });
+			modelBuilder.Entity<TextField>().HasData(new TextField
+			{
+				Id = Guid.NewGuid(),
+				CodeWord = "Sidebar",
+				Title = "Новости",
+				TitleImagePath = ""
+			});
 
 			modelBuilder.Entity<AnswersBase>().HasData(
 				[

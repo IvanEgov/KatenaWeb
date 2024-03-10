@@ -1,9 +1,24 @@
-﻿@model TextField
+﻿@using Katena.Domain
+@model TextField
 @{
 	ViewBag.Title = Model.Title;
 	ViewBag.Text = Model.Text;
 }
+@inject DataManager datamanager;
 
 <div>
 	@Html.Raw(Model.Text)
+    <div>
+        @foreach (QuestionPackBase entity in datamanager.Packs.GetAllPacks())
+        {
+            <div class="container">
+                <div class="col-12-medium">
+                    <form style="display: inline-block;" id="form-@entity.Id" asp-controller="Test" asp-action="Index" method="post">
+                        <input type ="hidden" name="id" value="@entity.Id"></input>
+                        <button><a href="#" onclick="document.getElementById('form-@entity.Id').submit();">Тест</a></button>
+                    </form>
+                </div>     
+            </div>
+        }
+    </div>
 </div>
