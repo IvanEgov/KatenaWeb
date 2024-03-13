@@ -24,10 +24,5 @@ namespace Katena.Controllers
 /*			ViewBag.TextField = dataManager.TextFields.GetTextFieldByCodeWord("PageTests");*/
 			return View(dataManager.TextFields.GetTextFieldByCodeWord("PageTests"));
 		}
-
-		public IActionResult TestPartView(QuestionPackBase entity)
-		{
-
-		}
 	}
 }

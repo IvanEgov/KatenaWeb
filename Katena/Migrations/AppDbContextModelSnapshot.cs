@@ -17,7 +17,7 @@ namespace Katena.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.1")
+                .HasAnnotation("ProductVersion", "8.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
@@ -269,10 +269,6 @@ namespace Katena.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("TitleImagePath")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
                     b.HasKey("Id");
 
                     b.ToTable("TextFields");
@@ -282,37 +278,41 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"),
                             CodeWord = "PageIndex",
-                            DateAdded = new DateTime(2024, 3, 10, 18, 19, 4, 161, DateTimeKind.Utc).AddTicks(1843),
+                            DateAdded = new DateTime(2024, 3, 13, 14, 16, 25, 613, DateTimeKind.Utc).AddTicks(6890),
                             Text = "Содержание заполняется администратором",
-                            Title = "Главная",
-                            TitleImagePath = ""
+                            Title = "Главная"
                         },
                         new
                         {
                             Id = new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"),
                             CodeWord = "PageTests",
-                            DateAdded = new DateTime(2024, 3, 10, 18, 19, 4, 161, DateTimeKind.Utc).AddTicks(1875),
+                            DateAdded = new DateTime(2024, 3, 13, 14, 16, 25, 613, DateTimeKind.Utc).AddTicks(6922),
                             Text = "Содержание заполняется администратором",
-                            Title = "Тесты",
-                            TitleImagePath = ""
+                            Title = "Тесты"
                         },
                         new
                         {
                             Id = new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"),
                             CodeWord = "PageAbilities",
-                            DateAdded = new DateTime(2024, 3, 10, 18, 19, 4, 161, DateTimeKind.Utc).AddTicks(1891),
+                            DateAdded = new DateTime(2024, 3, 13, 14, 16, 25, 613, DateTimeKind.Utc).AddTicks(6938),
                             Text = "Содержание заполняется администратором",
-                            Title = "Возможности",
-                            TitleImagePath = ""
+                            Title = "Возможности"
                         },
                         new
                         {
                             Id = new Guid("8eae0a63-8f52-4160-a14e-b405e431a13b"),
                             CodeWord = "PageContacts",
-                            DateAdded = new DateTime(2024, 3, 10, 18, 19, 4, 161, DateTimeKind.Utc).AddTicks(1905),
+                            DateAdded = new DateTime(2024, 3, 13, 14, 16, 25, 613, DateTimeKind.Utc).AddTicks(6951),
                             Text = "Содержание заполняется администратором",
-                            Title = "Контакты",
-                            TitleImagePath = ""
+                            Title = "Контакты"
+                        },
+                        new
+                        {
+                            Id = new Guid("9b613a7d-49ee-4ce0-ba22-c161553584ac"),
+                            CodeWord = "Sidebar",
+                            DateAdded = new DateTime(2024, 3, 13, 14, 16, 25, 613, DateTimeKind.Utc).AddTicks(6963),
+                            Text = "Содержание заполняется администратором",
+                            Title = "Новости"
                         });
                 });
 
@@ -443,13 +443,13 @@ namespace Katena.Migrations
                         {
                             Id = "ef37a3c2-7c96-4405-a971-7abcc91ac333",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "30dbe97a-33f1-4ced-b72a-89b461e1ae79",
+                            ConcurrencyStamp = "7b390698-362d-44b3-93d2-8485de787c9b",
                             Email = "my@email.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "MY@EMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAENpGAsIY7gqOChtnIWfameST5SdosjCfbEKpc7j1/kAyqlhN6roBmLdBx0GCEtWazg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEGQOaYtY8jV9rQX9OVM0jewGrQsxmV15e37vMAeXghhHGizVf9H9Aih2crnSOICWgQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,

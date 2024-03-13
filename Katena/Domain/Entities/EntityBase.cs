@@ -15,9 +15,6 @@ namespace Katena.Domain.Entities
 		[Display(Name = "Полное описание")]
 		public virtual string Text { get; set; }
 
-        [Display(Name = "Титульная картинка")]
-        public virtual string TitleImagePath { get; set; }
-
         [DataType(DataType.Time)]
         public DateTime DateAdded { get; set; }
 

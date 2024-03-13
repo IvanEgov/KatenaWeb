@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Katena.Migrations
 {
     /// <inheritdoc />
-    public partial class newMigration : Migration
+    public partial class doMigrationPls : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -158,8 +158,6 @@ namespace Katena.Migrations
                     Title = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Text = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    TitleImagePath = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     DateAdded = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
@@ -319,7 +317,7 @@ namespace Katena.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "ef37a3c2-7c96-4405-a971-7abcc91ac333", 0, "30dbe97a-33f1-4ced-b72a-89b461e1ae79", "my@email.com", true, false, null, "MY@EMAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAENpGAsIY7gqOChtnIWfameST5SdosjCfbEKpc7j1/kAyqlhN6roBmLdBx0GCEtWazg==", null, false, "", false, "admin" });
+                values: new object[] { "ef37a3c2-7c96-4405-a971-7abcc91ac333", 0, "7b390698-362d-44b3-93d2-8485de787c9b", "my@email.com", true, false, null, "MY@EMAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAEGQOaYtY8jV9rQX9OVM0jewGrQsxmV15e37vMAeXghhHGizVf9H9Aih2crnSOICWgQ==", null, false, "", false, "admin" });
 
             migrationBuilder.InsertData(
                 table: "Packs",
@@ -348,13 +346,14 @@ namespace Katena.Migrations
 
             migrationBuilder.InsertData(
                 table: "TextFields",
-                columns: new[] { "Id", "CodeWord", "DateAdded", "Text", "Title", "TitleImagePath" },
+                columns: new[] { "Id", "CodeWord", "DateAdded", "Text", "Title" },
                 values: new object[,]
                 {
-                    { new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"), "PageAbilities", new DateTime(2024, 3, 10, 18, 19, 4, 161, DateTimeKind.Utc).AddTicks(1891), "Содержание заполняется администратором", "Возможности", "" },
-                    { new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"), "PageIndex", new DateTime(2024, 3, 10, 18, 19, 4, 161, DateTimeKind.Utc).AddTicks(1843), "Содержание заполняется администратором", "Главная", "" },
-                    { new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"), "PageTests", new DateTime(2024, 3, 10, 18, 19, 4, 161, DateTimeKind.Utc).AddTicks(1875), "Содержание заполняется администратором", "Тесты", "" },
-                    { new Guid("8eae0a63-8f52-4160-a14e-b405e431a13b"), "PageContacts", new DateTime(2024, 3, 10, 18, 19, 4, 161, DateTimeKind.Utc).AddTicks(1905), "Содержание заполняется администратором", "Контакты", "" }
+                    { new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"), "PageAbilities", new DateTime(2024, 3, 13, 14, 16, 25, 613, DateTimeKind.Utc).AddTicks(6938), "Содержание заполняется администратором", "Возможности" },
+                    { new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"), "PageIndex", new DateTime(2024, 3, 13, 14, 16, 25, 613, DateTimeKind.Utc).AddTicks(6890), "Содержание заполняется администратором", "Главная" },
+                    { new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"), "PageTests", new DateTime(2024, 3, 13, 14, 16, 25, 613, DateTimeKind.Utc).AddTicks(6922), "Содержание заполняется администратором", "Тесты" },
+                    { new Guid("8eae0a63-8f52-4160-a14e-b405e431a13b"), "PageContacts", new DateTime(2024, 3, 13, 14, 16, 25, 613, DateTimeKind.Utc).AddTicks(6951), "Содержание заполняется администратором", "Контакты" },
+                    { new Guid("9b613a7d-49ee-4ce0-ba22-c161553584ac"), "Sidebar", new DateTime(2024, 3, 13, 14, 16, 25, 613, DateTimeKind.Utc).AddTicks(6963), "Содержание заполняется администратором", "Новости" }
                 });
 
             migrationBuilder.InsertData(

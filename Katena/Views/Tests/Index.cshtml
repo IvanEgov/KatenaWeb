@@ -20,27 +20,23 @@
 <div>
 	@Html.Raw(Model.Text)
     <div>
-        @foreach (QuestionPackBase entity in datamanager.Packs.GetAllPacks())
+        @{
+            List<QuestionPackBase> packs = datamanager.Packs.GetAllPacks().ToList();
+        }
+        @foreach (QuestionPackBase entity in packs)
         {
             <div class="container">
                 <div class="col-12-medium">
                     @* кнопка теста *@
-                    <button class="botton" id="startBotton">@entity.Name</button>
                     @* Если нажата кнопка теста, атрибут hidden должен пропасть*@
-                    <div id="test" hidden>
-                        @await Html.PartialAsync("testPartial", entity)
-                    </div>
-                    @* Если делать через скрипт, то форма лишняя, при этом форма передает entity, а как передать entity в partial? *@
-                    @* <form style="display: inline-block;" id="form-@entity.Id" asp-controller="Tests" asp-action="TestPartView" method="post">
-                        <input type ="hidden" name="id" value="@entity.Id">
-                        <button class="botton" id="startBotton"><a href="#" onclick="document.getElementById('form-@entity.Id').submit();">Тест</a></button>
-                    </form> *@
-                </div>     
+                </div>
+                <div id="test">
+                    @await Html.PartialAsync("testPartial", entity)
+                </div>
+                <div id="welcome">
+                    <h1></h1>
+                </div>
             </div>
         }
     </div>
-    <div class ="background" id="welcome">
-        @await Html.PartialAsync("homeParital")
-    </div>
-    @* Как не плодить страницы и при этом передавать нужный entity(тест)??? *@
 </div>
