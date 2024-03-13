@@ -6,6 +6,17 @@
 }
 @inject DataManager datamanager;
 
+<script>
+    document.getElementById("startButton").addEventListener(
+        "click",
+        function () {
+            document.getElementById("welcome").hidden = true;
+            document.getElementById("test").hidden = false;
+        },
+        false,
+    );
+</script>
+
 <div>
 	@Html.Raw(Model.Text)
     <div>
@@ -13,12 +24,23 @@
         {
             <div class="container">
                 <div class="col-12-medium">
-                    <form style="display: inline-block;" id="form-@entity.Id" asp-controller="Test" asp-action="Index" method="post">
-                        <input type ="hidden" name="id" value="@entity.Id"></input>
-                        <button><a href="#" onclick="document.getElementById('form-@entity.Id').submit();">Тест</a></button>
-                    </form>
+                    @* кнопка теста *@
+                    <button class="botton" id="startBotton">@entity.Name</button>
+                    @* Если нажата кнопка теста, атрибут hidden должен пропасть*@
+                    <div id="test" hidden>
+                        @await Html.PartialAsync("testPartial", entity)
+                    </div>
+                    @* Если делать через скрипт, то форма лишняя, при этом форма передает entity, а как передать entity в partial? *@
+                    @* <form style="display: inline-block;" id="form-@entity.Id" asp-controller="Tests" asp-action="TestPartView" method="post">
+                        <input type ="hidden" name="id" value="@entity.Id">
+                        <button class="botton" id="startBotton"><a href="#" onclick="document.getElementById('form-@entity.Id').submit();">Тест</a></button>
+                    </form> *@
                 </div>     
             </div>
         }
     </div>
+    <div class ="background" id="welcome">
+        @await Html.PartialAsync("homeParital")
+    </div>
+    @* Как не плодить страницы и при этом передавать нужный entity(тест)??? *@
 </div>

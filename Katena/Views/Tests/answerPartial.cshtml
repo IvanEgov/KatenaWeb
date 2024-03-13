@@ -1,0 +1,34 @@
+﻿@using Katena.Domain
+@model AnswersBase
+@{
+	ViewBag.Title = Model.Action;
+}
+
+@inject DataManager datamanager;
+
+<script>
+	document.getElementById("startButton").addEventListener(
+		"click",
+		function () {
+			document.getElementById("answer").hidden = true;
+			document.getElementById("start").hidden = false;
+		},
+		false,
+	);
+</script>
+
+<div id="answer" class="container">
+	<div class="div-box">
+		<p><h2>Ваш ответ</h2></p>
+		<p><h1>@Model.Action</h1></p>
+	</div>
+	<div class="div-box">
+		<p><h3>Выберите мотив, которым вы руководствовались при ответе.</h3></p>
+		@*Самое простое решение, которое сейчас идет в голову- переделать AnswersBase и для каждого вопроса хранить все мотивы*@
+		<div class="nav">
+			<p><botton>@Model.Reason</botton></p>
+			<p><botton>@Model.Reason</botton></p>
+			<p><botton>@Model.Reason</botton></p>
+		</div>
+	</div>
+</div>
