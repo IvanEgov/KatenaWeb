@@ -20,9 +20,8 @@ builder.Services.AddScoped<IResaults, EFResaultsBase>();
 builder.Services.AddScoped<DataManager>();
 
 //Подключаем контекст БД
-//builder.Services.AddDbContext<AppDbContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 builder.Services.AddDbContext<AppDbContext>(x => x.UseMySql(builder.Configuration.GetConnectionString("Default"), ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("Default"))));
-
+builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 //Настройка Identity системы

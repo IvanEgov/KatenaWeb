@@ -2,8 +2,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using static Katena.Domain.Entities.QuestionBase;
-
 namespace Katena.Domain
 {
 	//Представление личного кабинета админа, заполнения страниц и теста в бд
@@ -15,6 +13,7 @@ namespace Katena.Domain
 		public DbSet<QuestionBase> Questions { get; set; }
 		public DbSet<AnswersBase> Answers { get; set; }
 		public DbSet<ResaultsBase> Resaults { get; set; }
+		public DbSet<ReasonBase> Reasons { get; set; }
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			base.OnModelCreating(modelBuilder);
@@ -81,48 +80,36 @@ namespace Katena.Domain
 					{
 						Id = new Guid("cb83a258-54e1-4b2a-a58f-24fe95a357bc"),
 						Action = "Начну звонить соседям и выяснять у всех ли отключили",
-						Reason = "Может, кто-то знает причину отключения",
-						Type = "Hunter",
 						Weight = 0
 					},
 					new AnswersBase 
 					{
 						Id = new Guid("03b5d02c-aa7f-47b9-8b80-4bd984ce7906"),
 						Action = "Начну искать телефоны снабжающих организаций и выяснять причину отключения",
-						Reason = "Надо вывалить на кого-то все зло, которое у меня накопилось",
-						Type = "Mentor",
 						Weight = 0
 					},
 					new AnswersBase 
 					{
 						Id = new Guid("9102a12d-2845-4224-939e-913ab96524ab"),
 						Action = "Плевать, не велика проблема",
-						Reason = "Сейчас важнее не опаздать, а остальное -  мелочи",
-						Type = "Finder",
 						Weight = 0
 					},
 					new AnswersBase 
 					{
 						Id = new Guid("e82f0359-d505-49f3-9292-f3877a9a844f"),
 						Action = "Это знак свыше, можно никуда сегодня не ходить, пойду спать дальше",
-						Reason = "Вот, наконец-то, повод отлежаться дома",
-						Type = "GoodMan",
 						Weight = 0
 					},
                     new AnswersBase
                     {
                         Id = new Guid("5ed2804d-bc6a-4296-b9a0-cf720271a18a"),
                         Action = "Накричу на него, заставлю извиняться",
-                        Reason = "Если бы подобных людей в моей жизни было бы меньше, я бы чувствовал себя лучше",
-                        Type = "Hunter",
                         Weight = 0
                     },
 					new AnswersBase
                     {
                         Id = new Guid("4c748f11-614c-4da8-97f2-eec8dc8ef989"),
                         Action = "Поеду домой переодеваться, а потом вернусь на вечеринку",
-                        Reason = "Я всегда выгляжу идеально и должен быть примером для других",
-                        Type = "Hunter",
                         Weight = 0
                     },
 					new AnswersBase
@@ -130,16 +117,12 @@ namespace Katena.Domain
                         Id = new Guid("01786293-47e4-407e-9c24-66591aa9e099"),
                         Action = "Постараюсь, не привлекая внимания окружающих, удалить пятно подручными средствами," +
 						" а если это не получится, продолжу веселиться вместе с пятном",
-                        Reason = "Не думаю, что на подобной вечеринке мой канфуз будет сильно бросаться в глаза",
-                        Type = "Mentor",
                         Weight = 0
                     },
 					new AnswersBase
                     {
                         Id = new Guid("6afb4539-1a1c-44d5-ab1e-c8b29fbc2ddc"),
                         Action = "Настроение испорчено, уеду с вечеринки",
-                        Reason = "Никто не должен видеть меня в таком виде",
-                        Type = "Finder",
                         Weight = 0
                     }
                 ]);

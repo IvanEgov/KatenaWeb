@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Katena.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240313141626_doMigrationPls")]
-    partial class doMigrationPls
+    [Migration("20240314081906_newMigration")]
+    partial class newMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -281,7 +281,7 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"),
                             CodeWord = "PageIndex",
-                            DateAdded = new DateTime(2024, 3, 13, 14, 16, 25, 613, DateTimeKind.Utc).AddTicks(6890),
+                            DateAdded = new DateTime(2024, 3, 14, 8, 19, 5, 610, DateTimeKind.Utc).AddTicks(8036),
                             Text = "Содержание заполняется администратором",
                             Title = "Главная"
                         },
@@ -289,7 +289,7 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"),
                             CodeWord = "PageTests",
-                            DateAdded = new DateTime(2024, 3, 13, 14, 16, 25, 613, DateTimeKind.Utc).AddTicks(6922),
+                            DateAdded = new DateTime(2024, 3, 14, 8, 19, 5, 610, DateTimeKind.Utc).AddTicks(8067),
                             Text = "Содержание заполняется администратором",
                             Title = "Тесты"
                         },
@@ -297,7 +297,7 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"),
                             CodeWord = "PageAbilities",
-                            DateAdded = new DateTime(2024, 3, 13, 14, 16, 25, 613, DateTimeKind.Utc).AddTicks(6938),
+                            DateAdded = new DateTime(2024, 3, 14, 8, 19, 5, 610, DateTimeKind.Utc).AddTicks(8085),
                             Text = "Содержание заполняется администратором",
                             Title = "Возможности"
                         },
@@ -305,15 +305,15 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("8eae0a63-8f52-4160-a14e-b405e431a13b"),
                             CodeWord = "PageContacts",
-                            DateAdded = new DateTime(2024, 3, 13, 14, 16, 25, 613, DateTimeKind.Utc).AddTicks(6951),
+                            DateAdded = new DateTime(2024, 3, 14, 8, 19, 5, 610, DateTimeKind.Utc).AddTicks(8102),
                             Text = "Содержание заполняется администратором",
                             Title = "Контакты"
                         },
                         new
                         {
-                            Id = new Guid("9b613a7d-49ee-4ce0-ba22-c161553584ac"),
+                            Id = new Guid("248d13a7-38bd-4015-8515-82e90b8856a3"),
                             CodeWord = "Sidebar",
-                            DateAdded = new DateTime(2024, 3, 13, 14, 16, 25, 613, DateTimeKind.Utc).AddTicks(6963),
+                            DateAdded = new DateTime(2024, 3, 14, 8, 19, 5, 610, DateTimeKind.Utc).AddTicks(8117),
                             Text = "Содержание заполняется администратором",
                             Title = "Новости"
                         });
@@ -446,13 +446,13 @@ namespace Katena.Migrations
                         {
                             Id = "ef37a3c2-7c96-4405-a971-7abcc91ac333",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7b390698-362d-44b3-93d2-8485de787c9b",
+                            ConcurrencyStamp = "2b584925-c452-4643-b51a-9aa9af9757d6",
                             Email = "my@email.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "MY@EMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEGQOaYtY8jV9rQX9OVM0jewGrQsxmV15e37vMAeXghhHGizVf9H9Aih2crnSOICWgQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEFKKLJqQZzxCL8U98Rs55hwUwHYcw4z9VylBwUaE1OZjBgNoMoyWfWRUyIwSUdiieg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,

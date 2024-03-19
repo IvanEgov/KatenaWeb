@@ -22,15 +22,18 @@
 		<br>
 		<form>	
 			@{List<Guid> guidAns = question.AnswerId.ToList();}
-			@foreach(Guid answerId in guidAns)
+			@if(guidAns.Count != null)
 			{
-				AnswersBase answer = datamanager.Answers.GetAnswerById(answerId);
-				<div class="form-check">
-					<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-					<label class="form-check-label" for="flexRadioDefault1">
-						@answer.Action.  @answer.Reason
-					</label>
-				</div>
+				@foreach (Guid answerId in guidAns)
+				{
+					AnswersBase answer = datamanager.Answers.GetAnswerById(answerId);
+					<div class="form-check">
+						<input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+						<label class="form-check-label" for="flexRadioDefault1">
+							@answer.Action.  @answer.Reason
+						</label>
+					</div>
+				}
 			}
 		</form>
 	}

@@ -13,7 +13,7 @@ namespace Katena.Domain.Entities
         [Display(Name ="Действие")]
         public string Action { get; set; }
 
-        //Мотив
+        /*//Мотив
         [Required]
         [Display(Name ="Причина")]
         public string Reason { get; set; }
@@ -22,10 +22,42 @@ namespace Katena.Domain.Entities
         [Required]
         [Display(Name ="Тип личности")]
         public string Type { get; set; }
-
+*/		
         //Вес
         [Required]
         [Display(Name ="Вес")]
         public double Weight { get; set; }
-    }
+
+		//Вес
+		[Required]
+		[Display(Name = "Вес")]
+		public double Weight1 { get; set; }
+
+		//Вес
+		[Required]
+		[Display(Name = "Вес")]
+		public double Weight2 { get; set; }
+
+		//Вес
+		[Required]
+		[Display(Name = "Вес")]
+		public double Weight3 { get; set; }
+
+		//Вес
+		[Required]
+		[Display(Name = "Вес")]
+		public double Weight4 { get; set; }
+
+		//Вес
+		[Required]
+		[Display(Name = "Вес")]
+		public double Weight5 { get; set; }
+
+		//Вес
+		[Required]
+		[Display(Name = "Вес")]
+		public double Weight6 { get; set; }
+
+		public List<Guid> reasonsId { get; set; }
+	}
 }
