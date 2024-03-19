@@ -24,7 +24,7 @@ namespace Katena.Domain.Entities
         public string Type { get; set; }
 */
 		//Тип личности
-		[Required]
+/*		[Required]
 		[Display(Name = "Тип личности")]
 		public string Type1 { get; set; }
 
@@ -54,7 +54,7 @@ namespace Katena.Domain.Entities
 
 		[Required]
 		[Display(Name = "Ориентирован на")]
-		public string character4 { get; set; }
+		public string character4 { get; set; }*/
 
 		//Вес
 		[Required]
@@ -124,19 +124,18 @@ namespace Katena.Domain.Entities
 		//Вес
 		[Required]
 		[Display(Name = "Вес")]
-		public double Weight6 { get; set; }
+		public double Weight13 { get; set; }
 
 		//Вес
 		[Required]
 		[Display(Name = "Вес")]
-		public double Weight7 { get; set; }
+		public double Weight14 { get; set; }
 
 		//Вес
 		[Required]
 		[Display(Name = "Вес")]
-		public double Weight8 { get; set; }
+		public double Weight15 { get; set; }
 
 		public List<Guid> reasonsId { get; set; }
-		public List<Guid> typeId { get; set; }
 	}
 }

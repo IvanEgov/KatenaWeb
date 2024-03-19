@@ -14,6 +14,7 @@ namespace Katena.Domain
 		public DbSet<AnswersBase> Answers { get; set; }
 		public DbSet<ResaultsBase> Resaults { get; set; }
 		public DbSet<ReasonBase> Reasons { get; set; }
+
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			base.OnModelCreating(modelBuilder);
@@ -80,52 +81,202 @@ namespace Katena.Domain
 					{
 						Id = new Guid("cb83a258-54e1-4b2a-a58f-24fe95a357bc"),
 						Action = "Начну звонить соседям и выяснять у всех ли отключили",
-						Weight = 0
+						Weight = 0,
+						Weight1 = 0,
+						Weight2 = 0,
+						Weight3 = 0,
+						Weight4 = 0,
+						Weight5 = 0,
+						Weight6 = 0,
+						Weight7 = 0,
+						Weight8 = 0,
+						Weight9 = 0,
+						Weight10 = 0,
+						Weight11 = 0,
+						Weight12 = 0,
+						Weight13 = 0,
+						Weight14 = 0,
+						Weight15 = 0,
+						reasonsId = new List<Guid>{new Guid("f70fca13-268b-4e2e-9906-066b455d2081") }
 					},
 					new AnswersBase 
 					{
 						Id = new Guid("03b5d02c-aa7f-47b9-8b80-4bd984ce7906"),
 						Action = "Начну искать телефоны снабжающих организаций и выяснять причину отключения",
-						Weight = 0
+						Weight = 0,
+						Weight1 = 0,
+						Weight2 = 0,
+						Weight3 = 0,
+						Weight4 = 0,
+						Weight5 = 0,
+						Weight6 = 0,
+						Weight7 = 0,
+						Weight8 = 0,
+						Weight9 = 0,
+						Weight10 = 0,
+						Weight11 = 0,
+						Weight12 = 0,
+						Weight13 = 0,
+						Weight14 = 0,
+						Weight15 = 0,
+						reasonsId = new List<Guid>{new Guid("f70fca13-268b-4e2e-9906-066b455d2081") }
 					},
 					new AnswersBase 
 					{
 						Id = new Guid("9102a12d-2845-4224-939e-913ab96524ab"),
 						Action = "Плевать, не велика проблема",
-						Weight = 0
+						Weight = 0,
+						Weight1 = 0,
+						Weight2 = 0,
+						Weight3 = 0,
+						Weight4 = 0,
+						Weight5 = 0,
+						Weight6 = 0,
+						Weight7 = 0,
+						Weight8 = 0,
+						Weight9 = 0,
+						Weight10 = 0,
+						Weight11 = 0,
+						Weight12 = 0,
+						Weight13 = 0,
+						Weight14 = 0,
+						Weight15 = 0,
+						reasonsId = new List<Guid>{new Guid("f70fca13-268b-4e2e-9906-066b455d2081") }
+
 					},
 					new AnswersBase 
 					{
 						Id = new Guid("e82f0359-d505-49f3-9292-f3877a9a844f"),
 						Action = "Это знак свыше, можно никуда сегодня не ходить, пойду спать дальше",
-						Weight = 0
+						Weight = 0,
+						Weight1 = 0,
+						Weight2 = 0,
+						Weight3 = 0,
+						Weight4 = 0,
+						Weight5 = 0,
+						Weight6 = 0,
+						Weight7 = 0,
+						Weight8 = 0,
+						Weight9 = 0,
+						Weight10 = 0,
+						Weight11 = 0,
+						Weight12 = 0,
+						Weight13 = 0,
+						Weight14 = 0,
+						Weight15 = 0,
+						reasonsId = new List<Guid>{new Guid("f70fca13-268b-4e2e-9906-066b455d2081") }
 					},
                     new AnswersBase
                     {
                         Id = new Guid("5ed2804d-bc6a-4296-b9a0-cf720271a18a"),
                         Action = "Накричу на него, заставлю извиняться",
-                        Weight = 0
-                    },
+                        Weight = 0,
+						Weight1 = 0,
+						Weight2 = 0,
+						Weight3 = 0,
+						Weight4 = 0,
+						Weight5 = 0,
+						Weight6 = 0,
+						Weight7 = 0,
+						Weight8 = 0,
+						Weight9 = 0,
+						Weight10 = 0,
+						Weight11 = 0,
+						Weight12 = 0,
+						Weight13 = 0,
+						Weight14 = 0,
+						Weight15 = 0,
+						reasonsId = new List<Guid>{new Guid("f70fca13-268b-4e2e-9906-066b455d2081") }
+					},
 					new AnswersBase
                     {
                         Id = new Guid("4c748f11-614c-4da8-97f2-eec8dc8ef989"),
                         Action = "Поеду домой переодеваться, а потом вернусь на вечеринку",
-                        Weight = 0
-                    },
+                        Weight = 0,
+						Weight1 = 0,
+						Weight2 = 0,
+						Weight3 = 0,
+						Weight4 = 0,
+						Weight5 = 0,
+						Weight6 = 0,
+						Weight7 = 0,
+						Weight8 = 0,
+						Weight9 = 0,
+						Weight10 = 0,
+						Weight11 = 0,
+						Weight12 = 0,
+						Weight13 = 0,
+						Weight14 = 0,
+						Weight15 = 0,
+						reasonsId = new List<Guid>{new Guid("f70fca13-268b-4e2e-9906-066b455d2081") }
+					},
 					new AnswersBase
                     {
                         Id = new Guid("01786293-47e4-407e-9c24-66591aa9e099"),
                         Action = "Постараюсь, не привлекая внимания окружающих, удалить пятно подручными средствами," +
 						" а если это не получится, продолжу веселиться вместе с пятном",
-                        Weight = 0
-                    },
+                        Weight = 0,
+						Weight1 = 0,
+						Weight2 = 0,
+						Weight3 = 0,
+						Weight4 = 0,
+						Weight5 = 0,
+						Weight6 = 0,
+						Weight7 = 0,
+						Weight8 = 0,
+						Weight9 = 0,
+						Weight10 = 0,
+						Weight11 = 0,
+						Weight12 = 0,
+						Weight13 = 0,
+						Weight14 = 0,
+						Weight15 = 0,
+						reasonsId = new List<Guid>{new Guid("f70fca13-268b-4e2e-9906-066b455d2081") }
+					},
 					new AnswersBase
                     {
                         Id = new Guid("6afb4539-1a1c-44d5-ab1e-c8b29fbc2ddc"),
                         Action = "Настроение испорчено, уеду с вечеринки",
-                        Weight = 0
-                    }
+                        Weight = 0,
+						Weight1 = 0,
+						Weight2 = 0,
+						Weight3 = 0,
+						Weight4 = 0,
+						Weight5 = 0,
+						Weight6 = 0,
+						Weight7 = 0,
+						Weight8 = 0,
+						Weight9 = 0,
+						Weight10 = 0,
+						Weight11 = 0,
+						Weight12 = 0,
+						Weight13 = 0,
+						Weight14 = 0,
+						Weight15 = 0,
+						reasonsId = new List<Guid>{new Guid("f70fca13-268b-4e2e-9906-066b455d2081") }
+					}
                 ]);
+
+			modelBuilder.Entity<ReasonBase>().HasData(
+				[
+					new ReasonBase
+					{
+						Id = new Guid("f70fca13-268b-4e2e-9906-066b455d2081"),
+						Reason = "Reason",
+						Weight = 0,
+						Weight1 = 0,
+						Weight2 = 0,
+						Weight3 = 0,
+						Weight4 = 0,
+						Weight5 = 0,
+						Weight6 = 0,
+						Weight7 = 0,
+						Weight8 = 0,
+						Weight9 = 0,
+						Weight10 = 0,
+						Weight11 = 0
+					},
+				]);
 
 			modelBuilder.Entity<QuestionBase>().HasData(
 				[

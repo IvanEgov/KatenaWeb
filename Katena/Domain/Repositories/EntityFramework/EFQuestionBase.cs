@@ -23,6 +23,7 @@ namespace Katena.Domain.Repositories.EntietyFramework
 			return context.Questions.FirstOrDefault(x => x.Id == id);
 		}
 
+		//Подумать, что делать с весами
         public AnswersBase GetAnswer(Guid id, string KeyAction)
         {
 			QuestionBase question = GetQuestionById(id);
