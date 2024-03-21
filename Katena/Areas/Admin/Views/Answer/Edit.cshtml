@@ -102,11 +102,13 @@
             <input type="submit" value="Сохранить" />
         </form>
 
-        <button><a asp-area="Admin" asp-controller="Reason" asp-action="Edit" asp-rout-id="">Добавить мотив</a></button>
+        <button><a asp-area="Admin" asp-controller="Reason" asp-action="Edit">Добавить мотив</a></button>
         <div>
             @foreach (ReasonBase entity in model.Reasons.GetAllReasons())
             {
                 <div>
+                    @entity.Reason
+                    |
                     <button><a asp-area="Admin" asp-controller="Reason" asp-action="Edit" asp-route-id="@entity.Id">Редактировать</a></button>
                     |
                     <form style="display: inline-block;" id="form-@entity.Id" asp-area="Admin" asp-controller="Answer" asp-action="DeleteReason" method="post">

@@ -32,7 +32,7 @@
             </div>
             <input type="submit" value="Сохранить">
         </form>
-        <button><a asp-area="Admin" asp-controller="Question" asp-action="Edit" asp-rout-id="">Добавить вопрос</a></button>
+        <button><a asp-area="Admin" asp-controller="Question" asp-action="Edit" >Добавить вопрос</a></button>
         <div>
             @foreach (QuestionBase entity in datamanager.QuestionBase.GetAllQuestions())
             {

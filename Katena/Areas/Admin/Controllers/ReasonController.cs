@@ -5,7 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Katena.Areas.Admin.Controllers
 {
-	public class ReasonController : Controller
+    [Area("Admin")]
+    public class ReasonController : Controller
 	{
 		private readonly DataManager dataManager;
 		private readonly IWebHostEnvironment hostingEnvironment;
@@ -22,18 +23,18 @@ namespace Katena.Areas.Admin.Controllers
 			{
 				entity = new ReasonBase();
 				entity.Reason = string.Empty;
-				entity.Weight = 0;
-				entity.Weight1 = 0;
-				entity.Weight2 = 0;
-				entity.Weight3 = 0;
-				entity.Weight4 = 0;
-				entity.Weight5 = 0;
-				entity.Weight6 = 0;
-				entity.Weight7 = 0;
-				entity.Weight8 = 0;
-				entity.Weight9 = 0;
-				entity.Weight10 = 0;
-				entity.Weight11 = 0;
+				entity.Weight = 0.0;
+				entity.Weight1 = 0.0;
+				entity.Weight2 = 0.0;
+				entity.Weight3 = 0.0;
+				entity.Weight4 = 0.0;
+				entity.Weight5 = 0.0;
+				entity.Weight6 = 0.0;
+				entity.Weight7 = 0.0;
+				entity.Weight8 = 0.0;
+				entity.Weight9 = 0.0;
+				entity.Weight10 = 0.0;
+				entity.Weight11 = 0.0;
 				dataManager.Reasons.SaveReason(entity);
 			}
 			else

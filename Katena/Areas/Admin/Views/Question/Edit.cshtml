@@ -22,7 +22,7 @@
             <input type="submit" value="Сохранить" />
         </form>
         
-        <button><a asp-area="Admin" asp-controller="Answer" asp-action="Edit" asp-rout-id="">Добавить действие</a></button>
+        <button><a asp-area="Admin" asp-controller="Answer" asp-action="Edit" >Добавить действие</a></button>
         <div>
             @foreach (AnswersBase entity in model.Answers.GetAllAnswers())
             {
