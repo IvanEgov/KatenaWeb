@@ -329,15 +329,7 @@ namespace Katena.Domain
 						AnswerId = new List<Guid> { new Guid("5ed2804d-bc6a-4296-b9a0-cf720271a18a"), new Guid("4c748f11-614c-4da8-97f2-eec8dc8ef989"),
 							new Guid("01786293-47e4-407e-9c24-66591aa9e099"), new Guid("6afb4539-1a1c-44d5-ab1e-c8b29fbc2ddc") },
 						Name = "На корпоративе, к которому вы давно готовились, сосед случайно проливает на вас красное вино. Ваша первая реакция?"
-                    },
-
-					new QuestionBase 
-					{
-						Id = new Guid("2c517d36-d4db-4b02-b1c6-20b9c5eab29a"),
-						AnswerId = new List<Guid> { new Guid("c407f32a-9fbf-486e-b744-c69f4961e58e"), new Guid("0429066e-201f-4b2a-97fe-d15448bc4876"),
-							new Guid("6b39f0ec-0314-41c3-84f1-3b892bef6545"), new Guid("1b08ffbf-6ae8-46b2-a058-10f742cbb3d4") },
-						Name = "Question from Jack Fresko?"
-					}
+                    }
 				]);
 
 			modelBuilder.Entity<QuestionPackBase>().HasData(
@@ -349,7 +341,7 @@ namespace Katena.Domain
 						Description = "A good test to get to know yourself",
 						Instructions = "Think",
 						QuestionsIds = new List<Guid> { new Guid("0dc6e45e-ba94-4f54-a59e-53caa1eea73c"),
-							new Guid("2b8ad992-d4aa-4c3f-a65e-aaf036260807"),  new Guid("2c517d36-d4db-4b02-b1c6-20b9c5eab29a")},
+							new Guid("2b8ad992-d4aa-4c3f-a65e-aaf036260807")},
 						ResaultsId = new List<Guid> { new Guid("959f07c9-5bd1-402c-9d29-c0cd3b5f954d"),
 							new Guid("cbed2409-359d-4425-9505-7434d6f75d79"), new Guid("6662ee7c-34c8-4811-b3f3-ada6618dc47b")}
 

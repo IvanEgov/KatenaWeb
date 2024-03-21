@@ -27,6 +27,8 @@
             @foreach (AnswersBase entity in model.Answers.GetAllAnswers())
             {
                 <div>
+                    @entity.Action
+                    |
                     <button><a asp-area="Admin" asp-controller="Answer" asp-action="Edit" asp-route-id="@entity.Id">Редактировать</a></button>
                     |
                     <form style="display: inline-block;" id="form-@entity.Id" asp-area="Admin" asp-controller="Question" asp-action="DeleteAnswer" method="post">

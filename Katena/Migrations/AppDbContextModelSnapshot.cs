@@ -297,12 +297,6 @@ namespace Katena.Migrations
                             Id = new Guid("2b8ad992-d4aa-4c3f-a65e-aaf036260807"),
                             AnswerId = "[\"5ed2804d-bc6a-4296-b9a0-cf720271a18a\",\"4c748f11-614c-4da8-97f2-eec8dc8ef989\",\"01786293-47e4-407e-9c24-66591aa9e099\",\"6afb4539-1a1c-44d5-ab1e-c8b29fbc2ddc\"]",
                             Name = "На корпоративе, к которому вы давно готовились, сосед случайно проливает на вас красное вино. Ваша первая реакция?"
-                        },
-                        new
-                        {
-                            Id = new Guid("2c517d36-d4db-4b02-b1c6-20b9c5eab29a"),
-                            AnswerId = "[\"c407f32a-9fbf-486e-b744-c69f4961e58e\",\"0429066e-201f-4b2a-97fe-d15448bc4876\",\"6b39f0ec-0314-41c3-84f1-3b892bef6545\",\"1b08ffbf-6ae8-46b2-a058-10f742cbb3d4\"]",
-                            Name = "Question from Jack Fresko?"
                         });
                 });
 
@@ -343,7 +337,7 @@ namespace Katena.Migrations
                             Description = "A good test to get to know yourself",
                             Instructions = "Think",
                             Name = "Personality test",
-                            QuestionsIds = "[\"0dc6e45e-ba94-4f54-a59e-53caa1eea73c\",\"2b8ad992-d4aa-4c3f-a65e-aaf036260807\",\"2c517d36-d4db-4b02-b1c6-20b9c5eab29a\"]",
+                            QuestionsIds = "[\"0dc6e45e-ba94-4f54-a59e-53caa1eea73c\",\"2b8ad992-d4aa-4c3f-a65e-aaf036260807\"]",
                             ResaultsId = "[\"959f07c9-5bd1-402c-9d29-c0cd3b5f954d\",\"cbed2409-359d-4425-9505-7434d6f75d79\",\"6662ee7c-34c8-4811-b3f3-ada6618dc47b\"]"
                         });
                 });
@@ -535,7 +529,7 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"),
                             CodeWord = "PageIndex",
-                            DateAdded = new DateTime(2024, 3, 20, 4, 44, 55, 513, DateTimeKind.Utc).AddTicks(9313),
+                            DateAdded = new DateTime(2024, 3, 21, 19, 25, 27, 394, DateTimeKind.Utc).AddTicks(4299),
                             Text = "Содержание заполняется администратором",
                             Title = "Главная"
                         },
@@ -543,7 +537,7 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"),
                             CodeWord = "PageTests",
-                            DateAdded = new DateTime(2024, 3, 20, 4, 44, 55, 513, DateTimeKind.Utc).AddTicks(9342),
+                            DateAdded = new DateTime(2024, 3, 21, 19, 25, 27, 394, DateTimeKind.Utc).AddTicks(4333),
                             Text = "Содержание заполняется администратором",
                             Title = "Тесты"
                         },
@@ -551,7 +545,7 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"),
                             CodeWord = "PageAbilities",
-                            DateAdded = new DateTime(2024, 3, 20, 4, 44, 55, 513, DateTimeKind.Utc).AddTicks(9357),
+                            DateAdded = new DateTime(2024, 3, 21, 19, 25, 27, 394, DateTimeKind.Utc).AddTicks(4348),
                             Text = "Содержание заполняется администратором",
                             Title = "Возможности"
                         },
@@ -559,15 +553,15 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("8eae0a63-8f52-4160-a14e-b405e431a13b"),
                             CodeWord = "PageContacts",
-                            DateAdded = new DateTime(2024, 3, 20, 4, 44, 55, 513, DateTimeKind.Utc).AddTicks(9370),
+                            DateAdded = new DateTime(2024, 3, 21, 19, 25, 27, 394, DateTimeKind.Utc).AddTicks(4362),
                             Text = "Содержание заполняется администратором",
                             Title = "Контакты"
                         },
                         new
                         {
-                            Id = new Guid("2325b045-7133-4894-b2cf-f8378ed98218"),
+                            Id = new Guid("ca9b94bb-573e-4513-8800-dba0be9d247b"),
                             CodeWord = "Sidebar",
-                            DateAdded = new DateTime(2024, 3, 20, 4, 44, 55, 513, DateTimeKind.Utc).AddTicks(9384),
+                            DateAdded = new DateTime(2024, 3, 21, 19, 25, 27, 394, DateTimeKind.Utc).AddTicks(4376),
                             Text = "Содержание заполняется администратором",
                             Title = "Новости"
                         });
@@ -700,13 +694,13 @@ namespace Katena.Migrations
                         {
                             Id = "ef37a3c2-7c96-4405-a971-7abcc91ac333",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0aec61a4-90ae-43a1-ad6c-896d8c0343d8",
+                            ConcurrencyStamp = "c0039850-42f8-4769-bcaa-6856eff14b82",
                             Email = "my@email.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "MY@EMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEH4lDOwe9sv8NpOrcdm7ZsOPZq6X2dYz6GLpShM+2fADysACtNJR0vN6BbPKEzhH+g==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJCmJqF8LoGo2/6jzx0CaT5PaQ8/zLvIzESw8HopK7k9kRE7x8XB3goNK3Rie5wYaA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,

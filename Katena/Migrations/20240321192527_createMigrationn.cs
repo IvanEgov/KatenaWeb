@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Katena.Migrations
 {
     /// <inheritdoc />
-    public partial class newMigration : Migration
+    public partial class createMigrationn : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -356,12 +356,12 @@ namespace Katena.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "ef37a3c2-7c96-4405-a971-7abcc91ac333", 0, "0aec61a4-90ae-43a1-ad6c-896d8c0343d8", "my@email.com", true, false, null, "MY@EMAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAEH4lDOwe9sv8NpOrcdm7ZsOPZq6X2dYz6GLpShM+2fADysACtNJR0vN6BbPKEzhH+g==", null, false, "", false, "admin" });
+                values: new object[] { "ef37a3c2-7c96-4405-a971-7abcc91ac333", 0, "c0039850-42f8-4769-bcaa-6856eff14b82", "my@email.com", true, false, null, "MY@EMAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAEJCmJqF8LoGo2/6jzx0CaT5PaQ8/zLvIzESw8HopK7k9kRE7x8XB3goNK3Rie5wYaA==", null, false, "", false, "admin" });
 
             migrationBuilder.InsertData(
                 table: "Packs",
                 columns: new[] { "Id", "Description", "Instructions", "Name", "QuestionsIds", "ResaultsId" },
-                values: new object[] { new Guid("0ed29a4b-ea2d-426d-add2-22753c7bf8cb"), "A good test to get to know yourself", "Think", "Personality test", "[\"0dc6e45e-ba94-4f54-a59e-53caa1eea73c\",\"2b8ad992-d4aa-4c3f-a65e-aaf036260807\",\"2c517d36-d4db-4b02-b1c6-20b9c5eab29a\"]", "[\"959f07c9-5bd1-402c-9d29-c0cd3b5f954d\",\"cbed2409-359d-4425-9505-7434d6f75d79\",\"6662ee7c-34c8-4811-b3f3-ada6618dc47b\"]" });
+                values: new object[] { new Guid("0ed29a4b-ea2d-426d-add2-22753c7bf8cb"), "A good test to get to know yourself", "Think", "Personality test", "[\"0dc6e45e-ba94-4f54-a59e-53caa1eea73c\",\"2b8ad992-d4aa-4c3f-a65e-aaf036260807\"]", "[\"959f07c9-5bd1-402c-9d29-c0cd3b5f954d\",\"cbed2409-359d-4425-9505-7434d6f75d79\",\"6662ee7c-34c8-4811-b3f3-ada6618dc47b\"]" });
 
             migrationBuilder.InsertData(
                 table: "Questions",
@@ -369,8 +369,7 @@ namespace Katena.Migrations
                 values: new object[,]
                 {
                     { new Guid("0dc6e45e-ba94-4f54-a59e-53caa1eea73c"), "[\"cb83a258-54e1-4b2a-a58f-24fe95a357bc\",\"03b5d02c-aa7f-47b9-8b80-4bd984ce7906\",\"9102a12d-2845-4224-939e-913ab96524ab\",\"e82f0359-d505-49f3-9292-f3877a9a844f\"]", "Вы проснулись утром и поняли, что проспали сигнал будильника. Вы стремглав бежите в ванную и обнаруживаете, что в кране нет воды. Ни холодной, ни горячей. Ваши первые действия?" },
-                    { new Guid("2b8ad992-d4aa-4c3f-a65e-aaf036260807"), "[\"5ed2804d-bc6a-4296-b9a0-cf720271a18a\",\"4c748f11-614c-4da8-97f2-eec8dc8ef989\",\"01786293-47e4-407e-9c24-66591aa9e099\",\"6afb4539-1a1c-44d5-ab1e-c8b29fbc2ddc\"]", "На корпоративе, к которому вы давно готовились, сосед случайно проливает на вас красное вино. Ваша первая реакция?" },
-                    { new Guid("2c517d36-d4db-4b02-b1c6-20b9c5eab29a"), "[\"c407f32a-9fbf-486e-b744-c69f4961e58e\",\"0429066e-201f-4b2a-97fe-d15448bc4876\",\"6b39f0ec-0314-41c3-84f1-3b892bef6545\",\"1b08ffbf-6ae8-46b2-a058-10f742cbb3d4\"]", "Question from Jack Fresko?" }
+                    { new Guid("2b8ad992-d4aa-4c3f-a65e-aaf036260807"), "[\"5ed2804d-bc6a-4296-b9a0-cf720271a18a\",\"4c748f11-614c-4da8-97f2-eec8dc8ef989\",\"01786293-47e4-407e-9c24-66591aa9e099\",\"6afb4539-1a1c-44d5-ab1e-c8b29fbc2ddc\"]", "На корпоративе, к которому вы давно готовились, сосед случайно проливает на вас красное вино. Ваша первая реакция?" }
                 });
 
             migrationBuilder.InsertData(
@@ -398,11 +397,11 @@ namespace Katena.Migrations
                 columns: new[] { "Id", "CodeWord", "DateAdded", "Text", "Title" },
                 values: new object[,]
                 {
-                    { new Guid("2325b045-7133-4894-b2cf-f8378ed98218"), "Sidebar", new DateTime(2024, 3, 20, 4, 44, 55, 513, DateTimeKind.Utc).AddTicks(9384), "Содержание заполняется администратором", "Новости" },
-                    { new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"), "PageAbilities", new DateTime(2024, 3, 20, 4, 44, 55, 513, DateTimeKind.Utc).AddTicks(9357), "Содержание заполняется администратором", "Возможности" },
-                    { new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"), "PageIndex", new DateTime(2024, 3, 20, 4, 44, 55, 513, DateTimeKind.Utc).AddTicks(9313), "Содержание заполняется администратором", "Главная" },
-                    { new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"), "PageTests", new DateTime(2024, 3, 20, 4, 44, 55, 513, DateTimeKind.Utc).AddTicks(9342), "Содержание заполняется администратором", "Тесты" },
-                    { new Guid("8eae0a63-8f52-4160-a14e-b405e431a13b"), "PageContacts", new DateTime(2024, 3, 20, 4, 44, 55, 513, DateTimeKind.Utc).AddTicks(9370), "Содержание заполняется администратором", "Контакты" }
+                    { new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"), "PageAbilities", new DateTime(2024, 3, 21, 19, 25, 27, 394, DateTimeKind.Utc).AddTicks(4348), "Содержание заполняется администратором", "Возможности" },
+                    { new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"), "PageIndex", new DateTime(2024, 3, 21, 19, 25, 27, 394, DateTimeKind.Utc).AddTicks(4299), "Содержание заполняется администратором", "Главная" },
+                    { new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"), "PageTests", new DateTime(2024, 3, 21, 19, 25, 27, 394, DateTimeKind.Utc).AddTicks(4333), "Содержание заполняется администратором", "Тесты" },
+                    { new Guid("8eae0a63-8f52-4160-a14e-b405e431a13b"), "PageContacts", new DateTime(2024, 3, 21, 19, 25, 27, 394, DateTimeKind.Utc).AddTicks(4362), "Содержание заполняется администратором", "Контакты" },
+                    { new Guid("ca9b94bb-573e-4513-8800-dba0be9d247b"), "Sidebar", new DateTime(2024, 3, 21, 19, 25, 27, 394, DateTimeKind.Utc).AddTicks(4376), "Содержание заполняется администратором", "Новости" }
                 });
 
             migrationBuilder.InsertData(
