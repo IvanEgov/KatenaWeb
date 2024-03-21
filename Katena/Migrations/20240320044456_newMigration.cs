@@ -24,11 +24,24 @@ namespace Katena.Migrations
                     Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     Action = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Reason = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Type = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Weight = table.Column<double>(type: "double", nullable: false)
+                    Weight = table.Column<double>(type: "double", nullable: false),
+                    Weight1 = table.Column<double>(type: "double", nullable: false),
+                    Weight2 = table.Column<double>(type: "double", nullable: false),
+                    Weight3 = table.Column<double>(type: "double", nullable: false),
+                    Weight4 = table.Column<double>(type: "double", nullable: false),
+                    Weight5 = table.Column<double>(type: "double", nullable: false),
+                    Weight6 = table.Column<double>(type: "double", nullable: false),
+                    Weight7 = table.Column<double>(type: "double", nullable: false),
+                    Weight8 = table.Column<double>(type: "double", nullable: false),
+                    Weight9 = table.Column<double>(type: "double", nullable: false),
+                    Weight10 = table.Column<double>(type: "double", nullable: false),
+                    Weight11 = table.Column<double>(type: "double", nullable: false),
+                    Weight12 = table.Column<double>(type: "double", nullable: false),
+                    Weight13 = table.Column<double>(type: "double", nullable: false),
+                    Weight14 = table.Column<double>(type: "double", nullable: false),
+                    Weight15 = table.Column<double>(type: "double", nullable: false),
+                    reasonsId = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
@@ -125,6 +138,32 @@ namespace Katena.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Questions", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Reasons",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
+                    Reason = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Weight = table.Column<double>(type: "double", nullable: false),
+                    Weight1 = table.Column<double>(type: "double", nullable: false),
+                    Weight2 = table.Column<double>(type: "double", nullable: false),
+                    Weight3 = table.Column<double>(type: "double", nullable: false),
+                    Weight4 = table.Column<double>(type: "double", nullable: false),
+                    Weight5 = table.Column<double>(type: "double", nullable: false),
+                    Weight6 = table.Column<double>(type: "double", nullable: false),
+                    Weight7 = table.Column<double>(type: "double", nullable: false),
+                    Weight8 = table.Column<double>(type: "double", nullable: false),
+                    Weight9 = table.Column<double>(type: "double", nullable: false),
+                    Weight10 = table.Column<double>(type: "double", nullable: false),
+                    Weight11 = table.Column<double>(type: "double", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Reasons", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -296,17 +335,17 @@ namespace Katena.Migrations
 
             migrationBuilder.InsertData(
                 table: "Answers",
-                columns: new[] { "Id", "Action", "Reason", "Type", "Weight" },
+                columns: new[] { "Id", "Action", "Weight", "Weight1", "Weight10", "Weight11", "Weight12", "Weight13", "Weight14", "Weight15", "Weight2", "Weight3", "Weight4", "Weight5", "Weight6", "Weight7", "Weight8", "Weight9", "reasonsId" },
                 values: new object[,]
                 {
-                    { new Guid("01786293-47e4-407e-9c24-66591aa9e099"), "Постараюсь, не привлекая внимания окружающих, удалить пятно подручными средствами, а если это не получится, продолжу веселиться вместе с пятном", "Не думаю, что на подобной вечеринке мой канфуз будет сильно бросаться в глаза", "Mentor", 0.0 },
-                    { new Guid("03b5d02c-aa7f-47b9-8b80-4bd984ce7906"), "Начну искать телефоны снабжающих организаций и выяснять причину отключения", "Надо вывалить на кого-то все зло, которое у меня накопилось", "Mentor", 0.0 },
-                    { new Guid("4c748f11-614c-4da8-97f2-eec8dc8ef989"), "Поеду домой переодеваться, а потом вернусь на вечеринку", "Я всегда выгляжу идеально и должен быть примером для других", "Hunter", 0.0 },
-                    { new Guid("5ed2804d-bc6a-4296-b9a0-cf720271a18a"), "Накричу на него, заставлю извиняться", "Если бы подобных людей в моей жизни было бы меньше, я бы чувствовал себя лучше", "Hunter", 0.0 },
-                    { new Guid("6afb4539-1a1c-44d5-ab1e-c8b29fbc2ddc"), "Настроение испорчено, уеду с вечеринки", "Никто не должен видеть меня в таком виде", "Finder", 0.0 },
-                    { new Guid("9102a12d-2845-4224-939e-913ab96524ab"), "Плевать, не велика проблема", "Сейчас важнее не опаздать, а остальное -  мелочи", "Finder", 0.0 },
-                    { new Guid("cb83a258-54e1-4b2a-a58f-24fe95a357bc"), "Начну звонить соседям и выяснять у всех ли отключили", "Может, кто-то знает причину отключения", "Hunter", 0.0 },
-                    { new Guid("e82f0359-d505-49f3-9292-f3877a9a844f"), "Это знак свыше, можно никуда сегодня не ходить, пойду спать дальше", "Вот, наконец-то, повод отлежаться дома", "GoodMan", 0.0 }
+                    { new Guid("01786293-47e4-407e-9c24-66591aa9e099"), "Постараюсь, не привлекая внимания окружающих, удалить пятно подручными средствами, а если это не получится, продолжу веселиться вместе с пятном", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]" },
+                    { new Guid("03b5d02c-aa7f-47b9-8b80-4bd984ce7906"), "Начну искать телефоны снабжающих организаций и выяснять причину отключения", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]" },
+                    { new Guid("4c748f11-614c-4da8-97f2-eec8dc8ef989"), "Поеду домой переодеваться, а потом вернусь на вечеринку", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]" },
+                    { new Guid("5ed2804d-bc6a-4296-b9a0-cf720271a18a"), "Накричу на него, заставлю извиняться", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]" },
+                    { new Guid("6afb4539-1a1c-44d5-ab1e-c8b29fbc2ddc"), "Настроение испорчено, уеду с вечеринки", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]" },
+                    { new Guid("9102a12d-2845-4224-939e-913ab96524ab"), "Плевать, не велика проблема", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]" },
+                    { new Guid("cb83a258-54e1-4b2a-a58f-24fe95a357bc"), "Начну звонить соседям и выяснять у всех ли отключили", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]" },
+                    { new Guid("e82f0359-d505-49f3-9292-f3877a9a844f"), "Это знак свыше, можно никуда сегодня не ходить, пойду спать дальше", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]" }
                 });
 
             migrationBuilder.InsertData(
@@ -317,7 +356,7 @@ namespace Katena.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "ef37a3c2-7c96-4405-a971-7abcc91ac333", 0, "2b584925-c452-4643-b51a-9aa9af9757d6", "my@email.com", true, false, null, "MY@EMAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAEFKKLJqQZzxCL8U98Rs55hwUwHYcw4z9VylBwUaE1OZjBgNoMoyWfWRUyIwSUdiieg==", null, false, "", false, "admin" });
+                values: new object[] { "ef37a3c2-7c96-4405-a971-7abcc91ac333", 0, "0aec61a4-90ae-43a1-ad6c-896d8c0343d8", "my@email.com", true, false, null, "MY@EMAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAEH4lDOwe9sv8NpOrcdm7ZsOPZq6X2dYz6GLpShM+2fADysACtNJR0vN6BbPKEzhH+g==", null, false, "", false, "admin" });
 
             migrationBuilder.InsertData(
                 table: "Packs",
@@ -335,6 +374,16 @@ namespace Katena.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "Reasons",
+                columns: new[] { "Id", "Reason", "Weight", "Weight1", "Weight10", "Weight11", "Weight2", "Weight3", "Weight4", "Weight5", "Weight6", "Weight7", "Weight8", "Weight9" },
+                values: new object[,]
+                {
+                    { new Guid("661db458-5cea-431e-b8ba-6a91ed2854a6"), "Third reason", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 },
+                    { new Guid("c2ea7376-d1fb-466d-91b3-a6efb2fb0063"), "Second reason", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 },
+                    { new Guid("f70fca13-268b-4e2e-9906-066b455d2081"), "Reason", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 }
+                });
+
+            migrationBuilder.InsertData(
                 table: "Resaults",
                 columns: new[] { "Id", "Gender", "Resault", "Style", "Type" },
                 values: new object[,]
@@ -349,11 +398,11 @@ namespace Katena.Migrations
                 columns: new[] { "Id", "CodeWord", "DateAdded", "Text", "Title" },
                 values: new object[,]
                 {
-                    { new Guid("248d13a7-38bd-4015-8515-82e90b8856a3"), "Sidebar", new DateTime(2024, 3, 14, 8, 19, 5, 610, DateTimeKind.Utc).AddTicks(8117), "Содержание заполняется администратором", "Новости" },
-                    { new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"), "PageAbilities", new DateTime(2024, 3, 14, 8, 19, 5, 610, DateTimeKind.Utc).AddTicks(8085), "Содержание заполняется администратором", "Возможности" },
-                    { new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"), "PageIndex", new DateTime(2024, 3, 14, 8, 19, 5, 610, DateTimeKind.Utc).AddTicks(8036), "Содержание заполняется администратором", "Главная" },
-                    { new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"), "PageTests", new DateTime(2024, 3, 14, 8, 19, 5, 610, DateTimeKind.Utc).AddTicks(8067), "Содержание заполняется администратором", "Тесты" },
-                    { new Guid("8eae0a63-8f52-4160-a14e-b405e431a13b"), "PageContacts", new DateTime(2024, 3, 14, 8, 19, 5, 610, DateTimeKind.Utc).AddTicks(8102), "Содержание заполняется администратором", "Контакты" }
+                    { new Guid("2325b045-7133-4894-b2cf-f8378ed98218"), "Sidebar", new DateTime(2024, 3, 20, 4, 44, 55, 513, DateTimeKind.Utc).AddTicks(9384), "Содержание заполняется администратором", "Новости" },
+                    { new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"), "PageAbilities", new DateTime(2024, 3, 20, 4, 44, 55, 513, DateTimeKind.Utc).AddTicks(9357), "Содержание заполняется администратором", "Возможности" },
+                    { new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"), "PageIndex", new DateTime(2024, 3, 20, 4, 44, 55, 513, DateTimeKind.Utc).AddTicks(9313), "Содержание заполняется администратором", "Главная" },
+                    { new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"), "PageTests", new DateTime(2024, 3, 20, 4, 44, 55, 513, DateTimeKind.Utc).AddTicks(9342), "Содержание заполняется администратором", "Тесты" },
+                    { new Guid("8eae0a63-8f52-4160-a14e-b405e431a13b"), "PageContacts", new DateTime(2024, 3, 20, 4, 44, 55, 513, DateTimeKind.Utc).AddTicks(9370), "Содержание заполняется администратором", "Контакты" }
                 });
 
             migrationBuilder.InsertData(
@@ -425,6 +474,9 @@ namespace Katena.Migrations
 
             migrationBuilder.DropTable(
                 name: "Questions");
+
+            migrationBuilder.DropTable(
+                name: "Reasons");
 
             migrationBuilder.DropTable(
                 name: "Resaults");

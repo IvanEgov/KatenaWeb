@@ -3,7 +3,7 @@
     string strTitle = "Редактировать запись";
     ViewBag.Title = strTitle;
 }
-
+@inject DataManager model;
 <script src="~/js/ckeditor/ckeditor.js"></script>
 
 <div>
@@ -11,6 +11,7 @@
     <div>
         <form asp-area="Admin" asp-controller="Answer" asp-action="Edit" method="post" enctype="multipart/form-data">
             <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="reasonsId" />
 
             <div asp-validation-summary="All"></div>
             <div class="div-box">
@@ -19,22 +20,113 @@
                 <span asp-validation-for="Action"></span>
             </div>
             <div class="div-box">
-                <label asp-for="Reason"></label>
-                <input asp-for="Reason">
-                <span asp-validation-for="Reason"></span>
-            </div>
-            <div class="div-box">
-                <label asp-for="Type"></label>
-                <input asp-for="Type">
-                <span asp-validation-for="Type"></span>
-            </div>
-            <div class="div-box">
                 <label asp-for="Weight"></label>
                 <input asp-for="Weight">
                 <span asp-validation-for="Weight"></span>
             </div>
+            <div class="div-box">
+                <label asp-for="Weight1"></label>
+                <input asp-for="Weight1">
+                <span asp-validation-for="Weight1"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="Weight2"></label>
+                <input asp-for="Weight2">
+                <span asp-validation-for="Weight2"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="Weight3"></label>
+                <input asp-for="Weight3">
+                <span asp-validation-for="Weight3"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="Weight4"></label>
+                <input asp-for="Weight4">
+                <span asp-validation-for="Weight4"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="Weight5"></label>
+                <input asp-for="Weight5">
+                <span asp-validation-for="Weight5"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="Weight6"></label>
+                <input asp-for="Weight6">
+                <span asp-validation-for="Weight6"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="Weight7"></label>
+                <input asp-for="Weight7">
+                <span asp-validation-for="Weight7"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="Weight8"></label>
+                <input asp-for="Weight8">
+                <span asp-validation-for="Weight8"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="Weight9"></label>
+                <input asp-for="Weight9">
+                <span asp-validation-for="Weight9"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="Weight10"></label>
+                <input asp-for="Weight10">
+                <span asp-validation-for="Weight10"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="Weight11"></label>
+                <input asp-for="Weight11">
+                <span asp-validation-for="Weight11"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="Weight12"></label>
+                <input asp-for="Weight12">
+                <span asp-validation-for="Weight12"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="Weight13"></label>
+                <input asp-for="Weight13">
+                <span asp-validation-for="Weight13"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="Weight14"></label>
+                <input asp-for="Weight14">
+                <span asp-validation-for="Weight14"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="Weight15"></label>
+                <input asp-for="Weight15">
+                <span asp-validation-for="Weight15"></span>
+            </div>
             <input type="submit" value="Сохранить" />
         </form>
+
+        <button><a asp-area="Admin" asp-controller="Reason" asp-action="Edit" asp-rout-id="">Добавить мотив</a></button>
+        <div>
+            @foreach (ReasonBase entity in model.Reasons.GetAllReasons())
+            {
+                <div>
+                    <button><a asp-area="Admin" asp-controller="Reason" asp-action="Edit" asp-route-id="@entity.Id">Редактировать</a></button>
+                    |
+                    <form style="display: inline-block;" id="form-@entity.Id" asp-area="Admin" asp-controller="Answer" asp-action="DeleteReason" method="post">
+                        <input type="hidden" name="id" value="@entity.Id">
+                        <input type="hidden" name="answerId" value="@Model.Id">
+                        <button><a href="#" onclick="document.getElementById('form-@entity.Id').submit();">Удалить</a></button>
+                    </form>
+                    |
+                    @if (Model.reasonsId.FirstOrDefault<Guid>(x => x == entity.Id, Guid.Empty) == Guid.Empty)
+                    {
+                        <form style="display: inline-block;" id="form-@Model.Id" asp-area="Admin" asp-controller="Answer" asp-action="AddReason" method="post">
+                            <input type="hidden" name="answerId" value="@Model.Id">
+                            <input type="hidden" name="reasonId" value="@entity.Id">
+                            <button><a href="#" onclick="document.getElementById('form-@Model.Id').submit();">Сохранить в ответ</a></button>
+                        </form>
+                    }
+                </div>
+            }
+        </div>
+
         <form style="display: inline-block;" id="form-@Model.Id" asp-area="Admin" asp-controller="Answer" asp-action="ReturnHome" method="post">
             <input type="submit" value="Вернуться на главную страницу">
         </form>

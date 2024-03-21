@@ -17,6 +17,7 @@ builder.Services.AddScoped<IQuestionPack, EFQuestionPack>();
 builder.Services.AddScoped<ITextField, EFTextField>();
 builder.Services.AddScoped<IAnswers, EFAnswersBase>();
 builder.Services.AddScoped<IResaults, EFResaultsBase>();
+builder.Services.AddScoped<IReason, EFReasonBase>();
 builder.Services.AddScoped<DataManager>();
 
 //Подключаем контекст БД

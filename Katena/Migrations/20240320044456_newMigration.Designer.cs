@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Katena.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240314081906_newMigration")]
+    [Migration("20240320044456_newMigration")]
     partial class newMigration
     {
         /// <inheritdoc />
@@ -20,7 +20,7 @@ namespace Katena.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.2")
+                .HasAnnotation("ProductVersion", "8.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
@@ -35,16 +35,57 @@ namespace Katena.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Reason")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
                     b.Property<double>("Weight")
                         .HasColumnType("double");
+
+                    b.Property<double>("Weight1")
+                        .HasColumnType("double");
+
+                    b.Property<double>("Weight10")
+                        .HasColumnType("double");
+
+                    b.Property<double>("Weight11")
+                        .HasColumnType("double");
+
+                    b.Property<double>("Weight12")
+                        .HasColumnType("double");
+
+                    b.Property<double>("Weight13")
+                        .HasColumnType("double");
+
+                    b.Property<double>("Weight14")
+                        .HasColumnType("double");
+
+                    b.Property<double>("Weight15")
+                        .HasColumnType("double");
+
+                    b.Property<double>("Weight2")
+                        .HasColumnType("double");
+
+                    b.Property<double>("Weight3")
+                        .HasColumnType("double");
+
+                    b.Property<double>("Weight4")
+                        .HasColumnType("double");
+
+                    b.Property<double>("Weight5")
+                        .HasColumnType("double");
+
+                    b.Property<double>("Weight6")
+                        .HasColumnType("double");
+
+                    b.Property<double>("Weight7")
+                        .HasColumnType("double");
+
+                    b.Property<double>("Weight8")
+                        .HasColumnType("double");
+
+                    b.Property<double>("Weight9")
+                        .HasColumnType("double");
+
+                    b.Property<string>("reasonsId")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
@@ -55,65 +96,177 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("cb83a258-54e1-4b2a-a58f-24fe95a357bc"),
                             Action = "Начну звонить соседям и выяснять у всех ли отключили",
-                            Reason = "Может, кто-то знает причину отключения",
-                            Type = "Hunter",
-                            Weight = 0.0
+                            Weight = 0.0,
+                            Weight1 = 0.0,
+                            Weight10 = 0.0,
+                            Weight11 = 0.0,
+                            Weight12 = 0.0,
+                            Weight13 = 0.0,
+                            Weight14 = 0.0,
+                            Weight15 = 0.0,
+                            Weight2 = 0.0,
+                            Weight3 = 0.0,
+                            Weight4 = 0.0,
+                            Weight5 = 0.0,
+                            Weight6 = 0.0,
+                            Weight7 = 0.0,
+                            Weight8 = 0.0,
+                            Weight9 = 0.0,
+                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]"
                         },
                         new
                         {
                             Id = new Guid("03b5d02c-aa7f-47b9-8b80-4bd984ce7906"),
                             Action = "Начну искать телефоны снабжающих организаций и выяснять причину отключения",
-                            Reason = "Надо вывалить на кого-то все зло, которое у меня накопилось",
-                            Type = "Mentor",
-                            Weight = 0.0
+                            Weight = 0.0,
+                            Weight1 = 0.0,
+                            Weight10 = 0.0,
+                            Weight11 = 0.0,
+                            Weight12 = 0.0,
+                            Weight13 = 0.0,
+                            Weight14 = 0.0,
+                            Weight15 = 0.0,
+                            Weight2 = 0.0,
+                            Weight3 = 0.0,
+                            Weight4 = 0.0,
+                            Weight5 = 0.0,
+                            Weight6 = 0.0,
+                            Weight7 = 0.0,
+                            Weight8 = 0.0,
+                            Weight9 = 0.0,
+                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]"
                         },
                         new
                         {
                             Id = new Guid("9102a12d-2845-4224-939e-913ab96524ab"),
                             Action = "Плевать, не велика проблема",
-                            Reason = "Сейчас важнее не опаздать, а остальное -  мелочи",
-                            Type = "Finder",
-                            Weight = 0.0
+                            Weight = 0.0,
+                            Weight1 = 0.0,
+                            Weight10 = 0.0,
+                            Weight11 = 0.0,
+                            Weight12 = 0.0,
+                            Weight13 = 0.0,
+                            Weight14 = 0.0,
+                            Weight15 = 0.0,
+                            Weight2 = 0.0,
+                            Weight3 = 0.0,
+                            Weight4 = 0.0,
+                            Weight5 = 0.0,
+                            Weight6 = 0.0,
+                            Weight7 = 0.0,
+                            Weight8 = 0.0,
+                            Weight9 = 0.0,
+                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]"
                         },
                         new
                         {
                             Id = new Guid("e82f0359-d505-49f3-9292-f3877a9a844f"),
                             Action = "Это знак свыше, можно никуда сегодня не ходить, пойду спать дальше",
-                            Reason = "Вот, наконец-то, повод отлежаться дома",
-                            Type = "GoodMan",
-                            Weight = 0.0
+                            Weight = 0.0,
+                            Weight1 = 0.0,
+                            Weight10 = 0.0,
+                            Weight11 = 0.0,
+                            Weight12 = 0.0,
+                            Weight13 = 0.0,
+                            Weight14 = 0.0,
+                            Weight15 = 0.0,
+                            Weight2 = 0.0,
+                            Weight3 = 0.0,
+                            Weight4 = 0.0,
+                            Weight5 = 0.0,
+                            Weight6 = 0.0,
+                            Weight7 = 0.0,
+                            Weight8 = 0.0,
+                            Weight9 = 0.0,
+                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]"
                         },
                         new
                         {
                             Id = new Guid("5ed2804d-bc6a-4296-b9a0-cf720271a18a"),
                             Action = "Накричу на него, заставлю извиняться",
-                            Reason = "Если бы подобных людей в моей жизни было бы меньше, я бы чувствовал себя лучше",
-                            Type = "Hunter",
-                            Weight = 0.0
+                            Weight = 0.0,
+                            Weight1 = 0.0,
+                            Weight10 = 0.0,
+                            Weight11 = 0.0,
+                            Weight12 = 0.0,
+                            Weight13 = 0.0,
+                            Weight14 = 0.0,
+                            Weight15 = 0.0,
+                            Weight2 = 0.0,
+                            Weight3 = 0.0,
+                            Weight4 = 0.0,
+                            Weight5 = 0.0,
+                            Weight6 = 0.0,
+                            Weight7 = 0.0,
+                            Weight8 = 0.0,
+                            Weight9 = 0.0,
+                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]"
                         },
                         new
                         {
                             Id = new Guid("4c748f11-614c-4da8-97f2-eec8dc8ef989"),
                             Action = "Поеду домой переодеваться, а потом вернусь на вечеринку",
-                            Reason = "Я всегда выгляжу идеально и должен быть примером для других",
-                            Type = "Hunter",
-                            Weight = 0.0
+                            Weight = 0.0,
+                            Weight1 = 0.0,
+                            Weight10 = 0.0,
+                            Weight11 = 0.0,
+                            Weight12 = 0.0,
+                            Weight13 = 0.0,
+                            Weight14 = 0.0,
+                            Weight15 = 0.0,
+                            Weight2 = 0.0,
+                            Weight3 = 0.0,
+                            Weight4 = 0.0,
+                            Weight5 = 0.0,
+                            Weight6 = 0.0,
+                            Weight7 = 0.0,
+                            Weight8 = 0.0,
+                            Weight9 = 0.0,
+                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]"
                         },
                         new
                         {
                             Id = new Guid("01786293-47e4-407e-9c24-66591aa9e099"),
                             Action = "Постараюсь, не привлекая внимания окружающих, удалить пятно подручными средствами, а если это не получится, продолжу веселиться вместе с пятном",
-                            Reason = "Не думаю, что на подобной вечеринке мой канфуз будет сильно бросаться в глаза",
-                            Type = "Mentor",
-                            Weight = 0.0
+                            Weight = 0.0,
+                            Weight1 = 0.0,
+                            Weight10 = 0.0,
+                            Weight11 = 0.0,
+                            Weight12 = 0.0,
+                            Weight13 = 0.0,
+                            Weight14 = 0.0,
+                            Weight15 = 0.0,
+                            Weight2 = 0.0,
+                            Weight3 = 0.0,
+                            Weight4 = 0.0,
+                            Weight5 = 0.0,
+                            Weight6 = 0.0,
+                            Weight7 = 0.0,
+                            Weight8 = 0.0,
+                            Weight9 = 0.0,
+                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]"
                         },
                         new
                         {
                             Id = new Guid("6afb4539-1a1c-44d5-ab1e-c8b29fbc2ddc"),
                             Action = "Настроение испорчено, уеду с вечеринки",
-                            Reason = "Никто не должен видеть меня в таком виде",
-                            Type = "Finder",
-                            Weight = 0.0
+                            Weight = 0.0,
+                            Weight1 = 0.0,
+                            Weight10 = 0.0,
+                            Weight11 = 0.0,
+                            Weight12 = 0.0,
+                            Weight13 = 0.0,
+                            Weight14 = 0.0,
+                            Weight15 = 0.0,
+                            Weight2 = 0.0,
+                            Weight3 = 0.0,
+                            Weight4 = 0.0,
+                            Weight5 = 0.0,
+                            Weight6 = 0.0,
+                            Weight7 = 0.0,
+                            Weight8 = 0.0,
+                            Weight9 = 0.0,
+                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]"
                         });
                 });
 
@@ -195,6 +348,110 @@ namespace Katena.Migrations
                             Name = "Personality test",
                             QuestionsIds = "[\"0dc6e45e-ba94-4f54-a59e-53caa1eea73c\",\"2b8ad992-d4aa-4c3f-a65e-aaf036260807\",\"2c517d36-d4db-4b02-b1c6-20b9c5eab29a\"]",
                             ResaultsId = "[\"959f07c9-5bd1-402c-9d29-c0cd3b5f954d\",\"cbed2409-359d-4425-9505-7434d6f75d79\",\"6662ee7c-34c8-4811-b3f3-ada6618dc47b\"]"
+                        });
+                });
+
+            modelBuilder.Entity("Katena.Domain.Entities.ReasonBase", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("Reason")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<double>("Weight")
+                        .HasColumnType("double");
+
+                    b.Property<double>("Weight1")
+                        .HasColumnType("double");
+
+                    b.Property<double>("Weight10")
+                        .HasColumnType("double");
+
+                    b.Property<double>("Weight11")
+                        .HasColumnType("double");
+
+                    b.Property<double>("Weight2")
+                        .HasColumnType("double");
+
+                    b.Property<double>("Weight3")
+                        .HasColumnType("double");
+
+                    b.Property<double>("Weight4")
+                        .HasColumnType("double");
+
+                    b.Property<double>("Weight5")
+                        .HasColumnType("double");
+
+                    b.Property<double>("Weight6")
+                        .HasColumnType("double");
+
+                    b.Property<double>("Weight7")
+                        .HasColumnType("double");
+
+                    b.Property<double>("Weight8")
+                        .HasColumnType("double");
+
+                    b.Property<double>("Weight9")
+                        .HasColumnType("double");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Reasons");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("f70fca13-268b-4e2e-9906-066b455d2081"),
+                            Reason = "Reason",
+                            Weight = 0.0,
+                            Weight1 = 0.0,
+                            Weight10 = 0.0,
+                            Weight11 = 0.0,
+                            Weight2 = 0.0,
+                            Weight3 = 0.0,
+                            Weight4 = 0.0,
+                            Weight5 = 0.0,
+                            Weight6 = 0.0,
+                            Weight7 = 0.0,
+                            Weight8 = 0.0,
+                            Weight9 = 0.0
+                        },
+                        new
+                        {
+                            Id = new Guid("c2ea7376-d1fb-466d-91b3-a6efb2fb0063"),
+                            Reason = "Second reason",
+                            Weight = 0.0,
+                            Weight1 = 0.0,
+                            Weight10 = 0.0,
+                            Weight11 = 0.0,
+                            Weight2 = 0.0,
+                            Weight3 = 0.0,
+                            Weight4 = 0.0,
+                            Weight5 = 0.0,
+                            Weight6 = 0.0,
+                            Weight7 = 0.0,
+                            Weight8 = 0.0,
+                            Weight9 = 0.0
+                        },
+                        new
+                        {
+                            Id = new Guid("661db458-5cea-431e-b8ba-6a91ed2854a6"),
+                            Reason = "Third reason",
+                            Weight = 0.0,
+                            Weight1 = 0.0,
+                            Weight10 = 0.0,
+                            Weight11 = 0.0,
+                            Weight2 = 0.0,
+                            Weight3 = 0.0,
+                            Weight4 = 0.0,
+                            Weight5 = 0.0,
+                            Weight6 = 0.0,
+                            Weight7 = 0.0,
+                            Weight8 = 0.0,
+                            Weight9 = 0.0
                         });
                 });
 
@@ -281,7 +538,7 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"),
                             CodeWord = "PageIndex",
-                            DateAdded = new DateTime(2024, 3, 14, 8, 19, 5, 610, DateTimeKind.Utc).AddTicks(8036),
+                            DateAdded = new DateTime(2024, 3, 20, 4, 44, 55, 513, DateTimeKind.Utc).AddTicks(9313),
                             Text = "Содержание заполняется администратором",
                             Title = "Главная"
                         },
@@ -289,7 +546,7 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"),
                             CodeWord = "PageTests",
-                            DateAdded = new DateTime(2024, 3, 14, 8, 19, 5, 610, DateTimeKind.Utc).AddTicks(8067),
+                            DateAdded = new DateTime(2024, 3, 20, 4, 44, 55, 513, DateTimeKind.Utc).AddTicks(9342),
                             Text = "Содержание заполняется администратором",
                             Title = "Тесты"
                         },
@@ -297,7 +554,7 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"),
                             CodeWord = "PageAbilities",
-                            DateAdded = new DateTime(2024, 3, 14, 8, 19, 5, 610, DateTimeKind.Utc).AddTicks(8085),
+                            DateAdded = new DateTime(2024, 3, 20, 4, 44, 55, 513, DateTimeKind.Utc).AddTicks(9357),
                             Text = "Содержание заполняется администратором",
                             Title = "Возможности"
                         },
@@ -305,15 +562,15 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("8eae0a63-8f52-4160-a14e-b405e431a13b"),
                             CodeWord = "PageContacts",
-                            DateAdded = new DateTime(2024, 3, 14, 8, 19, 5, 610, DateTimeKind.Utc).AddTicks(8102),
+                            DateAdded = new DateTime(2024, 3, 20, 4, 44, 55, 513, DateTimeKind.Utc).AddTicks(9370),
                             Text = "Содержание заполняется администратором",
                             Title = "Контакты"
                         },
                         new
                         {
-                            Id = new Guid("248d13a7-38bd-4015-8515-82e90b8856a3"),
+                            Id = new Guid("2325b045-7133-4894-b2cf-f8378ed98218"),
                             CodeWord = "Sidebar",
-                            DateAdded = new DateTime(2024, 3, 14, 8, 19, 5, 610, DateTimeKind.Utc).AddTicks(8117),
+                            DateAdded = new DateTime(2024, 3, 20, 4, 44, 55, 513, DateTimeKind.Utc).AddTicks(9384),
                             Text = "Содержание заполняется администратором",
                             Title = "Новости"
                         });
@@ -446,13 +703,13 @@ namespace Katena.Migrations
                         {
                             Id = "ef37a3c2-7c96-4405-a971-7abcc91ac333",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2b584925-c452-4643-b51a-9aa9af9757d6",
+                            ConcurrencyStamp = "0aec61a4-90ae-43a1-ad6c-896d8c0343d8",
                             Email = "my@email.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "MY@EMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEFKKLJqQZzxCL8U98Rs55hwUwHYcw4z9VylBwUaE1OZjBgNoMoyWfWRUyIwSUdiieg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEH4lDOwe9sv8NpOrcdm7ZsOPZq6X2dYz6GLpShM+2fADysACtNJR0vN6BbPKEzhH+g==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,

@@ -8,6 +8,8 @@ namespace Katena.Domain.Repositories.Abstruct
     {
         IQueryable<AnswersBase> GetAllAnswers();
         AnswersBase GetAnswerById(Guid Id);
+        void AddReason(AnswersBase answer, Guid reasonId);
+        void DeleteReason(AnswersBase answer, Guid id);
         void SaveAnswer(AnswersBase entity);
         void DeleteAnswerById(Guid Id);
     }

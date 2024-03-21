@@ -97,7 +97,7 @@ namespace Katena.Domain
 						Weight13 = 0,
 						Weight14 = 0,
 						Weight15 = 0,
-						reasonsId = new List<Guid>{new Guid("f70fca13-268b-4e2e-9906-066b455d2081") }
+						reasonsId = new List<Guid>{ new Guid("f70fca13-268b-4e2e-9906-066b455d2081"), new Guid("c2ea7376-d1fb-466d-91b3-a6efb2fb0063"), new Guid("661db458-5cea-431e-b8ba-6a91ed2854a6") }
 					},
 					new AnswersBase 
 					{
@@ -119,7 +119,7 @@ namespace Katena.Domain
 						Weight13 = 0,
 						Weight14 = 0,
 						Weight15 = 0,
-						reasonsId = new List<Guid>{new Guid("f70fca13-268b-4e2e-9906-066b455d2081") }
+						reasonsId = new List<Guid>{ new Guid("f70fca13-268b-4e2e-9906-066b455d2081"), new Guid("c2ea7376-d1fb-466d-91b3-a6efb2fb0063"), new Guid("661db458-5cea-431e-b8ba-6a91ed2854a6") }
 					},
 					new AnswersBase 
 					{
@@ -141,7 +141,7 @@ namespace Katena.Domain
 						Weight13 = 0,
 						Weight14 = 0,
 						Weight15 = 0,
-						reasonsId = new List<Guid>{new Guid("f70fca13-268b-4e2e-9906-066b455d2081") }
+						reasonsId = new List<Guid>{ new Guid("f70fca13-268b-4e2e-9906-066b455d2081"), new Guid("c2ea7376-d1fb-466d-91b3-a6efb2fb0063"), new Guid("661db458-5cea-431e-b8ba-6a91ed2854a6") }
 
 					},
 					new AnswersBase 
@@ -164,7 +164,7 @@ namespace Katena.Domain
 						Weight13 = 0,
 						Weight14 = 0,
 						Weight15 = 0,
-						reasonsId = new List<Guid>{new Guid("f70fca13-268b-4e2e-9906-066b455d2081") }
+						reasonsId = new List<Guid>{ new Guid("f70fca13-268b-4e2e-9906-066b455d2081"), new Guid("c2ea7376-d1fb-466d-91b3-a6efb2fb0063"), new Guid("661db458-5cea-431e-b8ba-6a91ed2854a6") }
 					},
                     new AnswersBase
                     {
@@ -186,7 +186,7 @@ namespace Katena.Domain
 						Weight13 = 0,
 						Weight14 = 0,
 						Weight15 = 0,
-						reasonsId = new List<Guid>{new Guid("f70fca13-268b-4e2e-9906-066b455d2081") }
+						reasonsId = new List<Guid>{ new Guid("f70fca13-268b-4e2e-9906-066b455d2081"), new Guid("c2ea7376-d1fb-466d-91b3-a6efb2fb0063"), new Guid("661db458-5cea-431e-b8ba-6a91ed2854a6") }
 					},
 					new AnswersBase
                     {
@@ -208,7 +208,7 @@ namespace Katena.Domain
 						Weight13 = 0,
 						Weight14 = 0,
 						Weight15 = 0,
-						reasonsId = new List<Guid>{new Guid("f70fca13-268b-4e2e-9906-066b455d2081") }
+						reasonsId = new List<Guid>{ new Guid("f70fca13-268b-4e2e-9906-066b455d2081"), new Guid("c2ea7376-d1fb-466d-91b3-a6efb2fb0063"), new Guid("661db458-5cea-431e-b8ba-6a91ed2854a6") }
 					},
 					new AnswersBase
                     {
@@ -231,7 +231,7 @@ namespace Katena.Domain
 						Weight13 = 0,
 						Weight14 = 0,
 						Weight15 = 0,
-						reasonsId = new List<Guid>{new Guid("f70fca13-268b-4e2e-9906-066b455d2081") }
+						reasonsId = new List<Guid>{ new Guid("f70fca13-268b-4e2e-9906-066b455d2081"), new Guid("c2ea7376-d1fb-466d-91b3-a6efb2fb0063"), new Guid("661db458-5cea-431e-b8ba-6a91ed2854a6") }
 					},
 					new AnswersBase
                     {
@@ -253,7 +253,7 @@ namespace Katena.Domain
 						Weight13 = 0,
 						Weight14 = 0,
 						Weight15 = 0,
-						reasonsId = new List<Guid>{new Guid("f70fca13-268b-4e2e-9906-066b455d2081") }
+						reasonsId = new List<Guid>{new Guid("f70fca13-268b-4e2e-9906-066b455d2081"), new Guid("c2ea7376-d1fb-466d-91b3-a6efb2fb0063"), new Guid("661db458-5cea-431e-b8ba-6a91ed2854a6") }
 					}
                 ]);
 
@@ -276,7 +276,41 @@ namespace Katena.Domain
 						Weight10 = 0,
 						Weight11 = 0
 					},
-				]);
+                    new ReasonBase
+                    {
+                        Id = new Guid("c2ea7376-d1fb-466d-91b3-a6efb2fb0063"),
+                        Reason = "Second reason",
+                        Weight = 0,
+                        Weight1 = 0,
+                        Weight2 = 0,
+                        Weight3 = 0,
+                        Weight4 = 0,
+                        Weight5 = 0,
+                        Weight6 = 0,
+                        Weight7 = 0,
+                        Weight8 = 0,
+                        Weight9 = 0,
+                        Weight10 = 0,
+                        Weight11 = 0
+                    },
+                    new ReasonBase
+                    {
+                        Id = new Guid("661db458-5cea-431e-b8ba-6a91ed2854a6"),
+                        Reason = "Third reason",
+                        Weight = 0,
+                        Weight1 = 0,
+                        Weight2 = 0,
+                        Weight3 = 0,
+                        Weight4 = 0,
+                        Weight5 = 0,
+                        Weight6 = 0,
+                        Weight7 = 0,
+                        Weight8 = 0,
+                        Weight9 = 0,
+                        Weight10 = 0,
+                        Weight11 = 0
+                    }
+                ]);
 
 			modelBuilder.Entity<QuestionBase>().HasData(
 				[
