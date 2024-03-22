@@ -1,0 +1,19 @@
+﻿@model QuestionPackBase;
+@{
+	ViewBag.Title = Model.Name;
+	ViewBag.Description = Model.Description;
+	ViewBag.Image = "";
+}
+
+<div class="container" id="test">
+	<div id="Name">
+		<p><h1>Title</h1></p>
+		<p><h1>Description</h1></p>
+	</div>
+	<div id="picture">
+		<img>Image</img>
+	</div>
+	<div class="container">
+		<botton class="bottom"><a asp-controller="Tests" asp-action="Start"><h3>Начать тест</h3></a></botton>
+	</div>
+</div>
