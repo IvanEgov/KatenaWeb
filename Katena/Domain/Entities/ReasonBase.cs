@@ -13,50 +13,50 @@ namespace Katena.Domain.Entities
 		//Веса
 		[Required]
 		[Display(Name = "Первый вес")]
-		public double Weight { get; set; }
+		public double? Weight { get; set; }
 
 		[Required]
 		[Display(Name = "Второй вес")]
-		public double Weight1 { get; set; }
+		public double? Weight1 { get; set; }
 
 		[Required]
 		[Display(Name = "Третий вес")]
-		public double Weight2 { get; set; }
+		public double? Weight2 { get; set; }
 
 		[Required]
 		[Display(Name = "Четвертый вес")]
-		public double Weight3 { get; set; }
+		public double? Weight3 { get; set; }
 
 		[Required]
 		[Display(Name = "Пятый вес")]
-		public double Weight4 { get; set; }
+		public double? Weight4 { get; set; }
 
 		[Required]
 		[Display(Name = "Шестой вес")]
-		public double Weight5 { get; set; }
+		public double? Weight5 { get; set; }
 
 		[Required]
 		[Display(Name = "Седьмой вес")]
-		public double Weight6 { get; set; }
+		public double? Weight6 { get; set; }
 
 		[Required]
 		[Display(Name = "Восьмой вес")]
-		public double Weight7 { get; set; }
+		public double? Weight7 { get; set; }
 
 		[Required]
 		[Display(Name = "Девятый вес")]
-		public double Weight8 { get; set; }
+		public double? Weight8 { get; set; }
 
 		[Required]
 		[Display(Name = "Десятый вес")]
-		public double Weight9 { get; set; }
+		public double? Weight9 { get; set; }
 
 		[Required]
 		[Display(Name = "Одиннадцатый вес")]
-		public double Weight10 { get; set; }
+		public double? Weight10 { get; set; }
 
 		[Required]
 		[Display(Name = "Двенадцатый вес")]
-		public double Weight11 { get; set; }
+		public double? Weight11 { get; set; }
 	}
 }

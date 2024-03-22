@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Katena.Migrations
 {
     /// <inheritdoc />
-    public partial class createMigrationn : Migration
+    public partial class createMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -356,7 +356,7 @@ namespace Katena.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "ef37a3c2-7c96-4405-a971-7abcc91ac333", 0, "c0039850-42f8-4769-bcaa-6856eff14b82", "my@email.com", true, false, null, "MY@EMAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAEJCmJqF8LoGo2/6jzx0CaT5PaQ8/zLvIzESw8HopK7k9kRE7x8XB3goNK3Rie5wYaA==", null, false, "", false, "admin" });
+                values: new object[] { "ef37a3c2-7c96-4405-a971-7abcc91ac333", 0, "e1445e1a-1e58-4bb4-927a-73ad622ad27e", "my@email.com", true, false, null, "MY@EMAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAEH0h2D9hA5rLo2ufr7ca8DfIJFFbdccY3a9qksBPWywn9NUinNdlFy8EsMOWeRyHJQ==", null, false, "", false, "admin" });
 
             migrationBuilder.InsertData(
                 table: "Packs",
@@ -397,11 +397,11 @@ namespace Katena.Migrations
                 columns: new[] { "Id", "CodeWord", "DateAdded", "Text", "Title" },
                 values: new object[,]
                 {
-                    { new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"), "PageAbilities", new DateTime(2024, 3, 21, 19, 25, 27, 394, DateTimeKind.Utc).AddTicks(4348), "Содержание заполняется администратором", "Возможности" },
-                    { new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"), "PageIndex", new DateTime(2024, 3, 21, 19, 25, 27, 394, DateTimeKind.Utc).AddTicks(4299), "Содержание заполняется администратором", "Главная" },
-                    { new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"), "PageTests", new DateTime(2024, 3, 21, 19, 25, 27, 394, DateTimeKind.Utc).AddTicks(4333), "Содержание заполняется администратором", "Тесты" },
-                    { new Guid("8eae0a63-8f52-4160-a14e-b405e431a13b"), "PageContacts", new DateTime(2024, 3, 21, 19, 25, 27, 394, DateTimeKind.Utc).AddTicks(4362), "Содержание заполняется администратором", "Контакты" },
-                    { new Guid("ca9b94bb-573e-4513-8800-dba0be9d247b"), "Sidebar", new DateTime(2024, 3, 21, 19, 25, 27, 394, DateTimeKind.Utc).AddTicks(4376), "Содержание заполняется администратором", "Новости" }
+                    { new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"), "PageAbilities", new DateTime(2024, 3, 22, 4, 12, 23, 465, DateTimeKind.Utc).AddTicks(7704), "Содержание заполняется администратором", "Возможности" },
+                    { new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"), "PageIndex", new DateTime(2024, 3, 22, 4, 12, 23, 465, DateTimeKind.Utc).AddTicks(7451), "Содержание заполняется администратором", "Главная" },
+                    { new Guid("708a31c5-8fb2-4b81-95f1-4f2775271c2a"), "Sidebar", new DateTime(2024, 3, 22, 4, 12, 23, 465, DateTimeKind.Utc).AddTicks(7851), "Содержание заполняется администратором", "Новости" },
+                    { new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"), "PageTests", new DateTime(2024, 3, 22, 4, 12, 23, 465, DateTimeKind.Utc).AddTicks(7595), "Содержание заполняется администратором", "Тесты" },
+                    { new Guid("8eae0a63-8f52-4160-a14e-b405e431a13b"), "PageContacts", new DateTime(2024, 3, 22, 4, 12, 23, 465, DateTimeKind.Utc).AddTicks(7774), "Содержание заполняется администратором", "Контакты" }
                 });
 
             migrationBuilder.InsertData(
