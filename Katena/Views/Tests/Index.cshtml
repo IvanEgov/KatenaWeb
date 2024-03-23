@@ -25,6 +25,7 @@
         }
         @foreach (QuestionPackBase entity in packs)
         {
+            <!--TODO: redo on use of TestViewComponent and new model {pack+index} if carrying test, or {empty} if first appear-->
             <div class="container">
                 <div class="col-12-medium">
                     <botton class="button" id="startButton"><h3>@entity.Name</h3></botton>

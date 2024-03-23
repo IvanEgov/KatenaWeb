@@ -9,6 +9,11 @@ namespace Katena.Controllers
 	public class TestsController : Controller
 	{
 		private readonly DataManager dataManager;
+		private QuestionPackBase nowPack;
+		
+		//respresents number of page while carrying test (-1 - wellcome page,
+		//[0:number of questions] - question, number of questions> results)
+		private int testIndex;
 
 		public TestsController(DataManager dataManager)
 		{
@@ -19,10 +24,22 @@ namespace Katena.Controllers
 		{
 			if (id != default)
 			{
-				return View("Show", dataManager.Packs.GetPackById(id));
+				nowPack = dataManager.Packs.GetPackById(id);
+				testIndex = -1;
+				var model = new { nowPack,  testIndex};
+				return View(nowPack);
 			}
 /*			ViewBag.TextField = dataManager.TextFields.GetTextFieldByCodeWord("PageTests");*/
 			return View(dataManager.TextFields.GetTextFieldByCodeWord("PageTests"));
+		}
+
+		[HttpPost]
+		public IActionResult NextQuestion(QuestionBase question, AnswersBase answers, ReasonBase reason, int index)
+		{
+			//TODO: Test logic
+			testIndex = index + 1;
+			var model = new { nowPack, testIndex};
+			return View(model);
 		}
 	}
 }
