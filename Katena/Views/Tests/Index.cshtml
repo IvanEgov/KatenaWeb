@@ -1,9 +1,8 @@
 ﻿@using Katena.Domain
-@model TextField
-@{
-	ViewBag.Title = Model.Title;
-	ViewBag.Text = Model.Text;
-}
+@* @{
+	ViewBag.Title = Model.TextFields.Title;
+	ViewBag.Text = Model.TextFields.Text;
+} *@
 @inject DataManager datamanager;
 
 <script>
@@ -33,10 +32,10 @@
                 <div class="container">
                     <div class="col-8">
                         <div id="test" hidden>
-                            @await Component.InvokeAsync("TestViewComponent", new {nowpack = entity, index = 0});<!--Check this for finish:https://learn.microsoft.com/ru-ru/aspnet/core/mvc/views/view-components?view=aspnetcore-8.0 teg for find("Вызов компонента представления")-->
+                            @await Component.InvokeAsync("Test", new {nowpack = entity, index = -1});<!--Check this for finish:https://learn.microsoft.com/ru-ru/aspnet/core/mvc/views/view-components?view=aspnetcore-8.0 teg for find("Вызов компонента представления")-->
                         </div>
                         <div id="welcome">
-                            @await Component.InvokeAsync("TestViewComponent", new {});
+                            @await Html.PartialAsync("WelcomePage");
                         </div>
                     </div>
                 </div>

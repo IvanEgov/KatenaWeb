@@ -46,7 +46,6 @@
                         <input type="hidden" name="id" value="@entity.Id">
                         <input type="hidden" name="testId" value="@Model.Id">
                         <input type="submit" value="Удалить">
-                        @* <button><a href="#" onclick="document.getElementById('form-@entity.Id').submit();">удалить</a></button> *@
                     </form>
                     |
                     @if (Model.QuestionsIds.FirstOrDefault<Guid>(x=>x==entity.Id, Guid.Empty) == Guid.Empty)
@@ -55,7 +54,6 @@
                             <input type="hidden" name="questionId" value="@entity.Id">
                             <input type="hidden" name="testId" value="@Model.Id">
                             <input type="submit" value="Сохранить в тест">
-                            @* <button><a href="#" onclick="document.getElementById('form-@Model.Id').submit;">Сохранить в тест</a></button> *@
                         </form>
                     }
                 </div>
@@ -70,16 +68,12 @@
                 <div>
                     @entity.Type
                     |
-                    @* <form style="display: inline-block;" id="form-@entity.Id" asp-area="Admin" asp-controller="Resault" asp-action="Edit" asp-route-id="@entity.Id">
-                        <input type="submit" value="Редактировать" />
-                    </form> *@
                     <button><a asp-area="Admin" asp-controller="Resault" asp-action="Edit" asp-route-id="@entity.Id">Редактировать</a></button>
                     |
                     <form style="display: inline-block;" id="form-@entity.Id" asp-area="Admin" asp-controller="TestItems" asp-action="DeleteResult" method="post">
                         <input type="hidden" name="id" value="@entity.Id">
                         <input type="hidden" name="testId" value="@Model.Id">
                         <input type="submit" value="Удалить">
-                        @* <button><a href="#" onclick="document.getElementById('form-@entity.Id').submit();">удалить</a></button> *@
                     </form>
                     |
                     @if (Model.ResaultsId.FirstOrDefault<Guid>(x => x == entity.Id, Guid.Empty) == Guid.Empty)
@@ -88,7 +82,6 @@
                             <input type="hidden" name="testId" value="@Model.Id">
                             <input type="hidden" name="resaultId" value="@entity.Id">
                             <input type="submit" value="Сохранить в тест">
-                            @* <button><a href="#" onclick="document.getElementById('form-@Model.Id').submit;">Сохранить в тест</a></button> *@
                         </form>
                     }
                 </div>

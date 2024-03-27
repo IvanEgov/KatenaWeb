@@ -6,8 +6,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Katena.Components
 {
-    
-    public class Test : ViewComponent
+ 
+    public class TestViewComponent: ViewComponent
     {
         private readonly DataManager _dataManager;
 
