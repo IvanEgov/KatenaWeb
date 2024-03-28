@@ -1,4 +1,5 @@
-﻿using Katena.Domain;
+﻿using Humanizer;
+using Katena.Domain;
 using Katena.Domain.Entities;
 using Katena.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -12,7 +13,7 @@ namespace Katena.Controllers
 		
 		//respresents number of page while carrying test (-1 - wellcome page,
 		//[0:number of questions] - question, number of questions> results)
-		private int testIndex;
+		private int index;
 
 		public TestsController(DataManager dataManager)
 		{
@@ -23,10 +24,11 @@ namespace Katena.Controllers
 		{
 			if (id != default)
 			{
-				QuestionPackBase nowPack = dataManager.Packs.GetPackById(id);
-				testIndex = -1;
-				ViewBag.nowPack = nowPack;
-				ViewBag.testIndex = testIndex;
+				QuestionPackBase pack = dataManager.Packs.GetPackById(id);
+				index = -1;
+				ViewBag.pack = pack;
+				ViewBag.index = index;
+				ViewBag.fool = false;
 				return View();
 			}
 /*			ViewBag.TextField = dataManager.TextFields.GetTextFieldByCodeWord("PageTests");*/
@@ -34,14 +36,13 @@ namespace Katena.Controllers
 		}
 
 		[HttpPost]
-		public IActionResult NextQuestion(QuestionPackBase nowPack, int index, QuestionBase question = null, AnswersBase answers = null, ReasonBase reason = null)
+		public IActionResult NextQuestion(Guid pack, int index, Guid question, Guid answers, Guid reason)
 		{
 			//TODO: Test logic
-			testIndex = index + 1;
-			ViewBag.nowPack = nowPack;
-			ViewBag.testIndex = testIndex;
-			ViewBag.fool = false;
-			return View();
+			index = index + 1;
+			ViewBag.pack = dataManager.Packs.GetPackById(pack);
+			ViewBag.index = index;
+			return View("Index", dataManager.TextFields.GetTextFieldByCodeWord("PageTests"));
 		}
 	}
 }

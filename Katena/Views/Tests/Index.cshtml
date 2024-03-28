@@ -1,21 +1,11 @@
 ﻿@using Katena.Domain
-@* @{
-	ViewBag.Title = Model.TextFields.Title;
-	ViewBag.Text = Model.TextFields.Text;
-} *@
-@inject DataManager datamanager;
-
-@if (!ViewBag.fool)
-{
-    <h1>it works</h1>
-}
-else
-{
-    <h1> it doesn't work</h1>
+@{
+	ViewBag.Title = Model.Title;
+	ViewBag.Text = Model.Text;
 }
 
 <script>
-    document.getElementById("startButton").addEventListener(
+    event.target.addEventListener(
         "click",
         function () {
             document.getElementById("welcome").hidden = true;
@@ -25,30 +15,42 @@ else
     );
 </script>
 
+@inject DataManager datamanager;
+
 <div>
 	@Html.Raw(Model.Text)
     <div>
         @{
             List<QuestionPackBase> packs = datamanager.Packs.GetAllPacks().ToList();
         }
-        @foreach (QuestionPackBase entity in packs)
+        @if (ViewBag.pack == null)
         {
-            <!--TODO: redo on use of TestViewComponent and new model {pack+index} if carrying test, or {empty} if first appear-->
-            <div class="container">
-                <div class="col-12-medium">
-                    <botton class="button" id="startButton"><h3>@entity.Name</h3></botton>
-                </div>
+            @foreach (QuestionPackBase entity in packs)
+            {
+                <!--TODO: Разобраться со скриптом(кнопками)-->
                 <div class="container">
-                    <div class="col-8">
-                        <div id="test" hidden>
-                            @await Component.InvokeAsync("Test", new {nowpack = entity, index = -1});<!--Check this for finish:https://learn.microsoft.com/ru-ru/aspnet/core/mvc/views/view-components?view=aspnetcore-8.0 teg for find("Вызов компонента представления")-->
-                        </div>
-                        <div id="welcome">
-                            @await Html.PartialAsync("WelcomePage");
+                    <div class="col-12-medium">
+                        <botton class="button" id="startButton-@entity.Id"><h3>@entity.Name</h3></botton>
+                    </div>
+                    <div class="container">
+                        <div class="col-8">
+                            <div id="test-@entity.Id">
+                                @await Component.InvokeAsync("Test", new { pack = entity, index = -1 });<!--Check this for finish:https://learn.microsoft.com/ru-ru/aspnet/core/mvc/views/view-components?view=aspnetcore-8.0 teg for find("Вызов компонента представления")-->
+                            </div>
+                            <div id="welcome-@entity.Id">
+                                @await Html.PartialAsync("emptyPartial")
+                            </div>
                         </div>
                     </div>
                 </div>
+            }
+        }
+        else
+        {
+            <div id="test">
+                @await Component.InvokeAsync("Test", new { pack = ViewBag.pack, index = ViewBag.index })
             </div>
         }
+        
     </div>
 </div>

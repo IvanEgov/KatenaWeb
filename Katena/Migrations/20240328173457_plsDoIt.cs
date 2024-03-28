@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Katena.Migrations
 {
     /// <inheritdoc />
-    public partial class createMigration : Migration
+    public partial class plsDoIt : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -159,7 +159,10 @@ namespace Katena.Migrations
                     Weight8 = table.Column<double>(type: "double", nullable: false),
                     Weight9 = table.Column<double>(type: "double", nullable: false),
                     Weight10 = table.Column<double>(type: "double", nullable: false),
-                    Weight11 = table.Column<double>(type: "double", nullable: false)
+                    Weight11 = table.Column<double>(type: "double", nullable: false),
+                    Weight12 = table.Column<double>(type: "double", nullable: false),
+                    Weight13 = table.Column<double>(type: "double", nullable: false),
+                    Weight14 = table.Column<double>(type: "double", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -356,7 +359,7 @@ namespace Katena.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "ef37a3c2-7c96-4405-a971-7abcc91ac333", 0, "e1445e1a-1e58-4bb4-927a-73ad622ad27e", "my@email.com", true, false, null, "MY@EMAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAEH0h2D9hA5rLo2ufr7ca8DfIJFFbdccY3a9qksBPWywn9NUinNdlFy8EsMOWeRyHJQ==", null, false, "", false, "admin" });
+                values: new object[] { "ef37a3c2-7c96-4405-a971-7abcc91ac333", 0, "7148132b-89e4-4e3e-861c-ec39d75a1b73", "my@email.com", true, false, null, "MY@EMAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAELe0QMwHomec9EjqjHaQkqk1GNohVNnykRKMr37BMOB9lcMaOuPIx8eWZm7bxNxlLw==", null, false, "", false, "admin" });
 
             migrationBuilder.InsertData(
                 table: "Packs",
@@ -374,12 +377,12 @@ namespace Katena.Migrations
 
             migrationBuilder.InsertData(
                 table: "Reasons",
-                columns: new[] { "Id", "Reason", "Weight", "Weight1", "Weight10", "Weight11", "Weight2", "Weight3", "Weight4", "Weight5", "Weight6", "Weight7", "Weight8", "Weight9" },
+                columns: new[] { "Id", "Reason", "Weight", "Weight1", "Weight10", "Weight11", "Weight12", "Weight13", "Weight14", "Weight2", "Weight3", "Weight4", "Weight5", "Weight6", "Weight7", "Weight8", "Weight9" },
                 values: new object[,]
                 {
-                    { new Guid("661db458-5cea-431e-b8ba-6a91ed2854a6"), "Third reason", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 },
-                    { new Guid("c2ea7376-d1fb-466d-91b3-a6efb2fb0063"), "Second reason", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 },
-                    { new Guid("f70fca13-268b-4e2e-9906-066b455d2081"), "Reason", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 }
+                    { new Guid("661db458-5cea-431e-b8ba-6a91ed2854a6"), "Third reason", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 },
+                    { new Guid("c2ea7376-d1fb-466d-91b3-a6efb2fb0063"), "Second reason", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 },
+                    { new Guid("f70fca13-268b-4e2e-9906-066b455d2081"), "Reason", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 }
                 });
 
             migrationBuilder.InsertData(
@@ -397,11 +400,11 @@ namespace Katena.Migrations
                 columns: new[] { "Id", "CodeWord", "DateAdded", "Text", "Title" },
                 values: new object[,]
                 {
-                    { new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"), "PageAbilities", new DateTime(2024, 3, 22, 4, 12, 23, 465, DateTimeKind.Utc).AddTicks(7704), "Содержание заполняется администратором", "Возможности" },
-                    { new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"), "PageIndex", new DateTime(2024, 3, 22, 4, 12, 23, 465, DateTimeKind.Utc).AddTicks(7451), "Содержание заполняется администратором", "Главная" },
-                    { new Guid("708a31c5-8fb2-4b81-95f1-4f2775271c2a"), "Sidebar", new DateTime(2024, 3, 22, 4, 12, 23, 465, DateTimeKind.Utc).AddTicks(7851), "Содержание заполняется администратором", "Новости" },
-                    { new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"), "PageTests", new DateTime(2024, 3, 22, 4, 12, 23, 465, DateTimeKind.Utc).AddTicks(7595), "Содержание заполняется администратором", "Тесты" },
-                    { new Guid("8eae0a63-8f52-4160-a14e-b405e431a13b"), "PageContacts", new DateTime(2024, 3, 22, 4, 12, 23, 465, DateTimeKind.Utc).AddTicks(7774), "Содержание заполняется администратором", "Контакты" }
+                    { new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"), "PageAbilities", new DateTime(2024, 3, 28, 17, 34, 57, 168, DateTimeKind.Utc).AddTicks(7995), "Содержание заполняется администратором", "Возможности" },
+                    { new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"), "PageIndex", new DateTime(2024, 3, 28, 17, 34, 57, 168, DateTimeKind.Utc).AddTicks(7949), "Содержание заполняется администратором", "Главная" },
+                    { new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"), "PageTests", new DateTime(2024, 3, 28, 17, 34, 57, 168, DateTimeKind.Utc).AddTicks(7981), "Содержание заполняется администратором", "Тесты" },
+                    { new Guid("8eae0a63-8f52-4160-a14e-b405e431a13b"), "PageContacts", new DateTime(2024, 3, 28, 17, 34, 57, 168, DateTimeKind.Utc).AddTicks(8009), "Содержание заполняется администратором", "Контакты" },
+                    { new Guid("d313fdae-197c-4be8-8b5b-0e0505817b54"), "Sidebar", new DateTime(2024, 3, 28, 17, 34, 57, 168, DateTimeKind.Utc).AddTicks(8022), "Содержание заполняется администратором", "Новости" }
                 });
 
             migrationBuilder.InsertData(

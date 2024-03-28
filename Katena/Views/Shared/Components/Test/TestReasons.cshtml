@@ -1,0 +1,17 @@
+﻿@using Katena.Domain
+@inject DataManager datamanager;
+
+<div>
+	@foreach (Guid id in ViewBag.answer.reasonsId)
+	{
+		ReasonBase reason = datamanager.Reasons.GetReasonById(id);
+		<form style="display: inline-block;"  asp-controller="Tests" asp-action="NextQuestion">
+			<input type="hidden" name="nowPack" value="@ViewBag.pack.Id">
+			<input type="hidden" name="index" value="@ViewBag.index">
+			<input type="hidden" name="question" value="@ViewBag.question.Id">
+			<input type="hidden" name="answer" value="@ViewBag.answer.Id">
+			<input type="hidden" name="reason" value="@reason.Id">
+			<input type="submit" value="@reason.Reason">
+		</form>
+	}
+</div>

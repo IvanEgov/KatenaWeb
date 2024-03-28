@@ -274,7 +274,10 @@ namespace Katena.Domain
 						Weight8 = 0,
 						Weight9 = 0,
 						Weight10 = 0,
-						Weight11 = 0
+						Weight11 = 0,
+						Weight12 = 0,
+						Weight13 = 0,
+						Weight14 = 0
 					},
                     new ReasonBase
                     {
@@ -291,7 +294,10 @@ namespace Katena.Domain
                         Weight8 = 0,
                         Weight9 = 0,
                         Weight10 = 0,
-                        Weight11 = 0
+                        Weight11 = 0,
+						Weight12 = 0,
+						Weight13 = 0,
+						Weight14 = 0
                     },
                     new ReasonBase
                     {
@@ -308,7 +314,10 @@ namespace Katena.Domain
                         Weight8 = 0,
                         Weight9 = 0,
                         Weight10 = 0,
-                        Weight11 = 0
+                        Weight11 = 0,
+						Weight12 = 0,
+						Weight13 = 0,
+						Weight14 = 0
                     }
                 ]);
 

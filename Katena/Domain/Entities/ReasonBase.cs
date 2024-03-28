@@ -58,5 +58,17 @@ namespace Katena.Domain.Entities
 		[Required]
 		[Display(Name = "Двенадцатый вес")]
 		public double? Weight11 { get; set; }
-	}
+
+        [Required]
+        [Display(Name = "Тринадцатый вес")]
+        public double? Weight12 { get; set; }
+
+        [Required]
+        [Display(Name = "Четырнадцатый вес")]
+        public double? Weight13 { get; set; }
+
+        [Required]
+        [Display(Name = "Пятнадцатый вес")]
+        public double? Weight14 { get; set; }
+    }
 }

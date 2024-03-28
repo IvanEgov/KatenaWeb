@@ -32,52 +32,68 @@ namespace Katena.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<double>("Weight")
+                    b.Property<double?>("Weight")
+                        .IsRequired()
                         .HasColumnType("double");
 
-                    b.Property<double>("Weight1")
+                    b.Property<double?>("Weight1")
+                        .IsRequired()
                         .HasColumnType("double");
 
-                    b.Property<double>("Weight10")
+                    b.Property<double?>("Weight10")
+                        .IsRequired()
                         .HasColumnType("double");
 
-                    b.Property<double>("Weight11")
+                    b.Property<double?>("Weight11")
+                        .IsRequired()
                         .HasColumnType("double");
 
-                    b.Property<double>("Weight12")
+                    b.Property<double?>("Weight12")
+                        .IsRequired()
                         .HasColumnType("double");
 
-                    b.Property<double>("Weight13")
+                    b.Property<double?>("Weight13")
+                        .IsRequired()
                         .HasColumnType("double");
 
-                    b.Property<double>("Weight14")
+                    b.Property<double?>("Weight14")
+                        .IsRequired()
                         .HasColumnType("double");
 
-                    b.Property<double>("Weight15")
+                    b.Property<double?>("Weight15")
+                        .IsRequired()
                         .HasColumnType("double");
 
-                    b.Property<double>("Weight2")
+                    b.Property<double?>("Weight2")
+                        .IsRequired()
                         .HasColumnType("double");
 
-                    b.Property<double>("Weight3")
+                    b.Property<double?>("Weight3")
+                        .IsRequired()
                         .HasColumnType("double");
 
-                    b.Property<double>("Weight4")
+                    b.Property<double?>("Weight4")
+                        .IsRequired()
                         .HasColumnType("double");
 
-                    b.Property<double>("Weight5")
+                    b.Property<double?>("Weight5")
+                        .IsRequired()
                         .HasColumnType("double");
 
-                    b.Property<double>("Weight6")
+                    b.Property<double?>("Weight6")
+                        .IsRequired()
                         .HasColumnType("double");
 
-                    b.Property<double>("Weight7")
+                    b.Property<double?>("Weight7")
+                        .IsRequired()
                         .HasColumnType("double");
 
-                    b.Property<double>("Weight8")
+                    b.Property<double?>("Weight8")
+                        .IsRequired()
                         .HasColumnType("double");
 
-                    b.Property<double>("Weight9")
+                    b.Property<double?>("Weight9")
+                        .IsRequired()
                         .HasColumnType("double");
 
                     b.Property<string>("reasonsId")
@@ -368,6 +384,18 @@ namespace Katena.Migrations
                         .IsRequired()
                         .HasColumnType("double");
 
+                    b.Property<double?>("Weight12")
+                        .IsRequired()
+                        .HasColumnType("double");
+
+                    b.Property<double?>("Weight13")
+                        .IsRequired()
+                        .HasColumnType("double");
+
+                    b.Property<double?>("Weight14")
+                        .IsRequired()
+                        .HasColumnType("double");
+
                     b.Property<double?>("Weight2")
                         .IsRequired()
                         .HasColumnType("double");
@@ -413,6 +441,9 @@ namespace Katena.Migrations
                             Weight1 = 0.0,
                             Weight10 = 0.0,
                             Weight11 = 0.0,
+                            Weight12 = 0.0,
+                            Weight13 = 0.0,
+                            Weight14 = 0.0,
                             Weight2 = 0.0,
                             Weight3 = 0.0,
                             Weight4 = 0.0,
@@ -430,6 +461,9 @@ namespace Katena.Migrations
                             Weight1 = 0.0,
                             Weight10 = 0.0,
                             Weight11 = 0.0,
+                            Weight12 = 0.0,
+                            Weight13 = 0.0,
+                            Weight14 = 0.0,
                             Weight2 = 0.0,
                             Weight3 = 0.0,
                             Weight4 = 0.0,
@@ -447,6 +481,9 @@ namespace Katena.Migrations
                             Weight1 = 0.0,
                             Weight10 = 0.0,
                             Weight11 = 0.0,
+                            Weight12 = 0.0,
+                            Weight13 = 0.0,
+                            Weight14 = 0.0,
                             Weight2 = 0.0,
                             Weight3 = 0.0,
                             Weight4 = 0.0,
@@ -541,7 +578,7 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"),
                             CodeWord = "PageIndex",
-                            DateAdded = new DateTime(2024, 3, 22, 4, 12, 23, 465, DateTimeKind.Utc).AddTicks(7451),
+                            DateAdded = new DateTime(2024, 3, 28, 17, 34, 57, 168, DateTimeKind.Utc).AddTicks(7949),
                             Text = "Содержание заполняется администратором",
                             Title = "Главная"
                         },
@@ -549,7 +586,7 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"),
                             CodeWord = "PageTests",
-                            DateAdded = new DateTime(2024, 3, 22, 4, 12, 23, 465, DateTimeKind.Utc).AddTicks(7595),
+                            DateAdded = new DateTime(2024, 3, 28, 17, 34, 57, 168, DateTimeKind.Utc).AddTicks(7981),
                             Text = "Содержание заполняется администратором",
                             Title = "Тесты"
                         },
@@ -557,7 +594,7 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"),
                             CodeWord = "PageAbilities",
-                            DateAdded = new DateTime(2024, 3, 22, 4, 12, 23, 465, DateTimeKind.Utc).AddTicks(7704),
+                            DateAdded = new DateTime(2024, 3, 28, 17, 34, 57, 168, DateTimeKind.Utc).AddTicks(7995),
                             Text = "Содержание заполняется администратором",
                             Title = "Возможности"
                         },
@@ -565,15 +602,15 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("8eae0a63-8f52-4160-a14e-b405e431a13b"),
                             CodeWord = "PageContacts",
-                            DateAdded = new DateTime(2024, 3, 22, 4, 12, 23, 465, DateTimeKind.Utc).AddTicks(7774),
+                            DateAdded = new DateTime(2024, 3, 28, 17, 34, 57, 168, DateTimeKind.Utc).AddTicks(8009),
                             Text = "Содержание заполняется администратором",
                             Title = "Контакты"
                         },
                         new
                         {
-                            Id = new Guid("708a31c5-8fb2-4b81-95f1-4f2775271c2a"),
+                            Id = new Guid("d313fdae-197c-4be8-8b5b-0e0505817b54"),
                             CodeWord = "Sidebar",
-                            DateAdded = new DateTime(2024, 3, 22, 4, 12, 23, 465, DateTimeKind.Utc).AddTicks(7851),
+                            DateAdded = new DateTime(2024, 3, 28, 17, 34, 57, 168, DateTimeKind.Utc).AddTicks(8022),
                             Text = "Содержание заполняется администратором",
                             Title = "Новости"
                         });
@@ -706,13 +743,13 @@ namespace Katena.Migrations
                         {
                             Id = "ef37a3c2-7c96-4405-a971-7abcc91ac333",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e1445e1a-1e58-4bb4-927a-73ad622ad27e",
+                            ConcurrencyStamp = "7148132b-89e4-4e3e-861c-ec39d75a1b73",
                             Email = "my@email.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "MY@EMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEH0h2D9hA5rLo2ufr7ca8DfIJFFbdccY3a9qksBPWywn9NUinNdlFy8EsMOWeRyHJQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAELe0QMwHomec9EjqjHaQkqk1GNohVNnykRKMr37BMOB9lcMaOuPIx8eWZm7bxNxlLw==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,

@@ -34,7 +34,7 @@
                     <form style="display: inline-block;" id="form-@entity.Id" asp-area="Admin" asp-controller="Question" asp-action="DeleteAnswer" method="post">
                         <input type="hidden" name="id" value="@entity.Id">
                         <input type="hidden" name="questionId" value="@Model.Id">
-                        <input type="submit" name="Удалить">
+                        <input type="submit" value="Удалить">
                         @* <button><a href="#" onclick="document.getElementById('form-@entity.Id').submit();">Удалить</a></button> *@
                     </form>
                     |
@@ -43,7 +43,7 @@
                         <form style="display: inline-block;" id="form-@Model.Id" asp-area="Admin" asp-controller="Question" asp-action="AddAnswer" method="post">
                             <input type="hidden" name="questionId" value="@Model.Id">
                             <input type="hidden" name="answerId" value="@entity.Id">
-                            <input type="submit" name="Сохранить в вопрос">
+                            <input type="submit" value="Сохранить в вопрос">
                             @* <button><a href="#" onclick="document.getElementById('form-@Model.Id').submit();">Сохранить в вопрос</a></button> *@
                         </form>
                     }
