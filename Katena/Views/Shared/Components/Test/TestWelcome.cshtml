@@ -1,10 +1,4 @@
-﻿@model QuestionPackBase;
-@{
-	ViewBag.Title = Model.Name;
-	ViewBag.Description = Model.Description;
-	ViewBag.Image = "";
-}
-
+﻿
 <div class="container" id="test">
 	<div id="Name">
 		<p><h1>Title</h1></p>
@@ -14,6 +8,11 @@
 		<img>Image</img>
 	</div>
 	<div class="container">
-		<botton class="bottom"><a asp-controller="Tests" asp-action="Start"><h3>Начать тест</h3></a></botton>
+		<form style="display: inline-block;" id="form-@Model.pack.Id"  asp-controller="Tests" asp-action="NextQuestion">
+			<input type="hidden" name="nowPack" value="@Model">
+			<input type="hidden" name="index" value="-1">
+			<input type="submit" name="bottom">Начать тест</input>
+		</form>
+		@* <botton class="bottom"><a asp-controller="Tests" asp-action="NextQuestion"><h3>Начать тест</h3></a></botton> *@
 	</div>
 </div>
