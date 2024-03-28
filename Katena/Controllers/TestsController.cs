@@ -26,8 +26,9 @@ namespace Katena.Controllers
 			{
 				nowPack = dataManager.Packs.GetPackById(id);
 				testIndex = -1;
-				var model = new { nowPack,  testIndex};
-				return View(nowPack);
+				ViewBag.nowPack = nowPack;
+				ViewBag.testIndex = testIndex;
+				return View();
 			}
 /*			ViewBag.TextField = dataManager.TextFields.GetTextFieldByCodeWord("PageTests");*/
 			return View(dataManager.TextFields.GetTextFieldByCodeWord("PageTests"));
@@ -38,8 +39,10 @@ namespace Katena.Controllers
 		{
 			//TODO: Test logic
 			testIndex = index + 1;
-			var model = new { nowPack, testIndex};
-			return View(model);
+			ViewBag.nowPack = nowPack;
+			ViewBag.testIndex = testIndex;
+			ViewBag.fool = false;
+			return View();
 		}
 	}
 }

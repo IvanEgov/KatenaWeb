@@ -6,6 +6,15 @@
 }
 @inject DataManager datamanager;
 
+@if (!ViewBag.fool)
+{
+    <h1>it works</h1>
+}
+else
+{
+    <h1> it doesn't work</h1>
+}
+
 <script>
     document.getElementById("startButton").addEventListener(
         "click",
