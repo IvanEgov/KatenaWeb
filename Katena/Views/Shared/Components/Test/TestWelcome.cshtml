@@ -1,5 +1,5 @@
 ﻿
-<div class="container" id="test">
+<div class="container" id="test" style="display:flex; position:absolute;">
 	<div id="Name">
 		<p><h1>Title</h1></p>
 		<p><h1>Description</h1></p>
@@ -7,12 +7,11 @@
 	<div id="picture">
 		<img>Image</img>
 	</div>
-	<div class="container">
+	<div>
 		<form style="display: inline-block;" id="form-@ViewBag.pack.Id"  asp-controller="Tests" asp-action="NextQuestion">
 			<input type="hidden" name="pack" value="@ViewBag.pack.Id">
 			<input type="hidden" name="index" value="-1">
 			<input type="submit" name="bottom" value="Начать тест">
 		</form>
-		@* <botton class="bottom"><a asp-controller="Tests" asp-action="NextQuestion"><h3>Начать тест</h3></a></botton> *@
 	</div>
 </div>

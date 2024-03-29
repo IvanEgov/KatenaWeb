@@ -1,4 +1,18 @@
 ﻿@using Katena.Domain
-
-Работает
+@inject DataManager datamanager;
 <!--TODO: в TestViewComponent передать bool reason=true и action(answer), выбранные пользователем -->
+
+<div>
+	@foreach (Guid id in ViewBag.question.AnswerId)
+	{
+		AnswersBase answer = datamanager.Answers.GetAnswerById(id);
+		ViewBag.reason = true;
+		<form style="display: inline-block;" asp-controller="Tests" asp-action="NextQuestion">
+			<input type="hidden" name="pack" value="@ViewBag.pack.Id">
+			<input type="hidden" name="index" value="@ViewBag.index">
+			<input type="hidden" name="question" value="@ViewBag.question.Id">
+			<input type="hidden" name="answers" value="@answer.Id">
+			<input type="submit" value="@answer.Action">
+		</form>
+	}
+</div>

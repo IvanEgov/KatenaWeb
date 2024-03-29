@@ -1309,6 +1309,7 @@ ul.link-list li:first-child {
 /* Footer */
 #footer-wrapper {
   padding: 4em 0;
+  display:flex;
 }
 
 /* Copyright */

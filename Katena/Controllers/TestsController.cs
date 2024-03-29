@@ -28,7 +28,6 @@ namespace Katena.Controllers
 				index = -1;
 				ViewBag.pack = pack;
 				ViewBag.index = index;
-				ViewBag.fool = false;
 				return View();
 			}
 /*			ViewBag.TextField = dataManager.TextFields.GetTextFieldByCodeWord("PageTests");*/
