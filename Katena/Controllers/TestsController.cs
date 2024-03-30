@@ -35,26 +35,35 @@ namespace Katena.Controllers
 		}
 
 		[HttpPost]
-		public IActionResult NextQuestion(Guid pack, int index, Guid question, Guid answers, Guid reason)
+		public IActionResult NextQuestion(Guid pack, int index, Guid question, Guid answers, Guid reason, bool checkReason = false)
 		{
 			//TODO: Test logic
-			index = index + 1;
+			ViewBag.reason = checkReason;
+			
+			if (!checkReason)
+			{
+				index = index + 1;
+			}
+			else
+			{
+				ViewBag.answer = dataManager.Answers.GetAnswerById(answers);
+			}
 			ViewBag.pack = dataManager.Packs.GetPackById(pack);
 			ViewBag.index = index;
 			return View("Index", dataManager.TextFields.GetTextFieldByCodeWord("PageTests"));
 		}
 
 		//We need this method to get ViewComponent to the reason part (I think, it should work)
-		[HttpPost]
-		public IActionResult SwitchToResason(Guid pack, Guid answer, int index)
+		/*[HttpPost]
+		public IActionResult SwitchToResason(Guid pack, int index, Guid answers)
 		{
 			return ViewComponent("Test", new
 			{
 				pack = dataManager.Packs.GetPackById(pack),
 				index = index,
-				answer = dataManager.Answers.GetAnswerById(answer),
+				answer = dataManager.Answers.GetAnswerById(answers),
 				reason = true
 			});
-		}
+		}*/
 	}
 }
