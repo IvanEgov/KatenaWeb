@@ -7,10 +7,10 @@
 	{
 		AnswersBase answer = datamanager.Answers.GetAnswerById(id);
 		ViewBag.reason = true;
-		<form style="display: inline-block;" asp-controller="Tests" asp-action="NextQuestion">
+		<form style="display: inline-block;" asp-controller="Tests" asp-action="SwitchToReason">
 			<input type="hidden" name="pack" value="@ViewBag.pack.Id">
 			<input type="hidden" name="index" value="@ViewBag.index">
-			<input type="hidden" name="question" value="@ViewBag.question.Id">
+			@* <input type="hidden" name="question" value="@ViewBag.question.Id"> *@	<!--You don't need it there because ViewComponent gets question by index-->
 			<input type="hidden" name="answers" value="@answer.Id">
 			<input type="submit" value="@answer.Action">
 		</form>

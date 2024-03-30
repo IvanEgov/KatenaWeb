@@ -25,7 +25,7 @@ namespace Katena.Components
             {
                 return View("TestWelcome");
             }
-            else if (index < pack.QuestionsIds.Count && !reason)
+            else if (index < pack.QuestionsIds.Count)
             {
                 QuestionBase question = _dataManager.QuestionBase.GetQuestionById(pack.QuestionsIds[index]);
                 ViewBag.question = question;
