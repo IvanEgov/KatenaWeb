@@ -116,34 +116,184 @@ namespace Katena.TestProg
             /// и они вкладываются в расчет пометил ячейкой 
 
 
-            //корекция сложеных данных
+            //корекция сложеных данных мотивации
             if (distr_mentor > distr_looking && distr_mentor > distr_hunter) 
             {
-                distr_mentor = distr_mentor + 1; // + AL253*2  +  V253;  добавить надо а это вариант ответа только когда выбран  
+                distr_mentor = distr_mentor + 1 + answers.typeWeight2*2 +answers.typeWeight3; // + AL253*2  +  V253;   
             }
             else
             {
-                //distr_mentor +=  AL253*2  +  V253;  добавить надо а это вариант ответа только когда выбран  
+                distr_mentor = distr_mentor + answers.typeWeight2 * 2 + answers.typeWeight3;
             }
 
             if (distr_looking > distr_mentor && distr_looking > distr_hunter)
             {
-                distr_looking ++; // (F253+V253)+ AL253*2  +  BB253;  добавить надо а это вариант ответа только когда выбран  
+                distr_looking = distr_looking + 1 + (answers.typeWeight1+answers.typeWeight2)*2 + answers.typeWeight3 + answers.typeWeight4 ; // (F253+V253)+ AL253*2  +  BB253;    
             }
             else
             {
-                //distr_mentor +=  AL253*2  +  V253;  добавить надо а это вариант ответа только когда выбран  
+                distr_looking = distr_looking + (answers.typeWeight1 + answers.typeWeight2) * 2 + answers.typeWeight3 + answers.typeWeight4;
             }
 
             if (distr_hunter > distr_mentor && distr_hunter > distr_looking)
             {
-                distr_hunter++; // + BB253*2  +  F253;  добавить надо а это вариант ответа только когда выбран  
+                distr_hunter = distr_hunter + 1 + answers.typeWeight4*2 + answers.typeWeight1; // + BB253*2  +  F253; 
             }
             else
             {
-                //distr_mentor +=  AL253*2  +  V253;  добавить надо а это вариант ответа только когда выбран  
+                distr_hunter = distr_hunter + answers.typeWeight4 * 2 + answers.typeWeight1;
             }
 
+            double? distr_mentorP; 
+            double? distr_lookingP;
+            double? distr_hunterP; 
+
+            if(distr_mentor>=distr_looking && distr_mentor>=distr_hunter)
+            {
+                distr_mentorP = 1;
+            }
+            else
+            {
+                distr_mentorP= 0;
+            }
+            if (distr_looking >=distr_mentor && distr_looking >= distr_hunter)
+            {
+                distr_lookingP = 1;
+            }
+            else
+            {
+                distr_lookingP = 0;
+            }
+            if (distr_hunter >= distr_looking && distr_hunter >= distr_mentor)
+            {
+                distr_hunterP = 1;
+            }
+            else
+            {
+                distr_hunterP = 0;
+            }
+            //корекция сложеных данных дистриктув
+            switch (style_P)
+            {
+                case 1:
+                    style_P = 0;
+                    break;
+                case 2:
+                    style_P = 2;
+                    break;
+                case 3:
+                    style_P = 4;
+                    break;
+                case 4:
+                    style_P = 6;
+                    break;
+                default:
+                    style_P = 5;
+                    break;
+            }
+           var style_All = (reason.typeWeight1 + reason.typeWeight2 + reason.typeWeight3) * 2 + reason.typeWeight1 + reason.typeWeight2 + reason.typeWeight3;
+            style_P += style_All;
+
+            switch(style_A)
+            {
+                case 1:
+                    style_A = 0;
+                    break;
+                case 2:
+                    style_A = 2;
+                    break;
+                case 3:
+                    style_A = 4;
+                    break;
+                case 4:
+                    style_A = 6;
+                    break;
+                default:
+                    style_A = 5;
+                    break;
+            }
+            style_A += style_All;
+
+            switch (style_E)
+            {
+                case 1:
+                    style_E = 0;
+                    break;
+                case 2:
+                    style_E = 2;
+                    break;
+                case 3:
+                    style_E = 4;
+                    break;
+                case 4:
+                    style_E = 6;
+                    break;
+                default:
+                    style_E = 5;
+                    break;
+            }
+            style_E += style_All;
+
+            switch (style_I)
+            {
+                case 1:
+                    style_I = 0;
+                    break;
+                case 2:
+                    style_I = 2;
+                    break;
+                case 3:
+                    style_I = 4;
+                    break;
+                case 4:
+                    style_I = 6;
+                    break;
+                default:
+                    style_I = 5;
+                    break;
+            }
+            style_I += style_All;
+
+            double? style_PP;
+            double? style_AA;
+            double? style_EE;
+            double? style_II;
+
+            if (style_P >= style_A && style_P >= style_E && style_P>=style_I )
+            {
+                style_PP = 1;
+            }
+            else
+            {
+                style_PP = 0;
+            }
+            if (style_A >= style_P && style_A >= style_E && style_A >= style_I)
+            {
+                style_AA = 1;
+            }
+            else
+            {
+                style_AA = 0;
+            }
+            if (style_E >= style_A && style_E >= style_P && style_E >= style_I)
+            {
+                style_EE = 1;
+            }
+            else
+            {
+                style_EE = 0;
+            }
+            if (style_I >= style_A && style_I >= style_E && style_I >= style_P)
+            {
+                style_II = 1;
+            }
+            else
+            {
+                style_II = 0;
+            }
+
+            //вызов функции  где уже складывается и выбирается стили  заменить на ViewBag_________________________________
+           // LoogicAll(distr_mentorP,distr_lookingP,distr_hunterP, style_PP,style_AA, style_EE, style_II);
         }
     }
 }
