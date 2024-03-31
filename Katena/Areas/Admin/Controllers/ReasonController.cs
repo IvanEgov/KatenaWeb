@@ -38,6 +38,9 @@ namespace Katena.Areas.Admin.Controllers
 				entity.Weight12 = 0.0;
 				entity.Weight13 = 0.0;
 				entity.Weight14 = 0.0;
+				entity.typeWeight1 = 0.0;
+				entity.typeWeight2 = 0.0;
+				entity.typeWeight3 = 0.0;
 				dataManager.Reasons.SaveReason(entity);
 			}
 			else

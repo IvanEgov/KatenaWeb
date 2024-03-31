@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Katena.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240331112124_newAddMigration")]
-    partial class newAddMigration
+    [Migration("20240331120041_doThisMigration")]
+    partial class doThisMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -99,13 +99,25 @@ namespace Katena.Migrations
                         .IsRequired()
                         .HasColumnType("double");
 
-                    b.Property<double?>("hardWeight")
-                        .IsRequired()
-                        .HasColumnType("double");
-
                     b.Property<string>("reasonsId")
                         .IsRequired()
                         .HasColumnType("longtext");
+
+                    b.Property<double?>("typeWeight1")
+                        .IsRequired()
+                        .HasColumnType("double");
+
+                    b.Property<double?>("typeWeight2")
+                        .IsRequired()
+                        .HasColumnType("double");
+
+                    b.Property<double?>("typeWeight3")
+                        .IsRequired()
+                        .HasColumnType("double");
+
+                    b.Property<double?>("typeWeight4")
+                        .IsRequired()
+                        .HasColumnType("double");
 
                     b.HasKey("Id");
 
@@ -132,8 +144,11 @@ namespace Katena.Migrations
                             Weight7 = 0.0,
                             Weight8 = 0.0,
                             Weight9 = 0.0,
-                            hardWeight = 0.0,
-                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]"
+                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]",
+                            typeWeight1 = 0.0,
+                            typeWeight2 = 0.0,
+                            typeWeight3 = 0.0,
+                            typeWeight4 = 0.0
                         },
                         new
                         {
@@ -155,8 +170,11 @@ namespace Katena.Migrations
                             Weight7 = 0.0,
                             Weight8 = 0.0,
                             Weight9 = 0.0,
-                            hardWeight = 0.0,
-                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]"
+                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]",
+                            typeWeight1 = 0.0,
+                            typeWeight2 = 0.0,
+                            typeWeight3 = 0.0,
+                            typeWeight4 = 0.0
                         },
                         new
                         {
@@ -178,8 +196,11 @@ namespace Katena.Migrations
                             Weight7 = 0.0,
                             Weight8 = 0.0,
                             Weight9 = 0.0,
-                            hardWeight = 0.0,
-                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]"
+                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]",
+                            typeWeight1 = 0.0,
+                            typeWeight2 = 0.0,
+                            typeWeight3 = 0.0,
+                            typeWeight4 = 0.0
                         },
                         new
                         {
@@ -201,8 +222,11 @@ namespace Katena.Migrations
                             Weight7 = 0.0,
                             Weight8 = 0.0,
                             Weight9 = 0.0,
-                            hardWeight = 0.0,
-                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]"
+                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]",
+                            typeWeight1 = 0.0,
+                            typeWeight2 = 0.0,
+                            typeWeight3 = 0.0,
+                            typeWeight4 = 0.0
                         },
                         new
                         {
@@ -224,8 +248,11 @@ namespace Katena.Migrations
                             Weight7 = 0.0,
                             Weight8 = 0.0,
                             Weight9 = 0.0,
-                            hardWeight = 0.0,
-                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]"
+                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]",
+                            typeWeight1 = 0.0,
+                            typeWeight2 = 0.0,
+                            typeWeight3 = 0.0,
+                            typeWeight4 = 0.0
                         },
                         new
                         {
@@ -247,8 +274,11 @@ namespace Katena.Migrations
                             Weight7 = 0.0,
                             Weight8 = 0.0,
                             Weight9 = 0.0,
-                            hardWeight = 0.0,
-                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]"
+                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]",
+                            typeWeight1 = 0.0,
+                            typeWeight2 = 0.0,
+                            typeWeight3 = 0.0,
+                            typeWeight4 = 0.0
                         },
                         new
                         {
@@ -270,8 +300,11 @@ namespace Katena.Migrations
                             Weight7 = 0.0,
                             Weight8 = 0.0,
                             Weight9 = 0.0,
-                            hardWeight = 0.0,
-                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]"
+                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]",
+                            typeWeight1 = 0.0,
+                            typeWeight2 = 0.0,
+                            typeWeight3 = 0.0,
+                            typeWeight4 = 0.0
                         },
                         new
                         {
@@ -293,8 +326,11 @@ namespace Katena.Migrations
                             Weight7 = 0.0,
                             Weight8 = 0.0,
                             Weight9 = 0.0,
-                            hardWeight = 0.0,
-                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]"
+                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]",
+                            typeWeight1 = 0.0,
+                            typeWeight2 = 0.0,
+                            typeWeight3 = 0.0,
+                            typeWeight4 = 0.0
                         });
                 });
 
@@ -443,7 +479,15 @@ namespace Katena.Migrations
                         .IsRequired()
                         .HasColumnType("double");
 
-                    b.Property<double?>("hardWeight")
+                    b.Property<double?>("typeWeight1")
+                        .IsRequired()
+                        .HasColumnType("double");
+
+                    b.Property<double?>("typeWeight2")
+                        .IsRequired()
+                        .HasColumnType("double");
+
+                    b.Property<double?>("typeWeight3")
                         .IsRequired()
                         .HasColumnType("double");
 
@@ -471,7 +515,9 @@ namespace Katena.Migrations
                             Weight7 = 0.0,
                             Weight8 = 0.0,
                             Weight9 = 0.0,
-                            hardWeight = 0.0
+                            typeWeight1 = 0.0,
+                            typeWeight2 = 0.0,
+                            typeWeight3 = 0.0
                         },
                         new
                         {
@@ -492,7 +538,9 @@ namespace Katena.Migrations
                             Weight7 = 0.0,
                             Weight8 = 0.0,
                             Weight9 = 0.0,
-                            hardWeight = 0.0
+                            typeWeight1 = 0.0,
+                            typeWeight2 = 0.0,
+                            typeWeight3 = 0.0
                         },
                         new
                         {
@@ -513,7 +561,9 @@ namespace Katena.Migrations
                             Weight7 = 0.0,
                             Weight8 = 0.0,
                             Weight9 = 0.0,
-                            hardWeight = 0.0
+                            typeWeight1 = 0.0,
+                            typeWeight2 = 0.0,
+                            typeWeight3 = 0.0
                         });
                 });
 
@@ -600,7 +650,7 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"),
                             CodeWord = "PageIndex",
-                            DateAdded = new DateTime(2024, 3, 31, 11, 21, 23, 967, DateTimeKind.Utc).AddTicks(4251),
+                            DateAdded = new DateTime(2024, 3, 31, 12, 0, 40, 555, DateTimeKind.Utc).AddTicks(4127),
                             Text = "Содержание заполняется администратором",
                             Title = "Главная"
                         },
@@ -608,7 +658,7 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"),
                             CodeWord = "PageTests",
-                            DateAdded = new DateTime(2024, 3, 31, 11, 21, 23, 967, DateTimeKind.Utc).AddTicks(4278),
+                            DateAdded = new DateTime(2024, 3, 31, 12, 0, 40, 555, DateTimeKind.Utc).AddTicks(4248),
                             Text = "Содержание заполняется администратором",
                             Title = "Тесты"
                         },
@@ -616,7 +666,7 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"),
                             CodeWord = "PageAbilities",
-                            DateAdded = new DateTime(2024, 3, 31, 11, 21, 23, 967, DateTimeKind.Utc).AddTicks(4292),
+                            DateAdded = new DateTime(2024, 3, 31, 12, 0, 40, 555, DateTimeKind.Utc).AddTicks(4265),
                             Text = "Содержание заполняется администратором",
                             Title = "Возможности"
                         },
@@ -624,15 +674,15 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("8eae0a63-8f52-4160-a14e-b405e431a13b"),
                             CodeWord = "PageContacts",
-                            DateAdded = new DateTime(2024, 3, 31, 11, 21, 23, 967, DateTimeKind.Utc).AddTicks(4306),
+                            DateAdded = new DateTime(2024, 3, 31, 12, 0, 40, 555, DateTimeKind.Utc).AddTicks(4278),
                             Text = "Содержание заполняется администратором",
                             Title = "Контакты"
                         },
                         new
                         {
-                            Id = new Guid("9b7c30c3-8c39-4604-89bf-aca5297d4016"),
+                            Id = new Guid("29502787-ba92-410c-a4b0-b4ae9d2ad6e8"),
                             CodeWord = "Sidebar",
-                            DateAdded = new DateTime(2024, 3, 31, 11, 21, 23, 967, DateTimeKind.Utc).AddTicks(4319),
+                            DateAdded = new DateTime(2024, 3, 31, 12, 0, 40, 555, DateTimeKind.Utc).AddTicks(4292),
                             Text = "Содержание заполняется администратором",
                             Title = "Новости"
                         });
@@ -765,13 +815,13 @@ namespace Katena.Migrations
                         {
                             Id = "ef37a3c2-7c96-4405-a971-7abcc91ac333",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "3cd64ead-5a56-436b-b0da-9fd418771fd4",
+                            ConcurrencyStamp = "71556450-b204-4793-9e85-9260008d2f62",
                             Email = "my@email.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "MY@EMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEBSqiOPBOmkF2vApBXIf3lnE0uKQ0mWjyj0cFNZfKf8XyR1yp3yc962zaXidVqHsSw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEJonhQ/ETxxgfFyMZjHaNzKBfRQU9vJiH8O7VMQ8O1Od2p4nsMiV09RkOkUFrdnCog==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,

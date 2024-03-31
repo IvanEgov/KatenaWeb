@@ -41,6 +41,10 @@ namespace Katena.Areas.Admin.Controllers
 				entity.Weight13 = 0.0;
 				entity.Weight14 = 0.0;
 				entity.Weight15 = 0.0;
+				entity.typeWeight1 = 0.0;
+				entity.typeWeight2 = 0.0;
+				entity.typeWeight3 = 0.0;
+				entity.typeWeight4 = 0.0;
 				entity.reasonsId = new List<Guid> {Guid.NewGuid()};
 				dataManager.Answers.SaveAnswer(entity);
 			}
