@@ -12,63 +12,68 @@ namespace Katena.Domain.Entities
 
 		//Веса
 		[Required]
-		[Display(Name = "Первый вес")]
+		[Display(Name = "Поиск виноватого(З)")]
 		public double? Weight { get; set; }
 
 		[Required]
-		[Display(Name = "Второй вес")]
+		[Display(Name = "Поиск ценностей(З)")]
 		public double? Weight1 { get; set; }
 
 		[Required]
-		[Display(Name = "Третий вес")]
+		[Display(Name = "Вектор внимания(З)")]
 		public double? Weight2 { get; set; }
 
 		[Required]
-		[Display(Name = "Четвертый вес")]
+		[Display(Name = "Проявление заботы(З)")]
 		public double? Weight3 { get; set; }
 
 		[Required]
-		[Display(Name = "Пятый вес")]
+		[Display(Name = "Ориентация во времени(З)")]
 		public double? Weight4 { get; set; }
 
 		[Required]
-		[Display(Name = "Шестой вес")]
+		[Display(Name = "Поиск виноватого(П)")]
 		public double? Weight5 { get; set; }
 
 		[Required]
-		[Display(Name = "Седьмой вес")]
+		[Display(Name = "Поиск ценностей(П)")]
 		public double? Weight6 { get; set; }
 
 		[Required]
-		[Display(Name = "Восьмой вес")]
+		[Display(Name = "Вектор внимания(П)")]
 		public double? Weight7 { get; set; }
 
 		[Required]
-		[Display(Name = "Девятый вес")]
+		[Display(Name = "Проявление заботы(П)")]
 		public double? Weight8 { get; set; }
 
 		[Required]
-		[Display(Name = "Десятый вес")]
+		[Display(Name = "Ориентация во времени(П)")]
 		public double? Weight9 { get; set; }
 
 		[Required]
-		[Display(Name = "Одиннадцатый вес")]
+		[Display(Name = "Поиск виноватого(Х)")]
 		public double? Weight10 { get; set; }
 
 		[Required]
-		[Display(Name = "Двенадцатый вес")]
+		[Display(Name = "Поиск ценностей(Х)")]
 		public double? Weight11 { get; set; }
 
         [Required]
-        [Display(Name = "Тринадцатый вес")]
+        [Display(Name = "Вектор внимания(Х)")]
         public double? Weight12 { get; set; }
 
         [Required]
-        [Display(Name = "Четырнадцатый вес")]
+        [Display(Name = "Проявление заботы(Х)")]
         public double? Weight13 { get; set; }
 
         [Required]
-        [Display(Name = "Пятнадцатый вес")]
+        [Display(Name = "Ориентация во времени(Х)")]
         public double? Weight14 { get; set; }
-    }
+
+		//Вес сложности варианта мотивации
+		[Required]
+		[Display(Name = "Вес сложности")]
+		public double? hardWeight { get; set; }
+	}
 }

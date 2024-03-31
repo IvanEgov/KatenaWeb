@@ -3,6 +3,7 @@
 <!--TODO: в TestViewComponent передать bool reason=true и action(answer), выбранные пользователем -->
 
 <div>
+	<p><h3>@ViewBag.question.Name</h3></p>
 	@foreach (Guid id in ViewBag.question.AnswerId)
 	{
 		AnswersBase answer = datamanager.Answers.GetAnswerById(id);

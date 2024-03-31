@@ -13,128 +13,90 @@ namespace Katena.Domain.Entities
         [Display(Name ="Действие")]
         public string Action { get; set; }
 
-		/*//Мотив
-        [Required]
-        [Display(Name ="Причина")]
-        public string Reason { get; set; }
-
-        //Тип личности
-        [Required]
-        [Display(Name ="Тип личности")]
-        public string Type { get; set; }
-*/
-		//Тип личности
-/*		[Required]
-		[Display(Name = "Тип личности")]
-		public string Type1 { get; set; }
-
-		[Required]
-		[Display(Name = "Тип личности")]
-		public string Type2 { get; set; }
-
-		[Required]
-		[Display(Name = "Тип личности")]
-		public string Type3 { get; set; }
-
-		[Required]
-		[Display(Name = "Тип личности")]
-		public string Type4 { get; set; }
-
-		[Required]
-		[Display(Name ="Принимает решение")]
-		public string character1 {  get; set; }
-
-		[Required]
-		[Display(Name = "Фокус внимания")]
-		public string character2 { get; set; }
-
-		[Required]
-		[Display(Name = "Процесс принятия решений")]
-		public string character3 { get; set; }
-
-		[Required]
-		[Display(Name = "Ориентирован на")]
-		public string character4 { get; set; }*/
-
 		//Вес
 		[Required]
-        [Display(Name ="Вес")]
+        [Display(Name ="Принять решение(Производитель)")]
         public double? Weight { get; set; }
 
 		//Вес
 		[Required]
-		[Display(Name = "Вес")]
+		[Display(Name = "Фокус внимания(Производитель)")]
 		public double? Weight1 { get; set; }
 
 		//Вес
 		[Required]
-		[Display(Name = "Вес")]
+		[Display(Name = "Процесс принятия решений(Производитель)")]
 		public double? Weight2 { get; set; }
 
 		//Вес
 		[Required]
-		[Display(Name = "Вес")]
+		[Display(Name = "Ориентирован на(Производитель)")]
 		public double? Weight3 { get; set; }
 
 		//Вес
 		[Required]
-		[Display(Name = "Вес")]
+		[Display(Name = "Принять решение(Администратор)")]
 		public double? Weight4 { get; set; }
 
 		//Вес
 		[Required]
-		[Display(Name = "Вес")]
+		[Display(Name = "Фокус внимания(Администратор)")]
 		public double? Weight5 { get; set; }
 
 		//Вес
 		[Required]
-		[Display(Name = "Вес")]
+		[Display(Name = "Процесс принятия решений(Администратор)")]
 		public double? Weight6 { get; set; }
 
 		//Вес
 		[Required]
-		[Display(Name = "Вес")]
+		[Display(Name = "Ориентирован на(Администратор)")]
 		public double? Weight7 { get; set; }
 
 		//Вес
 		[Required]
-		[Display(Name = "Вес")]
+		[Display(Name = "Принять решение(Предприниматель)")]
 		public double? Weight8 { get; set; }
 
 		//Вес
 		[Required]
-		[Display(Name = "Вес")]
+		[Display(Name = "Фокус внимания(Предприниматель)")]
 		public double? Weight9 { get; set; }
 
 		//Вес
 		[Required]
-		[Display(Name = "Вес")]
+		[Display(Name = "Процесс принятия решений(Предприниматель)")]
 		public double? Weight10 { get; set; }
 
 		//Вес
 		[Required]
-		[Display(Name = "Вес")]
+		[Display(Name = "Ориентирован на(Предприниматель)")]
 		public double? Weight11 { get; set; }
 
 		//Вес
 		[Required]
-		[Display(Name = "Вес")]
+		[Display(Name = "Принять решение(Интегратор)")]
 		public double? Weight12 { get; set; }
 
 		//Вес
 		[Required]
-		[Display(Name = "Вес")]
+		[Display(Name = "Фокус внимания(Интегратор)")]
 		public double? Weight13 { get; set; }
 
 		//Вес
 		[Required]
-		[Display(Name = "Вес")]
+		[Display(Name = "Процесс принятия решений(Интегратор)")]
 		public double? Weight14 { get; set; }
 
 		//Вес
 		[Required]
-		[Display(Name = "Вес")]
+		[Display(Name = "Ориентирован на(Интегратор)")]
 		public double? Weight15 { get; set; }
+
+		//Вес сложности варианта ответа
+		[Required]
+		[Display(Name="Вес сложности")]
+		public double? hardWeight { get; set; }
 
 		public List<Guid> reasonsId { get; set; }
 	}
