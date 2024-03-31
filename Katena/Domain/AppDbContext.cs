@@ -97,7 +97,10 @@ namespace Katena.Domain
 						Weight13 = 0,
 						Weight14 = 0,
 						Weight15 = 0,
-						hardWeight = 0,
+						typeWeight1 = 0,
+						typeWeight2 = 0,
+						typeWeight3 = 0,
+						typeWeight4 = 0,
 						reasonsId = new List<Guid>{ new Guid("f70fca13-268b-4e2e-9906-066b455d2081"), new Guid("c2ea7376-d1fb-466d-91b3-a6efb2fb0063"), new Guid("661db458-5cea-431e-b8ba-6a91ed2854a6") }
 					},
 					new AnswersBase 
@@ -120,7 +123,10 @@ namespace Katena.Domain
 						Weight13 = 0,
 						Weight14 = 0,
 						Weight15 = 0,
-						hardWeight = 0,
+						typeWeight1 = 0,
+						typeWeight2 = 0,
+						typeWeight3 = 0,
+						typeWeight4 = 0,
 						reasonsId = new List<Guid>{ new Guid("f70fca13-268b-4e2e-9906-066b455d2081"), new Guid("c2ea7376-d1fb-466d-91b3-a6efb2fb0063"), new Guid("661db458-5cea-431e-b8ba-6a91ed2854a6") }
 					},
 					new AnswersBase 
@@ -143,7 +149,10 @@ namespace Katena.Domain
 						Weight13 = 0,
 						Weight14 = 0,
 						Weight15 = 0,
-						hardWeight = 0,
+						typeWeight1 = 0,
+						typeWeight2 = 0,
+						typeWeight3 = 0,
+						typeWeight4 = 0,
 						reasonsId = new List<Guid>{ new Guid("f70fca13-268b-4e2e-9906-066b455d2081"), new Guid("c2ea7376-d1fb-466d-91b3-a6efb2fb0063"), new Guid("661db458-5cea-431e-b8ba-6a91ed2854a6") }
 
 					},
@@ -167,7 +176,10 @@ namespace Katena.Domain
 						Weight13 = 0,
 						Weight14 = 0,
 						Weight15 = 0,
-						hardWeight = 0,
+						typeWeight1 = 0,
+						typeWeight2 = 0,
+						typeWeight3 = 0,
+						typeWeight4 = 0,
 						reasonsId = new List<Guid>{ new Guid("f70fca13-268b-4e2e-9906-066b455d2081"), new Guid("c2ea7376-d1fb-466d-91b3-a6efb2fb0063"), new Guid("661db458-5cea-431e-b8ba-6a91ed2854a6") }
 					},
                     new AnswersBase
@@ -190,7 +202,10 @@ namespace Katena.Domain
 						Weight13 = 0,
 						Weight14 = 0,
 						Weight15 = 0,
-						hardWeight = 0,
+						typeWeight1 = 0,
+						typeWeight2 = 0,
+						typeWeight3 = 0,
+						typeWeight4 = 0,
 						reasonsId = new List<Guid>{ new Guid("f70fca13-268b-4e2e-9906-066b455d2081"), new Guid("c2ea7376-d1fb-466d-91b3-a6efb2fb0063"), new Guid("661db458-5cea-431e-b8ba-6a91ed2854a6") }
 					},
 					new AnswersBase
@@ -213,7 +228,10 @@ namespace Katena.Domain
 						Weight13 = 0,
 						Weight14 = 0,
 						Weight15 = 0,
-						hardWeight = 0,
+						typeWeight1 = 0,
+						typeWeight2 = 0,
+						typeWeight3 = 0,
+						typeWeight4 = 0,
 						reasonsId = new List<Guid>{ new Guid("f70fca13-268b-4e2e-9906-066b455d2081"), new Guid("c2ea7376-d1fb-466d-91b3-a6efb2fb0063"), new Guid("661db458-5cea-431e-b8ba-6a91ed2854a6") }
 					},
 					new AnswersBase
@@ -237,7 +255,10 @@ namespace Katena.Domain
 						Weight13 = 0,
 						Weight14 = 0,
 						Weight15 = 0,
-						hardWeight = 0,
+						typeWeight1 = 0,
+						typeWeight2 = 0,
+						typeWeight3 = 0,
+						typeWeight4 = 0,
 						reasonsId = new List<Guid>{ new Guid("f70fca13-268b-4e2e-9906-066b455d2081"), new Guid("c2ea7376-d1fb-466d-91b3-a6efb2fb0063"), new Guid("661db458-5cea-431e-b8ba-6a91ed2854a6") }
 					},
 					new AnswersBase
@@ -260,7 +281,10 @@ namespace Katena.Domain
 						Weight13 = 0,
 						Weight14 = 0,
 						Weight15 = 0,
-						hardWeight = 0,
+						typeWeight1 = 0,
+						typeWeight2 = 0,
+						typeWeight3 = 0,
+						typeWeight4 = 0,
 						reasonsId = new List<Guid>{new Guid("f70fca13-268b-4e2e-9906-066b455d2081"), new Guid("c2ea7376-d1fb-466d-91b3-a6efb2fb0063"), new Guid("661db458-5cea-431e-b8ba-6a91ed2854a6") }
 					}
                 ]);
@@ -286,7 +310,9 @@ namespace Katena.Domain
 						Weight12 = 0,
 						Weight13 = 0,
 						Weight14 = 0,
-						hardWeight = 0
+						typeWeight1 = 0,
+						typeWeight2 = 0,
+						typeWeight3 = 0,
 					},
                     new ReasonBase
                     {
@@ -307,7 +333,9 @@ namespace Katena.Domain
 						Weight12 = 0,
 						Weight13 = 0,
 						Weight14 = 0,
-						hardWeight = 0
+						typeWeight1 = 0,
+						typeWeight2 = 0,
+						typeWeight3 = 0,
                     },
                     new ReasonBase
                     {
@@ -328,7 +356,9 @@ namespace Katena.Domain
 						Weight12 = 0,
 						Weight13 = 0,
 						Weight14 = 0,
-						hardWeight = 0
+						typeWeight1 = 0,
+						typeWeight2 = 0,
+						typeWeight3 = 0,
 					}
                 ]);
 

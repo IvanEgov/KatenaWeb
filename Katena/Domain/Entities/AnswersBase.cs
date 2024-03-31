@@ -95,8 +95,23 @@ namespace Katena.Domain.Entities
 
 		//Вес сложности варианта ответа
 		[Required]
-		[Display(Name="Вес сложности")]
-		public double? hardWeight { get; set; }
+		[Display(Name= "Вес производитель")]
+		public double? typeWeight1 { get; set; }
+
+		//Вес сложности варианта ответа
+		[Required]
+		[Display(Name = "Вес администартор")]
+		public double? typeWeight2 { get; set; }
+		
+		//Вес сложности варианта ответа
+		[Required]
+		[Display(Name = "Вес предприниматель")]
+		public double? typeWeight3 { get; set; }
+
+		//Вес сложности варианта ответа
+		[Required]
+		[Display(Name = "Вес интегратор")]
+		public double? typeWeight4 { get; set; }
 
 		public List<Guid> reasonsId { get; set; }
 	}

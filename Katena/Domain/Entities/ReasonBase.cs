@@ -71,9 +71,17 @@ namespace Katena.Domain.Entities
         [Display(Name = "Ориентация во времени(Х)")]
         public double? Weight14 { get; set; }
 
-		//Вес сложности варианта мотивации
+		//Веса сложности варианта мотивации
 		[Required]
-		[Display(Name = "Вес сложности")]
-		public double? hardWeight { get; set; }
+		[Display(Name = "Вес наставкник")]
+		public double? typeWeight1 { get; set; }
+
+		[Required]
+		[Display(Name = "Вес ищущий")]
+		public double? typeWeight2 { get; set; }
+
+		[Required]
+		[Display(Name = "Вес охотник")]
+		public double? typeWeight3 { get; set; }
 	}
 }
