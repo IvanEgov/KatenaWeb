@@ -37,6 +37,22 @@ namespace Katena.Domain.Repositories.EntityFramework
             context.SaveChanges();
         }
 
+        public void AddReason(AnswersBase answer, Guid reasonId)
+        {
+            Guid check = answer.reasonsId.FirstOrDefault(x => x == reasonId);
+
+            if (check == Guid.Empty)
+            {
+                answer.reasonsId.Add(reasonId);
+            }
+            context.SaveChanges();
+        }
+
+        public void DeleteReason(AnswersBase answer, Guid id)
+        {
+            answer.reasonsId.Remove(id);
+            context.SaveChanges();
+        }
         public void DeleteAnswerById(Guid id)
         {
             context.Answers.Remove(new AnswersBase { Id = id });

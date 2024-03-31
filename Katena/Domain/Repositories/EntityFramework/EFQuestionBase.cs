@@ -23,13 +23,14 @@ namespace Katena.Domain.Repositories.EntietyFramework
 			return context.Questions.FirstOrDefault(x => x.Id == id);
 		}
 
-        public AnswersBase GetAnswer(Guid id, string KeyAction, string KeyReason)
+		//Подумать, что делать с весами
+        public AnswersBase GetAnswer(Guid id, string KeyAction)
         {
 			QuestionBase question = GetQuestionById(id);
 			foreach(Guid Id in question.AnswerId)
 			{
 				AnswersBase answer = context.Answers.FirstOrDefault(x => x.Id == Id);
-				if (answer.Action == KeyAction && answer.Reason == KeyReason)
+				if (answer.Action == KeyAction)
 				{
 					return answer;
 				}

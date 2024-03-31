@@ -23,7 +23,7 @@ namespace Katena.Areas.Admin.Controllers
 			if (id == default)
 			{
 				entity = new QuestionBase();
-				entity.Name = "Вопрос еще не задан";
+				entity.Name = string.Empty;
 				entity.AnswerId = new List<Guid> {Guid.Empty};
 				dataManager.QuestionBase.SaveQuestion(entity);
 			}

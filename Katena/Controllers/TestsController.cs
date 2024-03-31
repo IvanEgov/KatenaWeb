@@ -1,4 +1,6 @@
-﻿using Katena.Domain;
+﻿using Humanizer;
+using Katena.Domain;
+using Katena.Domain.Entities;
 using Katena.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -8,6 +10,10 @@ namespace Katena.Controllers
 	public class TestsController : Controller
 	{
 		private readonly DataManager dataManager;
+		
+		//respresents number of page while carrying test (-1 - wellcome page,
+		//[0:number of questions] - question, number of questions> results)
+		private int index;
 
 		public TestsController(DataManager dataManager)
 		{
@@ -18,10 +24,46 @@ namespace Katena.Controllers
 		{
 			if (id != default)
 			{
-				return View("Show", dataManager.Packs.GetPackById(id));
+				QuestionPackBase pack = dataManager.Packs.GetPackById(id);
+				index = -1;
+				ViewBag.pack = pack;
+				ViewBag.index = index;
+				return View();
 			}
 /*			ViewBag.TextField = dataManager.TextFields.GetTextFieldByCodeWord("PageTests");*/
 			return View(dataManager.TextFields.GetTextFieldByCodeWord("PageTests"));
 		}
+
+		[HttpPost]
+		public IActionResult NextQuestion(Guid pack, int index, Guid question, Guid answers, Guid reason, bool checkReason = false)
+		{
+			//TODO: Test logic
+			ViewBag.reason = checkReason;
+			
+			if (!checkReason)
+			{
+				index = index + 1;
+			}
+			else
+			{
+				ViewBag.answer = dataManager.Answers.GetAnswerById(answers);
+			}
+			ViewBag.pack = dataManager.Packs.GetPackById(pack);
+			ViewBag.index = index;
+			return View("Index", dataManager.TextFields.GetTextFieldByCodeWord("PageTests"));
+		}
+
+		//We need this method to get ViewComponent to the reason part (I think, it should work)
+		/*[HttpPost]
+		public IActionResult SwitchToResason(Guid pack, int index, Guid answers)
+		{
+			return ViewComponent("Test", new
+			{
+				pack = dataManager.Packs.GetPackById(pack),
+				index = index,
+				answer = dataManager.Answers.GetAnswerById(answers),
+				reason = true
+			});
+		}*/
 	}
 }

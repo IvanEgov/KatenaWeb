@@ -1,0 +1,108 @@
+﻿@model ReasonBase
+@{
+	string strTitle = "Редактировать запись";
+	ViewBag.Title = strTitle;
+}
+
+<script src="~/js/ckeditor/ckeditor.js"></script>
+
+<div>
+    <h2>@strTitle</h2>
+    <div>
+        <form asp-area="Admin" asp-controller="Reason" asp-action="Edit" method="post" enctype="multipart/form-data">
+            <input type="hidden" asp-for="Id" />
+
+            <div asp-validation-summary="All"></div>
+            <div class="div-box">
+                <label asp-for="Reason"></label>
+                <input asp-for="Reason" />
+                <span asp-validation-for="Reason"></span>
+            </div>
+
+            <div class="div-box">
+                <label asp-for="Weight"></label>
+                <input asp-for="Weight" />
+                <span asp-validation-for="Weight"></span>
+            </div>
+
+            <div class="div-box">
+                <label asp-for="Weight1"></label>
+                <input asp-for="Weight1" />
+                <span asp-validation-for="Weight1"></span>
+            </div>
+
+            <div class="div-box">
+                <label asp-for="Weight2"></label>
+                <input asp-for="Weight2" />
+                <span asp-validation-for="Weight2"></span>
+            </div>
+
+            <div class="div-box">
+                <label asp-for="Weight3"></label>
+                <input asp-for="Weight3" />
+                <span asp-validation-for="Weight3"></span>
+            </div>
+
+            <div class="div-box">
+                <label asp-for="Weight4"></label>
+                <input asp-for="Weight4" />
+                <span asp-validation-for="Weight4"></span>
+            </div>
+
+            <div class="div-box">
+                <label asp-for="Weight5"></label>
+                <input asp-for="Weight5" />
+                <span asp-validation-for="Weight5"></span>
+            </div>
+
+            <div class="div-box">
+                <label asp-for="Weight6"></label>
+                <input asp-for="Weight6" />
+                <span asp-validation-for="Weight6"></span>
+            </div>
+
+            <div class="div-box">
+                <label asp-for="Weight7"></label>
+                <input asp-for="Weight7" />
+                <span asp-validation-for="Weight7"></span>
+            </div>
+
+            <div class="div-box">
+                <label asp-for="Weight8"></label>
+                <input asp-for="Weight8" />
+                <span asp-validation-for="Weight8"></span>
+            </div>
+
+            <div class="div-box">
+                <label asp-for="Weight9"></label>
+                <input asp-for="Weight9" />
+                <span asp-validation-for="Weight9"></span>
+            </div>
+
+            <div class="div-box">
+                <label asp-for="Weight10"></label>
+                <input asp-for="Weight10" />
+                <span asp-validation-for="Weight10"></span>
+            </div>
+
+            <div class="div-box">
+                <label asp-for="Weight11"></label>
+                <input asp-for="Weight11" />
+                <span asp-validation-for="Weight11"></span>
+            </div>
+            <input type="submit" value="Сохранить" />
+        </form>
+
+        <form style="display: inline-block;" id="form-@Model.Id" asp-area="Admin" asp-controller="Reason" asp-action="ReturnHome" method="post">
+            <input type="submit" value="Вернуться на главную страницу">
+        </form>
+    </div>
+</div>
+
+
+<script>
+    window.onload = function () {
+        var newCKEdit = CKEDITOR.replace('@Html.IdFor(x => x.Id)');
+        newCKEdit.updateElement();
+    }
+</script>

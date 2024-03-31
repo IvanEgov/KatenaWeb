@@ -6,7 +6,6 @@ using Katena.Service;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Identity.Client;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,11 +17,12 @@ builder.Services.AddScoped<IQuestionPack, EFQuestionPack>();
 builder.Services.AddScoped<ITextField, EFTextField>();
 builder.Services.AddScoped<IAnswers, EFAnswersBase>();
 builder.Services.AddScoped<IResaults, EFResaultsBase>();
+builder.Services.AddScoped<IReason, EFReasonBase>();
 builder.Services.AddScoped<DataManager>();
 
 //Подключаем контекст БД
-builder.Services.AddDbContext<AppDbContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
-
+builder.Services.AddDbContext<AppDbContext>(x => x.UseMySql(builder.Configuration.GetConnectionString("Default"), ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("Default"))));
+builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 //Настройка Identity системы

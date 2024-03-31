@@ -1,9 +1,61 @@
-﻿@model TextField
+﻿@using Katena.Domain
 @{
 	ViewBag.Title = Model.Title;
 	ViewBag.Text = Model.Text;
 }
 
+@inject DataManager datamanager;
+
 <div>
 	@Html.Raw(Model.Text)
+    <div>
+        @{
+            List<QuestionPackBase> packs = datamanager.Packs.GetAllPacks().ToList();
+        }
+        @if (ViewBag.pack == null)
+        {
+            @foreach (QuestionPackBase entity in packs)
+            {
+                <!--TODO: Разобраться со скриптом(кнопками)-->
+                <div class="container">
+                    <div style="display:flex; position:absolute; left:15%" class="container">
+                        <div class="col-8">
+                            <div id="test" hidden>
+                                @await Component.InvokeAsync("Test", new { pack = entity, index = -1 })
+                            </div>
+                            <div id="welcome">
+                                @await Html.PartialAsync("emptyPartial")
+                                <button class="button" id="startButton" >@entity.Name</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            @foreach(QuestionPackBase entity in packs)
+            {
+                <form style="display: inline-block;" asp-controller="Tests" asp-action="NextQuestion">
+                    <input type="hidden" name="pack" value="@entity">
+                    <input type="hidden" name="index" value="-1">
+                    <input type="submit" value="@entity.Name">
+                </form>
+            }
+            <div id="test">
+                @await Component.InvokeAsync("Test", new { pack = ViewBag.pack, index = ViewBag.index, reason=ViewBag.reason, answer=ViewBag.answer })
+            </div>
+        }
+        
+    </div>
 </div>
+
+<script>
+    document.getElementById("startButton").addEventListener(
+        "click",
+        function () {
+            document.getElementById("welcome").hidden = true;
+            document.getElementById("test").hidden = false;
+        },
+    );
+</script>

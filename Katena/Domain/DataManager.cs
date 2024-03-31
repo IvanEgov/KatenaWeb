@@ -10,14 +10,16 @@ namespace Katena.Domain
         public IAnswers Answers { get; set; }
         public IResaults Resaults { get; set; }
         public ITextField TextFields { get; set; }
+		public IReason Reasons { get; set; }
 		
-		public DataManager(IQuestionPack packs, IQuestion questionBase, IAnswers answers, IResaults resaults, ITextField textFields)
+		public DataManager(IQuestionPack packs, IQuestion questionBase, IAnswers answers, IResaults resaults, ITextField textFields, IReason reasons)
 		{
 			Packs = packs;
 			QuestionBase = questionBase;
 			Answers = answers;
 			Resaults = resaults;
 			TextFields = textFields;
+			Reasons = reasons;
 		}
 	}
 }

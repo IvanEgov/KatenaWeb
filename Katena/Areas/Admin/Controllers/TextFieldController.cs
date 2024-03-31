@@ -2,6 +2,7 @@
 using Katena.Domain.Entities;
 using Katena.Service;
 using Microsoft.AspNetCore.Mvc;
+using SixLabors.ImageSharp;
 
 namespace Katena.Areas.Admin.Controllers
 {
@@ -30,5 +31,8 @@ namespace Katena.Areas.Admin.Controllers
 			}
 			return View(model);
 		}
-	}
+
+        //Работа с изображением
+        
+    }
 }
