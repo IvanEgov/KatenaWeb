@@ -2,6 +2,7 @@
 using Katena.Domain;
 using Katena.Domain.Entities;
 using Katena.Models;
+using Katena.TestProg;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -37,20 +38,52 @@ namespace Katena.Controllers
 		[HttpPost]
 		public IActionResult NextQuestion(Guid pack, int index, Guid question, Guid answers, Guid reason, bool checkReason = false)
 		{
-			//TODO: Test logic
-			ViewBag.reason = checkReason;
+            //TODO: Test logic
+          //  
+
+            ViewBag.reason = checkReason;
 			
 			if (!checkReason)
 			{
 				index = index + 1;
-			}
+				if (reason != new  Guid("00000000-0000-0000-0000-000000000000"))
+				{
+					CalculationLoogiсReason calcReason = new CalculationLoogiсReason(dataManager.Reasons.GetReasonById(reason));
+					calcReason.MassCheckReason();
+					ViewBag.distr_mentorP = calcReason.distr_mentorP;
+                    ViewBag.distr_lookingP  = calcReason.distr_lookingP;
+                    ViewBag.distr_hunterP = calcReason.distr_hunterP;
+                    ViewBag.distr_mentor = calcReason.distr_mentor;
+                    ViewBag.distr_looking = calcReason.distr_looking;
+                    ViewBag.distr_hunter = calcReason.distr_hunter;
+                }
+            }
 			else
 			{
 				ViewBag.answer = dataManager.Answers.GetAnswerById(answers);
-			}
+				if (answers != new Guid("00000000-0000-0000-0000-000000000000"))
+				{
+					CalculationLoogiсAnswer calcAnswer = new CalculationLoogiсAnswer(dataManager.Answers.GetAnswerById(answers));
+					calcAnswer.MassCheckAnswer();
+					ViewBag.style_PP += calcAnswer.style_PP;
+                    ViewBag.style_AA = calcAnswer.style_AA;
+                    ViewBag.style_EE = calcAnswer.style_EE;
+                    ViewBag.style_II = calcAnswer.style_II;
+                    ViewBag.style_P = calcAnswer.style_P;
+                    ViewBag.style_A = calcAnswer.style_A;
+                    ViewBag.style_E = calcAnswer.style_E;
+                    ViewBag.style_I = calcAnswer.style_I;
+                }
+            }
+			
 			ViewBag.pack = dataManager.Packs.GetPackById(pack);
-			ViewBag.index = index;
-			return View("Index", dataManager.TextFields.GetTextFieldByCodeWord("PageTests"));
+			if (ViewBag.index == ViewBag.index.QuestionsIds.Count)
+			{
+				/// Допсиать расчет результатат
+				/// 
+			}
+
+            return View("Index", dataManager.TextFields.GetTextFieldByCodeWord("PageTests"));
 		}
 
 		//We need this method to get ViewComponent to the reason part (I think, it should work)
