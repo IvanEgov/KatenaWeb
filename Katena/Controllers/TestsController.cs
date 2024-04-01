@@ -85,18 +85,5 @@ namespace Katena.Controllers
 
             return View("Index", dataManager.TextFields.GetTextFieldByCodeWord("PageTests"));
 		}
-
-		//We need this method to get ViewComponent to the reason part (I think, it should work)
-		/*[HttpPost]
-		public IActionResult SwitchToResason(Guid pack, int index, Guid answers)
-		{
-			return ViewComponent("Test", new
-			{
-				pack = dataManager.Packs.GetPackById(pack),
-				index = index,
-				answer = dataManager.Answers.GetAnswerById(answers),
-				reason = true
-			});
-		}*/
 	}
 }

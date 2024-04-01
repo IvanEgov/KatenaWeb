@@ -1,14 +1,14 @@
 ﻿
-<div class="container" id="test" style="display:flex; position:absolute;">
-	<div id="Name">
-		<p><h1>Title</h1></p>
-		<p><h1>Description</h1></p>
-	</div>
-	<div id="picture">
-		<img>Image</img>
-	</div>
-	<div>
-		<form style="display: inline-block;" id="form-@ViewBag.pack.Id"  asp-controller="Tests" asp-action="NextQuestion">
+<div class="container" id="test" style="display:flex; position:absolute; left:40%;">
+	<div class="content" id="testInformation">
+		<div id="Name">
+			<h1>@ViewBag.pack.Name</h1>
+			<h1>@ViewBag.pack.Description</h1>
+		</div>
+		<div id="picture" left:50%;>
+			<img>Image</img>
+		</div>
+		<form style="display: inline-block;" id="form-@ViewBag.pack.Id" asp-controller="Tests" asp-action="NextQuestion">
 			<input type="hidden" name="pack" value="@ViewBag.pack.Id">
 			<input type="hidden" name="index" value="-1">
 			<input type="submit" name="bottom" value="Начать тест">
