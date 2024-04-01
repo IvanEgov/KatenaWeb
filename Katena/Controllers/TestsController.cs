@@ -65,7 +65,7 @@ namespace Katena.Controllers
 				{
 					CalculationLoogiсAnswer calcAnswer = new CalculationLoogiсAnswer(dataManager.Answers.GetAnswerById(answers));
 					calcAnswer.MassCheckAnswer();
-					ViewBag.style_PP += calcAnswer.style_PP;
+					ViewBag.style_PP = calcAnswer.style_PP;
                     ViewBag.style_AA = calcAnswer.style_AA;
                     ViewBag.style_EE = calcAnswer.style_EE;
                     ViewBag.style_II = calcAnswer.style_II;
@@ -77,13 +77,19 @@ namespace Katena.Controllers
             }
 			
 			ViewBag.pack = dataManager.Packs.GetPackById(pack);
-			if (ViewBag.index == ViewBag.index.QuestionsIds.Count)
+			ViewBag.index = index;
+			
+			if(ViewBag.pack != null)
 			{
-				/// Допсиать расчет результатат
-				/// 
-			}
+                if (ViewBag.index == ViewBag.pack.QuestionsIds.Count)
+                {
+                    /// Допсиать расчет результатат
+                    /// 
+                }
+            }
+			
 
-            return View("Index", dataManager.TextFields.GetTextFieldByCodeWord("PageTests"));
+			return View("Index", dataManager.TextFields.GetTextFieldByCodeWord("PageTests"));
 		}
 	}
 }
