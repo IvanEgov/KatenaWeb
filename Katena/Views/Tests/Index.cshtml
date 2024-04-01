@@ -45,7 +45,27 @@
                 </form>
             }
             <div id="test">
-                @await Component.InvokeAsync("Test", new { pack = ViewBag.pack, index = ViewBag.index, reason=ViewBag.reason, answer=ViewBag.answer })
+                @await Component.InvokeAsync("Test", new
+                    {
+                        pack = ViewBag.pack,
+                        index = ViewBag.index,
+                        reason = ViewBag.reason,
+                        answer = ViewBag.answer,
+                        distr_mentorP = ViewBag.distr_mentorP,
+                        distr_lookingP = ViewBag.distr_lookingP,
+                        distr_hunterP = ViewBag.distr_hunterP,
+                        distr_mentor = ViewBag.distr_mentor,
+                        distr_looking = ViewBag.distr_looking,
+                        distr_hunter = ViewBag.distr_hunter,
+                        style_PP = ViewBag.style_PP,
+                        style_AA = ViewBag.style_AA,
+                        style_EE = ViewBag.style_EE,
+                        style_II = ViewBag.style_II,
+                        style_P = ViewBag.style_P,
+                        style_A = ViewBag.style_A,
+                        style_E = ViewBag.style_E,
+                        style_I = ViewBag.style_I
+                    })
             </div>
         }
         
