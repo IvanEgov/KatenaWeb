@@ -50,12 +50,12 @@ namespace Katena.Controllers
 				{
 					CalculationLoogiсReason calcReason = new CalculationLoogiсReason(dataManager.Reasons.GetReasonById(reason));
 					calcReason.MassCheckReason();
-					ViewBag.distr_mentorP = calcReason.distr_mentorP;
-                    ViewBag.distr_lookingP  = calcReason.distr_lookingP;
-                    ViewBag.distr_hunterP = calcReason.distr_hunterP;
-                    ViewBag.distr_mentor = calcReason.distr_mentor;
-                    ViewBag.distr_looking = calcReason.distr_looking;
-                    ViewBag.distr_hunter = calcReason.distr_hunter;
+					ViewBag.distr_mentorP += calcReason.distr_mentorP;
+                    ViewBag.distr_lookingP += calcReason.distr_lookingP;
+                    ViewBag.distr_hunterP += calcReason.distr_hunterP;
+                    ViewBag.distr_mentor += calcReason.distr_mentor;
+                    ViewBag.distr_looking += calcReason.distr_looking;
+                    ViewBag.distr_hunter += calcReason.distr_hunter;
                 }
             }
 			else
@@ -65,31 +65,29 @@ namespace Katena.Controllers
 				{
 					CalculationLoogiсAnswer calcAnswer = new CalculationLoogiсAnswer(dataManager.Answers.GetAnswerById(answers));
 					calcAnswer.MassCheckAnswer();
-					ViewBag.style_PP = calcAnswer.style_PP;
-                    ViewBag.style_AA = calcAnswer.style_AA;
-                    ViewBag.style_EE = calcAnswer.style_EE;
-                    ViewBag.style_II = calcAnswer.style_II;
-                    ViewBag.style_P = calcAnswer.style_P;
-                    ViewBag.style_A = calcAnswer.style_A;
-                    ViewBag.style_E = calcAnswer.style_E;
-                    ViewBag.style_I = calcAnswer.style_I;
+					ViewBag.style_PP += calcAnswer.style_PP;
+                    ViewBag.style_AA += calcAnswer.style_AA;
+                    ViewBag.style_EE += calcAnswer.style_EE;
+                    ViewBag.style_II += calcAnswer.style_II;
+                    ViewBag.style_P += calcAnswer.style_P;
+                    ViewBag.style_A += calcAnswer.style_A;
+                    ViewBag.style_E += calcAnswer.style_E;
+                    ViewBag.style_I += calcAnswer.style_I;
                 }
             }
 			
 			ViewBag.pack = dataManager.Packs.GetPackById(pack);
-			ViewBag.index = index;
-			
-			if(ViewBag.pack != null)
+            ViewBag.index = index;
+			if (ViewBag.pack != null)
 			{
-                if (ViewBag.index == ViewBag.pack.QuestionsIds.Count)
-                {
-                    /// Допсиать расчет результатат
-                    /// 
-                }
-            }
-			
-
-			return View("Index", dataManager.TextFields.GetTextFieldByCodeWord("PageTests"));
+				if (ViewBag.index == ViewBag.pack.QuestionsIds.Count)
+				{
+					/// Допсиать расчет результатат
+					/// 
+					var aa = ViewBag.style_PP;
+				}
+			}
+            return View("Index", dataManager.TextFields.GetTextFieldByCodeWord("PageTests"));
 		}
 	}
 }
