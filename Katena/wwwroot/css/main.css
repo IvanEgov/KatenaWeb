@@ -97,7 +97,7 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-  text-transform: lowercase;
+  /*text-transform: lowercase;*/
 }
 
 h2 {
@@ -1190,6 +1190,15 @@ ul.link-list li:first-child {
   font-size: 1.2em;
   letter-spacing: -1px;
   border: none;
+}
+.button-question input {
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 1.2em;
+    border: 1px solid;
+    margin-bottom: 10px;
+    white-space: normal;
+    word-wrap: break-word;
 }
 .button:hover {
   background-image: -moz-linear-gradient(top, #1b9fbe, #118eb1);

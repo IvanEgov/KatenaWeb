@@ -2,8 +2,8 @@
 @inject DataManager datamanager;
 <!--TODO: в TestViewComponent передать bool reason=true и action(answer), выбранные пользователем -->
 
-<div>
-	<p><h3>@ViewBag.question.Name</h3></p>
+<div style="width: 700px; display: inline-block; margin-left:100px;">
+	<p><h2>@ViewBag.question.Name</h2></p>
 	@foreach (Guid id in ViewBag.question.AnswerId)
 	{
 		AnswersBase answer = datamanager.Answers.GetAnswerById(id);
@@ -14,7 +14,9 @@
 			<input type="hidden" name="answers" value="@answer.Id">
 			<input type="hidden" name="reason" value="@Guid.Empty">
 			<input type="hidden" name="checkReason" value="True">
-			<input type="submit" value="@answer.Action">
+			<div class="button-question">
+				<input type="submit" value="@answer.Action">
+			</div>
 		</form>
 	}
 </div>

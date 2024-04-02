@@ -7,7 +7,7 @@
 @inject DataManager datamanager;
 
 <div>
-    <div>
+    <div style="display:flex; justify-content:space-between;">
         @{
             List<QuestionPackBase> packs = datamanager.Packs.GetAllPacks().ToList();
         }
@@ -41,12 +41,12 @@
                 <form style="display: inline-block;" asp-controller="Tests" asp-action="NextQuestion">
                     <input type="hidden" name="pack" value="@entity">
                     <input type="hidden" name="index" value="-1">
-                    <div class="button">
+                    <div class="button" style="margin-bottom: 40px; display:inline-block;">
                         <input type="submit" value="@entity.Name">
                     </div>
                 </form>
             }
-            <div id="test" style="display:flex; left:15%" class="container">
+            <div id="test" style="display:inline-block; left:15%;" class="container">
                 @await Component.InvokeAsync("Test", new
                     {
                         pack = ViewBag.pack,
