@@ -2,8 +2,14 @@
 @{
 	ViewBag.Title = Model.Title;
 	ViewBag.Text = Model.Text;
+	ViewBag.TitleImagePath = Model.TitleImagePath;
 }
 
 <div>
 	@Html.Raw(Model.Text)
+	<div id="picture" style="margin-left:650px;">
+		<div>
+			<img class="img-block" src="~/images/@ViewBag.TitleImagePath" />
+		</div>
+	</div>
 </div>
