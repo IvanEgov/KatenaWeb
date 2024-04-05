@@ -14,6 +14,7 @@ namespace Katena.Domain
 		public DbSet<AnswersBase> Answers { get; set; }
 		public DbSet<ResaultsBase> Resaults { get; set; }
 		public DbSet<ReasonBase> Reasons { get; set; }
+		public DbSet<NewsBase> News { get; set; }
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
@@ -68,11 +69,13 @@ namespace Katena.Domain
 				CodeWord = "PageContacts",
 				Title = "Контакты",
             });
-			modelBuilder.Entity<TextField>().HasData(new TextField
+
+			modelBuilder.Entity<NewsBase>().HasData(new NewsBase
 			{
 				Id = Guid.NewGuid(),
-				CodeWord = "Sidebar",
-				Title = "Новости",
+				Title="Новость дня",
+				Text = "Теперь можно добавлять картинки!",
+				TitleImagePath = ""
 			});
 
 			modelBuilder.Entity<AnswersBase>().HasData(

@@ -11,8 +11,9 @@ namespace Katena.Domain
         public IResaults Resaults { get; set; }
         public ITextField TextFields { get; set; }
 		public IReason Reasons { get; set; }
+		public INews News { get; set; }
 		
-		public DataManager(IQuestionPack packs, IQuestion questionBase, IAnswers answers, IResaults resaults, ITextField textFields, IReason reasons)
+		public DataManager(IQuestionPack packs, IQuestion questionBase, IAnswers answers, IResaults resaults, ITextField textFields, IReason reasons, INews news)
 		{
 			Packs = packs;
 			QuestionBase = questionBase;
@@ -20,6 +21,7 @@ namespace Katena.Domain
 			Resaults = resaults;
 			TextFields = textFields;
 			Reasons = reasons;
+			News = news;
 		}
 	}
 }

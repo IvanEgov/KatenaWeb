@@ -1,3 +1,19 @@
-﻿<div id="sidebar" style="position:absolute; display:flex; left:80%;">
+﻿@* <div class="col-4 col-12-medium">
+    <cache>
+        @(await Component.InvokeAsync<SidebarViewComponent>())
+    </cache>
+</div> *@
+
+@* @model TextField
+@{
+	ViewBag.Title = Model.Title;
+	ViewBag.Text = Model.Text;
+}
+
+<div id="sidebar" style="position:absolute; display:flex; left:80%;">
+	@Html.Raw(Model.Text)
+</div>
+ *@
+<div id="sidebar" style="position:absolute; display:flex; left:80%;">
 	<h1>Новости!</h1>
 </div>
