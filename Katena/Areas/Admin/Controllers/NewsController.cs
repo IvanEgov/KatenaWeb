@@ -1,7 +1,12 @@
-﻿using Katena.Domain;
+﻿using System;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Katena.Domain;
 using Katena.Domain.Entities;
 using Katena.Service;
-using Microsoft.AspNetCore.Mvc;
+
 
 namespace Katena.Areas.Admin.Controllers
 {
@@ -24,7 +29,7 @@ namespace Katena.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Edit(NewsBase model, IFormFile titleImageFile)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid) 
             {
                 if (titleImageFile != null)
                 {

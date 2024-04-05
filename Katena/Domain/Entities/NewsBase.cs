@@ -14,6 +14,6 @@ namespace Katena.Domain.Entities
         public string Text { get; set; } = "Содержание заполняется администратором";
         
         [Display(Name = "Титульная картинка")]
-        public string TitleImagePath { get; set; }
+        public virtual string? TitleImagePath { get; set; }
     }
 }
