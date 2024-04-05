@@ -13,5 +13,8 @@ namespace Katena.Domain.Entities
 
 		[Display(Name = "Cодержание страницы")]
 		public override string Text { get; set; } = "Содержание заполняется администратором";
-	}
+        
+		[Display(Name = "Титульная картинка")]
+        public virtual string? TitleImagePath { get; set; }
+    }
 }
