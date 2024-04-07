@@ -1,4 +1,5 @@
 ﻿@using Katena.Domain
+
 @{
 	ViewBag.Title = Model.Title;
 	ViewBag.Text = Model.Text;
@@ -53,7 +54,7 @@
                         index = ViewBag.index,
                         reason = ViewBag.reason,
                         answer = ViewBag.answer,
-                        distr_mentorP = ViewBag.distr_mentorP,
+                       /* distr_mentorP = ViewBag.distr_mentorP,
                         distr_lookingP = ViewBag.distr_lookingP,
                         distr_hunterP = ViewBag.distr_hunterP,
                         distr_mentor = ViewBag.distr_mentor,
@@ -66,12 +67,24 @@
                         style_P = ViewBag.style_P,
                         style_A = ViewBag.style_A,
                         style_E = ViewBag.style_E,
-                        style_I = ViewBag.style_I
+                        style_I = ViewBag.style_I*/
                     })
+                
             </div>
+           /* <div id="styl" style="position:absolute; display:flex; left:45%;">
+                @{
+                    if (@ViewBag.style_PP != null)
+                    {
+                        <h1>style_PP @ViewBag.style_PP</h1>
+                        
+                    }
+                    
+                }
+            </div>*/
         }
         
     </div>
+   
 </div>
 
 <script>

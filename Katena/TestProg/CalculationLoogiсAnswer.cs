@@ -46,14 +46,14 @@ namespace Katena.TestProg
             CheckAnswer();
         }
 
-         public double? style_P;//стиль управления процесами Производитель
-         public double?  style_A;//стиль управления процесами Администратор
-         public double? style_E;//стиль управления процесами Предпренематель
-         public double? style_I;//стиль управления процесами Интегратор
-        public double? style_PP;
-        public double? style_AA;
-        public double? style_EE;
-        public double? style_II;
+         public double? style_P = 0;//стиль управления процесами Производитель
+         public double?  style_A = 0;//стиль управления процесами Администратор
+         public double? style_E = 0;//стиль управления процесами Предпренематель
+         public double? style_I = 0;//стиль управления процесами Интегратор
+        public int style_PP = 0;
+        public int style_AA = 0;
+        public int style_EE = 0;
+        public int style_II = 0;
         private void CheckAnswer()
         {
             for (int i = 0; i < AnswerCheckP.Length; i++)

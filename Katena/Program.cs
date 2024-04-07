@@ -47,6 +47,10 @@ builder.Services.ConfigureApplicationCookie(options =>
 	options.SlidingExpiration = true;
 });
 
+// Настройка сесии 
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession();
+
 //Настраиваем политику авторизации для Admin area
 builder.Services.AddAuthorization(x =>
 {
@@ -80,6 +84,7 @@ app.UseRouting();
 
 //Подключаем аутентификацию и авторизацию
 app.UseCookiePolicy();
+app.UseSession();   // добавляем middleware для работы с сессиями
 app.UseAuthentication();
 app.UseAuthorization();
 

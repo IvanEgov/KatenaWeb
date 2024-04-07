@@ -6,9 +6,9 @@ namespace Katena.TestProg
     {
         readonly ReasonBase reason; // мотив с весами 
 
-        private double?[] ReasonCheckZ = { 0, 1, 2, 3, 4 };// Масив весов мотивов З
-        private double?[] ReasonCheckP = { 0, 1, 2, 3, 4 };// Масив весов мотивов P
-        private double?[] ReasonCheckX = { 0, 1, 2, 3, 4 };// Масив весов мотивов Х
+        private int?[] ReasonCheckZ = { 0, 0, 0, 0, 0 };// Масив весов мотивов З
+        private int?[] ReasonCheckP = { 0, 0, 0, 0, 0 };// Масив весов мотивов P
+        private int?[] ReasonCheckX = { 0, 0, 0, 0, 0 };// Масив весов мотивов Х
 
         public CalculationLoogiсReason(ReasonBase reason)
         {
@@ -40,12 +40,12 @@ namespace Katena.TestProg
         }
 
         
-        public double? distr_mentor; //гендерному дистрибутиву наставник
-        public double? distr_looking;//гендерному дистрибутиву Ищущий
-        public double? distr_hunter; //гендерному дистрибутиву охотник
-        public double? distr_mentorP;
-        public double? distr_lookingP;
-        public double? distr_hunterP;
+        public int? distr_mentor = 0; //гендерному дистрибутиву наставник
+        public int? distr_looking = 0;//гендерному дистрибутиву Ищущий
+        public int? distr_hunter = 0; //гендерному дистрибутиву охотник
+        public int distr_mentorP = 0;
+        public int distr_lookingP = 0;
+        public int distr_hunterP = 0;
         private void CheckReason()
         {
             for (int i = 0; i < ReasonCheckZ.Length; i++)
