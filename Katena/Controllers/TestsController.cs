@@ -6,6 +6,7 @@ using Katena.TestProg;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using MySqlX.XDevAPI.Common;
 using Org.BouncyCastle.Crypto;
 using System.Diagnostics;
 using System.Net;
@@ -282,32 +283,42 @@ namespace Katena.Controllers
                        if(max_styl == style_pp_s)
                         {
                             //вывод Производитель
+                            ViewBag.calculateStyle = "Производитель";
+
                         }
                        else if (max_styl== style_aa_s) 
                         {
                             //вывод  Админестратор
+                            ViewBag.calculateStyle = "Админестратор";
                         }
                        else if(max_styl == style_ee_s)
                         {
                             //вывод  Предприниматель
+                            ViewBag.calculateType = "Предприниматель";
                         }
                        else
                         {
                             //Вывод  Интегратор
+                            ViewBag.calculateType = "Интегратор";
                         }
 
                        if(max_distr == distr_mentorP_s)
                         {
                             //вывод дистрикта наставник/заботлива
+                            ViewBag.calculateType = "Наставник";
                         }
                        else if(max_distr == distr_lookingP_s)
                         {
                             //вывод дистрикта ищущий/познающая
+                            ViewBag.calculateType = "Ищущий";
                         }
                        else
                         {
                             //вывод дистрикта охотник/хранительница
+                            ViewBag.calculateType = "Охотник";
                         }
+
+                       /// Дописать удаление куки сесии++++++++++++++++++++++++++++++++++++++++++++++++++++
                     }
 
 

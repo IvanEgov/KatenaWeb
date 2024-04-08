@@ -40,16 +40,18 @@ namespace Katena.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Edit(QuestionPackBase model, IFormFile titleImageFile)
         {
-            if (titleImageFile != null)
-            {
-                model.TitleImagePath = titleImageFile.FileName;
-                using (var stream = new FileStream(Path.Combine(hostingEnvironment.WebRootPath, "images/", titleImageFile.FileName), FileMode.Create))
-                {
-                    titleImageFile.CopyTo(stream);
-                }
-            }
-            dataManager.Packs.SavePack(model);
-            return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
+			
+				if (titleImageFile != null)
+				{
+					model.TitleImagePath = titleImageFile.FileName;
+					using (var stream = new FileStream(Path.Combine(hostingEnvironment.WebRootPath, "images/", titleImageFile.FileName), FileMode.Create))
+					{
+						titleImageFile.CopyTo(stream);
+					}
+				}
+				dataManager.Packs.SavePack(model);
+				return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
+			
         }
 
         [HttpPost]
