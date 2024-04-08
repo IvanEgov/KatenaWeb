@@ -7,16 +7,22 @@
         <ul class="small-image-list">
             @foreach (NewsBase entity in Model)
             {
-                <li>
-                    <img src="~/images/@entity.TitleImagePath" alt="" class="left" />
-                    <h4>
-                        @entity.Title
-                    </h4>
-                    <div class="content">
-                        @Html.Raw(entity.Text)
-                    </div>
-                    
-                </li>
+                <div >
+                    <li>
+                        <div id="pict">
+                            <img src="~/images/@entity.TitleImagePath" alt="" class="left" />
+                        </div>
+                        <div id="name">
+                        <h4>
+                                @entity.Title
+                        </h4>
+                        </div>
+                        <div id="text">
+                                @Html.Raw(entity.Text)
+                        </div>
+                    </li>
+                </div>
+                
             }
         </ul>
 	</section>
