@@ -17,8 +17,7 @@ namespace Katena.Components
 			this._dataManager = dataManager;
 		}
 
-		public IViewComponentResult Invoke(QuestionPackBase pack, int index = -1, bool reason = false, AnswersBase? answer = null, double? distr_mentorP = 0, double? distr_lookingP = 0, double? distr_hunterP = 0, double? distr_mentor = 0, double? distr_looking = 0,
-            double? distr_hunter = 0, double? style_PP = 0, double? style_AA = 0, double? style_EE = 0, double? style_II = 0, double? style_P = 0, double? style_A = 0, double? style_E = 0, double? style_I = 0)
+		public IViewComponentResult Invoke(QuestionPackBase pack, int index = -1, bool reason = false, AnswersBase? answer = null)
         {
             ViewBag.pack = pack;
             ViewBag.index = index;

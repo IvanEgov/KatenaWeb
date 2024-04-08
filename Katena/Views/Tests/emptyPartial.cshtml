@@ -1,3 +1,14 @@
-﻿<div style="display:flex; position:absolute; left:50%;">
+﻿@model TextField
+@{
+	ViewBag.Title = Model.Title;
+	ViewBag.Text = Model.Text;
+	ViewBag.TitleImagePath = Model.TitleImagePath;
+}
+<div style="display:flex; position:absolute; left:50%;">
 	<h1>@Html.Raw(Model.Text)</h1>
+</div>
+<div id="picture" style="margin-left:650px;">
+	<div>
+		<img class="img-block" src="~/images/@ViewBag.TitleImagePath" />
+	</div>
 </div>
