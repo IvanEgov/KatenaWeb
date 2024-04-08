@@ -1500,7 +1500,7 @@ ul.link-list li:first-child {
     position: absolute;
     width: 20px;
     height: 30px;
-    background: url("../sass/images/mobileUI-site-nav-opener-bg.svg");
+    background: url("../images/mobileUI-site-nav-opener-bg.svg");
     top: 16px;
     left: 19px;
   }
