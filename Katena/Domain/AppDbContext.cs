@@ -316,6 +316,13 @@ namespace Katena.Domain
 						typeWeight1 = 0,
 						typeWeight2 = 0,
 						typeWeight3 = 0,
+						typeWeight4 = 0,
+						typeWeight5 = 0,
+						typeWeight6 = 0,
+						typeWeight7 = 0,
+						typeWeight8 = 0,
+						typeWeight9 = 0,
+						typeWeight10 = 0
 					},
                     new ReasonBase
                     {
@@ -339,6 +346,13 @@ namespace Katena.Domain
 						typeWeight1 = 0,
 						typeWeight2 = 0,
 						typeWeight3 = 0,
+						typeWeight4 = 0,
+						typeWeight5 = 0,
+						typeWeight6 = 0,
+						typeWeight7 = 0,
+						typeWeight8 = 0,
+						typeWeight9 = 0,
+						typeWeight10 = 0
                     },
                     new ReasonBase
                     {
@@ -362,7 +376,14 @@ namespace Katena.Domain
 						typeWeight1 = 0,
 						typeWeight2 = 0,
 						typeWeight3 = 0,
-					}
+                        typeWeight4 = 0,
+                        typeWeight5 = 0,
+                        typeWeight6 = 0,
+                        typeWeight7 = 0,
+                        typeWeight8 = 0,
+                        typeWeight9 = 0,
+                        typeWeight10 = 0
+                    }
                 ]);
 
 			modelBuilder.Entity<QuestionBase>().HasData(

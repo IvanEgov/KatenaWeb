@@ -83,5 +83,33 @@ namespace Katena.Domain.Entities
 		[Required]
 		[Display(Name = "Вес охотник")]
 		public int? typeWeight3 { get; set; }
-	}
+
+        [Required]
+        [Display(Name = "Дополнительный вес 1")]
+        public int? typeWeight4 { get; set; }
+
+        [Required]
+        [Display(Name = "Дополнительный вес 2")]
+        public int? typeWeight5 { get; set; }
+
+        [Required]
+        [Display(Name = "Дополнительный вес 3")]
+        public int? typeWeight6 { get; set; }
+
+        [Required]
+        [Display(Name = "Дополнительный вес 4")]
+        public int? typeWeight7 { get; set; }
+
+        [Required]
+        [Display(Name = "Дополнительный вес 5")]
+        public int? typeWeight8 { get; set; }
+
+        [Required]
+        [Display(Name = "Дополнительный вес 6")]
+        public int? typeWeight9 { get; set; }
+
+        [Required]
+        [Display(Name = "Дополнительный вес 7")]
+        public int? typeWeight10 { get; set; }
+    }
 }
