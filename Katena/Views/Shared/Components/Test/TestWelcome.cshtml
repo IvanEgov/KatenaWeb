@@ -1,20 +1,22 @@
 ﻿@using Katena.Domain
 @inject DataManager datamanager;
 <div style="display:flex;">
-	<div id="Name" style="display:inline-block;">
+	<div id="Name" style="display:inline-block; width:500px;">
 		<h2>@ViewBag.pack.Name</h2>
 		<h2>@ViewBag.pack.Description</h2>
-		<div id="picture" style="margin-left:650px;">
-			<div>
+	</div>
+	<div id="testwelcome" style="display:inline-block; margin-left:100px; margin-top:50px;">
+		<div id="picture">
+			<div style="margin-bottom:20px;">
 				<img class="img-block" src="~/images/@ViewBag.pack.TitleImagePath" />
 			</div>
 		</div>
+		<form style="display: inline-block;" id="form-@ViewBag.pack.Id" asp-controller="Tests" asp-action="NextQuestion">
+			<input type="hidden" name="pack" value="@ViewBag.pack.Id">
+			<input type="hidden" name="index" value="-1">
+			<div class="button">
+				<input type="submit" name="bottom" value="Начать тест">
+			</div>
+		</form>
 	</div>
-	<form style="display: inline-block;" id="form-@ViewBag.pack.Id" asp-controller="Tests" asp-action="NextQuestion">
-		<input type="hidden" name="pack" value="@ViewBag.pack.Id">
-		<input type="hidden" name="index" value="-1">
-		<div class="button">
-			<input type="submit" name="bottom" value="Начать тест">
-		</div>
-	</form>
 </div>
