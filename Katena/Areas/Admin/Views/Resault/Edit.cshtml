@@ -35,9 +35,7 @@
             </div>
             <input type="submit" value="Сохранить" />
         </form>
-        <form style="display: inline-block;" id="form-@Model.Id" asp-area="Admin" asp-controller="Answer" asp-action="ReturnHome" method="post">
-            <input type="submit" value="Вернуться на главную страницу">
-        </form>
+        <button onclick="window.history.back()">Вернуться к тесту</button>
     </div>
 </div>
 

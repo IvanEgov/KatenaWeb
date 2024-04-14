@@ -161,10 +161,7 @@
             </div>
             <input type="submit" value="Сохранить" />
         </form>
-
-        <form style="display: inline-block;" id="form-@Model.Id" asp-area="Admin" asp-controller="Reason" asp-action="ReturnHome" method="post">
-            <input type="submit" value="Вернуться на главную страницу">
-        </form>
+        <button onclick="window.history.back()">Вернуться к действию</button>
     </div>
 </div>
 
