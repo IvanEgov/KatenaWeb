@@ -69,6 +69,8 @@ namespace Katena.TestProg
             {
                 distr_mentor = distr_mentor;// + answers.typeWeight2 * 2 + answers.typeWeight3;
             }
+            //убераем погрешность
+            distr_mentor = distr_mentor + reason.typeWeight2 + reason.typeWeight3 + reason.typeWeight4;  
 
             if (distr_looking > distr_mentor && distr_looking > distr_hunter)
             {
@@ -78,6 +80,7 @@ namespace Katena.TestProg
             {
                 distr_looking = distr_looking;// + (answers.typeWeight1 + answers.typeWeight2) * 2 + answers.typeWeight3 + answers.typeWeight4;
             }
+            distr_looking = distr_looking + reason.typeWeight1 + reason.typeWeight4 + reason.typeWeight2;
 
             if (distr_hunter > distr_mentor && distr_hunter > distr_looking)
             {
@@ -87,8 +90,8 @@ namespace Katena.TestProg
             {
                 distr_hunter = distr_hunter;// + answers.typeWeight4 * 2 + answers.typeWeight1;
             }
+            distr_hunter = distr_hunter + reason.typeWeight1 + reason.typeWeight3 + reason.typeWeight4;
 
-            
 
             if (distr_mentor >= distr_looking && distr_mentor >= distr_hunter)
             {
