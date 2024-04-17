@@ -2,12 +2,12 @@
 
 @if (Model?.Any() == true)
 {
-	<section>
+ 	<section>
 		<h2>Новости</h2>
         <ul class="small-image-list">
             @foreach (NewsBase entity in Model)
             {
-                <div >
+                <div class="news">
                     <li>
                         <div id="pict">
                             <img src="~/images/@entity.TitleImagePath" alt="" class="left" />

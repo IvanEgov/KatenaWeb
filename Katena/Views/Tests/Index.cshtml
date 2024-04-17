@@ -7,7 +7,7 @@
 
 @inject DataManager datamanager;
 
-<div>
+@* <div> *@
     <div style="display:flex; justify-content:space-between;">
         @{
             List<QuestionPackBase> packs = datamanager.Packs.GetAllPacks().ToList();
@@ -82,7 +82,7 @@
         
     </div>
    
-</div>
+@* </div> *@
 
 <script>
     document.getElementById("startButton").addEventListener(

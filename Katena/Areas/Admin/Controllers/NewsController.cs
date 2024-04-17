@@ -27,7 +27,7 @@ namespace Katena.Areas.Admin.Controllers
             return View(entity);
         }
         [HttpPost]
-        public IActionResult Edit(NewsBase model, IFormFile titleImageFile)
+        public IActionResult Edit(NewsBase model, IFormFile? titleImageFile)
         {
             if (ModelState.IsValid) 
             {

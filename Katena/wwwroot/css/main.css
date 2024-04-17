@@ -1145,6 +1145,7 @@ article.blog-post .blog-post-image {
 ul.small-image-list li {
   overflow: hidden;
   margin-bottom: 1.5em;
+  /*display:grid;*/
 }
 ul.small-image-list li img {
   width: 78px;
@@ -1665,3 +1666,10 @@ ul.link-list li:first-child {
     margin: 0 auto;
 }
 
+.news{
+    
+}
+
+.news:hover{
+
+}
