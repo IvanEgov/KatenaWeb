@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Katena.Migrations
 {
     /// <inheritdoc />
-    public partial class _intial : Migration
+    public partial class migrationWithWeights : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -24,26 +24,26 @@ namespace Katena.Migrations
                     Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     Action = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Weight = table.Column<double>(type: "double", nullable: false),
-                    Weight1 = table.Column<double>(type: "double", nullable: false),
-                    Weight2 = table.Column<double>(type: "double", nullable: false),
-                    Weight3 = table.Column<double>(type: "double", nullable: false),
-                    Weight4 = table.Column<double>(type: "double", nullable: false),
-                    Weight5 = table.Column<double>(type: "double", nullable: false),
-                    Weight6 = table.Column<double>(type: "double", nullable: false),
-                    Weight7 = table.Column<double>(type: "double", nullable: false),
-                    Weight8 = table.Column<double>(type: "double", nullable: false),
-                    Weight9 = table.Column<double>(type: "double", nullable: false),
-                    Weight10 = table.Column<double>(type: "double", nullable: false),
-                    Weight11 = table.Column<double>(type: "double", nullable: false),
-                    Weight12 = table.Column<double>(type: "double", nullable: false),
-                    Weight13 = table.Column<double>(type: "double", nullable: false),
-                    Weight14 = table.Column<double>(type: "double", nullable: false),
-                    Weight15 = table.Column<double>(type: "double", nullable: false),
-                    typeWeight1 = table.Column<double>(type: "double", nullable: false),
-                    typeWeight2 = table.Column<double>(type: "double", nullable: false),
-                    typeWeight3 = table.Column<double>(type: "double", nullable: false),
-                    typeWeight4 = table.Column<double>(type: "double", nullable: false),
+                    Weight = table.Column<int>(type: "int", nullable: false),
+                    Weight1 = table.Column<int>(type: "int", nullable: false),
+                    Weight2 = table.Column<int>(type: "int", nullable: false),
+                    Weight3 = table.Column<int>(type: "int", nullable: false),
+                    Weight4 = table.Column<int>(type: "int", nullable: false),
+                    Weight5 = table.Column<int>(type: "int", nullable: false),
+                    Weight6 = table.Column<int>(type: "int", nullable: false),
+                    Weight7 = table.Column<int>(type: "int", nullable: false),
+                    Weight8 = table.Column<int>(type: "int", nullable: false),
+                    Weight9 = table.Column<int>(type: "int", nullable: false),
+                    Weight10 = table.Column<int>(type: "int", nullable: false),
+                    Weight11 = table.Column<int>(type: "int", nullable: false),
+                    Weight12 = table.Column<int>(type: "int", nullable: false),
+                    Weight13 = table.Column<int>(type: "int", nullable: false),
+                    Weight14 = table.Column<int>(type: "int", nullable: false),
+                    Weight15 = table.Column<int>(type: "int", nullable: false),
+                    typeWeight1 = table.Column<int>(type: "int", nullable: false),
+                    typeWeight2 = table.Column<int>(type: "int", nullable: false),
+                    typeWeight3 = table.Column<int>(type: "int", nullable: false),
+                    typeWeight4 = table.Column<int>(type: "int", nullable: false),
                     reasonsId = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
@@ -108,6 +108,24 @@ namespace Katena.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "News",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
+                    Title = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Text = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    TitleImagePath = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_News", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "Packs",
                 columns: table => new
                 {
@@ -118,9 +136,11 @@ namespace Katena.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Instructions = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    QuestionsIds = table.Column<string>(type: "longtext", nullable: false)
+                    TitleImagePath = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    ResaultsId = table.Column<string>(type: "longtext", nullable: false)
+                    QuestionsIds = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    ResaultsId = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
@@ -152,24 +172,31 @@ namespace Katena.Migrations
                     Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     Reason = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Weight = table.Column<double>(type: "double", nullable: false),
-                    Weight1 = table.Column<double>(type: "double", nullable: false),
-                    Weight2 = table.Column<double>(type: "double", nullable: false),
-                    Weight3 = table.Column<double>(type: "double", nullable: false),
-                    Weight4 = table.Column<double>(type: "double", nullable: false),
-                    Weight5 = table.Column<double>(type: "double", nullable: false),
-                    Weight6 = table.Column<double>(type: "double", nullable: false),
-                    Weight7 = table.Column<double>(type: "double", nullable: false),
-                    Weight8 = table.Column<double>(type: "double", nullable: false),
-                    Weight9 = table.Column<double>(type: "double", nullable: false),
-                    Weight10 = table.Column<double>(type: "double", nullable: false),
-                    Weight11 = table.Column<double>(type: "double", nullable: false),
-                    Weight12 = table.Column<double>(type: "double", nullable: false),
-                    Weight13 = table.Column<double>(type: "double", nullable: false),
-                    Weight14 = table.Column<double>(type: "double", nullable: false),
-                    typeWeight1 = table.Column<double>(type: "double", nullable: false),
-                    typeWeight2 = table.Column<double>(type: "double", nullable: false),
-                    typeWeight3 = table.Column<double>(type: "double", nullable: false)
+                    Weight = table.Column<int>(type: "int", nullable: false),
+                    Weight1 = table.Column<int>(type: "int", nullable: false),
+                    Weight2 = table.Column<int>(type: "int", nullable: false),
+                    Weight3 = table.Column<int>(type: "int", nullable: false),
+                    Weight4 = table.Column<int>(type: "int", nullable: false),
+                    Weight5 = table.Column<int>(type: "int", nullable: false),
+                    Weight6 = table.Column<int>(type: "int", nullable: false),
+                    Weight7 = table.Column<int>(type: "int", nullable: false),
+                    Weight8 = table.Column<int>(type: "int", nullable: false),
+                    Weight9 = table.Column<int>(type: "int", nullable: false),
+                    Weight10 = table.Column<int>(type: "int", nullable: false),
+                    Weight11 = table.Column<int>(type: "int", nullable: false),
+                    Weight12 = table.Column<int>(type: "int", nullable: false),
+                    Weight13 = table.Column<int>(type: "int", nullable: false),
+                    Weight14 = table.Column<int>(type: "int", nullable: false),
+                    typeWeight1 = table.Column<int>(type: "int", nullable: false),
+                    typeWeight2 = table.Column<int>(type: "int", nullable: false),
+                    typeWeight3 = table.Column<int>(type: "int", nullable: false),
+                    typeWeight4 = table.Column<int>(type: "int", nullable: false),
+                    typeWeight5 = table.Column<int>(type: "int", nullable: false),
+                    typeWeight6 = table.Column<int>(type: "int", nullable: false),
+                    typeWeight7 = table.Column<int>(type: "int", nullable: false),
+                    typeWeight8 = table.Column<int>(type: "int", nullable: false),
+                    typeWeight9 = table.Column<int>(type: "int", nullable: false),
+                    typeWeight10 = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -207,6 +234,8 @@ namespace Katena.Migrations
                     Title = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Text = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    TitleImagePath = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     DateAdded = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
@@ -348,14 +377,14 @@ namespace Katena.Migrations
                 columns: new[] { "Id", "Action", "Weight", "Weight1", "Weight10", "Weight11", "Weight12", "Weight13", "Weight14", "Weight15", "Weight2", "Weight3", "Weight4", "Weight5", "Weight6", "Weight7", "Weight8", "Weight9", "reasonsId", "typeWeight1", "typeWeight2", "typeWeight3", "typeWeight4" },
                 values: new object[,]
                 {
-                    { new Guid("01786293-47e4-407e-9c24-66591aa9e099"), "Постараюсь, не привлекая внимания окружающих, удалить пятно подручными средствами, а если это не получится, продолжу веселиться вместе с пятном", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]", 0.0, 0.0, 0.0, 0.0 },
-                    { new Guid("03b5d02c-aa7f-47b9-8b80-4bd984ce7906"), "Начну искать телефоны снабжающих организаций и выяснять причину отключения", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]", 0.0, 0.0, 0.0, 0.0 },
-                    { new Guid("4c748f11-614c-4da8-97f2-eec8dc8ef989"), "Поеду домой переодеваться, а потом вернусь на вечеринку", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]", 0.0, 0.0, 0.0, 0.0 },
-                    { new Guid("5ed2804d-bc6a-4296-b9a0-cf720271a18a"), "Накричу на него, заставлю извиняться", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]", 0.0, 0.0, 0.0, 0.0 },
-                    { new Guid("6afb4539-1a1c-44d5-ab1e-c8b29fbc2ddc"), "Настроение испорчено, уеду с вечеринки", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]", 0.0, 0.0, 0.0, 0.0 },
-                    { new Guid("9102a12d-2845-4224-939e-913ab96524ab"), "Плевать, не велика проблема", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]", 0.0, 0.0, 0.0, 0.0 },
-                    { new Guid("cb83a258-54e1-4b2a-a58f-24fe95a357bc"), "Начну звонить соседям и выяснять у всех ли отключили", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]", 0.0, 0.0, 0.0, 0.0 },
-                    { new Guid("e82f0359-d505-49f3-9292-f3877a9a844f"), "Это знак свыше, можно никуда сегодня не ходить, пойду спать дальше", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]", 0.0, 0.0, 0.0, 0.0 }
+                    { new Guid("01786293-47e4-407e-9c24-66591aa9e099"), "Постараюсь, не привлекая внимания окружающих, удалить пятно подручными средствами, а если это не получится, продолжу веселиться вместе с пятном", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]", 0, 0, 0, 0 },
+                    { new Guid("03b5d02c-aa7f-47b9-8b80-4bd984ce7906"), "Начну искать телефоны снабжающих организаций и выяснять причину отключения", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]", 0, 0, 0, 0 },
+                    { new Guid("4c748f11-614c-4da8-97f2-eec8dc8ef989"), "Поеду домой переодеваться, а потом вернусь на вечеринку", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]", 0, 0, 0, 0 },
+                    { new Guid("5ed2804d-bc6a-4296-b9a0-cf720271a18a"), "Накричу на него, заставлю извиняться", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]", 0, 0, 0, 0 },
+                    { new Guid("6afb4539-1a1c-44d5-ab1e-c8b29fbc2ddc"), "Настроение испорчено, уеду с вечеринки", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]", 0, 0, 0, 0 },
+                    { new Guid("9102a12d-2845-4224-939e-913ab96524ab"), "Плевать, не велика проблема", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]", 0, 0, 0, 0 },
+                    { new Guid("cb83a258-54e1-4b2a-a58f-24fe95a357bc"), "Начну звонить соседям и выяснять у всех ли отключили", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]", 0, 0, 0, 0 },
+                    { new Guid("e82f0359-d505-49f3-9292-f3877a9a844f"), "Это знак свыше, можно никуда сегодня не ходить, пойду спать дальше", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]", 0, 0, 0, 0 }
                 });
 
             migrationBuilder.InsertData(
@@ -366,12 +395,17 @@ namespace Katena.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "ef37a3c2-7c96-4405-a971-7abcc91ac333", 0, "6504bc54-646c-43ff-a842-79937a940e6d", "my@email.com", true, false, null, "MY@EMAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAEJz7CX+p5EFDu+b3tWR6XC+Zh3hdtDSco5CYtTrmzcZwmnFcD6ATHKyepwOiUUCAFQ==", null, false, "", false, "admin" });
+                values: new object[] { "ef37a3c2-7c96-4405-a971-7abcc91ac333", 0, "dda247ba-d134-4950-b304-3072d9fc4f74", "my@email.com", true, false, null, "MY@EMAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAEI/SpM8Wz3tfp16Hq6+D2/yhpkFZuBlYKtY4YE6P4tPWARQO4tIFRwhrSw0fu7xx3w==", null, false, "", false, "admin" });
+
+            migrationBuilder.InsertData(
+                table: "News",
+                columns: new[] { "Id", "Text", "Title", "TitleImagePath" },
+                values: new object[] { new Guid("3148ff34-f198-4674-9083-23eb2d1e51be"), "Теперь можно добавлять картинки!", "Новость дня", "" });
 
             migrationBuilder.InsertData(
                 table: "Packs",
-                columns: new[] { "Id", "Description", "Instructions", "Name", "QuestionsIds", "ResaultsId" },
-                values: new object[] { new Guid("0ed29a4b-ea2d-426d-add2-22753c7bf8cb"), "A good test to get to know yourself", "Think", "Personality test", "[\"0dc6e45e-ba94-4f54-a59e-53caa1eea73c\",\"2b8ad992-d4aa-4c3f-a65e-aaf036260807\"]", "[\"959f07c9-5bd1-402c-9d29-c0cd3b5f954d\",\"cbed2409-359d-4425-9505-7434d6f75d79\",\"6662ee7c-34c8-4811-b3f3-ada6618dc47b\"]" });
+                columns: new[] { "Id", "Description", "Instructions", "Name", "QuestionsIds", "ResaultsId", "TitleImagePath" },
+                values: new object[] { new Guid("0ed29a4b-ea2d-426d-add2-22753c7bf8cb"), "A good test to get to know yourself", "Think", "Personality test", "[\"0dc6e45e-ba94-4f54-a59e-53caa1eea73c\",\"2b8ad992-d4aa-4c3f-a65e-aaf036260807\"]", "[\"959f07c9-5bd1-402c-9d29-c0cd3b5f954d\",\"cbed2409-359d-4425-9505-7434d6f75d79\",\"6662ee7c-34c8-4811-b3f3-ada6618dc47b\"]", null });
 
             migrationBuilder.InsertData(
                 table: "Questions",
@@ -384,12 +418,12 @@ namespace Katena.Migrations
 
             migrationBuilder.InsertData(
                 table: "Reasons",
-                columns: new[] { "Id", "Reason", "Weight", "Weight1", "Weight10", "Weight11", "Weight12", "Weight13", "Weight14", "Weight2", "Weight3", "Weight4", "Weight5", "Weight6", "Weight7", "Weight8", "Weight9", "typeWeight1", "typeWeight2", "typeWeight3" },
+                columns: new[] { "Id", "Reason", "Weight", "Weight1", "Weight10", "Weight11", "Weight12", "Weight13", "Weight14", "Weight2", "Weight3", "Weight4", "Weight5", "Weight6", "Weight7", "Weight8", "Weight9", "typeWeight1", "typeWeight10", "typeWeight2", "typeWeight3", "typeWeight4", "typeWeight5", "typeWeight6", "typeWeight7", "typeWeight8", "typeWeight9" },
                 values: new object[,]
                 {
-                    { new Guid("661db458-5cea-431e-b8ba-6a91ed2854a6"), "Third reason", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 },
-                    { new Guid("c2ea7376-d1fb-466d-91b3-a6efb2fb0063"), "Second reason", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 },
-                    { new Guid("f70fca13-268b-4e2e-9906-066b455d2081"), "Reason", 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 }
+                    { new Guid("661db458-5cea-431e-b8ba-6a91ed2854a6"), "Third reason", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                    { new Guid("c2ea7376-d1fb-466d-91b3-a6efb2fb0063"), "Second reason", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                    { new Guid("f70fca13-268b-4e2e-9906-066b455d2081"), "Reason", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
                 });
 
             migrationBuilder.InsertData(
@@ -404,14 +438,13 @@ namespace Katena.Migrations
 
             migrationBuilder.InsertData(
                 table: "TextFields",
-                columns: new[] { "Id", "CodeWord", "DateAdded", "Text", "Title" },
+                columns: new[] { "Id", "CodeWord", "DateAdded", "Text", "Title", "TitleImagePath" },
                 values: new object[,]
                 {
-                    { new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"), "PageAbilities", new DateTime(2024, 4, 1, 17, 46, 32, 714, DateTimeKind.Utc).AddTicks(2029), "Содержание заполняется администратором", "Возможности" },
-                    { new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"), "PageIndex", new DateTime(2024, 4, 1, 17, 46, 32, 714, DateTimeKind.Utc).AddTicks(1231), "Содержание заполняется администратором", "Главная" },
-                    { new Guid("6960a39d-32b7-4742-ad74-d08dcee79cbe"), "Sidebar", new DateTime(2024, 4, 1, 17, 46, 32, 714, DateTimeKind.Utc).AddTicks(2373), "Содержание заполняется администратором", "Новости" },
-                    { new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"), "PageTests", new DateTime(2024, 4, 1, 17, 46, 32, 714, DateTimeKind.Utc).AddTicks(1829), "Содержание заполняется администратором", "Тесты" },
-                    { new Guid("8eae0a63-8f52-4160-a14e-b405e431a13b"), "PageContacts", new DateTime(2024, 4, 1, 17, 46, 32, 714, DateTimeKind.Utc).AddTicks(2098), "Содержание заполняется администратором", "Контакты" }
+                    { new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"), "PageAbilities", new DateTime(2024, 4, 10, 11, 8, 44, 613, DateTimeKind.Utc).AddTicks(4267), "Содержание заполняется администратором", "Возможности", null },
+                    { new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"), "PageIndex", new DateTime(2024, 4, 10, 11, 8, 44, 613, DateTimeKind.Utc).AddTicks(4217), "Содержание заполняется администратором", "Главная", null },
+                    { new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"), "PageTests", new DateTime(2024, 4, 10, 11, 8, 44, 613, DateTimeKind.Utc).AddTicks(4252), "Содержание заполняется администратором", "Тесты", null },
+                    { new Guid("8eae0a63-8f52-4160-a14e-b405e431a13b"), "PageContacts", new DateTime(2024, 4, 10, 11, 8, 44, 613, DateTimeKind.Utc).AddTicks(4280), "Содержание заполняется администратором", "Контакты", null }
                 });
 
             migrationBuilder.InsertData(
@@ -477,6 +510,9 @@ namespace Katena.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "News");
 
             migrationBuilder.DropTable(
                 name: "Packs");
