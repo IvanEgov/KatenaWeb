@@ -1,0 +1,29 @@
+﻿@model IQueryable<NewsBase>
+
+@if (Model?.Any() == true)
+{
+ 	<section>
+		<h2>Новости</h2>
+        <ul class="small-image-list">
+            @foreach (NewsBase entity in Model)
+            {
+                <div class="news">
+                    <li>
+                        <div id="pict">
+                            <img src="~/images/@entity.TitleImagePath" alt="" class="left" />
+                        </div>
+                        <div id="name">
+                        <h4>
+                                @entity.Title
+                        </h4>
+                        </div>
+                        <div id="text">
+                                @Html.Raw(entity.Text)
+                        </div>
+                    </li>
+                </div>
+                
+            }
+        </ul>
+	</section>
+}

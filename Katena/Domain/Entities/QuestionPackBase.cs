@@ -19,8 +19,11 @@ namespace Katena.Domain.Entities
 		[Display(Name = "Инструкции выполнения")]
 		public string Instructions { get; set; }
 
-        public List<Guid> QuestionsIds { get; set; }
+        [Display(Name = "Картинка теста")]
+        public virtual string? TitleImagePath { get; set; }
 
-        public List <Guid> ResaultsId { get; set; }
+        public List<Guid>? QuestionsIds { get; set; }
+
+        public List <Guid>? ResaultsId { get; set; }
 	}
 }

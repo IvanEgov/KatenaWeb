@@ -32,73 +32,89 @@ namespace Katena.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<double?>("Weight")
+                    b.Property<int?>("Weight")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
 
-                    b.Property<double?>("Weight1")
+                    b.Property<int?>("Weight1")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
 
-                    b.Property<double?>("Weight10")
+                    b.Property<int?>("Weight10")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
 
-                    b.Property<double?>("Weight11")
+                    b.Property<int?>("Weight11")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
 
-                    b.Property<double?>("Weight12")
+                    b.Property<int?>("Weight12")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
 
-                    b.Property<double?>("Weight13")
+                    b.Property<int?>("Weight13")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
 
-                    b.Property<double?>("Weight14")
+                    b.Property<int?>("Weight14")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
 
-                    b.Property<double?>("Weight15")
+                    b.Property<int?>("Weight15")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
 
-                    b.Property<double?>("Weight2")
+                    b.Property<int?>("Weight2")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
 
-                    b.Property<double?>("Weight3")
+                    b.Property<int?>("Weight3")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
 
-                    b.Property<double?>("Weight4")
+                    b.Property<int?>("Weight4")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
 
-                    b.Property<double?>("Weight5")
+                    b.Property<int?>("Weight5")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
 
-                    b.Property<double?>("Weight6")
+                    b.Property<int?>("Weight6")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
 
-                    b.Property<double?>("Weight7")
+                    b.Property<int?>("Weight7")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
 
-                    b.Property<double?>("Weight8")
+                    b.Property<int?>("Weight8")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
 
-                    b.Property<double?>("Weight9")
+                    b.Property<int?>("Weight9")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
 
                     b.Property<string>("reasonsId")
                         .IsRequired()
                         .HasColumnType("longtext");
+
+                    b.Property<int?>("typeWeight1")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("typeWeight2")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("typeWeight3")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("typeWeight4")
+                        .IsRequired()
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -109,177 +125,240 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("cb83a258-54e1-4b2a-a58f-24fe95a357bc"),
                             Action = "Начну звонить соседям и выяснять у всех ли отключили",
-                            Weight = 0.0,
-                            Weight1 = 0.0,
-                            Weight10 = 0.0,
-                            Weight11 = 0.0,
-                            Weight12 = 0.0,
-                            Weight13 = 0.0,
-                            Weight14 = 0.0,
-                            Weight15 = 0.0,
-                            Weight2 = 0.0,
-                            Weight3 = 0.0,
-                            Weight4 = 0.0,
-                            Weight5 = 0.0,
-                            Weight6 = 0.0,
-                            Weight7 = 0.0,
-                            Weight8 = 0.0,
-                            Weight9 = 0.0,
-                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]"
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight15 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
                         },
                         new
                         {
                             Id = new Guid("03b5d02c-aa7f-47b9-8b80-4bd984ce7906"),
                             Action = "Начну искать телефоны снабжающих организаций и выяснять причину отключения",
-                            Weight = 0.0,
-                            Weight1 = 0.0,
-                            Weight10 = 0.0,
-                            Weight11 = 0.0,
-                            Weight12 = 0.0,
-                            Weight13 = 0.0,
-                            Weight14 = 0.0,
-                            Weight15 = 0.0,
-                            Weight2 = 0.0,
-                            Weight3 = 0.0,
-                            Weight4 = 0.0,
-                            Weight5 = 0.0,
-                            Weight6 = 0.0,
-                            Weight7 = 0.0,
-                            Weight8 = 0.0,
-                            Weight9 = 0.0,
-                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]"
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight15 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
                         },
                         new
                         {
                             Id = new Guid("9102a12d-2845-4224-939e-913ab96524ab"),
                             Action = "Плевать, не велика проблема",
-                            Weight = 0.0,
-                            Weight1 = 0.0,
-                            Weight10 = 0.0,
-                            Weight11 = 0.0,
-                            Weight12 = 0.0,
-                            Weight13 = 0.0,
-                            Weight14 = 0.0,
-                            Weight15 = 0.0,
-                            Weight2 = 0.0,
-                            Weight3 = 0.0,
-                            Weight4 = 0.0,
-                            Weight5 = 0.0,
-                            Weight6 = 0.0,
-                            Weight7 = 0.0,
-                            Weight8 = 0.0,
-                            Weight9 = 0.0,
-                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]"
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight15 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
                         },
                         new
                         {
                             Id = new Guid("e82f0359-d505-49f3-9292-f3877a9a844f"),
                             Action = "Это знак свыше, можно никуда сегодня не ходить, пойду спать дальше",
-                            Weight = 0.0,
-                            Weight1 = 0.0,
-                            Weight10 = 0.0,
-                            Weight11 = 0.0,
-                            Weight12 = 0.0,
-                            Weight13 = 0.0,
-                            Weight14 = 0.0,
-                            Weight15 = 0.0,
-                            Weight2 = 0.0,
-                            Weight3 = 0.0,
-                            Weight4 = 0.0,
-                            Weight5 = 0.0,
-                            Weight6 = 0.0,
-                            Weight7 = 0.0,
-                            Weight8 = 0.0,
-                            Weight9 = 0.0,
-                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]"
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight15 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
                         },
                         new
                         {
                             Id = new Guid("5ed2804d-bc6a-4296-b9a0-cf720271a18a"),
                             Action = "Накричу на него, заставлю извиняться",
-                            Weight = 0.0,
-                            Weight1 = 0.0,
-                            Weight10 = 0.0,
-                            Weight11 = 0.0,
-                            Weight12 = 0.0,
-                            Weight13 = 0.0,
-                            Weight14 = 0.0,
-                            Weight15 = 0.0,
-                            Weight2 = 0.0,
-                            Weight3 = 0.0,
-                            Weight4 = 0.0,
-                            Weight5 = 0.0,
-                            Weight6 = 0.0,
-                            Weight7 = 0.0,
-                            Weight8 = 0.0,
-                            Weight9 = 0.0,
-                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]"
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight15 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
                         },
                         new
                         {
                             Id = new Guid("4c748f11-614c-4da8-97f2-eec8dc8ef989"),
                             Action = "Поеду домой переодеваться, а потом вернусь на вечеринку",
-                            Weight = 0.0,
-                            Weight1 = 0.0,
-                            Weight10 = 0.0,
-                            Weight11 = 0.0,
-                            Weight12 = 0.0,
-                            Weight13 = 0.0,
-                            Weight14 = 0.0,
-                            Weight15 = 0.0,
-                            Weight2 = 0.0,
-                            Weight3 = 0.0,
-                            Weight4 = 0.0,
-                            Weight5 = 0.0,
-                            Weight6 = 0.0,
-                            Weight7 = 0.0,
-                            Weight8 = 0.0,
-                            Weight9 = 0.0,
-                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]"
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight15 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
                         },
                         new
                         {
                             Id = new Guid("01786293-47e4-407e-9c24-66591aa9e099"),
                             Action = "Постараюсь, не привлекая внимания окружающих, удалить пятно подручными средствами, а если это не получится, продолжу веселиться вместе с пятном",
-                            Weight = 0.0,
-                            Weight1 = 0.0,
-                            Weight10 = 0.0,
-                            Weight11 = 0.0,
-                            Weight12 = 0.0,
-                            Weight13 = 0.0,
-                            Weight14 = 0.0,
-                            Weight15 = 0.0,
-                            Weight2 = 0.0,
-                            Weight3 = 0.0,
-                            Weight4 = 0.0,
-                            Weight5 = 0.0,
-                            Weight6 = 0.0,
-                            Weight7 = 0.0,
-                            Weight8 = 0.0,
-                            Weight9 = 0.0,
-                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]"
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight15 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
                         },
                         new
                         {
                             Id = new Guid("6afb4539-1a1c-44d5-ab1e-c8b29fbc2ddc"),
                             Action = "Настроение испорчено, уеду с вечеринки",
-                            Weight = 0.0,
-                            Weight1 = 0.0,
-                            Weight10 = 0.0,
-                            Weight11 = 0.0,
-                            Weight12 = 0.0,
-                            Weight13 = 0.0,
-                            Weight14 = 0.0,
-                            Weight15 = 0.0,
-                            Weight2 = 0.0,
-                            Weight3 = 0.0,
-                            Weight4 = 0.0,
-                            Weight5 = 0.0,
-                            Weight6 = 0.0,
-                            Weight7 = 0.0,
-                            Weight8 = 0.0,
-                            Weight9 = 0.0,
-                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]"
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight15 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        });
+                });
+
+            modelBuilder.Entity("Katena.Domain.Entities.NewsBase", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("TitleImagePath")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("News");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("c8be520d-1590-41b1-9376-7a8d2c05f797"),
+                            Text = "Теперь можно добавлять картинки!",
+                            Title = "Новость дня",
+                            TitleImagePath = ""
                         });
                 });
 
@@ -335,11 +414,12 @@ namespace Katena.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("QuestionsIds")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("ResaultsId")
-                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("TitleImagePath")
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
@@ -368,65 +448,105 @@ namespace Katena.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<double?>("Weight")
+                    b.Property<int?>("Weight")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
 
-                    b.Property<double?>("Weight1")
+                    b.Property<int?>("Weight1")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
 
-                    b.Property<double?>("Weight10")
+                    b.Property<int?>("Weight10")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
 
-                    b.Property<double?>("Weight11")
+                    b.Property<int?>("Weight11")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
 
-                    b.Property<double?>("Weight12")
+                    b.Property<int?>("Weight12")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
 
-                    b.Property<double?>("Weight13")
+                    b.Property<int?>("Weight13")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
 
-                    b.Property<double?>("Weight14")
+                    b.Property<int?>("Weight14")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
 
-                    b.Property<double?>("Weight2")
+                    b.Property<int?>("Weight2")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
 
-                    b.Property<double?>("Weight3")
+                    b.Property<int?>("Weight3")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
 
-                    b.Property<double?>("Weight4")
+                    b.Property<int?>("Weight4")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
 
-                    b.Property<double?>("Weight5")
+                    b.Property<int?>("Weight5")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
 
-                    b.Property<double?>("Weight6")
+                    b.Property<int?>("Weight6")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
 
-                    b.Property<double?>("Weight7")
+                    b.Property<int?>("Weight7")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
 
-                    b.Property<double?>("Weight8")
+                    b.Property<int?>("Weight8")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
 
-                    b.Property<double?>("Weight9")
+                    b.Property<int?>("Weight9")
                         .IsRequired()
-                        .HasColumnType("double");
+                        .HasColumnType("int");
+
+                    b.Property<int?>("typeWeight1")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("typeWeight10")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("typeWeight2")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("typeWeight3")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("typeWeight4")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("typeWeight5")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("typeWeight6")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("typeWeight7")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("typeWeight8")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("typeWeight9")
+                        .IsRequired()
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -437,61 +557,91 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("f70fca13-268b-4e2e-9906-066b455d2081"),
                             Reason = "Reason",
-                            Weight = 0.0,
-                            Weight1 = 0.0,
-                            Weight10 = 0.0,
-                            Weight11 = 0.0,
-                            Weight12 = 0.0,
-                            Weight13 = 0.0,
-                            Weight14 = 0.0,
-                            Weight2 = 0.0,
-                            Weight3 = 0.0,
-                            Weight4 = 0.0,
-                            Weight5 = 0.0,
-                            Weight6 = 0.0,
-                            Weight7 = 0.0,
-                            Weight8 = 0.0,
-                            Weight9 = 0.0
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 0,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
                         },
                         new
                         {
                             Id = new Guid("c2ea7376-d1fb-466d-91b3-a6efb2fb0063"),
                             Reason = "Second reason",
-                            Weight = 0.0,
-                            Weight1 = 0.0,
-                            Weight10 = 0.0,
-                            Weight11 = 0.0,
-                            Weight12 = 0.0,
-                            Weight13 = 0.0,
-                            Weight14 = 0.0,
-                            Weight2 = 0.0,
-                            Weight3 = 0.0,
-                            Weight4 = 0.0,
-                            Weight5 = 0.0,
-                            Weight6 = 0.0,
-                            Weight7 = 0.0,
-                            Weight8 = 0.0,
-                            Weight9 = 0.0
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 0,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
                         },
                         new
                         {
                             Id = new Guid("661db458-5cea-431e-b8ba-6a91ed2854a6"),
                             Reason = "Third reason",
-                            Weight = 0.0,
-                            Weight1 = 0.0,
-                            Weight10 = 0.0,
-                            Weight11 = 0.0,
-                            Weight12 = 0.0,
-                            Weight13 = 0.0,
-                            Weight14 = 0.0,
-                            Weight2 = 0.0,
-                            Weight3 = 0.0,
-                            Weight4 = 0.0,
-                            Weight5 = 0.0,
-                            Weight6 = 0.0,
-                            Weight7 = 0.0,
-                            Weight8 = 0.0,
-                            Weight9 = 0.0
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 0,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
                         });
                 });
 
@@ -569,6 +719,9 @@ namespace Katena.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("TitleImagePath")
+                        .HasColumnType("longtext");
+
                     b.HasKey("Id");
 
                     b.ToTable("TextFields");
@@ -578,7 +731,7 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"),
                             CodeWord = "PageIndex",
-                            DateAdded = new DateTime(2024, 3, 28, 17, 34, 57, 168, DateTimeKind.Utc).AddTicks(7949),
+                            DateAdded = new DateTime(2024, 4, 18, 6, 33, 3, 859, DateTimeKind.Utc).AddTicks(1779),
                             Text = "Содержание заполняется администратором",
                             Title = "Главная"
                         },
@@ -586,7 +739,7 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"),
                             CodeWord = "PageTests",
-                            DateAdded = new DateTime(2024, 3, 28, 17, 34, 57, 168, DateTimeKind.Utc).AddTicks(7981),
+                            DateAdded = new DateTime(2024, 4, 18, 6, 33, 3, 859, DateTimeKind.Utc).AddTicks(1826),
                             Text = "Содержание заполняется администратором",
                             Title = "Тесты"
                         },
@@ -594,7 +747,7 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"),
                             CodeWord = "PageAbilities",
-                            DateAdded = new DateTime(2024, 3, 28, 17, 34, 57, 168, DateTimeKind.Utc).AddTicks(7995),
+                            DateAdded = new DateTime(2024, 4, 18, 6, 33, 3, 859, DateTimeKind.Utc).AddTicks(1854),
                             Text = "Содержание заполняется администратором",
                             Title = "Возможности"
                         },
@@ -602,17 +755,9 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("8eae0a63-8f52-4160-a14e-b405e431a13b"),
                             CodeWord = "PageContacts",
-                            DateAdded = new DateTime(2024, 3, 28, 17, 34, 57, 168, DateTimeKind.Utc).AddTicks(8009),
+                            DateAdded = new DateTime(2024, 4, 18, 6, 33, 3, 859, DateTimeKind.Utc).AddTicks(1882),
                             Text = "Содержание заполняется администратором",
                             Title = "Контакты"
-                        },
-                        new
-                        {
-                            Id = new Guid("d313fdae-197c-4be8-8b5b-0e0505817b54"),
-                            CodeWord = "Sidebar",
-                            DateAdded = new DateTime(2024, 3, 28, 17, 34, 57, 168, DateTimeKind.Utc).AddTicks(8022),
-                            Text = "Содержание заполняется администратором",
-                            Title = "Новости"
                         });
                 });
 
@@ -743,13 +888,13 @@ namespace Katena.Migrations
                         {
                             Id = "ef37a3c2-7c96-4405-a971-7abcc91ac333",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7148132b-89e4-4e3e-861c-ec39d75a1b73",
+                            ConcurrencyStamp = "26f0f05e-1e9e-4589-8ef8-a8e5d1bd7a4f",
                             Email = "my@email.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "MY@EMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAELe0QMwHomec9EjqjHaQkqk1GNohVNnykRKMr37BMOB9lcMaOuPIx8eWZm7bxNxlLw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEEzwAQ4G2V8xJKDX1dOpm0N6qIYXfw0gueWFP9EUYHv87L1AnJnRc1MjiaHwMu97vA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,

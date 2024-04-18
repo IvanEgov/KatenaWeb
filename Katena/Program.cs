@@ -18,6 +18,7 @@ builder.Services.AddScoped<ITextField, EFTextField>();
 builder.Services.AddScoped<IAnswers, EFAnswersBase>();
 builder.Services.AddScoped<IResaults, EFResaultsBase>();
 builder.Services.AddScoped<IReason, EFReasonBase>();
+builder.Services.AddScoped<INews, EFNewsBase>();
 builder.Services.AddScoped<DataManager>();
 
 //Подключаем контекст БД
@@ -45,6 +46,10 @@ builder.Services.ConfigureApplicationCookie(options =>
 	options.AccessDeniedPath = "/account/accessdenied";
 	options.SlidingExpiration = true;
 });
+
+// Настройка сесии 
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession();
 
 //Настраиваем политику авторизации для Admin area
 builder.Services.AddAuthorization(x =>
@@ -79,6 +84,7 @@ app.UseRouting();
 
 //Подключаем аутентификацию и авторизацию
 app.UseCookiePolicy();
+app.UseSession();   // добавляем middleware для работы с сессиями
 app.UseAuthentication();
 app.UseAuthorization();
 

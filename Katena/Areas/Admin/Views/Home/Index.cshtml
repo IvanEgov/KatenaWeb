@@ -26,6 +26,27 @@
                 </div>
             }
         </div>
+        
+    </div>
+
+    <div>
+        <h3>Редактировать новостную ленту</h3>
+        <div class="div-box">
+            <a asp-area="Admin" asp-controller="News" asp-action="Edit" asp-route-id="">Добавить новость</a>
+        </div>
+        @foreach (NewsBase entity in Model.News.GetNews())
+        {
+            <div>
+                @entity.Title
+                |
+                <button><a asp-area="Admin" asp-controller="News" asp-action="Edit" asp-route-id="@entity.Id">редактировать</a></button>
+                |
+                <form style="display: inline-block;" id="form-@entity.Id" asp-area="Admin" asp-controller="News" asp-action="Delete" method="post">
+                    <input type="hidden" name="id" value="@entity.Id">
+                    <button><a href="#" onclick="document.getElementById('form-@entity.Id').submit();">удалить</a></button>
+                </form>
+            </div>
+        }
     </div>
     <div class="div-box">
         <h3>Редактировать страницы сайта</h3>

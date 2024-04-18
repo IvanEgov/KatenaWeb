@@ -16,7 +16,7 @@
             <div asp-validation-summary="All"></div>
             <div class="div-box">
                 <label asp-for="Action"></label>
-                <input asp-for="Action"/>
+                <textarea asp-for="Action"></textarea>
                 <span asp-validation-for="Action"></span>
             </div>
             <div class="div-box">
@@ -99,6 +99,26 @@
                 <input asp-for="Weight15">
                 <span asp-validation-for="Weight15"></span>
             </div>
+            <div class="div-box">
+                <label asp-for="typeWeight1"></label>
+                <input asp-for="typeWeight1">
+                <span asp-validation-for="typeWeight1"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="typeWeight2"></label>
+                <input asp-for="typeWeight2">
+                <span asp-validation-for="typeWeight2"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="typeWeight3"></label>
+                <input asp-for="typeWeight3">
+                <span asp-validation-for="typeWeight3"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="typeWeight4"></label>
+                <input asp-for="typeWeight4">
+                <span asp-validation-for="typeWeight4"></span>
+            </div>
             <input type="submit" value="Сохранить" />
         </form>
 
@@ -130,10 +150,7 @@
                 </div>
             }
         </div>
-
-        <form style="display: inline-block;" id="form-@Model.Id" asp-area="Admin" asp-controller="Answer" asp-action="ReturnHome" method="post">
-            <input type="submit" value="Вернуться на главную страницу">
-        </form>
+        <button onclick="window.history.back()">Вернуться к вопросу</button>
     </div>
 </div>
 

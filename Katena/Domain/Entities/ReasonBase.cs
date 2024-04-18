@@ -12,63 +12,104 @@ namespace Katena.Domain.Entities
 
 		//Веса
 		[Required]
-		[Display(Name = "Первый вес")]
-		public double? Weight { get; set; }
+		[Display(Name = "Поиск виноватого(З)")]
+		public int? Weight { get; set; }
 
 		[Required]
-		[Display(Name = "Второй вес")]
-		public double? Weight1 { get; set; }
+		[Display(Name = "Поиск ценностей(З)")]
+		public int? Weight1 { get; set; }
 
 		[Required]
-		[Display(Name = "Третий вес")]
-		public double? Weight2 { get; set; }
+		[Display(Name = "Вектор внимания(З)")]
+		public int? Weight2 { get; set; }
 
 		[Required]
-		[Display(Name = "Четвертый вес")]
-		public double? Weight3 { get; set; }
+		[Display(Name = "Проявление заботы(З)")]
+		public int? Weight3 { get; set; }
 
 		[Required]
-		[Display(Name = "Пятый вес")]
-		public double? Weight4 { get; set; }
+		[Display(Name = "Ориентация во времени(З)")]
+		public int? Weight4 { get; set; }
 
 		[Required]
-		[Display(Name = "Шестой вес")]
-		public double? Weight5 { get; set; }
+		[Display(Name = "Поиск виноватого(П)")]
+		public int? Weight5 { get; set; }
 
 		[Required]
-		[Display(Name = "Седьмой вес")]
-		public double? Weight6 { get; set; }
+		[Display(Name = "Поиск ценностей(П)")]
+		public int? Weight6 { get; set; }
 
 		[Required]
-		[Display(Name = "Восьмой вес")]
-		public double? Weight7 { get; set; }
+		[Display(Name = "Вектор внимания(П)")]
+		public int? Weight7 { get; set; }
 
 		[Required]
-		[Display(Name = "Девятый вес")]
-		public double? Weight8 { get; set; }
+		[Display(Name = "Проявление заботы(П)")]
+		public int? Weight8 { get; set; }
 
 		[Required]
-		[Display(Name = "Десятый вес")]
-		public double? Weight9 { get; set; }
+		[Display(Name = "Ориентация во времени(П)")]
+		public int? Weight9 { get; set; }
 
 		[Required]
-		[Display(Name = "Одиннадцатый вес")]
-		public double? Weight10 { get; set; }
+		[Display(Name = "Поиск виноватого(Х)")]
+		public int? Weight10 { get; set; }
 
 		[Required]
-		[Display(Name = "Двенадцатый вес")]
-		public double? Weight11 { get; set; }
+		[Display(Name = "Поиск ценностей(Х)")]
+		public int? Weight11 { get; set; }
 
         [Required]
-        [Display(Name = "Тринадцатый вес")]
-        public double? Weight12 { get; set; }
+        [Display(Name = "Вектор внимания(Х)")]
+        public int? Weight12 { get; set; }
 
         [Required]
-        [Display(Name = "Четырнадцатый вес")]
-        public double? Weight13 { get; set; }
+        [Display(Name = "Проявление заботы(Х)")]
+        public int? Weight13 { get; set; }
 
         [Required]
-        [Display(Name = "Пятнадцатый вес")]
-        public double? Weight14 { get; set; }
+        [Display(Name = "Ориентация во времени(Х)")]
+        public int? Weight14 { get; set; }
+
+		//Веса сложности варианта мотивации
+		[Required]
+		[Display(Name = "Вес наставкник")]
+		public int? typeWeight1 { get; set; }
+
+		[Required]
+		[Display(Name = "Вес ищущий")]
+		public int? typeWeight2 { get; set; }
+
+		[Required]
+		[Display(Name = "Вес охотник")]
+		public int? typeWeight3 { get; set; }
+
+        [Required]
+        [Display(Name = "Дополнительный вес 1")]
+        public int? typeWeight4 { get; set; }
+
+        [Required]
+        [Display(Name = "Дополнительный вес 2")]
+        public int? typeWeight5 { get; set; }
+
+        [Required]
+        [Display(Name = "Дополнительный вес 3")]
+        public int? typeWeight6 { get; set; }
+
+        [Required]
+        [Display(Name = "Дополнительный вес 4")]
+        public int? typeWeight7 { get; set; }
+
+        [Required]
+        [Display(Name = "Дополнительный вес 5")]
+        public int? typeWeight8 { get; set; }
+
+        [Required]
+        [Display(Name = "Дополнительный вес 6")]
+        public int? typeWeight9 { get; set; }
+
+        [Required]
+        [Display(Name = "Дополнительный вес 7")]
+        public int? typeWeight10 { get; set; }
     }
 }

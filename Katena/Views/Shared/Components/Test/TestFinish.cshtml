@@ -1,1 +1,14 @@
-﻿Finish
+﻿ @using Katena.Domain
+@inject DataManager datamanager;
+
+<div style="width: 700px; display: inline-block; margin-left:100px;">
+	<p><h2>Прохождение теста завершено! Здесь вы можете увидеть результат!</h2></p>
+	@foreach (Guid id in ViewBag.pack.ResaultsId)
+	{
+		ResaultsBase result = datamanager.Resaults.GetResaultById(id);
+		if(ViewBag.calculateType == result.Type && ViewBag.calculateStyle == result.Style)
+		{
+			<p><h1>@result.Resault</h1></p>
+		}
+	}
+</div>
