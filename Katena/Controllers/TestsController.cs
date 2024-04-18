@@ -289,7 +289,7 @@ namespace Katena.Controllers
                        else if (max_styl== style_aa_s) 
                         {
                             //вывод  Админестратор
-                            ViewBag.calculateStyle = "Админестратор";
+                            ViewBag.calculateStyle = "Администратор";
                         }
                        else if(max_styl == style_ee_s)
                         {
@@ -304,6 +304,7 @@ namespace Katena.Controllers
 
                        if(max_distr == distr_mentorP_s)
                         {
+                         //   if(ViewBag.)
                             //вывод дистрикта наставник/заботлива
                             ViewBag.calculateType = "Наставник";
                         }
