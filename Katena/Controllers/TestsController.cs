@@ -43,13 +43,23 @@ namespace Katena.Controllers
 			return View(dataManager.TextFields.GetTextFieldByCodeWord("PageTests"));
 		}
 
+        /*[HttpPost]
+        public IActionResult SetGender(string gender, Guid id)
+        {
+            ViewBag.gender = gender;
+			QuestionPackBase pack = dataManager.Packs.GetPackById(id);
+			ViewBag.pack = pack;
+			ViewBag.index = -1;
+			return View("Index");
+		}*/
+
 		[HttpPost]
-		public IActionResult NextQuestion(Guid pack, int index, Guid question, Guid answers, Guid reason, bool checkReason = false)
+		public IActionResult NextQuestion(Guid pack, int index, Guid question, Guid answers, Guid reason, string gender, bool checkReason = false)
 		{
             //TODO: Test logic
-          //  
-
+            //  
             ViewBag.reason = checkReason;
+            ViewBag.gender = gender;
 			
 			if (!checkReason)
 			{

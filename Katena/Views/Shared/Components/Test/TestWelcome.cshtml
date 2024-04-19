@@ -11,11 +11,39 @@
 				<img class="img-block" src="~/images/@ViewBag.pack.TitleImagePath" />
 			</div>
 		</div>
+		@* <div id="Gender" style="display: inline-block;">
+			<h2>Каков ваш пол?</h2>
+			<div id="genderButton">
+				<form id="setGender" asp-controller="Tests" asp-action="SetGender">
+					<input type="hidden" name="gender" value="Мужчина">
+					<input type="hidden" name="id" value="@ViewBag.pack.Id">
+					<div class="button">
+						<input type="submit" name="male-button" value="Мужчина">
+					</div>
+				</form>
+				<form id="setGender" asp-controller="Tests" asp-action="SetGender">
+					<input type="hidden" name="gender" value="Женщина">
+					<input type="hidden" name="id" value="@ViewBag.pack.Id">
+					<div class="button">
+						<input type="submit" name="female-button" value="Женщина">
+					</div>
+				</form>
+		</div> 
+		</div>*@
 		<form style="display: inline-block;" id="form-@ViewBag.pack.Id" asp-controller="Tests" asp-action="NextQuestion">
 			<input type="hidden" name="pack" value="@ViewBag.pack.Id">
 			<input type="hidden" name="index" value="-1">
+			<input type="hidden" name="gender" value="Мужчина">
 			<div class="button">
-				<input type="submit" name="bottom" value="Начать тест">
+				<input type="submit" name="bottom" value="Начать тест(Мужчины)">
+			</div>
+		</form>
+		<form style="display: inline-block;" id="form-@ViewBag.pack.Id" asp-controller="Tests" asp-action="NextQuestion">
+			<input type="hidden" name="pack" value="@ViewBag.pack.Id">
+			<input type="hidden" name="index" value="-1">
+			<input type="hidden" name="gender" value="Женщина">
+			<div class="button">
+				<input type="submit" name="bottom" value="Начать тест(Женщины)">
 			</div>
 		</form>
 	</div>

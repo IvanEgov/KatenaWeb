@@ -4,6 +4,7 @@
 
 <div style="width: 700px; display: inline-block; margin-left:100px; justify-content:center; align-content:center;">
 	<p><h2>@ViewBag.question.Name</h2></p>
+	@* <p><h2>@ViewBag.gender</h2></p> *@
 	@foreach (Guid id in ViewBag.question.AnswerId)
 	{
 		AnswersBase answer = datamanager.Answers.GetAnswerById(id);
@@ -13,6 +14,7 @@
 			<input type="hidden" name="index" value="@ViewBag.index">
 			<input type="hidden" name="answers" value="@answer.Id">
 			<input type="hidden" name="reason" value="@Guid.Empty">
+			<input type="hidden" name="gender" value="@ViewBag.gender">
 			<input type="hidden" name="checkReason" value="True">
 			<div class="button-question">
 				<input type="submit" value="@answer.Action">

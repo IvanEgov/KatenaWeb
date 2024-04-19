@@ -1667,9 +1667,59 @@ ul.link-list li:first-child {
 }
 
 .news{
-    
+    border:double;
+    border-radius:15px;
+    padding:5px 5px 5px 5px;
+    background:#c8d2bc;
 }
 
 .news:hover{
+    background:#ced0b7;
+}
 
+.previousDot {
+    border: double;
+    border-radius: 30px;
+    padding: 5px 5px 5px 5px;
+    background:#006e8b;
+}
+
+.progressLine {
+    display: inline-block;
+    position: relative;
+    padding-left: 20px;
+}
+
+.progressLine:before {
+    content: " ";
+    background: #077d9b;
+    width: 50px;
+    height: 1px;
+    /*border-bottom: 1px solid #077d9b;*/
+}
+
+.nowDot {
+    border: double;
+    border-radius: 30px;
+    padding: 5px 5px 5px 5px;
+    background: #1b9fbe;
+}
+
+.nextDot {
+    border: double;
+    border-radius: 30px;
+    padding: 5px 5px 5px 5px;
+    background: #fff;
+}
+.nextLine {
+    display: inline-block;
+    position: relative;
+    padding-left: 20px;
+}
+.nextLine:after {
+    content: " ";
+    background: #A6A88F;
+    width: 50px;
+    height: 1px;
+    /*border-bottom: 1px solid #A6A88F;*/
 }

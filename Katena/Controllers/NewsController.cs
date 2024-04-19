@@ -1,4 +1,4 @@
-﻿using Katena.Domain;
+﻿/*using Katena.Domain;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Katena.Controllers
@@ -22,3 +22,4 @@ namespace Katena.Controllers
         }
     }
 }
+*/
