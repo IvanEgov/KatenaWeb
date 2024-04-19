@@ -1,28 +1,42 @@
 ﻿ @using Katena.Domain
 @inject DataManager datamanager;
 
-<div style="width: 700px; display: inline-block; margin-left:100px;">
-	<p><h2>Прохождение теста завершено! Здесь вы можете увидеть результат!</h2></p>
-	@* <p><h2>@ViewBag.gender</h2></p> *@
-	@foreach (Guid id in ViewBag.pack.ResaultsId)
-	{
-		ResaultsBase result = datamanager.Resaults.GetResaultById(id);
-		if(ViewBag.calculateType == result.Type && ViewBag.calculateStyle == result.Style && ViewBag.gender == result.Gender)
-		{
-			<p><h1>@result.Resault</h1></p>
-		}
-
-		<button class="button" onclick="showResults()" id="showButton">Показать все результаты</button>
-		<div id="allResults" hidden>
-			<div id="result">
-				<p><h1>@result.Resault</h1></p>
-			</div>
+<div class="result-wrapper" style="text-align:center;">
+	<div class="result-content">
+		<div class="question">
+			<p><h2>Прохождение теста завершено! Здесь вы можете увидеть результат!</h2></p>
 		</div>
-	}
+		<div class="result">
+			@foreach (Guid id in ViewBag.pack.ResaultsId)
+			{
+				ResaultsBase result = datamanager.Resaults.GetResaultById(id);
+				if (ViewBag.calculateType == result.Type && ViewBag.calculateStyle == result.Style && ViewBag.gender == result.Gender)
+				{
+					<p><h1>@result.Resault</h1></p>
+				}
+			}
+		</div>
+		<button class="button" onclick="showResults()" id="showButton">Показать все результаты</button>
+		<div id="results" hidden>
+			@foreach (Guid id in ViewBag.pack.ResaultsId)
+			{
+				ResaultsBase result = datamanager.Resaults.GetResaultById(id);
+				<div class="result">
+					<p><h1>@result.Resault</h1></p>
+				</div>
+			}
+		</div>
+	</div>
 </div>
+
 
 <script>
 	function showResults() {
-			document.getElementById("allResults").hidden = false;
+		if (document.getElementById("results").hidden == false) {
+			document.getElementById("results").hidden = true;
+		}
+		else {
+			document.getElementById("results").hidden = false;
+		}
 	}
 </script>

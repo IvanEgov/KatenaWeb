@@ -1,29 +1,57 @@
 ﻿@using Katena.Domain
 @inject DataManager datamanager;
 
+<div class="reson-wrapper">
+	<div class="reson">
 
-<div style="width: 700px; display: inline-block; margin-left:100px;">
-	
-	<div id="takeAction" style="border:solid; text-align:center;">
-		<p><h2>Вы выбрали действие</h2></p>
-		<p><h2>@ViewBag.answer.Action</h2></p>
-		<h2>Каков ваш мотив?</h2>
+		<div class="takeAction">
+			<p><h2>Вы выбрали действие</h2></p>
+			<p><h2>@ViewBag.answer.Action</h2></p>
+			<h2>Каков ваш мотив?</h2>
+		</div>
+
+		@foreach (Guid id in ViewBag.answer.reasonsId)
+		{
+			ReasonBase reason = datamanager.Reasons.GetReasonById(id);
+			<form style="display: inline-block;" asp-controller="Tests" asp-action="NextQuestion">
+				<input type="hidden" name="pack" value="@ViewBag.pack.Id">
+				<input type="hidden" name="index" value="@ViewBag.index">
+				<input type="hidden" name="question" value="@ViewBag.question.Id">
+				<input type="hidden" name="answer" value="@ViewBag.answer.Id">
+				<input type="hidden" name="reason" value="@reason.Id">
+				<input type="hidden" name="gender" value="@ViewBag.gender">
+				<input type="hidden" name="checkReason" value="false">
+				<div class="button-question">
+					<input type="submit" value="@reason.Reason">
+				</div>
+			</form>
+		}
 	</div>
-	
-	@foreach (Guid id in ViewBag.answer.reasonsId)
-	{
-		ReasonBase reason = datamanager.Reasons.GetReasonById(id);
-		<form style="display: inline-block;"  asp-controller="Tests" asp-action="NextQuestion">
-			<input type="hidden" name="pack" value="@ViewBag.pack.Id">
-			<input type="hidden" name="index" value="@ViewBag.index">
-			<input type="hidden" name="question" value="@ViewBag.question.Id">
-			<input type="hidden" name="answer" value="@ViewBag.answer.Id">
-			<input type="hidden" name="reason" value="@reason.Id">
-			<input type="hidden" name="gender" value="@ViewBag.gender">
-			<input type="hidden" name="checkReason" value="false">
-			<div class="button-question">
-				<input type="submit" value="@reason.Reason">
-			</div>
-		</form>
-	}
+
+	<div class="testProgressDots">
+		@for (int i = 0; i < ViewBag.pack.QuestionsIds.Count; i++)
+		{
+			if (i < ViewBag.index)
+			{
+				<span class="previousDot">@(i + 1)</span>
+				<span class="progressLine"></span>
+			}
+			else if (i == ViewBag.index)
+			{
+				<span class="nowDot">@(i + 1)</span>
+				if (i < ViewBag.pack.QuestionsIds.Count - 1)
+				{
+					<span class="nextLine"></span>
+				}
+			}
+			else
+			{
+				<span class="nextDot">@(i + 1)</span>
+				if (i < ViewBag.pack.QuestionsIds.Count - 1)
+				{
+					<span class="nextLine"></span>
+				}
+			}
+		}
+	</div>
 </div>

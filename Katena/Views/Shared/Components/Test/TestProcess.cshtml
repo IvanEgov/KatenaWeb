@@ -2,50 +2,53 @@
 @inject DataManager datamanager;
 <!--TODO: в TestViewComponent передать bool reason=true и action(answer), выбранные пользователем -->
 
-<div style="width: 700px; display: inline-block; margin-left:100px; justify-content:center; align-content:center;">
-	<p><h2>@ViewBag.question.Name</h2></p>
-	@* <p><h2>@ViewBag.gender</h2></p> *@
-	@foreach (Guid id in ViewBag.question.AnswerId)
-	{
-		AnswersBase answer = datamanager.Answers.GetAnswerById(id);
-		ViewBag.reason = true;
-		<form style="display: inline-block;" asp-controller="Tests" asp-action="NextQuestion">
-			<input type="hidden" name="pack" value="@ViewBag.pack.Id">
-			<input type="hidden" name="index" value="@ViewBag.index">
-			<input type="hidden" name="answers" value="@answer.Id">
-			<input type="hidden" name="reason" value="@Guid.Empty">
-			<input type="hidden" name="gender" value="@ViewBag.gender">
-			<input type="hidden" name="checkReason" value="True">
-			<div class="button-question">
-				<input type="submit" value="@answer.Action">
-			</div>
-		</form>
-	}
-</div>
+<div class="action-wrapper">
+	<div class="action">
+		<div class="question">
+			<p><h2>@ViewBag.question.Name</h2></p>
+		</div>
+		@foreach (Guid id in ViewBag.question.AnswerId)
+		{
+			AnswersBase answer = datamanager.Answers.GetAnswerById(id);
+			ViewBag.reason = true;
+			<form style="display: inline-block;" asp-controller="Tests" asp-action="NextQuestion">
+				<input type="hidden" name="pack" value="@ViewBag.pack.Id">
+				<input type="hidden" name="index" value="@ViewBag.index">
+				<input type="hidden" name="answers" value="@answer.Id">
+				<input type="hidden" name="reason" value="@Guid.Empty">
+				<input type="hidden" name="gender" value="@ViewBag.gender">
+				<input type="hidden" name="checkReason" value="True">
+				<div class="button-question">
+					<input type="submit" value="@answer.Action">
+				</div>
+			</form>
+		}
+	</div>
 
-<div class="testProgressDots">
-	@for (int i = 0; i < ViewBag.pack.QuestionsIds.Count; i++)
-	{
-		if (i < ViewBag.index)
+	<div class="testProgressDots">
+		@for (int i = 0; i < ViewBag.pack.QuestionsIds.Count; i++)
 		{
-			<span class="previousDot">@(i + 1)</span>
-			<span class="progressLine"></span>
-		}
-		else if (i == ViewBag.index)
-		{
-			<span class="nowDot">@(i + 1)</span>
-			if (i < ViewBag.pack.QuestionsIds.Count - 1)
+			if (i < ViewBag.index)
 			{
-				<span class="nextLine"></span>
+				<span class="previousDot">@(i + 1)</span>
+				<span class="progressLine"></span>
+			}
+			else if (i == ViewBag.index)
+			{
+				<span class="nowDot">@(i + 1)</span>
+				if (i < ViewBag.pack.QuestionsIds.Count - 1)
+				{
+					<span class="nextLine"></span>
+				}
+			}
+			else
+			{
+				<span class="nextDot">@(i + 1)</span>
+				if (i < ViewBag.pack.QuestionsIds.Count - 1)
+				{
+					<span class="nextLine"></span>
+				}
 			}
 		}
-		else
-		{
-			<span class="nextDot">@(i + 1)</span>
-			if (i < ViewBag.pack.QuestionsIds.Count-1)
-			{
-				<span class="nextLine"></span>
-			}
-		}
-	}
+	</div>
 </div>

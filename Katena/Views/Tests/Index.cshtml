@@ -8,7 +8,7 @@
 @inject DataManager datamanager;
 
 @* <div> *@
-    <div style="display:flex; justify-content:space-between;">
+    <div style="display:flex;">
         @{
             List<QuestionPackBase> packs = datamanager.Packs.GetAllPacks().ToList();
         }

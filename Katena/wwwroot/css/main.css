@@ -1666,16 +1666,16 @@ ul.link-list li:first-child {
     margin: 0 auto;
 }
 
-.news{
-    border:double;
-    border-radius:15px;
-    padding:5px 5px 5px 5px;
-    background:#c8d2bc;
+.news {
+    border: double;
+    border-radius: 15px;
+    padding: 5px 5px 5px 5px;
+    background: #c8d2bc;
 }
 
-.news:hover{
-    background:#ced0b7;
-}
+    .news:hover {
+        background: #ced0b7;
+    }
 
 .previousDot {
     border: double;
@@ -1694,9 +1694,9 @@ ul.link-list li:first-child {
     background: #077d9b;
     width: 50px;
     height: 5px;
-    border:double;
-    border-radius:15px;
-    border-color:darkgrey;
+    border: double;
+    border-radius: 15px;
+    border-color: darkgrey;
 }
 
 /*.progressLine:before {
@@ -1704,7 +1704,7 @@ ul.link-list li:first-child {
     background: #077d9b;
     width: 50px;
     height: 1px;*/
-    /*border-bottom: 1px solid #077d9b;*/
+/*border-bottom: 1px solid #077d9b;*/
 /*}*/
 
 .nowDot {
@@ -1724,6 +1724,7 @@ ul.link-list li:first-child {
     color: #000;
     border-color: gray;
 }
+
 .nextLine {
     content: " ";
     background: #A6A88F;
@@ -1736,10 +1737,80 @@ ul.link-list li:first-child {
     border-radius: 15px;
     border-color: darkgrey;
 }
-/*.nextLine:after {
-    content: " ";
-    background: #A6A88F;
-    width: 50px;
-    height: 1px;*/
-    /*border-bottom: 1px solid #A6A88F;*/
-/*}*/
+
+.result {
+    width: 700px;
+    display: flex;
+    margin-left: 100px;
+    border: solid;
+    border-radius: 30px;
+    border-color: #A6A88F;
+    border-width: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+    line-height: 1.5;
+    background: #ced0b7;
+}
+
+.results {
+}
+
+.result-content {
+    width: 900px;
+    display: inline-block;
+    margin-left: 100px;
+    justify-content: center;
+    align-content: center;
+}
+
+.result-wrapper {
+    text-align: center;
+}
+
+.action {
+    width: 700px;
+    display: inline-block;
+    margin-left: 100px;
+    justify-content: center;
+    align-content: center;
+}
+
+.action-wrapper {
+    text-align: center;
+}
+
+.reson {
+    width: 700px;
+    display: inline-block;
+    margin-left: 100px;
+}
+
+.resons {
+    display: inline-block;
+    text-align: center;
+}
+
+.reson-wrapper {
+    text-align: center;
+}
+
+.question {
+    border: solid;
+    border-radius: 30px;
+    border-color: #A6A88F;
+    border-width: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+    line-height: 1.5;
+    background: #ced0b7;
+}
+
+.takeAction {
+    border: solid;
+    border-radius: 30px;
+    border-color: #A6A88F;
+    border-width: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+    background: #ced0b7;
+}
