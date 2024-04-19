@@ -34,7 +34,10 @@
 		else if (i == ViewBag.index)
 		{
 			<span class="nowDot">@(i + 1)</span>
-			<span class="nextLine"></span>
+			if (i < ViewBag.pack.QuestionsIds.Count - 1)
+			{
+				<span class="nextLine"></span>
+			}
 		}
 		else
 		{
