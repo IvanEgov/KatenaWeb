@@ -1,7 +1,19 @@
-﻿<div class ="container-sidebar">
+﻿@* <div class ="container-sidebar">
     <div class="col-4 col-12-medium">
         <cache>
             @(await Component.InvokeAsync("Sidebar"))
         </cache>
     </div>
+</div>
+ *@
+
+<div class="inner">
+	<nav>
+		<ul>
+			<li><a href="#intro">Главная</a></li>
+			<li><a href="#one">О тесте</a></li>
+			<li><a href="#two">Возможности</a></li>
+			<li><a href="#three">Контактная информация</a></li>
+		</ul>
+	</nav>
 </div>

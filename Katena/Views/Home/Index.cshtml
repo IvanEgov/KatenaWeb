@@ -5,11 +5,176 @@
 	ViewBag.TitleImagePath = Model.TitleImagePath;
 }
 
-<div>
+@* <div>
 	@Html.Raw(Model.Text)
 	<div id="picture" style="margin-left:650px;">
 		<div>
 			<img class="img-block" src="~/images/@ViewBag.TitleImagePath" />
 		</div>
 	</div>
+</div> *@
+
+
+<section id="sidebar">
+	@await Html.PartialAsync("SidebarPartial")
+</section>
+
+<!-- Intro -->
+<div id="wrapper">
+	<section id="intro" class="wrapper style1 fullscreen fade-up">
+		<div class="inner">
+			<h1>@Html.Raw(Model.Title)</h1>
+			<p>
+				@Html.Raw(Model.Text)
+			</p>
+			<ul class="actions">
+				<li><a href="#three" class="button scrolly">Связаться с нами</a></li>
+				<li><a asp-area="" asp-controller="Tests" asp-action="Index" asp-route-id="" class="button scrolly">Пройти тест</a></li>
+			</ul>
+		</div>
+	</section>
+
+	<!-- One -->
+	<section id="one" class="wrapper style2 spotlights">
+		<section>
+			<a href="#" class="image"><img src="~/images/images.jpg" alt="" data-position="center center" /></a>
+			<div class="content">
+				<div class="inner">
+					<h2>Зачем вам наш тест?</h2>
+					<p>Вы сможете больше узнать о себе.</p>
+					<ul class="actions">
+						<li><a asp-area="" asp-controller="Tests" asp-action="Index" asp-route-id="" class="button scrolly">Пройти тест</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section>
+			<a href="#" class="image"><img src="~/images/images.jpg" alt="" data-position="top center" /></a>
+			<div class="content">
+				<div class="inner">
+					<h2>Открывайте новые горизонты</h2>
+					<p>Наш тест поможет вам познать новые грани себя.</p>
+					<ul class="actions">
+						<li><a asp-area="" asp-controller="Tests" asp-action="Index" asp-route-id="" class="button scrolly">Пройти тест</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section>
+			<a href="#" class="image"><img src="~/images/images.jpg" alt="" data-position="25% 25%" /></a>
+			<div class="content">
+				<div class="inner">
+					<h2>Не стойте на месте</h2>
+					<p>Только узнав кто вы, вы сможете двигаться вперед.</p>
+					<ul class="actions">
+						<li><a asp-area="" asp-controller="Tests" asp-action="Index" asp-route-id="" class="button scrolly">Пройти тест</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</section>
+
+	<!-- Two -->
+	<section id="two" class="wrapper style3 fade-up">
+		<div class="inner">
+			<h2>Возможности</h2>
+			<p>Зачем вам мы?.</p>
+			<div class="features">
+				<section>
+					<span class="icon solid major fa-code"></span>
+					<h3>Развитие</h3>
+					<p>Вы станете круче.</p>
+				</section>
+				<section>
+					<span class="icon solid major fa-lock"></span>
+					<h3>Доход</h3>
+					<p>Вы станете богаче.</p>
+				</section>
+				<section>
+					<span class="icon solid major fa-cog"></span>
+					<h3>Статус</h3>
+					<p>Ну тут все понятно.</p>
+				</section>
+				<section>
+					<span class="icon solid major fa-desktop"></span>
+					<h3>Осмысление и принятие себя.</h3>
+					<p>Ну это сложно, придется думать.</p>
+				</section>
+				<section>
+					<span class="icon solid major fa-link"></span>
+					<h3>Работа над собой</h3>
+					<p>Тоже сложно, без нас никуда.</p>
+				</section>
+				<section>
+					<span class="icon major fa-gem"></span>
+					<h3>Другой уровень жизни</h3>
+					<p>Сказка.</p>
+				</section>
+			</div>
+			<ul class="actions">
+				<li><a a asp-area="" asp-controller="Abilities" asp-action="Index" asp-route-id="" class="button">Узнать больше о своих возможностях</a></li>
+			</ul>
+		</div>
+	</section>
+
+	<!-- Three -->
+	<section id="three" class="wrapper style1 fade-up">
+		<div class="inner">
+			<h2>Как с нами связаться?</h2>
+			<p>Конструктивная критика и разумные предложения приветствуются.</p>
+			<div class="split style1">
+				<section>
+					<form method="post" action="#">
+						<div class="fields">
+							<div class="field half">
+								<label for="name">Name</label>
+								<input type="text" name="name" id="name" />
+							</div>
+							<div class="field half">
+								<label for="email">Email</label>
+								<input type="text" name="email" id="email" />
+							</div>
+							<div class="field">
+								<label for="message">Message</label>
+								<textarea name="message" id="message" rows="5"></textarea>
+							</div>
+						</div>
+						<ul class="actions">
+							<li><a href="" class="button submit">Send Message</a></li>
+						</ul>
+					</form>
+				</section>
+				<section>
+					<ul class="contact">
+						<li>
+							<h3>Address</h3>
+							<span>
+								Томск<br />
+								Улица Пушкина<br />
+								Дом Колотушкина
+							</span>
+						</li>
+						<li>
+							<h3>Email</h3>
+							<a href="#">КрутыеПерцы@gmail.com</a>
+						</li>
+						<li>
+							<h3>Phone</h3>
+							<span>8-800-555-35-35</span>
+						</li>
+						<li>
+							<h3>Social</h3>
+							<ul class="icons">
+								<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+			</div>
+		</div>
+	</section>
 </div>
