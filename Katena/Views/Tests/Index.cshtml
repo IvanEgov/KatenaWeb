@@ -18,14 +18,18 @@
             {
                 <!--TODO: Разобраться со скриптом(кнопками)-->
                 <div class="container" style="display:flex;">
-                    <div style="display:inline-block; margin-right:50px;">
-                        <button class="button" id="startButton">@entity.Name</button>
-                    </div>
                     <div @* class="col-8" *@>
                         <div id="test" hidden>
+                            <div style="display:inline-block; margin-right:50px;">
+                                <button class="button" id="homeButton"><a asp-area="" asp-controller="Home" asp-action="Index">Вернуться на главную</a></button>
+                            </div>
                             @await Component.InvokeAsync("Test", new { pack = entity, index = -1 })
                         </div>
                         <div id="welcome">
+                            <div style="display:inline-block; margin-right:50px;">
+                                <button class="button" id="startButton">@entity.Name</button>
+                                <button class="button" id="homeButton"><a asp-area="" asp-controller="Home" asp-action="Index">Вернуться на главную</a></button>
+                            </div>
                             @await Html.PartialAsync("emptyPartial")
                         </div>
                     </div>
@@ -34,7 +38,7 @@
         }
         else
         {
-            @foreach(QuestionPackBase entity in packs)
+            @* @foreach(QuestionPackBase entity in packs)
             {
                 <form style="display: inline-block;" asp-controller="Tests" asp-action="NextQuestion">
                     <input type="hidden" name="pack" value="@entity">
@@ -43,7 +47,11 @@
                         <input type="submit" value="@entity.Name">
                     </div>
                 </form>
-            }
+            } *@
+
+            <div style="display:inline-block; margin-right:50px;">
+                <button class="button" id="homeButton"><a asp-area="" asp-controller="Home" asp-action="Index">Вернуться на главную</a></button>
+            </div>
             <div id="test" style="display:inline-block; left:15%;" class="container">
                 @await Component.InvokeAsync("Test", new
                     {
