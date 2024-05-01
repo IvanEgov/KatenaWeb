@@ -3907,3 +3907,14 @@ input, select, textarea {
 			}
 
 		}
+
+@font-face {
+	font-family: "Firenight-Regular";
+	src: url(../webfonts/Firenight-Regular.eot);
+	src: url("../webfonts/Firenight-Regular.eot?#iefix")
+	format('embedded-opentype'),
+	url("../webfonts/Firenight-Regular.woff") format('woff'),
+	url("../webfonts/Firenight-Regular.ttf") format('truetype');
+	font-style: normal;
+	font-weight: normal;
+}

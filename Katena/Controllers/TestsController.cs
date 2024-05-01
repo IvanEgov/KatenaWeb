@@ -54,7 +54,7 @@ namespace Katena.Controllers
 		}*/
 
 		[HttpPost]
-		public IActionResult NextQuestion(Guid pack, int index, Guid question, Guid answers, Guid reason, string gender, bool checkReason = false)
+		public IActionResult NextQuestion(Guid pack, int index, Guid question, Guid answers, Guid reason, string gender, string background, bool checkReason = false)
 		{
             //TODO: Test logic
             //  
@@ -268,6 +268,7 @@ namespace Katena.Controllers
             }
 			
 			ViewBag.pack = dataManager.Packs.GetPackById(pack);
+            ViewBag.background = ViewBag.pack.BackgroundImageFile[index];
             ViewBag.index = index;
 			if (ViewBag.pack != null)
 			{
@@ -331,8 +332,6 @@ namespace Katena.Controllers
 
                        /// Дописать удаление куки сесии++++++++++++++++++++++++++++++++++++++++++++++++++++
                     }
-
-
                 }
 			}
             return View("Index", dataManager.TextFields.GetTextFieldByCodeWord("PageTests"));

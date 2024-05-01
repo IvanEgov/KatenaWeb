@@ -7,6 +7,8 @@
 @inject DataManager datamanager;
 <script src="~/js/ckeditor/ckeditor.js"></script>
 
+
+
 <div>
     <h2>@strTitle</h2>
     <div>
@@ -14,6 +16,7 @@
             <input type="hidden" asp-for="Id" />
             <input type="hidden" asp-for="QuestionsIds" />
             <input type="hidden" asp-for="ResaultsId" />
+            <input type="hidden" asp-for="BackgroundImageFiles" id="Background" />
 
             <div asp-validation-summary="All"></div>
             <div class="div-box">
@@ -38,7 +41,12 @@
                     <img class="img-block" src="~/images/@Model.TitleImagePath" />
                 </div>
             </div>
-            <input type="submit" value="Сохранить">
+            <div class="div-box">
+                <label asp-for="Background"></label>
+                <textarea asp-for="Background" id="BackgroundString"></textarea>
+                <span asp-validation-for="Background"></span>
+            </div>
+            <input type="submit" value="Сохранить" id="BackgroundFunction">
         </form>
 
         <button><a asp-area="Admin" asp-controller="Question" asp-action="Edit" >Добавить вопрос</a></button>
@@ -111,4 +119,13 @@
         var newCKEdit = CKEDITOR.replace('@Html.IdFor(x => x.Id)');
         newCKEdit.updateElement();
     }
+</script>
+
+<script>
+    document.getElementById("BackgroundFunction").addEventListener(
+        "click",
+        function () {
+            document.getElementById("Background") = document.getElementById("BackgroundString").split(",");
+            }
+    );
 </script>

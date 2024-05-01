@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Org.BouncyCastle.Bcpg;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Katena.Domain.Entities
@@ -11,19 +12,25 @@ namespace Katena.Domain.Entities
 
 		[Required]
 		[Display(Name = "Название теста")]
-		public string Name { get; set; }
+		public string? Name { get; set; }
 
 		[Display(Name = "Описание теста")]
-		public string Description { get; set; }
+		public string? Description { get; set; }
 
 		[Display(Name = "Инструкции выполнения")]
-		public string Instructions { get; set; }
+		public string? Instructions { get; set; }
 
-        [Display(Name = "Картинка теста")]
-        public virtual string? TitleImagePath { get; set; }
+		[Display(Name = "Картинка теста")]
+		public virtual string? TitleImagePath { get; set; }
 
-        public List<Guid>? QuestionsIds { get; set; }
+		public List<Guid>? QuestionsIds { get; set; }
 
-        public List <Guid>? ResaultsId { get; set; }
-	}
+		public List<Guid>? ResaultsId { get; set; }
+
+		public List<string>? BackgroundImageFiles { get; set; }
+
+		[Display(Name = "Имена файлов картинок теста в порядке следования вопросов через запятую, перед именем файла вписать путь ~/wwwroot/images/")]
+		public virtual string? Background { get; set; }
+
+    }
 }

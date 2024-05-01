@@ -11,8 +11,8 @@ namespace Katena.Domain.Entities
 
         [Required]
         [Display(Name = "Вопрос")]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
-        public List <Guid> AnswerId { get; set; }
+        public List <Guid>? AnswerId { get; set; }
     }
 }

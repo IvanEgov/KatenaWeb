@@ -19,7 +19,9 @@ namespace Katena.Areas.Admin.Controllers
 
 		public IActionResult Edit(Guid id)
 		{
-			QuestionBase entity;
+            var entity = id == default ? new QuestionBase() : dataManager.QuestionBase.GetQuestionById(id);
+            return View(entity);
+            /*QuestionBase entity;
 			if (id == default)
 			{
 				entity = new QuestionBase();
@@ -31,11 +33,11 @@ namespace Katena.Areas.Admin.Controllers
 			{
 				entity = dataManager.QuestionBase.GetQuestionById(id);
 			}
-			return View(entity);
+			return View(entity);*/
 		}
 
         [HttpPost]
-        public IActionResult Edit(QuestionBase model)
+        public IActionResult Edit(QuestionBase model, IFormFile? backgroundImageFile)
         {
             dataManager.QuestionBase.SaveQuestion(model);
             return View(model);

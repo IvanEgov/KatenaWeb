@@ -8,7 +8,7 @@
 @inject DataManager datamanager;
 
 @* <div> *@
-    <div style="display:flex;">
+    <div style="display:flex; background-image:url(@ViewBag.background)">
         @{
             List<QuestionPackBase> packs = datamanager.Packs.GetAllPacks().ToList();
         }
@@ -60,6 +60,7 @@
                         reason = ViewBag.reason,
                         answer = ViewBag.answer,
                         gender = ViewBag.gender,
+                        background = ViewBag.background
                        /* distr_mentorP = ViewBag.distr_mentorP,
                         distr_lookingP = ViewBag.distr_lookingP,
                         distr_hunterP = ViewBag.distr_hunterP,
