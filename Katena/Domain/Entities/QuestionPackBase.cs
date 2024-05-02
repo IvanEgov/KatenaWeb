@@ -27,9 +27,7 @@ namespace Katena.Domain.Entities
 
 		public List<Guid>? ResaultsId { get; set; }
 
-		public List<string>? BackgroundImageFiles { get; set; }
-
-		[Display(Name = "Имена файлов картинок теста в порядке следования вопросов через запятую, перед именем файла вписать путь ~/wwwroot/images/")]
+		[Display(Name = "Имена файлов картинок теста в порядке следования вопросов через запятую без пробелов")]
 		public virtual string? Background { get; set; }
 
     }

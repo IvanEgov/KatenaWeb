@@ -3490,7 +3490,6 @@ input, select, textarea {
 	}
 
 /* Footer */
-
 	#sidebar + #wrapper + #footer {
 		margin-left: 18em;
 	}
@@ -3917,4 +3916,11 @@ input, select, textarea {
 	url("../webfonts/Firenight-Regular.ttf") format('truetype');
 	font-style: normal;
 	font-weight: normal;
+}
+
+.background-image{
+	z-index:0;
+	position:absolute;
+	width:100vw;
+	height:100vh;
 }

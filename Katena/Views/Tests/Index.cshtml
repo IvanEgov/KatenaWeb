@@ -8,7 +8,8 @@
 @inject DataManager datamanager;
 
 @* <div> *@
-    <div style="display:flex; background-image:url(@ViewBag.background)">
+<div>
+    <img class="background-image" src="~/images/@ViewBag.background" alt="" data-position="top center"/>
         @{
             List<QuestionPackBase> packs = datamanager.Packs.GetAllPacks().ToList();
         }
@@ -91,6 +92,8 @@
         }
         
     </div>
+
+    <div style="background-image:url(background1.png)"></div>
    
 @* </div> *@
 
