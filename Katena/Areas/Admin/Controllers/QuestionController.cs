@@ -19,21 +19,19 @@ namespace Katena.Areas.Admin.Controllers
 
 		public IActionResult Edit(Guid id)
 		{
-            var entity = id == default ? new QuestionBase() : dataManager.QuestionBase.GetQuestionById(id);
-            return View(entity);
-            /*QuestionBase entity;
+			QuestionBase entity;
 			if (id == default)
 			{
 				entity = new QuestionBase();
 				entity.Name = string.Empty;
-				entity.AnswerId = new List<Guid> {Guid.Empty};
+				entity.AnswerId = new List<Guid> { Guid.Empty };
 				dataManager.QuestionBase.SaveQuestion(entity);
 			}
 			else
 			{
 				entity = dataManager.QuestionBase.GetQuestionById(id);
 			}
-			return View(entity);*/
+			return View(entity);
 		}
 
         [HttpPost]
