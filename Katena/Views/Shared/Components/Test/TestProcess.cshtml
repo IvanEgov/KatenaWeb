@@ -5,13 +5,14 @@
 <div class="action-wrapper">
 	<div class="action">
 		<div class="question">
-			<p><h2>@ViewBag.question.Name</h2></p>
+			<p><h1>@ViewBag.question.Name</h1></p>
 		</div>
+		<span class="line"></span>
 		@foreach (Guid id in ViewBag.question.AnswerId)
 		{
 			AnswersBase answer = datamanager.Answers.GetAnswerById(id);
 			ViewBag.reason = true;
-			<form style="display: inline-block;" asp-controller="Tests" asp-action="NextQuestion">
+			<form asp-controller="Tests" asp-action="NextQuestion">
 				<input type="hidden" name="pack" value="@ViewBag.pack.Id">
 				<input type="hidden" name="index" value="@ViewBag.index">
 				<input type="hidden" name="answers" value="@answer.Id">

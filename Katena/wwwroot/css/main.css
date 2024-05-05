@@ -3924,3 +3924,141 @@ input, select, textarea {
 	width:100vw;
 	height:100vh;
 }
+
+.previousDot {
+	border: double;
+	border-radius: 30px;
+	border-color: gray;
+	padding: 5px 5px 5px 5px;
+	background: #474e43;
+	color: #fff;
+}
+
+.progressLine {
+	display: inline-block;
+	position: relative;
+	padding-left: 20px;
+	content: " ";
+	background: #077d9b;
+	width: 50px;
+	height: 5px;
+	border: double;
+	border-radius: 15px;
+	border-color: darkgrey;
+}
+
+/*.progressLine:before {
+    content: " ";
+    background: #077d9b;
+    width: 50px;
+    height: 1px;*/
+/*border-bottom: 1px solid #077d9b;*/
+/*}*/
+
+.nowDot {
+	border: double;
+	border-radius: 30px;
+	padding: 5px 5px 5px 5px;
+	background: #1b9fbe;
+	color: #fff;
+	border-color: gray;
+}
+
+.nextDot {
+	border: double;
+	border-radius: 30px;
+	padding: 5px 5px 5px 5px;
+	background: #fff;
+	color: #000;
+	border-color: gray;
+}
+
+.nextLine {
+	content: " ";
+	background: #A6A88F;
+	width: 50px;
+	height: 5px;
+	display: inline-block;
+	position: relative;
+	padding-left: 20px;
+	border: double;
+	border-radius: 15px;
+	border-color: darkgrey;
+}
+
+.result {
+}
+
+.results {
+}
+
+.action {
+	width: 700px;
+	display: inline-block;
+	justify-content: center;
+	align-content: center;
+}
+
+.action-wrapper {
+	text-align: center;
+	top: 50%;
+	width: fit-content;
+}
+
+.reson {
+	width: 700px;
+	display: inline-block;
+	margin-left: 100px;
+}
+
+.resons {
+	display: inline-block;
+	text-align: center;
+}
+
+.reson-wrapper {
+	text-align: center;
+}
+
+.question {
+	margin-bottom: 15px;
+	text-align: center;
+	line-height: 1.5;
+	z-index: 100;
+	position: relative;
+}
+
+.line {
+	background: linear-gradient( to right, #00ff05, #ff0000);
+	content: " ";
+	width: 1100px;
+	height: 2px;
+	display: inline-block;
+	position: relative;
+	border-radius: 15px;
+	padding-right:25px;
+}
+
+.takeAction {
+	border: solid;
+	border-radius: 30px;
+	border-color: #A6A88F;
+	border-width: 5px;
+	margin-bottom: 15px;
+	text-align: center;
+	z-index: 100;
+	position: relative;
+}
+
+.test {
+	display: flex;
+	justify-content: space-between;
+	background: #1F3B4D;
+	position: relative;
+	width: 1250px;
+	height: 800px;
+	left: 15%;
+	top: 10%;
+	padding-top: 100px;
+	padding-left: 50px;
+}
