@@ -28,7 +28,7 @@ namespace Katena.Domain.Entities
 		public List<Guid>? ResaultsId { get; set; }
 
 		[Display(Name = "Имена файлов картинок теста в порядке следования вопросов через запятую без пробелов")]
-		public virtual string? Background { get; set; }
+		public string? Background { get; set; }
 
     }
 }

@@ -9,6 +9,7 @@
 
 @* <div> *@
 <div style="width:100vw; height:100vh;">
+    @{ViewBag.background += ".png";}
     <img class="background-image" src="~/images/@ViewBag.background" alt="" data-position="center"/>
         @{
             List<QuestionPackBase> packs = datamanager.Packs.GetAllPacks().ToList();
