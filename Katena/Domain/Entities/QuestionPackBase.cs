@@ -30,5 +30,7 @@ namespace Katena.Domain.Entities
 		[Display(Name = "Имена файлов картинок теста в порядке следования вопросов через запятую без пробелов")]
 		public string? Background { get; set; }
 
+		[Display(Name = "Имена файлов картинок вопросов теста в порядке следования вопросов через запятую без пробелов")]
+		public string? Pictures { get; set; }
     }
 }

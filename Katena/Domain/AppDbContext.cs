@@ -5138,7 +5138,8 @@ namespace Katena.Domain
 							new Guid("b72c0d38-0fe3-4a00-bef2-acb32789e086"),
 							new Guid("e2fb7ee4-614b-4cd5-b11e-e522a2d75e94")
 						},
-				Background = "background1,background2,background3,background4,background5,background6,background7,background8,background9,background10,background11"
+				Background = "background1,background2,background3,background4,background5,background6,background7,background8,background9,background10,background11",
+				Pictures = "picture1,picture2,picture3,picture4,picture5,picture6,picture7,picture8,picture9,picture10,picture11"
 			}
 				]);
 			

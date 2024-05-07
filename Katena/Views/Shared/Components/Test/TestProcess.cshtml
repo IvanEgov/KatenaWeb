@@ -2,11 +2,13 @@
 @inject DataManager datamanager;
 <!--TODO: в TestViewComponent передать bool reason=true и action(answer), выбранные пользователем -->
 
+@{ViewBag.picture += ".png";}
 <div class="action-wrapper">
 	<div class="action">
 		<div class="question">
 			<p><h1>@ViewBag.question.Name</h1></p>
 		</div>
+		<img class="image" src="~/images/@ViewBag.picture" alt="" data-position="center" />
 		<span class="line"></span>
 		@foreach (Guid id in ViewBag.question.AnswerId)
 		{

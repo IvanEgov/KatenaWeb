@@ -1,6 +1,7 @@
 ﻿@using Katena.Domain
 @inject DataManager datamanager;
 
+@{ViewBag.picture += ".png";}
 <div class="reson-wrapper">
 	<div class="reson">
 
@@ -9,7 +10,7 @@
 			<p><h2>@ViewBag.answer.Action</h2></p>
 			<h2>Каков ваш мотив?</h2>
 		</div>
-
+		<img class="image" src="~/images/@ViewBag.picture" alt="" data-position="center" />
 		@foreach (Guid id in ViewBag.answer.reasonsId)
 		{
 			ReasonBase reason = datamanager.Reasons.GetReasonById(id);

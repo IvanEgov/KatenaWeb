@@ -269,6 +269,7 @@ namespace Katena.Controllers
 			
 			ViewBag.pack = dataManager.Packs.GetPackById(pack);
             ViewBag.background = ViewBag.pack.Background.Split(",")[Math.Min(index, ViewBag.pack.Background.Split(",").Length - 1)];
+            ViewBag.picture = ViewBag.pack.Pictures.Split(",")[Math.Min(index, ViewBag.pack.Pictures.Split(",").Length - 1)];
             ViewBag.index = index;
 			if (ViewBag.pack != null)
 			{
