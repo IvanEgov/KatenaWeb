@@ -17,6 +17,7 @@
 			}
 		</div>
 		<button class="button" onclick="showResults()" id="showButton">Показать все результаты</button>
+		<button class="button" id="homeButton"><a asp-area="" asp-controller="Home" asp-action="Index">Вернуться на главную</a></button>
 		<div id="results" hidden>
 			@foreach (Guid id in ViewBag.pack.ResaultsId)
 			{

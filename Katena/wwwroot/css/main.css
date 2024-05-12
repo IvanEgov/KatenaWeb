@@ -1849,7 +1849,7 @@ input, select, textarea {
 		text-align: center;
 		text-decoration: none;
 		text-transform: uppercase;
-		white-space: nowrap;
+		white-space: normal;
 	}
 
 		input[type="submit"]:after,
@@ -3992,62 +3992,73 @@ input, select, textarea {
 .results {
 }
 
-.action {
-	width: 700px;
-	display: inline-block;
-	justify-content: center;
-	align-content: center;
-}
-
 .action-wrapper {
 	text-align: center;
 	top: 50%;
-	width: fit-content;
+	font-family:Firenight-Regular;
+}
+
+.action {
+	text-align: left;
+	display: inline-block;
+	width: 1100px;
+	margin-top:50px;
 }
 
 .reson {
 	width: 700px;
 	display: inline-block;
 	margin-left: 100px;
+	font-family: Firenight-Regular;
 }
 
 .resons {
-	display: inline-block;
+	display: flex;
 	text-align: center;
+	font-family: Firenight-Regular;
+	width: 1100px;
+	margin-left:100px;
 }
 
 .reson-wrapper {
 	text-align: center;
+	font-family: Firenight-Regular;
 }
 
 .question {
-	margin-bottom: 15px;
-	text-align: center;
+	text-align: left;
 	line-height: 1.5;
-	z-index: 100;
-	position: relative;
+	font-family: Firenight-Regular;
+	display: inline-block;
+	padding-left:37.5px;
+	padding-right:75px;
+	margin-top:35px;
 }
-
+.question-text {
+	display: block;
+	float: left;
+}
+.question-image {
+	display: block;
+	float: left;
+	margin-left: 50px;
+}
+.line-wrapper {
+	display: inline-flex;
+	margin-left: 55px;
+}
 .line {
 	background: linear-gradient( to right, #00ff05, #ff0000);
 	content: " ";
-	width: 1100px;
+	width: 1500px;
 	height: 2px;
-	display: inline-block;
-	position: relative;
 	border-radius: 15px;
-	padding-right:25px;
+	position: relative;
 }
 
 .takeAction {
-	border: solid;
-	border-radius: 30px;
-	border-color: #A6A88F;
-	border-width: 5px;
-	margin-bottom: 15px;
-	text-align: center;
-	z-index: 100;
-	position: relative;
+	display:inline-block;
+	text-align:left;
 }
 
 .test {
@@ -4055,10 +4066,13 @@ input, select, textarea {
 	justify-content: space-between;
 	background: #1F3B4D;
 	position: relative;
-	width: 1250px;
+	width: 1700px;
 	height: 800px;
-	left: 15%;
-	top: 10%;
-	padding-top: 100px;
-	padding-left: 50px;
+	left: 5%;
+	top: 5%;
+	font-family: Firenight-Regular;
+}
+
+.button-question {
+	font-family: Firenight-Regular;
 }
