@@ -13,13 +13,15 @@
 			</div>
 		</div>
 		<div class="takeAction">
-			<h3 style="float:left;">Вы выбрали действие: </h3>
-		<div class="input-group-sm">@ViewBag.answer.Action</div>
-		@* <input type="submit" value="@ViewBag.answer.Action"> *@
+			<h3 style="float:left; margin-right:15px;">Вы выбрали действие: </h3>
+			@* <div class="takenAction">@ViewBag.answer.Action</div> *@
+			<div class="button-question-post">
+				<input style="text-align:left; height:auto; line-height:50px;" type="submit" value="@ViewBag.answer.Action" disabled="1">
+			</div>
 			<h3>Каков ваш мотив?</h3>
 		</div>
 		<div class="question-image">
-		<img class="image" style="width:400px;height:400	px;" src="~/images/@ViewBag.picture" alt="" data-position="center" />
+		<img class="image" style="width:400px;height:400px;" src="~/images/@ViewBag.picture" alt="" data-position="center" />
 			<h2 style="font-family:'Firenight-Regular'">Ситуация @(ViewBag.index + 1)/@ViewBag.pack.QuestionsIds.Count</h2>
 		</div>
 		<div class="resons">

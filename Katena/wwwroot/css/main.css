@@ -4018,6 +4018,7 @@ input, select, textarea {
 	font-family: Firenight-Regular;
 	width: 1100px;
 	margin-left:100px;
+	margin-top:50px;
 }
 
 .reson-wrapper {
@@ -4057,8 +4058,15 @@ input, select, textarea {
 }
 
 .takeAction {
-	display:inline-block;
-	text-align:left;
+	display: inline-block;
+	text-align: left;
+	width: 1000px;
+	height: 150px;
+	margin-top: 50px;
+}
+
+.takenAction{
+
 }
 
 .test {
@@ -4074,5 +4082,10 @@ input, select, textarea {
 }
 
 .button-question {
+	font-family: Firenight-Regular;
+	margin-left:20px;
+}
+
+.button-question-post {
 	font-family: Firenight-Regular;
 }
