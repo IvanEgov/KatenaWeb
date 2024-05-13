@@ -2,9 +2,13 @@
 @inject DataManager datamanager;
 
 <div class="result-wrapper" style="text-align:center;">
-	<div class="result-content">
-		<div class="question">
-			<p><h2>Прохождение теста завершено! Здесь вы можете увидеть результат!</h2></p>
+		<div class="result-welcome">
+			<div class="result-welcome-text">
+				<h2 style="font-family:'Firenight-Regular';">Прохождение теста завершено! Здесь вы можете увидеть результат!</h2>
+			</div>
+			<div class="line-wrapper">
+				<span class="line"></span>
+			</div>
 		</div>
 		<div class="result">
 			@foreach (Guid id in ViewBag.pack.ResaultsId)
@@ -12,13 +16,13 @@
 				ResaultsBase result = datamanager.Resaults.GetResaultById(id);
 				if (ViewBag.calculateType == result.Type && ViewBag.calculateStyle == result.Style && ViewBag.gender == result.Gender)
 				{
-					<p><h1>@result.Resault</h1></p>
+				<h2 style="font-size:1.5em; font-family:'Firenight-Regular';">@result.Resault</h2>
 				}
 			}
 		</div>
-		<button class="button" onclick="showResults()" id="showButton">Показать все результаты</button>
+		@* <button class="button" onclick="showResults()" id="showButton">Показать все результаты</button> *@
 		<button class="button" id="homeButton"><a asp-area="" asp-controller="Home" asp-action="Index">Вернуться на главную</a></button>
-		<div id="results" hidden>
+		@* <div id="results" hidden>
 			@foreach (Guid id in ViewBag.pack.ResaultsId)
 			{
 				ResaultsBase result = datamanager.Resaults.GetResaultById(id);
@@ -26,8 +30,7 @@
 					<p><h1>@result.Resault</h1></p>
 				</div>
 			}
-		</div>
-	</div>
+		</div> *@
 </div>
 
 

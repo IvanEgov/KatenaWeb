@@ -3925,73 +3925,28 @@ input, select, textarea {
 	height:100vh;
 }
 
-.previousDot {
-	border: double;
-	border-radius: 30px;
-	border-color: gray;
-	padding: 5px 5px 5px 5px;
-	background: #474e43;
-	color: #fff;
-}
-
-.progressLine {
-	display: inline-block;
-	position: relative;
-	padding-left: 20px;
-	content: " ";
-	background: #077d9b;
-	width: 50px;
-	height: 5px;
-	border: double;
-	border-radius: 15px;
-	border-color: darkgrey;
-}
-
-/*.progressLine:before {
-    content: " ";
-    background: #077d9b;
-    width: 50px;
-    height: 1px;*/
-/*border-bottom: 1px solid #077d9b;*/
-/*}*/
-
-.nowDot {
-	border: double;
-	border-radius: 30px;
-	padding: 5px 5px 5px 5px;
-	background: #1b9fbe;
-	color: #fff;
-	border-color: gray;
-}
-
-.nextDot {
-	border: double;
-	border-radius: 30px;
-	padding: 5px 5px 5px 5px;
-	background: #fff;
-	color: #000;
-	border-color: gray;
-}
-
-.nextLine {
-	content: " ";
-	background: #A6A88F;
-	width: 50px;
-	height: 5px;
-	display: inline-block;
-	position: relative;
-	padding-left: 20px;
-	border: double;
-	border-radius: 15px;
-	border-color: darkgrey;
-}
-
 .result {
+	margin-left: 40px;
+	margin-right: 40px;
 }
 
 .results {
 }
 
+.result-welcome {
+	text-align: center;
+	line-height: 1.5;
+	font-family: Firenight-Regular;
+	display: inline-block;
+	padding-left: 37.5px;
+	padding-right: 75px;
+	margin-top: 35px;
+}
+
+result-welcome-text {
+	display: block;
+	text-align: center;
+}
 .action-wrapper {
 	text-align: center;
 	top: 50%;
