@@ -1,6 +1,42 @@
 ﻿@using Katena.Domain
 @inject DataManager datamanager;
-<div style="display:flex;">
+<div id="wrapper" style="width:100vw; height:100vh;">
+	<section id="intro" class="wrapper style1 fullscreen fade-up">
+		<div class="inner">
+			<h1>@ViewBag.pack.Name</h1>
+			<p>
+				@ViewBag.pack.Description
+			</p>
+			<p>
+				Выберите пол. После чего начнется прохождение теста. Желаем удачи!
+			</p>
+			<ul class="actions">	
+				<li>
+					<form style="display: inline-block;" id="form-@ViewBag.pack.Id" asp-controller="Tests" asp-action="NextQuestion">
+						<input type="hidden" name="pack" value="@ViewBag.pack.Id">
+						<input type="hidden" name="index" value="-1">
+						<input type="hidden" name="gender" value="man">
+						<input type="submit" name="bottom" value="Мужчина">
+					</form>
+				</li>
+				<li>
+					<form style="display: inline-block;" id="form-@ViewBag.pack.Id" asp-controller="Tests" asp-action="NextQuestion">
+						<input type="hidden" name="pack" value="@ViewBag.pack.Id">
+						<input type="hidden" name="index" value="-1">
+						<input type="hidden" name="gender" value="women">
+						<input type="submit" name="bottom" value="Женщина">
+					</form>
+				</li>
+				<li>
+					<div style="display:inline-block;">
+						<button class="button" id="homeButton"><a asp-area="" asp-controller="Home" asp-action="Index">Вернуться на главную</a></button>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</section>
+<div/>
+@* <div style="display:flex;">
 	<div id="Name" style="display:inline-block; width:500px;">
 		<h2>@ViewBag.pack.Name</h2>
 		<h2>@ViewBag.pack.Description</h2>
@@ -10,7 +46,7 @@
 			<div style="margin-bottom:20px;">
 				<img class="img-block" src="~/images/@ViewBag.pack.TitleImagePath" />
 			</div>
-		</div>
+		</div> *@
 		@* <div id="Gender" style="display: inline-block;">
 			<h2>Каков ваш пол?</h2>
 			<div id="genderButton">
@@ -30,7 +66,7 @@
 				</form>
 		</div> 
 		</div>*@
-		<form style="display: inline-block;" id="form-@ViewBag.pack.Id" asp-controller="Tests" asp-action="NextQuestion">
+		@* <form style="display: inline-block;" id="form-@ViewBag.pack.Id" asp-controller="Tests" asp-action="NextQuestion">
 			<input type="hidden" name="pack" value="@ViewBag.pack.Id">
 			<input type="hidden" name="index" value="-1">
 			<input type="hidden" name="gender" value="man">
@@ -43,4 +79,4 @@
 			<input type="submit" name="bottom" value="Начать тест(Женщины)">
 		</form>
 	</div>
-</div>
+</div> *@
