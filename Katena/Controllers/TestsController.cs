@@ -314,24 +314,40 @@ namespace Katena.Controllers
                             ViewBag.calculateType = "Интегратор";
                         }
 
-                       if(max_distr == distr_mentorP_s)
+                       if(max_distr == distr_mentorP_s && gender == "man")
                         {
                          //   if(ViewBag.)
                             //вывод дистрикта наставник/заботлива
                             ViewBag.calculateType = "Наставник";
                         }
-                       else if(max_distr == distr_lookingP_s)
+                       else if(max_distr == distr_lookingP_s && gender == "man")
                         {
                             //вывод дистрикта ищущий/познающая
                             ViewBag.calculateType = "Ищущий";
                         }
-                       else
+                       else if(max_distr == distr_hunterP_s && gender == "man")
                         {
                             //вывод дистрикта охотник/хранительница
                             ViewBag.calculateType = "Охотник";
                         }
-
-                       /// Дописать удаление куки сесии++++++++++++++++++++++++++++++++++++++++++++++++++++
+                       //женский тип
+                        if (max_distr == distr_mentorP_s && gender == "woman")
+                        {
+                            //   if(ViewBag.)
+                            //вывод дистрикта наставник/заботлива
+                            ViewBag.calculateType = "Заботливая";
+                        }
+                        else if (max_distr == distr_lookingP_s && gender == "woman")
+                        {
+                            //вывод дистрикта ищущий/познающая
+                            ViewBag.calculateType = "Познающая";
+                        }
+                        else if (max_distr == distr_hunterP_s && gender == "woman")
+                        {
+                            //вывод дистрикта охотник/хранительница
+                            ViewBag.calculateType = "Хранительница";
+                        }
+                        /// Дописать удаление куки сесии++++++++++++++++++++++++++++++++++++++++++++++++++++
                     }
                 }
 			}
