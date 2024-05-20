@@ -5136,7 +5136,19 @@ namespace Katena.Domain
 							new Guid("991c17b5-7165-46cc-96f2-3811798622c3"),
 							new Guid("b29b2152-b6f1-45d7-a49d-902ca3530268"),
 							new Guid("b72c0d38-0fe3-4a00-bef2-acb32789e086"),
-							new Guid("e2fb7ee4-614b-4cd5-b11e-e522a2d75e94")
+							new Guid("e2fb7ee4-614b-4cd5-b11e-e522a2d75e94"),
+							new Guid("0d6ba570-1721-4d51-83c4-fa990a69b728"),
+							new Guid("2da33b3a-e685-4dd9-a1a1-55121d31d136"),
+							new Guid("2e77f1b9-a436-4c15-be4b-b581c10bec2c"),
+							new Guid("46af2f80-adf6-4fa3-88a4-4c9d9703a914"),
+							new Guid("64552b30-4c93-4a69-b305-10f4d7db6cb4"),
+							new Guid("81393ae6-9b6f-462f-a189-bb421d430bff"),
+							new Guid("8bb5e5c9-14c4-4dd1-b695-d144aaa8f7d2"),
+							new Guid("a548a1f0-b437-41ad-b5ef-6e8e4e5064ed"),
+							new Guid("b1954ccf-f1d0-495a-928d-0099701a9518"),
+							new Guid("bc01dd89-601d-4c4e-969f-2082b6833ffc"),
+							new Guid("c299418c-9304-4fa0-a681-ec09a95b123c"),
+							new Guid("e6eb1f77-a620-488a-aea7-ec2dba777a66")
 						},
 				Background = "background1,background2,background3,background4,background5,background6,background7,background8,background9,background10,background11",
 				Pictures = "picture1,picture2,picture3,picture4,picture5,picture6,picture7,picture8,picture9,picture10,picture11"

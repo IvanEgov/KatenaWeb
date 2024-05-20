@@ -2535,9 +2535,9 @@ input, select, textarea {
 				font-size: 1.25em;
 			}
 
-				.wrapper.style1 .icon.major:before {
-					color: #5e42a6;
-				}
+			.wrapper.style1 .icon.major:before {
+				color: #5e42a6;
+			}
 
 				.wrapper.style1-alt .icon.major:before {
 					color: #493382;
@@ -3239,9 +3239,9 @@ input, select, textarea {
 			background-color: #261c3e;
 		}
 
-		.wrapper.style1 {
-			background-color: #5e42a6;
-		}
+.wrapper.style1 {
+	background-color: #1c918c;
+}
 
 		.wrapper.style1-alt {
 			background-color: #493382;
@@ -3521,20 +3521,20 @@ input, select, textarea {
 
 /* Sidebar */
 
-	#sidebar {
-		padding: 2.5em 2.5em 0.5em 2.5em ;
-		background: #312450;
-		cursor: default;
-		height: 100vh;
-		left: 0;
-		overflow-x: hidden;
-		overflow-y: auto;
-		position: fixed;
-		text-align: right;
-		top: 0;
-		width: 18em;
-		z-index: 10000;
-	}
+#sidebar {
+	padding: 2.5em 2.5em 0.5em 2.5em;
+	background: /*#132936*/ #0d1c26;
+	cursor: default;
+	height: 100vh;
+	left: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	position: fixed;
+	text-align: right;
+	top: 0;
+	width: 18em;
+	z-index: 10000;
+}
 
 		#sidebar > .inner {
 			display: -moz-flex;
@@ -3753,21 +3753,21 @@ input, select, textarea {
 				border-radius: 0.2em;
 				bottom: 0;
 				content: '';
-				height: 0.2em;
+				height: 1px;
 				position: absolute;
 				right: 0;
 				width: 100%;
 			}
 
 			#sidebar nav a:before {
-				background: #3c2c62;
+				background: #ffffff;
 			}
 
 			#sidebar nav a:after {
 				background-image: -moz-linear-gradient(to right, #5e42a6, #b74e91);
 				background-image: -webkit-linear-gradient(to right, #5e42a6, #b74e91);
 				background-image: -ms-linear-gradient(to right, #5e42a6, #b74e91);
-				background-image: linear-gradient(to right, #5e42a6, #b74e91);
+				background-image: linear-gradient( to right, #1c918c, #ff0000) /*linear-gradient(to right, #5e42a6, #b74e91)*/;
 				-moz-transition: max-width 0.2s ease;
 				-webkit-transition: max-width 0.2s ease;
 				-ms-transition: max-width 0.2s ease;
@@ -3871,7 +3871,7 @@ input, select, textarea {
 
 /* Intro */
 
-	#intro {
+	/*#intro {
 		background-attachment: fixed;
 		background-image: url("images/intro.svg");
 		background-position: top right;
@@ -3905,7 +3905,7 @@ input, select, textarea {
 				background-attachment: scroll;
 			}
 
-		}
+		}*/
 
 @font-face {
 	font-family: "Firenight-Regular";

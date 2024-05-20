@@ -25,9 +25,9 @@
 <div id="wrapper">
 	<section id="intro" class="wrapper style1 fullscreen fade-up">
 		<div class="inner">
-			<h1>@Html.Raw(Model.Title)</h1>
+			<h1 style="font-family:'Firenight-Regular'">@Html.Raw(Model.Title)</h1>
 			<p>
-				@Html.Raw(Model.Text)
+				<h3 style="font-family:'Firenight-Regular'; font-size:large;">@Html.Raw(Model.Text)</h3>
 			</p>
 			<ul class="actions">
 				<li><a href="#four" class="button scrolly">Связаться с нами</a></li>
@@ -36,53 +36,28 @@
 		</div>
 	</section>
 
-	<!-- О тесте -->
+	<!-- Тесты -->
 	<section id="one" class="wrapper style2 spotlights">
-		<section>
-			<a href="#" class="image"><img src="~/images/images.jpg" alt="" data-position="center center" /></a>
+		<section style="background-color:#1c918c">
+			<a href="#" class="image"><img src="~/images/image1.jpg" alt="" data-position="center center" /></a>
 			<div class="content">
 				<div class="inner">
-					<h2>Зачем вам наш тест?</h2>
-					<p>Вы сможете больше узнать о себе.</p>
+					<h2 style="font-family:'Firenight-Regular'">ОПИСАНИЕ ТЕСТА</h2>
+					<p>Твоя роль в сценарии</p>
 					<ul class="actions">
-						<li><a asp-area="" asp-controller="Tests" asp-action="Index" asp-route-id="" class="button scrolly">Пройти тест</a></li>
+						<li><a asp-area="" asp-controller="Tests" asp-action="Index" asp-route-id="" class="button scrolly" style="font-family:'Firenight-Regular'"><h2 style="line-height:2.5;">Learn more</h2></a></li>
 					</ul>
 				</div>
 			</div>
 		</section>
-		<section>
-			<a href="#" class="image"><img src="~/images/images.jpg" alt="" data-position="top center" /></a>
+		<section style="background-color:#3395b0">
+			<a href="#" class="image"><img src="~/images/image2.jpg" alt="" data-position="top center" /></a>
 			<div class="content">
 				<div class="inner">
-					<h2>Открывайте новые горизонты</h2>
-					<p>Наш тест поможет вам познать новые грани себя.</p>
+					<h2 style="font-family:'Firenight-Regular'">ПРОЙТИ ТЕСТ</h2>
+					<p>13 ситуаций, 52 варианта действий, 42 мотива</p>
 					<ul class="actions">
-						<li><a asp-area="" asp-controller="Tests" asp-action="Index" asp-route-id="" class="button scrolly">Пройти тест</a></li>
-					</ul>
-				</div>
-			</div>
-		</section>
-		<section>
-			<a href="#" class="image"><img src="~/images/images.jpg" alt="" data-position="25% 25%" /></a>
-			<div class="content">
-				<div class="inner">
-					<h2>Не стойте на месте</h2>
-					<p>Только узнав кто вы, вы сможете двигаться вперед.</p>
-					<ul class="actions">
-						<li><a asp-area="" asp-controller="Tests" asp-action="Index" asp-route-id="" class="button scrolly">Пройти тест</a></li>
-					</ul>
-				</div>
-			</div>
-		</section>
-		<section>
-			<a href="#" class="image"><img src="~/images/images.jpg" alt="" data-position="25% 25%" /></a>
-			<div class="content">
-				<div class="inner">
-					<h2>Что вы получите?</h2>
-					<p>Вы можете ознакомиться со всеми результатами</p>
-					<ul class="actions">
-						<li><a asp-area="" asp-controller="Tests" asp-action="Index" asp-route-id="" class="button scrolly">Пройти тест</a></li>
-						<li><a href="#two" onclick="showResults()" class="button scrolly">Посмотреть результаты</a></li>
+						<li><a asp-area="" asp-controller="Tests" asp-action="Index" asp-route-id="" class="button scrolly" style="font-family:'Firenight-Regular'"><h2 style="line-height:2.5;">LEARN MORE</h2></a></li>
 					</ul>
 				</div>
 			</div>
@@ -113,7 +88,7 @@
 		}
 	</div>
 	<!-- Возможности -->
-	<section id="three" class="wrapper style3 fade-up">
+	@* <section id="three" class="wrapper style3 fade-up">
 		<div class="inner">
 			<h2>Возможности</h2>
 			<p>Зачем вам мы?.</p>
@@ -153,7 +128,7 @@
 				<li><a a asp-area="" asp-controller="Abilities" asp-action="Index" asp-route-id="" class="button">Узнать больше о своих возможностях</a></li>
 			</ul>
 		</div>
-	</section>
+	</section> *@
 
 	<!--Новости-->
 	<!--Разворачиваем новости, чтобы вывести в актуальном порядке-->

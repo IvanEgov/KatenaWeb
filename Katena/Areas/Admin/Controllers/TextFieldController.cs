@@ -29,14 +29,14 @@ namespace Katena.Areas.Admin.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-                if (titleImageFile != null)
+                /*if (titleImageFile != null)
                 {
                     model.TitleImagePath = titleImageFile.FileName;
                     using (var stream = new FileStream(Path.Combine(hostingEnvironment.WebRootPath, "images/", titleImageFile.FileName), FileMode.Create))
                     {
                         titleImageFile.CopyTo(stream);
                     }
-                }
+                }*/
                 dataManager.TextFields.SaveTextField(model);
 				return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
 			}
