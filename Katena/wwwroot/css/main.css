@@ -4044,3 +4044,10 @@ result-welcome-text {
 .button-question-post {
 	font-family: Firenight-Regular;
 }
+
+.sidebar-word {
+	font-family: 'Firenight-Regular';
+	font-style: normal;
+	font-size: x-large;
+	letter-spacing: 2px;
+}
