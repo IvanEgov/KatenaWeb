@@ -47,13 +47,13 @@ namespace Katena.Controllers
         public IActionResult SetGender(string gender, Guid id)
         {
             ViewBag.gender = gender;
-			QuestionPackBase pack = dataManager.Packs.GetPackById(id);
-			ViewBag.pack = pack;
-			ViewBag.index = -1;
-			return View("Index");
-		}*/
+            QuestionPackBase pack = dataManager.Packs.GetPackById(id);
+            ViewBag.pack = pack;
+            ViewBag.index = -1;
+            return View("Index");
+        }*/
 
-		[HttpPost]
+        [HttpPost]
 		public IActionResult NextQuestion(Guid pack, int index, Guid question, Guid answers, Guid reason, string gender, string background, bool checkReason = false)
 		{
             //TODO: Test logic

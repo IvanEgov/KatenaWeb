@@ -5,18 +5,18 @@ using System.Diagnostics;
 
 namespace Katena.Controllers
 {
-    public class AbilitiesController : Controller
+    public class DescriptionController : Controller
     {
 		private readonly DataManager dataManager;
 
-		public AbilitiesController(DataManager dataManager)
+		public DescriptionController(DataManager dataManager)
 		{
 			this.dataManager = dataManager;
 		}
 
 		public IActionResult Index()
         {
-			return View(dataManager.TextFields.GetTextFieldByCodeWord("PageAbilities"));
+			return View(dataManager.TextFields.GetTextFieldByCodeWord("PageDescription"));
 		}
     }
 }

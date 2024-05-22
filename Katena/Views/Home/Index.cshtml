@@ -45,7 +45,7 @@
 					<h2 style="font-family:'Firenight-Regular'">ОПИСАНИЕ ТЕСТА</h2>
 					<p>Твоя роль в сценарии</p>
 					<ul class="actions">
-						<li><a asp-area="" asp-controller="Tests" asp-action="Index" asp-route-id="" class="button scrolly" style="font-family:'Firenight-Regular'"><h2 style="line-height:2.5;">Learn more</h2></a></li>
+						<li><a asp-area="" asp-controller="Description" asp-action="Index" asp-route-id="" class="button scrolly" style="font-family:'Firenight-Regular'"><h2 style="line-height:2.5;">Learn more</h2></a></li>
 					</ul>
 				</div>
 			</div>
@@ -64,6 +64,48 @@
 		</section>
 	</section>
 	<!--Результаты-->
+	<section id="two" class="wrapper style2 spotlights">
+		<section style="background-color:#1c918c">
+			<a href="#" class="image"><img src="~/images/image1.jpg" alt="" data-position="center center" /></a>
+			<div class="content">
+				<div class="inner">
+					<h2 style="font-family:'Firenight-Regular'">ЖЕНЩИНЫ</h2>
+					<p>Описание всех женских психотипов</p>
+					<ul class="actions">
+						<li>
+							<form asp-controller="ResultDescription" asp-action="Index">
+								<input type="hidden" name="gender" value="female">
+								<div class="button-question">
+									<input type="submit" style="text-align:left; height:auto; line-height:50px;" value="LEARN MORE">
+								</div>
+							</form>
+						</li>
+						@* <li><a asp-area="" asp-controller="Description" asp-action="Index" asp-route-id="" class="button scrolly" style="font-family:'Firenight-Regular'"><h2 style="line-height:2.5;">Learn more</h2></a></li> *@
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section style="background-color:#3395b0">
+			<a href="#" class="image"><img src="~/images/image2.jpg" alt="" data-position="top center" /></a>
+			<div class="content">
+				<div class="inner">
+					<h2 style="font-family:'Firenight-Regular'">МУЖЧИНЫ</h2>
+					<p>Описание всех мужских психотипов</p>
+					<ul class="actions">
+						<li>
+							<form asp-controller="ResultDescription" asp-action="Index">
+								<input type="hidden" name="gender" value="male">
+								<div class="button-question">
+									<input type="submit" style="text-align:left; height:auto; line-height:50px;" value="LEARN MORE">
+								</div>
+							</form>
+						</li>
+						@* <li><a asp-area="" asp-controller="Tests" asp-action="Index" asp-route-id="" class="button scrolly" style="font-family:'Firenight-Regular'"><h2 style="line-height:2.5;">LEARN MORE</h2></a></li> *@
+					</ul>
+				</div>
+			</div>
+		</section>
+	</section>
 	<div id="results" hidden>
 		@foreach (ResaultsBase result in datamanager.Resaults.GetAllResaults())
 		{
@@ -132,7 +174,7 @@
 
 	<!--Новости-->
 	<!--Разворачиваем новости, чтобы вывести в актуальном порядке-->
-	@{
+	@* @{
 		IQueryable<NewsBase> allNews = datamanager.News.GetNews();
 		List<NewsBase> reversedNews = allNews.ToList();
 		reversedNews.Reverse();
@@ -149,14 +191,28 @@
 					<div class="inner">
 						<h2>@news.Title</h2>
 						<p>@Html.Raw(news.Text)</p>
-						@* <ul class="actions">
-							<li><a asp-area="" asp-controller="Tests" asp-action="Index" asp-route-id="" class="button scrolly">Пройти тест</a></li>
-						</ul> *@
 					</div>
 				</div>
 			</section>
 		</section>
-	}
+	} *@
+	<section id="five" class="wrapper style1 fullscreen fade-up">
+		<div class="inner">
+			<h1 style="font-family:'Firenight-Regular'"></h1>
+			<div id="picture" style="margin-left:650px;">
+				<div>
+					@* <img class="img-block" src="~/images/@ViewBag.TitleImagePath" /> *@
+				</div>
+			</div>
+			<p>
+				@* <h3 style="font-family:'Firenight-Regular'; font-size:large;">@Html.Raw(Model.Text)</h3> *@
+			</p>
+			<ul class="actions">@* 
+				<li><a asp-area="" asp-controller="Home" asp-action="Index" class="button scrolly">Вернуться на главную</a></li>
+				<li><a asp-area="" asp-controller="Tests" asp-action="Index" asp-route-id="" class="button scrolly">Пройти тест</a></li> *@
+			</ul>
+		</div>
+	</section>
 
 	<!-- Контактная информация -->
 	<section id="four" class="wrapper style1 fade-up">
