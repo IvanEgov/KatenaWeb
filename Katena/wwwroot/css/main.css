@@ -3930,7 +3930,9 @@ input, select, textarea {
 	margin-right: 40px;
 }
 
-.results {
+.result-gender {
+	background-image: url(../images/background6.png);
+	text-align: center;
 }
 
 .result-welcome {

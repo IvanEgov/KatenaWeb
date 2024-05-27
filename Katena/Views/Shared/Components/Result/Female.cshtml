@@ -1,4 +1,42 @@
-﻿<div style="display:inline-block;">
-    <button class="button" id="homeButton"><a asp-area="" asp-controller="Home" asp-action="Index">Вернуться на главную</a></button>
+﻿@using Katena.Domain
+@inject DataManager datamanager;
+
+<div class="result-gender">
+	@* <div class="result-welcome">
+	<div class="result-welcome-text">
+	<h2 style="font-family:'Firenight-Regular';">@ViewBag.calculateType @ViewBag.calculateStyle</h2>
+	</div>
+	<div class="line-wrapper">
+	<span class="line"></span>
+	</div>
+	</div> *@
+	<button class="button" id="homeButton"><a asp-area="" asp-controller="Home" asp-action="Index">Вернуться на главную</a></button>
+	@foreach (ResaultsBase result in datamanager.Resaults.GetAllResaults())
+	{
+		if ("woman" == result.Gender)
+		{
+			<div class="result-welcome">
+				<div class="result-welcome-text">
+					<h2 style="font-family:'Firenight-Regular';">@result.Type @result.Style</h2>
+				</div>
+				<div class="line-wrapper">
+					<span class="line"></span>
+				</div>
+			</div>
+			<div class="result">
+				<h2 style="font-size:1.5em; font-family:'Firenight-Regular';">@result.Resault</h2>
+			</div>
+		}
+	}
+	@* <button class="button" onclick="showResults()" id="showButton">Показать все результаты</button> *@
+	<button class="button" id="homeButton"><a asp-area="" asp-controller="Home" asp-action="Index">Вернуться на главную</a></button>
+	@* <div id="results" hidden>
+	@foreach (Guid id in ViewBag.pack.ResaultsId)
+	{
+	ResaultsBase result = datamanager.Resaults.GetResaultById(id);
+	<div class="result">
+	<p><h1>@result.Resault</h1></p>
+	</div>
+	}
+	</div> *@
 </div>
-Результаты для девочек
