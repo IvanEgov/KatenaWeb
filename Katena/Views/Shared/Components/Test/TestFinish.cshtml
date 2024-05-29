@@ -2,12 +2,15 @@
 @inject DataManager datamanager;
 
 <div class="result-wrapper" style="text-align:center;">
+	<div class="result-text">
 		<div class="result-welcome">
 			<div class="result-welcome-text">
-			<h2 style="font-family:'Firenight-Regular';">Вы @ViewBag.calculateType @ViewBag.calculateStyle</h2>
+				<h1 style="font-family:'Firenight-Regular';color:black;">Результат теста</h1>
 			</div>
+			<h2 style="font-family:'Firenight-Regular';color:black;">Ваш тип</h2>
+			<h2 style="font-family:'Firenight-Regular';color:black;">@ViewBag.calculateType @ViewBag.calculateStyle</h2>
 			<div class="line-wrapper">
-				<span class="line"></span>
+				<span class="result-line"></span>
 			</div>
 		</div>
 		<div class="result">
@@ -16,31 +19,38 @@
 				ResaultsBase result = datamanager.Resaults.GetResaultById(id);
 				if (ViewBag.calculateType == result.Type && ViewBag.calculateStyle == result.Style && ViewBag.gender == result.Gender)
 				{
-				<h2 style="font-size:1.5em; font-family:'Firenight-Regular';">@result.Resault</h2>
+				<h2 style="font-size:1.5em; font-family:'Firenight-Regular'; color:black;">@result.Resault</h2>
+				ViewBag.trigerImage = result.TrigerImage + ".png";
 				}
 			}
 		</div>
-		@* <button class="button" onclick="showResults()" id="showButton">Показать все результаты</button> *@
-		<button class="button" id="homeButton"><a asp-area="" asp-controller="Home" asp-action="Index">Вернуться на главную</a></button>
-		@* <div id="results" hidden>
-			@foreach (Guid id in ViewBag.pack.ResaultsId)
+	</div>
+	<div class="result-tables">
+		<div class="distrib-table">
+			<h1 style="color:black;">Производитель: @ViewBag.P%</h1>
+			<h1 style="color:black;">Администратор: @ViewBag.A%</h1>
+			<h1 style="color:black;">Производитель: @ViewBag.E%</h1>
+			<h1 style="color:black;">Интегратор: @ViewBag.I%</h1>
+			@if (ViewBag.gender == "man")
 			{
-				ResaultsBase result = datamanager.Resaults.GetResaultById(id);
-				<div class="result">
-					<p><h1>@result.Resault</h1></p>
-				</div>
+				<h1 style="color:black;">Отеческий: @ViewBag.Parent%</h1>
+				<h1 style="color:black;">Эгоцентричный: @ViewBag.Self%</h1>
+				<h1 style="color:black;">Сыновий: @ViewBag.Children%</h1>
 			}
-		</div> *@
+			else if (ViewBag.gender == "woman")
+			{
+				<h1 style="color:black;">Материнский: @ViewBag.Parent%</h1>
+				<h1 style="color:black;">Эгоцентричный: @ViewBag.Self%</h1>
+				<h1 style="color:black;">Дочерний: @ViewBag.Children%</h1>
+			}
+			else
+			{
+				<h1 style="color:black;">error(File:TestFinish)</h1>
+			}
+		</div>
+		<div class="triger-image">
+			<img class="image" style="display:flex;" src="~/images/@ViewBag.TrigerImage" alt="" data-position="center" />
+		</div>
+	</div>
+	<button class="button" id="homeButton"><a asp-area="" asp-controller="Home" asp-action="Index">Вернуться на главную</a></button>
 </div>
-
-
-<script>
-	function showResults() {
-		if (document.getElementById("results").hidden == false) {
-			document.getElementById("results").hidden = true;
-		}
-		else {
-			document.getElementById("results").hidden = false;
-		}
-	}
-</script>

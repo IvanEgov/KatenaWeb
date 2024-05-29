@@ -280,19 +280,29 @@ namespace Katena.Controllers
 					
                    if( HttpContext.Session.Keys.Contains("style_pp"))
 					{
-						int style_pp_s = Int32.Parse(HttpContext.Session.GetString("style_pp"))/10 +1 + Int32.Parse(HttpContext.Session.GetString("style_p"));
-                        int style_ee_s = Int32.Parse(HttpContext.Session.GetString("style_aa"))/10 +1 + Int32.Parse(HttpContext.Session.GetString("style_a"));
-                        int style_aa_s = Int32.Parse(HttpContext.Session.GetString("style_ee")) / 10 + 1 + Int32.Parse(HttpContext.Session.GetString("style_e"));
-                        int style_ii_s = Int32.Parse(HttpContext.Session.GetString("style_ii")) / 10 + 1 + Int32.Parse(HttpContext.Session.GetString("style_i"));
+						int style_pp_s = Int32.Parse(HttpContext.Session.GetString("style_pp")) + Int32.Parse(HttpContext.Session.GetString("style_p"));
+                        int style_ee_s = Int32.Parse(HttpContext.Session.GetString("style_aa")) + Int32.Parse(HttpContext.Session.GetString("style_a"));
+                        int style_aa_s = Int32.Parse(HttpContext.Session.GetString("style_ee")) + Int32.Parse(HttpContext.Session.GetString("style_e"));
+                        int style_ii_s = Int32.Parse(HttpContext.Session.GetString("style_ii")) + Int32.Parse(HttpContext.Session.GetString("style_i"));
 
                        
-                        int distr_mentorP_s = Int32.Parse(HttpContext.Session.GetString("distr_mentorP"))/10 +1 + Int32.Parse(HttpContext.Session.GetString("distr_mentor"));
-                        int distr_lookingP_s = Int32.Parse(HttpContext.Session.GetString("distr_lookingP")) / 10 + 1 + Int32.Parse(HttpContext.Session.GetString("distr_looking"));
-                        int distr_hunterP_s = Int32.Parse(HttpContext.Session.GetString("distr_hunterP")) / 10 + 1 + Int32.Parse(HttpContext.Session.GetString("distr_hunter"));
+                        int distr_mentorP_s = Int32.Parse(HttpContext.Session.GetString("distr_mentorP")) + Int32.Parse(HttpContext.Session.GetString("distr_mentor"));
+                        int distr_lookingP_s = Int32.Parse(HttpContext.Session.GetString("distr_lookingP")) + Int32.Parse(HttpContext.Session.GetString("distr_looking"));
+                        int distr_hunterP_s = Int32.Parse(HttpContext.Session.GetString("distr_hunterP")) + Int32.Parse(HttpContext.Session.GetString("distr_hunter"));
 
                         int max_styl = Math.Max(style_pp_s,Math.Max(style_ee_s, Math.Max(style_aa_s, style_ii_s)));
                         int max_distr = Math.Max(distr_mentorP_s, Math.Max(distr_lookingP_s, distr_hunterP_s));
-                       if(max_styl == style_pp_s)
+
+                        ViewBag.P = Math.Round(100.0 * style_pp_s / (style_pp_s + style_ee_s + style_aa_s + style_ii_s), 2);
+                        ViewBag.A = Math.Round(100.0 * style_aa_s / (style_pp_s + style_ee_s + style_aa_s + style_ii_s), 2);
+                        ViewBag.E = Math.Round(100.0 * style_ee_s / (style_pp_s + style_ee_s + style_aa_s + style_ii_s), 2);
+                        ViewBag.I = Math.Round(100.0 * style_ii_s / (style_pp_s + style_ee_s + style_aa_s + style_ii_s), 2);
+
+                        ViewBag.Parent = Math.Round(100.0 * distr_mentorP_s / (distr_mentorP_s + distr_lookingP_s + distr_hunterP_s), 2);
+                        ViewBag.Self = Math.Round(100.0 * distr_hunterP_s / (distr_mentorP_s + distr_lookingP_s + distr_hunterP_s), 2);
+                        ViewBag.Children = Math.Round(100.0 * distr_lookingP_s / (distr_mentorP_s + distr_lookingP_s + distr_hunterP_s), 2);
+
+					   if (max_styl == style_pp_s)
                         {
                             //вывод Производитель
                             ViewBag.calculateStyle = "Производитель";

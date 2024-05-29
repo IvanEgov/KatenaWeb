@@ -6,11 +6,11 @@
 }
 
 @inject DataManager datamanager;
-
-@* <div> *@
+@{
+    ViewBag.background += ".png";
+}
+<img class="background-image" src="~/images/@ViewBag.background" alt="" data-position="center" />
 <div style="width:100vw; height:100vh;">
-    @{ViewBag.background += ".png";}
-    <img class="background-image" src="~/images/@ViewBag.background" alt="" data-position="center"/>
         @{
             List<QuestionPackBase> packs = datamanager.Packs.GetAllPacks().ToList();
         }
@@ -51,15 +51,14 @@
             @* <div  style="display:inline-block;">
                 <button class="button" id="homeButton"><a asp-area="" asp-controller="Home" asp-action="Index">Вернуться на главную</a></button>
             </div> *@
-            <div class="test"@*  style="display:inline-block; left:15%;" *@>
-                @await Component.InvokeAsync("Test", new
-                    {
-                        pack = ViewBag.pack,
-                        index = ViewBag.index,
-                        reason = ViewBag.reason,
-                        answer = ViewBag.answer,
-                        gender = ViewBag.gender,
-                        background = ViewBag.background
+            @await Component.InvokeAsync("Test", new
+            {
+                pack = ViewBag.pack,
+                index = ViewBag.index,
+                reason = ViewBag.reason,
+                answer = ViewBag.answer,
+                gender = ViewBag.gender,
+                background = ViewBag.background
                        /* distr_mentorP = ViewBag.distr_mentorP,
                         distr_lookingP = ViewBag.distr_lookingP,
                         distr_hunterP = ViewBag.distr_hunterP,
@@ -74,9 +73,7 @@
                         style_A = ViewBag.style_A,
                         style_E = ViewBag.style_E,
                         style_I = ViewBag.style_I*/
-                    })
-                
-            </div>
+            })
            /* <div id="styl" style="position:absolute; display:flex; left:45%;">
                 @{
                     if (@ViewBag.style_PP != null)
@@ -89,9 +86,7 @@
             </div>*/
         }
         
-    </div>
-   
-@* </div> *@
+ </div>
 
 <script>
     document.getElementById("startButton").addEventListener(

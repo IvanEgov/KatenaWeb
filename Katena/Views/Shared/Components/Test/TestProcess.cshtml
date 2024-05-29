@@ -3,19 +3,17 @@
 <!--TODO: в TestViewComponent передать bool reason=true и action(answer), выбранные пользователем -->
 
 @{ViewBag.picture += ".png";}
-<div class="action-wrapper">
-	<div class="question">
-		<div class="question-text">
-			<h1 style="float:left; padding-right:37.5px; font-family:'Firenight-Regular'; font-size:3.5em;">"</h1>
-			<h2 style="font-family:'Firenight-Regular';">@ViewBag.question.Name</h2>
-		</div>
-		<div class="line-wrapper">
-			<span class="line"></span>
-		</div>
+<div class ="test">
+	<div class="question-text">
+		<h1 class="question-symbol">"</h1>
+		<h2 style="margin: 0 0 0 0;">@ViewBag.question.Name</h2>
+	</div>
+	<div class="line-wrapper">
+		<span class="line"></span>
 	</div>
 	<div class="question-image">
-		<img class="image" style="width:447px;height:447px;" src="~/images/@ViewBag.picture" alt="" data-position="center" />
-		<h2 style="font-family:'Firenight-Regular'">Ситуация @(ViewBag.index + 1)/@ViewBag.pack.QuestionsIds.Count</h2>
+		<img class="question-image-circle" src="~/images/@ViewBag.picture" alt="" data-position="center" />
+		<h2 style="font-family:'Firenight-Regular';font-size:2vw;">Ситуация @(ViewBag.index + 1)/@ViewBag.pack.QuestionsIds.Count</h2>
 	</div>
 	<div class="action">
 		@foreach (Guid id in ViewBag.question.AnswerId)
@@ -30,36 +28,37 @@
 				<input type="hidden" name="gender" value="@ViewBag.gender">
 				<input type="hidden" name="checkReason" value="True">
 				<div class="button-question">
-					<input type="submit" style="text-align:left; height:auto; line-height:50px;" value="@answer.Action">
+					<input type="submit" class="button-action" value="@answer.Action">
 				</div>
 			</form>
 		}
 	</div>
 
-	@* <div class="testProgressDots">
+		@* <div class="testProgressDots">
 		@for (int i = 0; i < ViewBag.pack.QuestionsIds.Count; i++)
 		{
-			if (i < ViewBag.index)
-			{
-				<span class="previousDot">@(i + 1)</span>
-				<span class="progressLine"></span>
-			}
-			else if (i == ViewBag.index)
-			{
-				<span class="nowDot">@(i + 1)</span>
-				if (i < ViewBag.pack.QuestionsIds.Count - 1)
-				{
-					<span class="nextLine"></span>
-				}
-			}
-			else
-			{
-				<span class="nextDot">@(i + 1)</span>
-				if (i < ViewBag.pack.QuestionsIds.Count - 1)
-				{
-					<span class="nextLine"></span>
-				}
-			}
+		if (i < ViewBag.index)
+		{
+		<span class="previousDot">@(i + 1)</span>
+		<span class="progressLine"></span>
 		}
-	</div> *@
+		else if (i == ViewBag.index)
+		{
+		<span class="nowDot">@(i + 1)</span>
+		if (i < ViewBag.pack.QuestionsIds.Count - 1)
+		{
+		<span class="nextLine"></span>
+		}
+		}
+		else
+		{
+		<span class="nextDot">@(i + 1)</span>
+		if (i < ViewBag.pack.QuestionsIds.Count - 1)
+		{
+		<span class="nextLine"></span>
+		}
+		}
+		}
+		</div> *@
 </div>
+
