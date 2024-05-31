@@ -3947,14 +3947,16 @@ input, select, textarea {
 .result-left {
 	text-align: center;
 	display: inline-block;
-	position:relative;
-	flex-grow:1;
+	position: relative;
+	flex-grow: 1;
+	font-size: 1.2vw;
 }
 .result-tables {
 	text-align: center;
 	display: inline-block;
 	position: relative;
 	flex-grow: 1;
+	font-size: 1.2vw;
 }
 .result-wrapper {
 	display: flex;
