@@ -1,30 +1,31 @@
 ﻿ @using Katena.Domain
 @inject DataManager datamanager;
 
-<div class="result-wrapper" style="text-align:center;">
-	<div class="result-text">
+<div class="result-wrapper">
+	<div class="result-left">
 		<div class="result-welcome">
 			<div class="result-welcome-text">
 				<h1 style="font-family:'Firenight-Regular';color:black;">Результат теста</h1>
-			</div>
-			<h2 style="font-family:'Firenight-Regular';color:black;">Ваш тип</h2>
-			<h2 style="font-family:'Firenight-Regular';color:black;">@ViewBag.calculateType @ViewBag.calculateStyle</h2>
-			<div class="line-wrapper">
-				<span class="result-line"></span>
+				<h2 style="font-family:'Firenight-Regular';color:black;">Ваш тип</h2>
+				<h2 style="font-family:'Firenight-Regular';color:black;">@ViewBag.calculateType @ViewBag.calculateStyle</h2>
 			</div>
 		</div>
+		<div class="line-wrapper"
+				<span class="result-line"></span>
+			</div>
 		<div class="result">
 			@foreach (Guid id in ViewBag.pack.ResaultsId)
 			{
 				ResaultsBase result = datamanager.Resaults.GetResaultById(id);
 				if (ViewBag.calculateType == result.Type && ViewBag.calculateStyle == result.Style && ViewBag.gender == result.Gender)
 				{
-				<h2 style="font-size:1.5em; font-family:'Firenight-Regular'; color:black;">@result.Resault</h2>
-				ViewBag.trigerImage = result.TrigerImage + ".png";
+					<h2 style="font-size:1.5em; font-family:'Firenight-Regular'; color:black;">@result.Resault</h2>
+					ViewBag.trigerImage = result.TrigerImage + ".png";
 				}
 			}
 		</div>
 	</div>
+		
 	<div class="result-tables">
 		<div class="distrib-table">
 			<h1 style="color:black;">Производитель: @ViewBag.P%</h1>
