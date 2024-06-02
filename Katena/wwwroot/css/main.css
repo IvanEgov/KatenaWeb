@@ -176,9 +176,10 @@ input, select, textarea {
 
 	h1, h2, h3, h4, h5, h6 {
 		color: #ffffff;
-		font-weight: bold;
+		font-weight: normal;
 		line-height: 1.5;
 		margin: 0 0 0.5em 0;
+		letter-spacing:3px;
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -3926,8 +3927,10 @@ input, select, textarea {
 }
 
 .result {
-	margin-left: 40px;
-	margin-right: 40px;
+	margin-left: 5%;
+	margin-right: 5%;
+	max-height:90%;
+	font-weight:normal;
 }
 
 .result-gender {
@@ -3936,48 +3939,65 @@ input, select, textarea {
 }
 
 .result-welcome {
-	text-align: center;
-	line-height: 1.5;
-	font-family: Firenight-Regular;
-	display: inline-block;
-	padding-left: 37.5px;
-	padding-right: 75px;
-	margin-top: 35px;
+	display: inline-flex;
+	min-height: 3%;
+	left: 2%;
+	background-color: darkcyan;
+	min-width: 90%;
+	max-width:100%;
+	font-family: 'Firenight-Regular';
+	font-size: 1vw;
+	margin: 2% 0 0 4%;
+	padding-left:3%;
+	padding-top:2%;
+	padding-bottom:2%;
 }
 .result-left {
-	text-align: center;
+	text-align: left;
 	display: inline-block;
 	position: relative;
 	flex-grow: 1;
-	font-size: 1.2vw;
+	font-size: 0.9vw;
+	max-height:100%;
+	flex-direction:column;
 }
 .result-tables {
 	text-align: center;
-	display: inline-block;
+	display: inline-flex;
 	position: relative;
 	flex-grow: 1;
-	font-size: 1.2vw;
+	font-size: 1vw;
+	max-height: 100%;
+	max-width:60%;
+	flex-direction:column;
+}
+.distrib-table{
+	display:inline-flex;
+	max-width:90%;
+	max-height:45%;
+	position:relative;
+	margin-top:10%;
+	padding-right:5%;
 }
 .result-wrapper {
 	display: flex;
 	justify-content: flex-start;
 	position: relative;
 	flex-direction: row;
-	text-align: center;
-	max-width: 100%;
-	min-width: 40%;
-	max-height: 100%;
-	min-height: 60%;
+	text-align: left;
 	font-family: Firenight-Regular;
+	gap: 3%;
+	background-image: url(../images/background12.png)
 }
 
-result-welcome-text {
+.result-welcome-text {
 	text-align: center;
-	display: inline-flex;
-	float: left;
+	display: flex;
+	flex-direction:column;
 	font-family: 'Firenight-Regular';
 	font-size: 1.2vw;
 	margin: 2% 0 0 0;
+	max-height:15%;
 }
 /*.action-wrapper {
 	text-align: center;
@@ -4056,9 +4076,9 @@ result-welcome-text {
 .result-line {
 	background-color: chocolate;
 	content: " ";
-	min-width: 90%;
-	max-width: 90%;
-	height: 2px;
+	min-width: 95%;
+	max-width: 95%;
+	height: 3px;
 	border-radius: 15px;
 	margin-left: 5%;
 }
@@ -4125,9 +4145,17 @@ result-welcome-text {
 	letter-spacing: 2px;
 }
 
-.triger-image{
+.triger-image-wrapper{
 	display:block;
 	float:right;
+	min-height:40%;
+	max-height:60%;
+}
+.triger-image{
+	display:inline-block;
+	width:90%;
+	height:90%;
+	border:none;
 }
 
 .question-symbol {

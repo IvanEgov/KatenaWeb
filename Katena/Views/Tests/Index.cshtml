@@ -13,7 +13,7 @@
  *@@{
     List<QuestionPackBase> packs = datamanager.Packs.GetAllPacks().ToList();
 }
-<div style="display:flex; background:url(../../images/@ViewBag.background)no-repeat; -webkit-background-size: cover; background-size: cover; width:100%; height:100%; position:relative;">
+<div style="background-image:url(../images/@ViewBag.background); -webkit-background-size: cover; background-size:cover; width:100%; height:100%; position:relative;">
     @if (ViewBag.pack == null)
     {
         @foreach (QuestionPackBase entity in packs)
@@ -24,33 +24,12 @@
                     <div id="test">
                         @await Component.InvokeAsync("Test", new { pack = entity, index = -1 })
                     </div>
-                            @* <div id="welcome">
-                                <div style="display:inline-block; margin-right:50px;">
-                                    <button class="button" id="startButton">@entity.Name</button>
-                                    <button class="button" id="homeButton"><a asp-area="" asp-controller="Home" asp-action="Index">Вернуться на главную</a></button>
-                                </div>
-                                @await Html.PartialAsync("emptyPartial")
-                            </div> *@
                 </div>
             </div>
         }
      }
         else
         {
-               @* @foreach(QuestionPackBase entity in packs)
-                {
-                    <form style="display: inline-block;" asp-controller="Tests" asp-action="NextQuestion">
-                        <input type="hidden" name="pack" value="@entity">
-                        <input type="hidden" name="index" value="-1">
-                        <div class="button" style="margin-bottom: 40px; display:inline-block;">
-                            <input type="submit" value="@entity.Name">
-                        </div>
-                    </form>
-                } *@
-
-                @* <div  style="display:inline-block;">
-                    <button class="button" id="homeButton"><a asp-area="" asp-controller="Home" asp-action="Index">Вернуться на главную</a></button>
-                </div> *@
             @await Component.InvokeAsync("Test", new
             {
                 pack = ViewBag.pack,
@@ -86,13 +65,3 @@
                 </div>*/
         }
 </div>
-
-<script>
-    document.getElementById("startButton").addEventListener(
-        "click",
-        function () {
-            document.getElementById("welcome").hidden = true;
-            document.getElementById("test").hidden = false;
-        },
-    );
-</script>
