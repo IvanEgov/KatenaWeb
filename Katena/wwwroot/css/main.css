@@ -3870,9 +3870,9 @@ input, select, textarea {
 
 		}
 
-/* Intro */
+ Intro 
 
-	/*#intro {
+	#intro {
 		background-attachment: fixed;
 		background-image: url("images/intro.svg");
 		background-position: top right;
@@ -3906,7 +3906,7 @@ input, select, textarea {
 				background-attachment: scroll;
 			}
 
-		}*/
+		}
 
 @font-face {
 	font-family: "Firenight-Regular";

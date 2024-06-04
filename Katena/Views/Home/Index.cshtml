@@ -7,15 +7,6 @@
 @using Katena.Domain
 @inject DataManager datamanager;
 
-@* <div>
-	@Html.Raw(Model.Text)
-	<div id="picture" style="margin-left:650px;">
-		<div>
-			<img class="img-block" src="~/images/@ViewBag.TitleImagePath" />
-		</div>
-	</div>
-</div> *@
-
 
 <section id="sidebar">
 	@await Html.PartialAsync("SidebarPartial")
@@ -24,10 +15,10 @@
 <!-- Главная -->
 <div id="wrapper">
 	<section id="intro" class="wrapper style1 fullscreen fade-up">
-		<div class="inner" style="margin-left:150px;">
-			<h1 style="font-family:'Firenight-Regular'; letter-spacing:5px;">@Html.Raw(Model.Title)</h1>
+		<div class="inner">
+			<h1 style="font-family:'Firenight-Regular';">@Html.Raw(Model.Title)</h1>
 			<p>
-				<h3 style="font-family:'Firenight-Regular'; font-size:large; letter-spacing:5px;">@Html.Raw(Model.Text)</h3>
+				<h3 style="font-family:'Firenight-Regular';">@Html.Raw(Model.Text)</h3>
 			</p>
 			<ul class="actions">
 				<li><a href="#four" class="button scrolly">Связаться с нами</a></li>
