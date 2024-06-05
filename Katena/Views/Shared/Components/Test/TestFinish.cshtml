@@ -24,14 +24,13 @@
 				}
 			}
 		</div>
+		<div>
+			<button class="button-question-result" id="homeButton"><a asp-area="" asp-controller="Home" asp-action="Index">Вернуться на главную страницу</a></button>
+		</div>
 	</div>
 		
 	<div class="result-tables">
 		<div class="distrib-table">
-			@* <h1 style="color:black;">Производитель: @ViewBag.P%</h1>
-			<h1 style="color:black;">Администратор: @ViewBag.A%</h1>
-			<h1 style="color:black;">Производитель: @ViewBag.E%</h1>
-			<h1 style="color:black;">Интегратор: @ViewBag.I%</h1> *@
 			@if (ViewBag.gender == "man")
 			{
 				<table class="table">
@@ -122,9 +121,6 @@
 						</tr>
 					</table>
 				</div>
-				@* <h1 style="color:black;">Материнский: @ViewBag.Parent%</h1>
-				<h1 style="color:black;">Эгоцентричный: @ViewBag.Self%</h1>
-				<h1 style="color:black;">Дочерний: @ViewBag.Children%</h1> *@
 			}
 			else
 			{
@@ -135,5 +131,4 @@
 			<img class="triger-image" src="~/images/@ViewBag.TrigerImage" alt="" data-position="center" />
 		</div>
 	</div>
-	@* <button class="button" id="homeButton"><a asp-area="" asp-controller="Home" asp-action="Index">Вернуться на главную</a></button> *@
 </div>

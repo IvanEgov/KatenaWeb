@@ -4058,6 +4058,13 @@ input, select, textarea {
 		margin-left: 2%;
 		font-size: 1.2vw;
 	}
+	.button-question-result {
+		margin-left: 2%;
+		font-size: 0.9vw;
+		background-color: darkcyan;
+		max-width:40%;
+		line-height:3.5em;
+	}
 
 	.button-action {
 		text-align: left;
@@ -4237,6 +4244,14 @@ input, select, textarea {
 		margin-right:2%;
 		font-size: 4vw;
 		display:inline-flex;
+	}
+
+	.button-question-result {
+		margin-left: 2%;
+		font-size: 2vw;
+		background-color: darkcyan;
+		max-width: 60%;
+		line-height: 3.5em;
 	}
 
 	input[type="submit"].button-action {
