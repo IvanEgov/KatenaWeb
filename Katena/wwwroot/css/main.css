@@ -4182,13 +4182,15 @@ input, select, textarea {
 	}
 
 	.triger-image-wrapper {
-		display: block;
+		display: inline-flex;
 		max-width:100%;
 		min-width:40%;
 	}
 
 	.triger-image {
 		border: none;
+		min-width:60%;
+		min-height:80%;
 	}
 }
 
