@@ -4199,6 +4199,68 @@ input, select, textarea {
 		min-width:60%;
 		min-height:80%;
 	}
+
+	.description-page {
+		background-color: darkcyan;
+		display: flex;
+		-webkit-background-size: cover;
+		background-size: cover;
+		flex-direction: column;
+		padding: 0 5% 0 5%;
+	}
+
+	.description-name {
+		font-family: 'Firenight-Regular';
+		font-size: 80%;
+	}
+
+	.description-main {
+		display: inline-flex;
+		flex-direction: column;
+		background-color: #1F3B4D;
+		flex-grow: 0.8;
+		padding-bottom: 2%;
+		margin-bottom: 1%;
+	}
+
+	.description-main-text {
+		font-family: 'Firenight-Regular';
+		margin-left: 2%;
+	}
+
+	.description-line-wrapper {
+		display: inline-flex;
+		min-width: 100%;
+		max-width: 100%;
+		margin: 0 0 0 0;
+	}
+
+	.description-line {
+		background: linear-gradient( to right, #00ff05, #ff0000);
+		content: " ";
+		min-width: 100%;
+		max-width: 100%;
+		height: 2px;
+		border-radius: 15px;
+	}
+
+	.discription-image-wrapper {
+		display: inline-block;
+		margin-left: 10%;
+		text-align: center;
+		max-width: 80%;
+		min-width: 80%;
+	}
+
+	.discription-image {
+		display: inline-block;
+		max-width: 100%;
+		min-width: 100%;
+	}
+
+	.description-text {
+		font-size: 60%;
+	}
 }
 
 @media screen and (max-width: 900px) {
@@ -4453,6 +4515,69 @@ input, select, textarea {
 		max-width:100%;
 		border: none;
 	}
+
+	.description-page {
+		background-color: darkcyan;
+		display: flex;
+		-webkit-background-size: cover;
+		background-size: cover;
+		flex-direction: column;
+		padding: 0 5% 0 5%;
+	}
+
+	.description-name {
+		font-family: 'Firenight-Regular';
+		font-size: 80%;
+	}
+
+	.description-main {
+		display: inline-flex;
+		flex-direction: column;
+		background-color: #1F3B4D;
+		flex-grow: 0.8;
+		padding-bottom: 2%;
+		max-height:contain;
+		margin-bottom: 1%;
+	}
+
+	.description-main-text {
+		font-family: 'Firenight-Regular';
+		margin-left: 2%;
+	}
+
+	.description-line-wrapper {
+		display: inline-flex;
+		min-width: 100%;
+		max-width: 100%;
+		margin: 0 0 0 0;
+	}
+
+	.description-line {
+		background: linear-gradient( to right, #00ff05, #ff0000);
+		content: " ";
+		min-width: 100%;
+		max-width: 100%;
+		height: 2px;
+		border-radius: 15px;
+	}
+
+	.discription-image-wrapper {
+		display: inline-block;
+		margin-left: 5%;
+		text-align: center;
+		max-width: 90%;
+		min-width: 90%;
+	}
+
+	.discription-image {
+		display: inline-block;
+		max-width: 100%;
+		min-width: 100%;
+	}
+
+	.description-text {
+		font-size: 85%;
+	}
 }
 
 .button-question {
@@ -4472,4 +4597,14 @@ input, select, textarea {
 	font-family: 'Firenight-Regular';
 	font-size: 3.5em;
 	margin:0 0 0 2%;
+}
+
+input[type="submit"].main-button {
+	text-align: center;
+	font-family: 'Firenight-Regular';
+	line-height: 2.5;
+	font-size: 1em;
+	font-weight: normal;
+	height: 3.25em;
+	padding: 0 1.75em;
 }

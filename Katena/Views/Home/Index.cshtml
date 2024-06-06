@@ -48,7 +48,7 @@
 					<h2 style="font-family:'Firenight-Regular'">ПРОЙТИ ТЕСТ</h2>
 					<p>13 ситуаций, 52 варианта действий, 42 мотива</p>
 					<ul class="actions">
-						<li><a asp-area="" asp-controller="Tests" asp-action="Index" asp-route-id="" class="button scrolly" style="font-family:'Firenight-Regular'"><h2 style="line-height:2.5;">LEARN MORE</h2></a></li>
+						<li><a asp-area="" asp-controller="Tests" asp-action="Index" asp-route-id="" class="button" style="font-family:'Firenight-Regular'"><h2 style="line-height:2.5;">LEARN MORE</h2></a></li>
 					</ul>
 				</div>
 			</div>
@@ -66,9 +66,7 @@
 						<li>
 							<form asp-controller="ResultDescription" asp-action="Index">
 								<input type="hidden" name="gender" value="female">
-								<div class="button-question">
-									<input type="submit" style="text-align:left; height:auto; line-height:50px;" value="LEARN MORE">
-								</div>
+								<input type="submit" class="main-button" value="LEARN MORE">
 							</form>
 						</li>
 						@* <li><a asp-area="" asp-controller="Description" asp-action="Index" asp-route-id="" class="button scrolly" style="font-family:'Firenight-Regular'"><h2 style="line-height:2.5;">Learn more</h2></a></li> *@
@@ -86,9 +84,7 @@
 						<li>
 							<form asp-controller="ResultDescription" asp-action="Index">
 								<input type="hidden" name="gender" value="male">
-								<div class="button-question">
-									<input type="submit" style="text-align:left; height:auto; line-height:50px;" value="LEARN MORE">
-								</div>
+								<input type="submit" class="main-button" value="LEARN MORE">
 							</form>
 						</li>
 						@* <li><a asp-area="" asp-controller="Tests" asp-action="Index" asp-route-id="" class="button scrolly" style="font-family:'Firenight-Regular'"><h2 style="line-height:2.5;">LEARN MORE</h2></a></li> *@
