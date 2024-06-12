@@ -4796,3 +4796,8 @@ input[type="submit"].main-button {
 	height: 3.25em;
 	padding: 0 1.75em;
 }
+
+.special-word{
+	text-transform:uppercase;
+	color:darkcyan;
+}
