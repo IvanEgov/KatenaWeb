@@ -39,7 +39,8 @@ namespace Katena.Controllers
 				ViewBag.index = index;
 				return View();
 			}
-/*			ViewBag.TextField = dataManager.TextFields.GetTextFieldByCodeWord("PageTests");*/
+			/*			ViewBag.TextField = dataManager.TextFields.GetTextFieldByCodeWord("PageTests");*/
+			ViewBag.background = "descriptionBackground";
 			return View(dataManager.TextFields.GetTextFieldByCodeWord("PageTests"));
 		}
 

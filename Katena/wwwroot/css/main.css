@@ -3967,13 +3967,13 @@ input, select, textarea {
 
 
 .line {
-	background: linear-gradient( to right, #00ff05, #ff0000);
+	background: linear-gradient( to right, #009999, #ff0000);
 	content: " ";
 	min-width: 90%;
 	max-width: 90%;
 	height: 2px;
 	border-radius: 15px;
-	margin-left:5%;
+	margin-left: 5%;
 }
 
 .takeAction {
@@ -4260,6 +4260,100 @@ input, select, textarea {
 
 	.description-text {
 		font-size: 60%;
+	}
+
+	.welcome-wrapper {
+		display: flex;
+		position: relative;
+		font-family: Firenight-Regular;
+		padding: 2% 2% 2% 2%;
+	}
+
+	.welcome-main {
+		display: inline-flex;
+		flex-direction: column;
+		background-color: #1F3B4D;
+		flex-grow: 0.8;
+		padding: 2% 0 0 0;
+		max-height: contain;
+	}
+
+	.welcome-name {
+		text-align: center;
+	}
+
+	.welcome-description {
+		display: inline-flex;
+		flex-direction: row;
+		gap: 2%;
+	}
+
+	.left-description {
+		display: inline-flex;
+		flex-direction: column;
+		padding-left: 3%;
+		height: 100%;
+	}
+
+	.left-text {
+		text-align: right;
+		margin-bottom: 7%;
+	}
+
+	.left-line-text {
+		text-align: right;
+		font-weight: 400;
+		margin: 0 0 0 0;
+	}
+
+	.central-line-wrapper {
+		display: inline-flex;
+		min-height: 100%;
+		max-height: 100%;
+		margin: 0 0 0 0;
+	}
+
+	.central-line {
+		background: linear-gradient( to top, #ff0000, #009999);
+		content: " ";
+		min-height: 90%;
+		max-height: 90%;
+		width: 2px;
+		border-radius: 15px;
+	}
+
+	.right-description {
+		display: inline-flex;
+		flex-direction: column;
+		padding-right: 3%;
+		height: 100%;
+	}
+
+	.right-text {
+		text-align: left;
+		margin-bottom: 5%;
+	}
+
+	.right-line-text {
+		text-align: left;
+		font-weight: 400;
+		margin: 0 0 0 0;
+	}
+
+	.description {
+		text-align: left;
+		padding: 2% 5% 0 5%;
+		margin-bottom: 3%;
+	}
+
+	.go-word {
+		text-align: left;
+		padding: 0 5% 0 5%;
+	}
+
+	.go-buttons {
+		text-align: center;
+		padding: 0 5% 0 5%;
 	}
 }
 
@@ -4577,6 +4671,100 @@ input, select, textarea {
 
 	.description-text {
 		font-size: 85%;
+	}
+
+	.welcome-wrapper {
+		display: flex;
+		position: relative;
+		font-family: Firenight-Regular;
+		padding: 2% 2% 2% 2%;
+	}
+
+	.welcome-main {
+		display: inline-flex;
+		flex-direction: column;
+		background-color: #1F3B4D;
+		flex-grow: 0.8;
+		padding: 2% 0 0 0;
+		max-height: contain;
+	}
+
+	.welcome-name {
+		text-align: center;
+	}
+
+	.welcome-description {
+		display: inline-flex;
+		flex-direction: row;
+		gap: 2%;
+	}
+
+	.left-description {
+		display: inline-flex;
+		flex-direction: column;
+		padding-left: 3%;
+		height: 100%;
+	}
+
+	.left-text {
+		text-align: right;
+		margin-bottom: 7%;
+	}
+
+	.left-line-text {
+		text-align: right;
+		font-weight: 400;
+		margin: 0 0 0 0;
+	}
+
+	.central-line-wrapper {
+		display: inline-flex;
+		min-height: 100%;
+		max-height: 100%;
+		margin: 0 0 0 0;
+	}
+
+	.central-line {
+		background: linear-gradient( to top, #ff0000, #009999);
+		content: " ";
+		min-height: 90%;
+		max-height: 90%;
+		width: 2px;
+		border-radius: 15px;
+	}
+
+	.right-description {
+		display: inline-flex;
+		flex-direction: column;
+		height: 100%;
+		margin-left:2%;
+	}
+
+	.right-text {
+		text-align: left;
+		margin-bottom: 5%;
+	}
+
+	.right-line-text {
+		text-align: left;
+		font-weight: 400;
+		margin: 0 0 0 0;
+	}
+
+	.description {
+		text-align: left;
+		padding: 2% 5% 0 5%;
+		margin-bottom: 3%;
+	}
+
+	.go-word {
+		text-align: left;
+		padding: 0 5% 0 5%;
+	}
+
+	.go-buttons {
+		text-align: center;
+		padding: 0 5% 0 5%;
 	}
 }
 
