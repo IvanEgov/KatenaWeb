@@ -54,7 +54,7 @@
 			</div>
 		</section>
 	</section>
-	<!--Результаты-->
+	<!--Все психотипы-->
 	<section id="two" class="wrapper style2 spotlights">
 		<section style="background-color:#1c918c">
 			<a href="#" class="image"><img src="~/images/image1.jpg" alt="" data-position="center center" /></a>
@@ -183,25 +183,79 @@
 			</section>
 		</section>
 	} *@
-	<section id="five" class="wrapper style1 fullscreen fade-up">
-		<div class="inner">
-			<h1 style="font-family:'Firenight-Regular'"></h1>
-			<div id="picture" style="margin-left:650px;">
-				<div>
-					@* <img class="img-block" src="~/images/@ViewBag.TitleImagePath" /> *@
+	<!--Проект-->
+	<section id="five" class="wrapper project spa fullscreen fade-up">
+		<div id="five" class="spa">
+			<img class="image spa" src="~/images/spaImage.png" />
+			<div class="spa-text">
+				<div class="spa-left-text">Синергетический анализ личности</div>
+				<div class="spa-right-text">ЦИФРОВАЯ ПЛАТФОРМА</div>
+			</div>
+		</div>
+	</section>
+	<section id="five" class="wrapper project fullscreen fade-up">
+		<div id="five" class="project-page-one">
+			<div class="left-blocks">
+				<div class="block-text">
+					<div class="block">
+						<h3>Что такое SPA?</h3>
+					</div>
+					<div class="text">
+						<p><span class="first-word">SPA</span>- это система разработана  для российского рынка, которая помогает управлять процессами в компании и повышать вовлеченность сотрудников, автоматически выявлять потребности и согласовывать их с целями компании</p>
+					</div>
+				</div>
+				<div class="block-text">
+					<div class="hand-image">
+						<img class="image hand" src="~/images/project-image.png" />
+					</div>
+					<div class="text">
+						<p><span class="first-word">Функционал </span>системы предусматривает взаимодействие с юридическими и физическими лицами посредством интернет-платформы. После регистрации у пользователя появляется свое <span class="first-word">онлайн-пространство</span>, включающее различные инструменты</p>
+					</div>
+				</div>
+				<div class="block-text third">
+					<div class="block">
+						<h3>Первое касание</h3>
+					</div>
+					<div class="text empty">
+						<p><span class="first-word">Первое касание</span>- бесплатный авторский ТЕСТ, который с большой долей вероятности определит какими мотивами к действиям он чаще всего руководствуется, и к какому стилю управления он склонен.</p>
+					</div>
+					<div class="project-description-block">
+						<div class="test-description">
+							<h5 style="color:black; font-weight:600;"><p style="margin: 0 0 1em 0;">ТЕСТ состоит из 13 простых бытовых ситуаций: позитивных, негативных, шутливых, порой нелепых, которые могут произойти или периодически происходят в реальной жизни</p> <p style="margin:0 0 0 0;">Человеку в расслабленной обстановке поэтапно предлагается на выбор разрешить ситуацию через свое  действие и обоснованный мотив, как чаще всего он в поступает в жизни.</p></h5>
+						</div>
+						<div class="test-blocks">
+							<div class="name-block">
+								<h3 style="font-weight:600;">Авторский тест А.Саркисова</h3>
+							</div>
+							<div class="statistic-blocks-up">
+								<div class="left-block up">
+									<h3 style="font-weight:600;">13 ситуаций</h3>
+								</div>
+								<div class="right-block up">
+									<h3 style="font-weight:600;">15 мин</h3>
+								</div>
+							</div>
+							<div class="statistic-blocks-down">
+								<div class="right-block">
+									<h3 style="font-weight:600;">Мгновенный результат</h3>
+								</div>
+								<div class="left-block">
+									<h3 style="font-weight:600;">95% респондентов согласились с результатами теста</h3>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-			<p>
-				@* <h3 style="font-family:'Firenight-Regular'; font-size:large;">@Html.Raw(Model.Text)</h3> *@
-			</p>
-			<ul class="actions">@* 
-				<li><a asp-area="" asp-controller="Home" asp-action="Index" class="button scrolly">Вернуться на главную</a></li>
-				<li><a asp-area="" asp-controller="Tests" asp-action="Index" asp-route-id="" class="button scrolly">Пройти тест</a></li> *@
-			</ul>
+		</div>
+	</section>
+	<section id="five" class="wrapper project fullscreen fade-up">
+		<div id="five" class="project-page-two">
+			<img class="image daily" src="~/images/daily.png" />
 		</div>
 	</section>
 
-	<!-- Контактная информация -->
+	<!-- Обратная связь -->
 	<section id="four" class="wrapper style1 fade-up">
 		<div class="inner">
 			<h2>Как с нами связаться?</h2>

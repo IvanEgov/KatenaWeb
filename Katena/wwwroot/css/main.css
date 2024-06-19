@@ -2568,6 +2568,16 @@ input, select, textarea {
 		display: inline-block;
 		position: relative;
 	}
+		.image.spa{
+			width:60%;
+			margin:0 20% 0 20%;
+		}
+		.image.hand {
+			max-width:100%;
+		}
+		.image.daily{
+			max-width:100%;
+		}
 
 		.image img {
 			border-radius: 0.25em;
@@ -3241,6 +3251,14 @@ input, select, textarea {
 
 .wrapper.style1 {
 	background-color: #1c918c;
+}
+.wrapper.project{
+	background-color:#ffffff;
+}
+.wrapper.project.spa{
+	background-image:url("../images/spaBackroung.jpg");
+	margin: 0;
+	background-size:cover;
 }
 
 		.wrapper.style1-alt {
@@ -4236,7 +4254,7 @@ input, select, textarea {
 	}
 
 	.description-line {
-		background: linear-gradient( to right, #00ff05, #ff0000);
+		background: linear-gradient( to right, #009999, #ff0000);
 		content: " ";
 		min-width: 100%;
 		max-width: 100%;
@@ -4373,6 +4391,167 @@ input, select, textarea {
 
 	.result-gender-welcome-text {
 		font-family: 'Firenight-Regular';
+	}
+
+	.spa-text {
+		display: flex;
+		flex-direction: row;
+		padding: 0 27%;
+		gap: 5%;
+	}
+
+	.spa-left-text {
+		text-align: right;
+		color:darkgoldenrod;
+		width: 50%;
+		font-size: 2.5vh;
+		font-weight: 600;
+	}
+
+	.spa-right-text {
+		text-align: left;
+		color: white;
+		text-transform: uppercase;
+		flex-grow: 1;
+		font-size: 2vh;
+	}
+
+	.spa {
+		text-align: center;
+	}
+	.project-page-one {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		padding-left: 5%;
+	}
+
+	.left-blocks {
+		display: inline-flex;
+		flex-direction: column;
+		min-width: 28%;
+		padding: 3% 3% 0 3%;
+		gap: 2%;
+	}
+
+	.block {
+		background-color: lightblue;
+		text-align: left;
+		min-height: 15%;
+		padding-top: 2%;
+		width: 30%;
+		padding-bottom: 1%;
+		padding-right: 5%;
+		padding-left: 2%;
+		height: 100%;
+	}
+
+	.block-text {
+		display: flex;
+		flex-direction: row;
+		gap: 3%;
+	}
+
+	.text {
+		text-align: left;
+		color: black;
+		display: flex;
+		flex-direction: row;
+		font-size: 1vw;
+		padding-right: 30%;
+	}
+
+	.text.empty {
+		text-align: left;
+		color: black;
+		display: flex;
+		flex-direction: row;
+		font-size: 1vw;
+		padding-right: 0;
+	}
+
+	.first-word {
+		font-weight: 600;
+		color: black;
+	}
+
+	.hand-image {
+		min-width: 23%;
+		min-height: 15%;
+	}
+
+	.project-description-block {
+		display: flex;
+		flex-direction: row;
+		gap: 3%;
+	}
+
+	.test-description {
+		display: inline-block;
+		border: 2px solid;
+		border-radius: 1%;
+		border-color: lightblue;
+		flex-grow: 1;
+		font-size: 2vh;
+		padding: 2% 2% 0 2%;
+		width: 90%;
+	}
+
+	.test-blocks {
+		display: inline-flex;
+		flex-direction: column;
+		gap: 2%;
+		flex-grow: 4;
+		font-size: 1.5vh;
+	}
+
+	.name-block {
+		background-color: lightblue;
+		text-align: right;
+		padding: 10% 10%;
+		font-weight: 600;
+	}
+
+	.statistic-blocks-up {
+		display: inline-flex;
+		flex-direction: row;
+		gap: 2%;
+		flex-grow: 1;
+	}
+
+	.statistic-blocks-down {
+		display: inline-flex;
+		flex-direction: row;
+		gap: 2%;
+		flex-grow: 0.5;
+	}
+
+	.left-block {
+		background-color: gold;
+		width: 50%;
+		flex-grow: 1;
+		padding: 6% 6%;
+	}
+
+	.left-block.up {
+		background-color: gold;
+		width: 50%;
+		flex-grow: 1;
+		padding: 20% 6%;
+	}
+
+	.right-block {
+		background-color: lightblue;
+		width: 50%;
+		flex-grow: 1;
+		padding: 20% 6%;
+	}
+
+	.right-block.up {
+		background-color: lightblue;
+		width: 50%;
+		flex-grow: 1;
+		padding: 20% 13%;
 	}
 }
 
@@ -4804,6 +4983,171 @@ input, select, textarea {
 	.result-gender-welcome-text {
 		font-family: 'Firenight-Regular';
 	}
+
+	.spa-text {
+		display: flex;
+		flex-direction: row;
+		padding: 0 10%;
+		gap: 5%;
+	}
+
+	.spa-left-text {
+		text-align: right;
+		color: darkgoldenrod;
+		width: 50%;
+		font-size: 2vh;
+		font-weight: 600;
+	}
+
+	.spa-right-text {
+		text-align: left;
+		color: white;
+		text-transform: uppercase;
+		flex-grow: 1;
+		font-size: 2vh;
+	}
+
+	.spa {
+		text-align: center;
+	}
+	.project-page-one {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		padding-left: 5%;
+	}
+
+	.left-blocks {
+		display: inline-flex;
+		flex-direction: column;
+		min-width: 28%;
+		padding: 3% 3% 0 3%;
+	}
+
+	.block {
+		background-color: lightblue;
+		text-align: left;
+		padding-top: 2%;
+		width: 60%;
+		padding-bottom: 1%;
+		padding-right: 5%;
+		padding-left: 2%;
+		height: 100%;
+	}
+
+	.block-text {
+		display: flex;
+		flex-direction: row;
+		gap: 3%;
+	}
+
+	.block-text.third {
+		display: flex;
+		flex-direction: column;
+		gap: 3%;
+	}
+
+	.text {
+		text-align: left;
+		color: black;
+		display: flex;
+		flex-direction: row;
+		font-size: 2vw;
+		padding-right: 30%;
+	}
+
+	.text.empty {
+		text-align: left;
+		color: black;
+		display: flex;
+		flex-direction: row;
+		font-size: 2vw;
+		padding-right: 0;
+	}
+
+	.first-word {
+		font-weight: 600;
+		color: black;
+	}
+
+	.hand-image {
+		min-width: 23%;
+		min-height: 15%;
+	}
+
+	.project-description-block {
+		display: flex;
+		flex-direction: row;
+		gap: 3%;
+	}
+
+	.test-description {
+		display: inline-block;
+		border: 2px solid;
+		border-radius: 1%;
+		border-color: lightblue;
+		flex-grow: 1;
+		font-size: 2vh;
+		padding: 2% 2% 0 2%;
+		width: 90%;
+	}
+
+	.test-blocks {
+		display: inline-flex;
+		flex-direction: column;
+		gap: 2%;
+		flex-grow: 4;
+		font-size: 1.5vh;
+	}
+
+	.name-block {
+		background-color: lightblue;
+		text-align: right;
+		padding: 10% 10%;
+		font-weight: 600;
+	}
+
+	.statistic-blocks-up {
+		display: inline-flex;
+		flex-direction: row;
+		gap: 2%;
+		flex-grow: 1;
+	}
+
+	.statistic-blocks-down {
+		display: inline-flex;
+		flex-direction: row;
+		gap: 2%;
+		flex-grow: 0.5;
+	}
+
+	.left-block {
+		background-color: gold;
+		width: 50%;
+		flex-grow: 1;
+		padding: 6% 0;
+	}
+
+	.left-block.up {
+		background-color: gold;
+		width: 50%;
+		flex-grow: 1;
+		padding: 20% 6%;
+	}
+
+	.right-block {
+		background-color: lightblue;
+		width: 50%;
+		flex-grow: 1;
+		padding: 20% 6%;
+	}
+
+	.right-block.up {
+		background-color: lightblue;
+		width: 50%;
+		flex-grow: 1;
+		padding: 20% 13%;
+	}
 }
 
 .button-question {
@@ -4838,4 +5182,8 @@ input[type="submit"].main-button {
 .special-word{
 	text-transform:uppercase;
 	color:darkcyan;
+}
+.project-page-two{
+	padding:2% 0 0 5%;
+	min-width:100%;
 }
