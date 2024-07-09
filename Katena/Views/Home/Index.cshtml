@@ -6,6 +6,7 @@
 }
 @using Katena.Domain
 @inject DataManager datamanager;
+@inject FeedbackBase feedback;
 
 
 <section id="sidebar">
@@ -266,23 +267,23 @@
 			<p>Конструктивная критика и разумные предложения приветствуются.</p>
 			<div class="split style1">
 				<section>
-					<form method="post" action="#">
+					<form asp-controller="FeedBack" asp-action="Edit" method="post" enctype="multipart/form-data">
 						<div class="fields">
 							<div class="field half">
-								<label for="name">Name</label>
-								<input type="text" name="name" id="name" />
+								<label asp-for="@feedback.name">Name</label>
+								<input type="text" asp-for="@feedback.name" id="name" />
 							</div>
 							<div class="field half">
-								<label for="email">Email</label>
-								<input type="text" name="email" id="email" />
+								<label asp-for="@feedback.mail">Email</label>
+								<input type="text" asp-for="@feedback.mail" id="email" />
 							</div>
 							<div class="field">
-								<label for="message">Message</label>
-								<textarea name="message" id="message" rows="5"></textarea>
+								<label asp-for="@feedback.message">Message</label>
+								<textarea asp-for="@feedback.message" id="message" rows="5"></textarea>
 							</div>
 						</div>
 						<ul class="actions">
-							<li><a href="" class="button submit">Send Message</a></li>
+							<li><input type="submit">Send Message</input></li>
 						</ul>
 					</form>
 				</section>

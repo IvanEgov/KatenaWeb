@@ -12,5 +12,7 @@ namespace Katena.Domain.Entities
 		//Имя пользователя
 		[Required]
 		public string name { get; set; }
+		[Required]
+		public string message { get; set; }
 	}
 }

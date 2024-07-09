@@ -5187,3 +5187,8 @@ input[type="submit"].main-button {
 	padding:2% 0 0 5%;
 	min-width:100%;
 }
+
+.tableString {
+	color: black;
+	border: 2px solid black;
+}
