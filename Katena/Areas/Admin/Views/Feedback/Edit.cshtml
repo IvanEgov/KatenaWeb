@@ -1,0 +1,24 @@
+﻿@model FeedbackBase
+@{
+	string strTitle = "Обратная связь";
+	ViewBag.Title = strTitle;
+}
+@inject DataManager model;
+<div>
+	<h2>@strTitle</h2>
+	<table class="table">
+		<tr>
+			<td class="tableString">Имя</td>
+			<td class="tableString">Почта</td>
+			<td class="tableString">Обратная связь</td>
+		</tr>
+		@foreach(FeedbackBase feedback in model.Feedback.GetFeedbacks())
+		{
+			<tr>
+				<td class="tableString">@feedback.name</td>
+				<td class="tableString">@feedback.mail</td>
+				<td class="tableString">@feedback.feedback</td>
+			</tr>
+		}
+	</table>
+</div>

@@ -16,6 +16,7 @@ namespace Katena.Domain
 		public DbSet<ResaultsBase> Resaults { get; set; }
 		public DbSet<ReasonBase> Reasons { get; set; }
 		public DbSet<NewsBase> News { get; set; }
+		public DbSet<FeedbackBase> Feedbacks { get; set; }
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
