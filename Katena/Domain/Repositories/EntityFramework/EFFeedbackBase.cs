@@ -4,10 +4,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Katena.Domain.Repositories.EntityFramework
 {
-	public class EFFeedback: IFeedback
+	public class EFFeedbackBase: IFeedback
 	{
 		private readonly AppDbContext context;
-		public EFFeedback(AppDbContext context)
+		public EFFeedbackBase(AppDbContext context)
 		{
 			this.context = context;
 		}

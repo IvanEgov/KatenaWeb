@@ -6,7 +6,6 @@
 }
 @using Katena.Domain
 @inject DataManager datamanager;
-@inject FeedbackBase feedback;
 
 
 <section id="sidebar">
@@ -22,7 +21,7 @@
 				<h3 style="font-family:'Firenight-Regular';">@Html.Raw(Model.Text)</h3>
 			</p>
 			<ul class="actions">
-				<li><a href="#four" class="button scrolly">Связаться с нами</a></li>
+				<li><a asp-area="" asp-controller="FeedBack" asp-actio="Index" asp-route-id="" class="button scrolly">Связаться с нами</a></li>
 				<li><a asp-area="" asp-controller="Tests" asp-action="Index" asp-route-id="" class="button scrolly">Пройти тест</a></li>
 			</ul>
 			@* <audio preload="auto" controls="controls">
@@ -257,67 +256,6 @@
 	<section id="five" class="wrapper project fullscreen fade-up">
 		<div id="five" class="project-page-two">
 			<img class="image daily" src="~/images/daily.png" />
-		</div>
-	</section>
-
-	<!-- Обратная связь -->
-	<section id="four" class="wrapper style1 fade-up">
-		<div class="inner">
-			<h2>Как с нами связаться?</h2>
-			<p>Конструктивная критика и разумные предложения приветствуются.</p>
-			<div class="split style1">
-				<section>
-					<form asp-controller="FeedBack" asp-action="Edit" method="post" enctype="multipart/form-data">
-						<div class="fields">
-							<div class="field half">
-								<label asp-for="@feedback.name">Name</label>
-								<input type="text" asp-for="@feedback.name" id="name" />
-							</div>
-							<div class="field half">
-								<label asp-for="@feedback.mail">Email</label>
-								<input type="text" asp-for="@feedback.mail" id="email" />
-							</div>
-							<div class="field">
-								<label asp-for="@feedback.message">Message</label>
-								<textarea asp-for="@feedback.message" id="message" rows="5"></textarea>
-							</div>
-						</div>
-						<ul class="actions">
-							<li><input type="submit">Send Message</input></li>
-						</ul>
-					</form>
-				</section>
-				<section>
-					<ul class="contact">
-						<li>
-							<h3>Address</h3>
-							<span>
-								Томск<br />
-								Улица Пушкина<br />
-								Дом Колотушкина
-							</span>
-						</li>
-						<li>
-							<h3>Email</h3>
-							<a href="#">КрутыеПерцы@gmail.com</a>
-						</li>
-						<li>
-							<h3>Phone</h3>
-							<span>8-800-555-35-35</span>
-						</li>
-						<li>
-							<h3>Social</h3>
-							<ul class="icons">
-								<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-								<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-							</ul>
-						</li>
-					</ul>
-				</section>
-			</div>
 		</div>
 	</section>
 </div>

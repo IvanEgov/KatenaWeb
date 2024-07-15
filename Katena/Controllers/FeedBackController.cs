@@ -15,6 +15,10 @@ namespace Katena.Controllers
             this.dataManager = dataManager;
             this.hostingEnvironment = hostingEnvironment;
         }
+        public IActionResult Index() 
+        { 
+            return View();
+        }
         [HttpPost]
         public IActionResult Edit(FeedbackBase model)
         {

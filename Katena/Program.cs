@@ -19,6 +19,7 @@ builder.Services.AddScoped<IAnswers, EFAnswersBase>();
 builder.Services.AddScoped<IResaults, EFResaultsBase>();
 builder.Services.AddScoped<IReason, EFReasonBase>();
 builder.Services.AddScoped<INews, EFNewsBase>();
+builder.Services.AddScoped<IFeedback, EFFeedbackBase>();
 builder.Services.AddScoped<DataManager>();
 
 //Подключаем контекст БД

@@ -5352,6 +5352,14 @@ namespace Katena.Domain
                         TrigerImage = "ишуший-предпренематель"
                         },
 				]);
+			modelBuilder.Entity<FeedbackBase>().HasData(
+				[
+				new FeedbackBase{
+					id= Guid.NewGuid(),
+					name="Игорь",
+					mail="igoryan@mail.ru",
+					message="Super site"
+				}]);
 		}
 	}
 }
