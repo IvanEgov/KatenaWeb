@@ -22,7 +22,10 @@ namespace Katena.Controllers
         [HttpPost]
         public IActionResult Edit(FeedbackBase model)
         {
-            dataManager.Feedback.SaveFeedback(model);
+            if (ModelState.IsValid)
+            {
+                dataManager.Feedback.SaveFeedback(model);
+            }
             return RedirectToAction(nameof(HomeController.Index), nameof(HomeController).CutController());
         }
     }
