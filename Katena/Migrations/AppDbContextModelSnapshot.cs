@@ -1267,6 +1267,38 @@ namespace Katena.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Katena.Domain.Entities.FeedbackBase", b =>
+                {
+                    b.Property<Guid>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("mail")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("message")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Feedbacks");
+
+                    b.HasData(
+                        new
+                        {
+                            id = new Guid("a4a8c0d6-cabc-43ab-acc1-acdf875a2bf3"),
+                            mail = "igoryan@mail.ru",
+                            message = "Super site",
+                            name = "Игорь"
+                        });
+                });
+
             modelBuilder.Entity("Katena.Domain.Entities.NewsBase", b =>
                 {
                     b.Property<Guid>("Id")
@@ -1291,35 +1323,35 @@ namespace Katena.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("8b565c49-447f-45d2-91ed-26558438bad9"),
+                            Id = new Guid("dbb8c821-c03a-4825-86ff-fa93e6e5902e"),
                             Text = "Теперь можно добавлять картинки!",
                             Title = "Новость дня",
                             TitleImagePath = ""
                         },
                         new
                         {
-                            Id = new Guid("c602e649-6760-4721-ad34-aa32e4c7df63"),
+                            Id = new Guid("c508cb0c-4302-4fa9-ba2a-5a70811e13a6"),
                             Text = "Было собраноо уже 6 вопросов",
                             Title = "Новость полудня",
                             TitleImagePath = "2f9a623372f47bb6a0fc9b42c87bde91.jpg"
                         },
                         new
                         {
-                            Id = new Guid("59373bbe-4b39-44da-88d7-ccb9f3903766"),
+                            Id = new Guid("de216c88-5450-4698-a708-63f483719c8e"),
                             Text = "Очередное заполнение БД и тестирование новостей",
                             Title = "Новость дня 17.04.2024",
                             TitleImagePath = "2f9a623372f47bb6a0fc9b42c87bde91.jpg"
                         },
                         new
                         {
-                            Id = new Guid("46e35b8c-a92b-49ef-b6d0-e37da788a11f"),
+                            Id = new Guid("3c067b3b-a9c8-4117-b579-1c0a380b9039"),
                             Text = "Курс молодого бойца. Наводнение продолжается!!!",
                             Title = "Новость дня 16.04.2024",
                             TitleImagePath = "11c53ebb6fe575943e75dca3a72b0bf9.jpg"
                         },
                         new
                         {
-                            Id = new Guid("37854340-aff6-40ea-9dd6-94e9ad97cf55"),
+                            Id = new Guid("48eefbc6-e65f-405c-b322-c789bd5ce5c1"),
                             Text = "Заполянем базу данных",
                             Title = "Новость дня 15.04,2024",
                             TitleImagePath = "2f9a623372f47bb6a0fc9b42c87bde91.jpg"
@@ -5789,15 +5821,15 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"),
                             CodeWord = "PageIndex",
-                            DateAdded = new DateTime(2024, 7, 8, 12, 43, 7, 832, DateTimeKind.Utc).AddTicks(120),
-                            Text = "Мы искренне рады видеть тебя и приглашаем в свое пространство! Спасибо, что откликнулся пройти наш авторский тест. Мы старались, чтобы тебе было комфортно и интересно \r\n Устраивайся поудобнее, включай любимую волну, поехали!",
+                            DateAdded = new DateTime(2024, 7, 15, 9, 44, 15, 758, DateTimeKind.Utc).AddTicks(5950),
+                            Text = "Мы искренне рады видеть тебя и приглашаем в свое пространство! Спасибо, что откликнулся пройти наш авторский тест. Мы старались, чтобы тебе было комфортно и интересно Устраивайся поудобнее, включай любимую волну, поехали!",
                             Title = "Дорогой друг,"
                         },
                         new
                         {
                             Id = new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"),
                             CodeWord = "PageTests",
-                            DateAdded = new DateTime(2024, 7, 8, 12, 43, 7, 832, DateTimeKind.Utc).AddTicks(152),
+                            DateAdded = new DateTime(2024, 7, 15, 9, 44, 15, 758, DateTimeKind.Utc).AddTicks(5984),
                             Text = "Содержание заполняется администратором",
                             Title = "Тесты"
                         },
@@ -5805,7 +5837,7 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"),
                             CodeWord = "PageDescription",
-                            DateAdded = new DateTime(2024, 7, 8, 12, 43, 7, 832, DateTimeKind.Utc).AddTicks(165),
+                            DateAdded = new DateTime(2024, 7, 15, 9, 44, 15, 758, DateTimeKind.Utc).AddTicks(5999),
                             Text = "Содержание заполняется администратором",
                             Title = "Описание теста"
                         },
@@ -5813,7 +5845,7 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("8eae0a63-8f52-4160-a14e-b405e431a13b"),
                             CodeWord = "PageContacts",
-                            DateAdded = new DateTime(2024, 7, 8, 12, 43, 7, 832, DateTimeKind.Utc).AddTicks(179),
+                            DateAdded = new DateTime(2024, 7, 15, 9, 44, 15, 758, DateTimeKind.Utc).AddTicks(6010),
                             Text = "Содержание заполняется администратором",
                             Title = "Контакты"
                         });
@@ -5946,13 +5978,13 @@ namespace Katena.Migrations
                         {
                             Id = "ef37a3c2-7c96-4405-a971-7abcc91ac333",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4da12655-adef-4b95-9546-5078f71eb0f7",
+                            ConcurrencyStamp = "fe029f8d-a112-4fd9-bb5c-46598093facb",
                             Email = "my@email.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "MY@EMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAED9R0j0kX3vsOprvsxJopdpSFuFiwNzOacsl9HYhOUnq77qMcGRE1tMu/j0WU+k38Q==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEPeVSdDao4O7F1SXTSCHQnQCvx5Y6xhiST+pAxZIE480Qsflsvtj3fou7zwoPKDHmw==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
