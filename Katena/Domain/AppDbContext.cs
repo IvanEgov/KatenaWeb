@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 namespace Katena.Domain
 {
-	//Представление личного кабинета админа, заполнения страниц и теста в бд
-	public class AppDbContext : IdentityDbContext<IdentityUser>
-	{
+    //Представление личного кабинета админа, заполнения страниц и теста в бд
+    public class AppDbContext : IdentityDbContext<ApplicationUser>
+    {
 		public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 		public DbSet<TextField> TextFields { get; set; }
 		public DbSet<QuestionPackBase> Packs { get; set; }
@@ -17,8 +17,9 @@ namespace Katena.Domain
 		public DbSet<ReasonBase> Reasons { get; set; }
 		public DbSet<NewsBase> News { get; set; }
 		public DbSet<FeedbackBase> Feedbacks { get; set; }
-
-		protected override void OnModelCreating(ModelBuilder modelBuilder)
+        public DbSet<Firm> Firms { get; set; }
+        public DbSet<TestResult> TestResults { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			base.OnModelCreating(modelBuilder);
 
@@ -5359,7 +5360,22 @@ namespace Katena.Domain
 					name="Игорь",
 					mail="igoryan@mail.ru",
 					message="Super site"
+			
 				}]);
-		}
+
+            // Настройка связей для новых таблиц
+            modelBuilder.Entity<TestResult>()
+                .HasOne(tr => tr.User)
+                .WithMany()
+                .HasForeignKey(tr => tr.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<TestResult>()
+                .HasOne(tr => tr.Firm)
+                .WithMany(f => f.TestResults)
+                .HasForeignKey(tr => tr.FirmId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+        }
 	}
 }

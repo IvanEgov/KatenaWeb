@@ -4,8 +4,10 @@ using Katena.Domain.Entities;
 using Katena.Models;
 using Katena.TestProg;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.EntityFrameworkCore;
 using MySqlX.XDevAPI.Common;
 using Org.BouncyCastle.Crypto;
 using System.Diagnostics;
@@ -18,31 +20,39 @@ namespace Katena.Controllers
 {
 	public class TestsController : Controller
 	{
-		private readonly DataManager dataManager;
-        
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly DataManager dataManager;
+        private readonly AppDbContext _context;
         //respresents number of page while carrying test (-1 - wellcome page,
         //[0:number of questions] - question, number of questions> results)
         private int index;
 
-		public TestsController(DataManager dataManager)
-		{
-			this.dataManager = dataManager;
-		}
+        public TestsController(DataManager dataManager, UserManager<ApplicationUser> userManager, AppDbContext context)
+        {
+            this.dataManager = dataManager;
+            _userManager = userManager;
+            _context = context;
+        }
 
-		public IActionResult Index(Guid id)
-		{
-			if (id != default)
-			{
-				QuestionPackBase pack = dataManager.Packs.GetPackById(id);
-				index = -1;
-				ViewBag.pack = pack;
-				ViewBag.index = index;
-				return View();
-			}
-			/*			ViewBag.TextField = dataManager.TextFields.GetTextFieldByCodeWord("PageTests");*/
-			ViewBag.background = "descriptionBackground";
-			return View(dataManager.TextFields.GetTextFieldByCodeWord("PageTests"));
-		}
+        public IActionResult Index(Guid id)
+        {
+            // Устанавливаем пол по умолчанию, если его нет в сессии
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("gender")))
+            {
+                HttpContext.Session.SetString("gender", "man");
+            }
+
+            if (id != default)
+            {
+                QuestionPackBase pack = dataManager.Packs.GetPackById(id);
+                index = -1;
+                ViewBag.pack = pack;
+                ViewBag.index = index;
+                return View();
+            }
+            ViewBag.background = "descriptionBackground";
+            return View(dataManager.TextFields.GetTextFieldByCodeWord("PageTests"));
+        }
 
         /*[HttpPost]
         public IActionResult SetGender(string gender, Guid id)
@@ -55,14 +65,16 @@ namespace Katena.Controllers
         }*/
 
         [HttpPost]
-		public IActionResult NextQuestion(Guid pack, int index, Guid question, Guid answers, Guid reason, string gender, string background, bool checkReason = false)
-		{
+        public async Task<IActionResult> NextQuestion(Guid pack, int index, Guid question, Guid answers, Guid reason, bool checkReason = false)
+        {
             //TODO: Test logic
             //  
+           
             ViewBag.reason = checkReason;
-            ViewBag.gender = gender;
-			
-			if (!checkReason)
+            string gender = HttpContext.Session.GetString("gender") ?? "man";
+            ViewBag.gender = gender; ;
+
+            if (!checkReason)
 			{
 				index = index + 1;
 				if (reason != new Guid("00000000-0000-0000-0000-000000000000"))
@@ -359,12 +371,92 @@ namespace Katena.Controllers
                             ViewBag.calculateType = "Хранительница";
                         }
                         /// Дописать удаление куки сесии++++++++++++++++++++++++++++++++++++++++++++++++++++
+                        // СОХРАНЕНИЕ ИЛИ ОБНОВЛЕНИЕ РЕЗУЛЬТАТА ТЕСТА В БАЗЕ ДАННЫХ
+                        var currentUser = await _userManager.GetUserAsync(User);
+                        if (currentUser != null && currentUser.FirmId != null)
+                        {
+                            // 1. Ищем, есть ли уже карточка у этого пользователя
+                            var existingResult = await _context.TestResults
+                                .FirstOrDefaultAsync(tr => tr.UserId == currentUser.Id);
+
+                            if (existingResult != null)
+                            {
+                                // 2. Если карточка есть, ОБНОВЛЯЕМ её данные
+                                existingResult.TestDate = DateTime.UtcNow;
+                                existingResult.StyleResult = ViewBag.calculateStyle?.ToString();
+                                existingResult.TypeResult = ViewBag.calculateType?.ToString();
+
+                                // EF Core автоматически поймет, что запись изменена
+                                _context.TestResults.Update(existingResult);
+                            }
+                            else
+                            {
+                                // 3. Если карточки нет, СОЗДАЕМ новую
+                                var newResult = new TestResult
+                                {
+                                    UserId = currentUser.Id,
+                                    FirmId = currentUser.FirmId,
+                                    TestDate = DateTime.UtcNow,
+                                    StyleResult = ViewBag.calculateStyle?.ToString(),
+                                    TypeResult = ViewBag.calculateType?.ToString()
+                                };
+                                _context.TestResults.Add(newResult);
+                            }
+
+                            // Сохраняем изменения (либо обновление, либо новую запись)
+                            await _context.SaveChangesAsync();
+                        }
                     }
                 }
 			}
             return View("Index", dataManager.TextFields.GetTextFieldByCodeWord("PageTests"));
 		}
 
-	}
+        [HttpPost]
+        public async Task<IActionResult> ResetEmployeePassword(string userId)
+        {
+            var currentUser = await _userManager.GetUserAsync(User);
+
+            // Проверка: только директор своей фирмы может это делать
+            if (currentUser?.UserRole != "Director" || currentUser.FirmId == null)
+            {
+                return RedirectToAction("Index");
+            }
+
+            var employee = await _userManager.FindByIdAsync(userId);
+
+            if (employee == null || employee.FirmId != currentUser.FirmId)
+            {
+                return NotFound();
+            }
+
+            // Генерируем токен для сброса и новый временный пароль
+            var token = await _userManager.GeneratePasswordResetTokenAsync(employee);
+            var newPassword = GenerateTempPassword(); // Используем ваш существующий метод генерации
+
+            // Сбрасываем пароль
+            var result = await _userManager.ResetPasswordAsync(employee, token, newPassword);
+
+            if (result.Succeeded)
+            {
+                // Сохраняем сообщение во временные данные (TempData), чтобы показать его на следующей странице
+                TempData["SuccessMessage"] = $"✅ Пароль для {employee.Email} успешно сброшен!<br><strong>Новый пароль:</strong> {newPassword}";
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "❌ Ошибка при сбросе пароля.";
+            }
+
+            // Возвращаемся обратно в карточку сотрудника
+            return RedirectToAction("EmployeeCard", new { userId = userId });
+        }
+        private string GenerateTempPassword()
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            var random = new Random();
+            return new string(Enumerable.Repeat(chars, 10)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+    }
    
 }

@@ -54,5 +54,8 @@
 
     <!-- Scripts -->
     @await Html.PartialAsync("ScriptsPartial")
+
+    @* Эта строка позволяет страницам (например, регистрации) добавлять свои скрипты *@
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

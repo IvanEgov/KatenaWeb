@@ -12,15 +12,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Katena.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240708124308__migration")]
-    partial class _migration
+    [Migration("20260920171411_AddCreatedAtToUsers")]
+    partial class AddCreatedAtToUsers
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.4")
+                .HasAnnotation("ProductVersion", "9.0.13")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
@@ -35,88 +35,68 @@ namespace Katena.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int?>("Weight")
-                        .IsRequired()
+                    b.Property<int>("Weight")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight1")
-                        .IsRequired()
+                    b.Property<int>("Weight1")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight10")
-                        .IsRequired()
+                    b.Property<int>("Weight10")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight11")
-                        .IsRequired()
+                    b.Property<int>("Weight11")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight12")
-                        .IsRequired()
+                    b.Property<int>("Weight12")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight13")
-                        .IsRequired()
+                    b.Property<int>("Weight13")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight14")
-                        .IsRequired()
+                    b.Property<int>("Weight14")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight15")
-                        .IsRequired()
+                    b.Property<int>("Weight15")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight2")
-                        .IsRequired()
+                    b.Property<int>("Weight2")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight3")
-                        .IsRequired()
+                    b.Property<int>("Weight3")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight4")
-                        .IsRequired()
+                    b.Property<int>("Weight4")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight5")
-                        .IsRequired()
+                    b.Property<int>("Weight5")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight6")
-                        .IsRequired()
+                    b.Property<int>("Weight6")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight7")
-                        .IsRequired()
+                    b.Property<int>("Weight7")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight8")
-                        .IsRequired()
+                    b.Property<int>("Weight8")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight9")
-                        .IsRequired()
+                    b.Property<int>("Weight9")
                         .HasColumnType("int");
 
-                    b.Property<string>("reasonsId")
+                    b.PrimitiveCollection<string>("reasonsId")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int?>("typeWeight1")
-                        .IsRequired()
+                    b.Property<int>("typeWeight1")
                         .HasColumnType("int");
 
-                    b.Property<int?>("typeWeight2")
-                        .IsRequired()
+                    b.Property<int>("typeWeight2")
                         .HasColumnType("int");
 
-                    b.Property<int?>("typeWeight3")
-                        .IsRequired()
+                    b.Property<int>("typeWeight3")
                         .HasColumnType("int");
 
-                    b.Property<int?>("typeWeight4")
-                        .IsRequired()
+                    b.Property<int>("typeWeight4")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -1270,6 +1250,128 @@ namespace Katena.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Katena.Domain.Entities.ApplicationUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("FirmId")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("longtext");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("longtext");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256)");
+
+                    b.Property<string>("UserRole")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FirmId");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex");
+
+                    b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("Katena.Domain.Entities.FeedbackBase", b =>
+                {
+                    b.Property<Guid>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("mail")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("message")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Feedbacks");
+
+                    b.HasData(
+                        new
+                        {
+                            id = new Guid("6c18e483-3d24-4f06-90c4-63a49f547b1d"),
+                            mail = "igoryan@mail.ru",
+                            message = "Super site",
+                            name = "Игорь"
+                        });
+                });
+
+            modelBuilder.Entity("Katena.Domain.Entities.Firm", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Firms");
+                });
+
             modelBuilder.Entity("Katena.Domain.Entities.NewsBase", b =>
                 {
                     b.Property<Guid>("Id")
@@ -1294,35 +1396,35 @@ namespace Katena.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("8b565c49-447f-45d2-91ed-26558438bad9"),
+                            Id = new Guid("963cc6a3-4918-4306-9059-a2b958a30c4d"),
                             Text = "Теперь можно добавлять картинки!",
                             Title = "Новость дня",
                             TitleImagePath = ""
                         },
                         new
                         {
-                            Id = new Guid("c602e649-6760-4721-ad34-aa32e4c7df63"),
+                            Id = new Guid("9414bbc9-1b41-4f39-bfa4-6acdd011feee"),
                             Text = "Было собраноо уже 6 вопросов",
                             Title = "Новость полудня",
                             TitleImagePath = "2f9a623372f47bb6a0fc9b42c87bde91.jpg"
                         },
                         new
                         {
-                            Id = new Guid("59373bbe-4b39-44da-88d7-ccb9f3903766"),
+                            Id = new Guid("a08c6941-e8ae-40f1-8f4d-0374065a876d"),
                             Text = "Очередное заполнение БД и тестирование новостей",
                             Title = "Новость дня 17.04.2024",
                             TitleImagePath = "2f9a623372f47bb6a0fc9b42c87bde91.jpg"
                         },
                         new
                         {
-                            Id = new Guid("46e35b8c-a92b-49ef-b6d0-e37da788a11f"),
+                            Id = new Guid("843e46b5-69fc-4450-bd12-263ecee19541"),
                             Text = "Курс молодого бойца. Наводнение продолжается!!!",
                             Title = "Новость дня 16.04.2024",
                             TitleImagePath = "11c53ebb6fe575943e75dca3a72b0bf9.jpg"
                         },
                         new
                         {
-                            Id = new Guid("37854340-aff6-40ea-9dd6-94e9ad97cf55"),
+                            Id = new Guid("32cc8c0c-c498-41a6-a8c1-d117cfe63669"),
                             Text = "Заполянем базу данных",
                             Title = "Новость дня 15.04,2024",
                             TitleImagePath = "2f9a623372f47bb6a0fc9b42c87bde91.jpg"
@@ -1335,7 +1437,7 @@ namespace Katena.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("char(36)");
 
-                    b.Property<string>("AnswerId")
+                    b.PrimitiveCollection<string>("AnswerId")
                         .HasColumnType("longtext");
 
                     b.Property<string>("Name")
@@ -1437,10 +1539,10 @@ namespace Katena.Migrations
                     b.Property<string>("Pictures")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("QuestionsIds")
+                    b.PrimitiveCollection<string>("QuestionsIds")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("ResaultsId")
+                    b.PrimitiveCollection<string>("ResaultsId")
                         .HasColumnType("longtext");
 
                     b.Property<string>("TitleImagePath")
@@ -1474,104 +1576,79 @@ namespace Katena.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int?>("Weight")
-                        .IsRequired()
+                    b.Property<int>("Weight")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight1")
-                        .IsRequired()
+                    b.Property<int>("Weight1")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight10")
-                        .IsRequired()
+                    b.Property<int>("Weight10")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight11")
-                        .IsRequired()
+                    b.Property<int>("Weight11")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight12")
-                        .IsRequired()
+                    b.Property<int>("Weight12")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight13")
-                        .IsRequired()
+                    b.Property<int>("Weight13")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight14")
-                        .IsRequired()
+                    b.Property<int>("Weight14")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight2")
-                        .IsRequired()
+                    b.Property<int>("Weight2")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight3")
-                        .IsRequired()
+                    b.Property<int>("Weight3")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight4")
-                        .IsRequired()
+                    b.Property<int>("Weight4")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight5")
-                        .IsRequired()
+                    b.Property<int>("Weight5")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight6")
-                        .IsRequired()
+                    b.Property<int>("Weight6")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight7")
-                        .IsRequired()
+                    b.Property<int>("Weight7")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight8")
-                        .IsRequired()
+                    b.Property<int>("Weight8")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight9")
-                        .IsRequired()
+                    b.Property<int>("Weight9")
                         .HasColumnType("int");
 
-                    b.Property<int?>("typeWeight1")
-                        .IsRequired()
+                    b.Property<int>("typeWeight1")
                         .HasColumnType("int");
 
-                    b.Property<int?>("typeWeight10")
-                        .IsRequired()
+                    b.Property<int>("typeWeight10")
                         .HasColumnType("int");
 
-                    b.Property<int?>("typeWeight2")
-                        .IsRequired()
+                    b.Property<int>("typeWeight2")
                         .HasColumnType("int");
 
-                    b.Property<int?>("typeWeight3")
-                        .IsRequired()
+                    b.Property<int>("typeWeight3")
                         .HasColumnType("int");
 
-                    b.Property<int?>("typeWeight4")
-                        .IsRequired()
+                    b.Property<int>("typeWeight4")
                         .HasColumnType("int");
 
-                    b.Property<int?>("typeWeight5")
-                        .IsRequired()
+                    b.Property<int>("typeWeight5")
                         .HasColumnType("int");
 
-                    b.Property<int?>("typeWeight6")
-                        .IsRequired()
+                    b.Property<int>("typeWeight6")
                         .HasColumnType("int");
 
-                    b.Property<int?>("typeWeight7")
-                        .IsRequired()
+                    b.Property<int>("typeWeight7")
                         .HasColumnType("int");
 
-                    b.Property<int?>("typeWeight8")
-                        .IsRequired()
+                    b.Property<int>("typeWeight8")
                         .HasColumnType("int");
 
-                    b.Property<int?>("typeWeight9")
-                        .IsRequired()
+                    b.Property<int>("typeWeight9")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -5759,6 +5836,41 @@ namespace Katena.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Katena.Domain.Entities.TestResult", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("DetailedScoresJson")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("FirmId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("StyleResult")
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("TestDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("TypeResult")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FirmId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("TestResults");
+                });
+
             modelBuilder.Entity("Katena.Domain.Entities.TextField", b =>
                 {
                     b.Property<Guid>("Id")
@@ -5792,15 +5904,15 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"),
                             CodeWord = "PageIndex",
-                            DateAdded = new DateTime(2024, 7, 8, 12, 43, 7, 832, DateTimeKind.Utc).AddTicks(120),
-                            Text = "Мы искренне рады видеть тебя и приглашаем в свое пространство! Спасибо, что откликнулся пройти наш авторский тест. Мы старались, чтобы тебе было комфортно и интересно \r\n Устраивайся поудобнее, включай любимую волну, поехали!",
+                            DateAdded = new DateTime(2026, 9, 20, 17, 14, 9, 586, DateTimeKind.Utc).AddTicks(6155),
+                            Text = "Мы искренне рады видеть тебя и приглашаем в свое пространство! Спасибо, что откликнулся пройти наш авторский тест. Мы старались, чтобы тебе было комфортно и интересно Устраивайся поудобнее, включай любимую волну, поехали!",
                             Title = "Дорогой друг,"
                         },
                         new
                         {
                             Id = new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"),
                             CodeWord = "PageTests",
-                            DateAdded = new DateTime(2024, 7, 8, 12, 43, 7, 832, DateTimeKind.Utc).AddTicks(152),
+                            DateAdded = new DateTime(2026, 9, 20, 17, 14, 9, 586, DateTimeKind.Utc).AddTicks(8788),
                             Text = "Содержание заполняется администратором",
                             Title = "Тесты"
                         },
@@ -5808,7 +5920,7 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"),
                             CodeWord = "PageDescription",
-                            DateAdded = new DateTime(2024, 7, 8, 12, 43, 7, 832, DateTimeKind.Utc).AddTicks(165),
+                            DateAdded = new DateTime(2026, 9, 20, 17, 14, 9, 586, DateTimeKind.Utc).AddTicks(8834),
                             Text = "Содержание заполняется администратором",
                             Title = "Описание теста"
                         },
@@ -5816,7 +5928,7 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("8eae0a63-8f52-4160-a14e-b405e431a13b"),
                             CodeWord = "PageContacts",
-                            DateAdded = new DateTime(2024, 7, 8, 12, 43, 7, 832, DateTimeKind.Utc).AddTicks(179),
+                            DateAdded = new DateTime(2026, 9, 20, 17, 14, 9, 586, DateTimeKind.Utc).AddTicks(8869),
                             Text = "Содержание заполняется администратором",
                             Title = "Контакты"
                         });
@@ -5890,12 +6002,10 @@ namespace Katena.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Email")
-                        .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
+                        .HasColumnType("longtext");
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("tinyint(1)");
@@ -5907,12 +6017,10 @@ namespace Katena.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("NormalizedEmail")
-                        .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("NormalizedUserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("PasswordHash")
                         .HasColumnType("longtext");
@@ -5930,32 +6038,24 @@ namespace Katena.Migrations
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("UserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
+                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("NormalizedEmail")
-                        .HasDatabaseName("EmailIndex");
-
-                    b.HasIndex("NormalizedUserName")
-                        .IsUnique()
-                        .HasDatabaseName("UserNameIndex");
-
-                    b.ToTable("AspNetUsers", (string)null);
+                    b.ToTable("IdentityUser");
 
                     b.HasData(
                         new
                         {
                             Id = "ef37a3c2-7c96-4405-a971-7abcc91ac333",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4da12655-adef-4b95-9546-5078f71eb0f7",
+                            ConcurrencyStamp = "f8ab69f5-fbd1-4308-98f7-5d6bd989eba3",
                             Email = "my@email.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "MY@EMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAED9R0j0kX3vsOprvsxJopdpSFuFiwNzOacsl9HYhOUnq77qMcGRE1tMu/j0WU+k38Q==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEKaBIZo7GEukM7HUJQFVQ/DGcISgXj088d8cVQIHD3e6wbEaGjCGXv4TdP0VedfK5Q==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -6051,6 +6151,34 @@ namespace Katena.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Katena.Domain.Entities.ApplicationUser", b =>
+                {
+                    b.HasOne("Katena.Domain.Entities.Firm", "Firm")
+                        .WithMany("Users")
+                        .HasForeignKey("FirmId");
+
+                    b.Navigation("Firm");
+                });
+
+            modelBuilder.Entity("Katena.Domain.Entities.TestResult", b =>
+                {
+                    b.HasOne("Katena.Domain.Entities.Firm", "Firm")
+                        .WithMany("TestResults")
+                        .HasForeignKey("FirmId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Katena.Domain.Entities.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Firm");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -6062,7 +6190,7 @@ namespace Katena.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("Katena.Domain.Entities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -6071,7 +6199,7 @@ namespace Katena.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("Katena.Domain.Entities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -6086,7 +6214,7 @@ namespace Katena.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("Katena.Domain.Entities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -6095,11 +6223,18 @@ namespace Katena.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("Katena.Domain.Entities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Katena.Domain.Entities.Firm", b =>
+                {
+                    b.Navigation("TestResults");
+
+                    b.Navigation("Users");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,0 +1,121 @@
+﻿@{
+    ViewData["Title"] = "Личный кабинет";
+}
+
+<h2>Личный кабинет</h2>
+
+@if (ViewBag.IsDirector == true)
+{
+    <h3>Управление сотрудниками</h3>
+    <a asp-action="AddEmployee" class="btn btn-primary">Добавить сотрудника</a>
+
+    <hr />
+
+    <h4>Список сотрудников</h4>
+    @if (ViewBag.Employees != null && ViewBag.Employees.Count > 0)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Email</th>
+                    <th>Дата регистрации</th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var employee in ViewBag.Employees)
+                {
+                    <tr>
+                        <td>@employee.Email</td>
+                        <td>@employee.CreatedAt.ToString("dd.MM.yyyy")</td>
+                        <td>
+                            <a asp-action="EmployeeCard" asp-route-userId="@employee.Id" class="btn btn-info btn-sm">Карточка</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>Сотрудники еще не добавлены.</p>
+    }
+
+    <hr />
+
+    <h4>Последние результаты тестов</h4>
+    @if (ViewBag.TestResults != null && ViewBag.TestResults.Count > 0)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Сотрудник</th>
+                    <th>Дата</th>
+                    <th>Стиль</th>
+                    <th>Тип</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var result in ViewBag.TestResults)
+                {
+                    <tr>
+                        <td>@(result.User?.Email ?? "Неизвестно")</td>
+                        <td>@result.TestDate.ToString("dd.MM.yyyy")</td>
+                        <td>@result.StyleResult</td>
+                        <td>@result.TypeResult</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>Результаты тестов еще не получены.</p>
+    }
+}
+
+else
+{
+<h3>Мой профиль и результаты</h3>
+
+<!-- КНОПКА ПРОЙТИ ТЕСТ ТЕПЕРЬ ВИДНА ВСЕГДА -->
+<div class="mb-4">
+    <a asp-controller="Tests" asp-action="Index" class="btn btn-primary btn-lg">
+        📝 Пройти тестирование (или обновить результаты)
+    </a>
+</div>
+
+
+@if (ViewBag.MyResults != null && ViewBag.MyResults.Count > 0)
+{
+    <h4>Мой текущий результат:</h4>
+    <table class="table table-bordered">
+        <thead class="table-light">
+            <tr>
+                <th>Дата прохождения</th>
+                <th>Стиль управления</th>
+                <th>Тип личности</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var result in ViewBag.MyResults)
+            {
+                <tr>
+                    <td>@result.TestDate.ToString("dd.MM.yyyy HH:mm")</td>
+                    <td><span class="badge bg-primary fs-6">@result.StyleResult</span></td>
+                    <td><span class="badge bg-success fs-6">@result.TypeResult</span></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="alert alert-info">
+        💡 <strong>Совет:</strong> Если вы хотите изменить результаты, просто нажмите кнопку "Пройти тестирование" выше. Старая карточка будет автоматически обновлена, дубликаты не создадутся.
+    </div>
+}
+else
+{
+    <div class="alert alert-warning">
+        Вы еще не проходили тестирование. Нажмите кнопку выше, чтобы начать.
+    </div>
+}
+}
