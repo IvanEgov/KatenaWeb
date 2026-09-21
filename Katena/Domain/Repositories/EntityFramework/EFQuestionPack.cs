@@ -1,6 +1,5 @@
 ﻿using Katena.Domain.Entities;
 using Katena.Domain.Repositories.Abstruct;
-using Katena.Domain;
 using Microsoft.EntityFrameworkCore;
 
 namespace Katena.Domain.Repositories.EntietyFramework

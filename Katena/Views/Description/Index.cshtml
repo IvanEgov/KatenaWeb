@@ -1,0 +1,35 @@
+﻿@model TextField
+@{
+	ViewBag.Title = Model.Title;
+	ViewBag.Text = Model.Text;
+	ViewBag.TitleImagePath = Model.TitleImagePath;
+}
+
+<div style="display:flex; min-height: 100vh; min-width:100vw;">
+	<div class="description-page">
+		<div class="description-name">
+			<h1>Описание теста</h1>
+		</div>
+		<div class="description-main">
+			<div class="description-main-text">
+				<h2>В данном срезе мы хотим предположить, какую роль ты мог бы сыграть в сценарии процессов компании</h2>
+			</div>
+			<div class="discription-image-wrapper">
+				<div class="description-line-wrapper">
+					<span class="description-line"></span>
+				</div>
+				<img class="discription-image" src="~/images/description.png" alt="" data-position="center" />
+			</div>
+		</div>
+		<div class="description-text">
+			<h2>ТЕСТ состоит из 13 простых бытовых ситуаций: позитивных, негативных, шутливых, порой нелепых, которые могут произойти с любым человеком или периодически происходят в реальной жизни</h2>
+			<h2>В расслабленной обстановке поэтапно предлагается на выбор разрешить ситуацию через свое  действие и обоснованный мотив, как чаще всего ты поступаешь в жизни. Здесь нет «правильных» или «неправильных» ответов, так как в любом случае ситуация будет решена<h2 />
+		</div>
+		<ul class="actions">
+			<li><a asp-area="" asp-controller="Home" asp-action="Index" class="button scrolly">Вернуться на главную</a></li>
+			<li><a asp-area="" asp-controller="Tests" asp-action="Index" asp-route-id="" class="button scrolly">Пройти тест</a></li>
+		</ul>
+	</div>
+</div>
+
+			

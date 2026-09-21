@@ -7,6 +7,8 @@
 @inject DataManager datamanager;
 <script src="~/js/ckeditor/ckeditor.js"></script>
 
+
+
 <div>
     <h2>@strTitle</h2>
     <div>
@@ -37,6 +39,16 @@
                 <div>
                     <img class="img-block" src="~/images/@Model.TitleImagePath" />
                 </div>
+            </div>
+            <div class="div-box">
+                <label asp-for="Background"></label>
+                <textarea asp-for="Background"></textarea>
+                <span asp-validation-for="Background"></span>
+            </div>
+            <div class="div-box">
+                <label asp-for="Pictures"></label>
+                <textarea asp-for="Pictures"></textarea>
+                <span asp-validation-for="Pictures"></span>
             </div>
             <input type="submit" value="Сохранить">
         </form>

@@ -1,0 +1,103 @@
+﻿@{
+    ViewData["Title"] = "Карточка сотрудника";
+    var employee = ViewBag.Employee as Katena.Domain.Entities.ApplicationUser;
+    var testResults = ViewBag.TestResults as List<Katena.Domain.Entities.TestResult>;
+}
+
+<div class="container mt-5">
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @Html.Raw(TempData["SuccessMessage"])
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <h2>Карточка сотрудника</h2>
+
+    <div class="card mb-4">
+        <div class="card-header bg-info text-white">
+            <h4 class="mb-0">@employee?.Email</h4>
+        </div>
+        <div class="card-body">
+            <p><strong>Email:</strong> @employee?.Email</p>
+            <p><strong>Роль:</strong> @(employee?.UserRole == "Director" ? "Директор" : "Сотрудник")</p>
+
+            <hr />
+
+            <form asp-action="ResetEmployeePassword" method="post" style="display:inline;">
+                <input type="hidden" name="userId" value="@employee.Id" />
+                <button type="submit" class="btn btn-warning" onclick="return confirm('Вы уверены, что хотите сбросить пароль для этого сотрудника? Старый пароль перестанет работать.');">
+                    🔄 Сбросить и показать новый пароль
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <h3>Результаты тестирования</h3>
+
+    @if (testResults != null && testResults.Count > 0)
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Дата</th>
+                    <th>Стиль управления</th>
+                    <th>Тип личности</th>
+                    <th>Детали</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var result in testResults)
+                {
+                    <tr>
+                        <td>@result.TestDate.ToString("dd.MM.yyyy HH:mm")</td>
+                        <td><span class="badge bg-primary">@result.StyleResult</span></td>
+                        <td><span class="badge bg-success">@result.TypeResult</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#detailsModal@(result.Id)">
+                                Подробнее
+                            </button>
+                        </td>
+                    </tr>
+
+                    <!-- Модальное окно с деталями -->
+                    <div class="modal fade" id="detailsModal@(result.Id)" tabindex="-1">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Детали теста от @result.TestDate.ToString("dd.MM.yyyy")</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p><strong>Стиль управления:</strong> @result.StyleResult</p>
+                                    <p><strong>Тип личности:</strong> @result.TypeResult</p>
+                                    @if (!string.IsNullOrEmpty(result.DetailedScoresJson))
+                                    {
+                                        <p><strong>Детальные баллы:</strong></p>
+                                        <pre>@result.DetailedScoresJson</pre>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="alert alert-info">
+            Сотрудник еще не проходил тестирование.
+        </div>
+    }
+
+    <a asp-action="Index" class="btn btn-secondary">Назад к списку сотрудников</a>
+</div>

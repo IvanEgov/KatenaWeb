@@ -17,7 +17,7 @@ namespace Katena.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.3")
+                .HasAnnotation("ProductVersion", "9.0.13")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
@@ -32,88 +32,68 @@ namespace Katena.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int?>("Weight")
-                        .IsRequired()
+                    b.Property<int>("Weight")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight1")
-                        .IsRequired()
+                    b.Property<int>("Weight1")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight10")
-                        .IsRequired()
+                    b.Property<int>("Weight10")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight11")
-                        .IsRequired()
+                    b.Property<int>("Weight11")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight12")
-                        .IsRequired()
+                    b.Property<int>("Weight12")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight13")
-                        .IsRequired()
+                    b.Property<int>("Weight13")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight14")
-                        .IsRequired()
+                    b.Property<int>("Weight14")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight15")
-                        .IsRequired()
+                    b.Property<int>("Weight15")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight2")
-                        .IsRequired()
+                    b.Property<int>("Weight2")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight3")
-                        .IsRequired()
+                    b.Property<int>("Weight3")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight4")
-                        .IsRequired()
+                    b.Property<int>("Weight4")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight5")
-                        .IsRequired()
+                    b.Property<int>("Weight5")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight6")
-                        .IsRequired()
+                    b.Property<int>("Weight6")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight7")
-                        .IsRequired()
+                    b.Property<int>("Weight7")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight8")
-                        .IsRequired()
+                    b.Property<int>("Weight8")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight9")
-                        .IsRequired()
+                    b.Property<int>("Weight9")
                         .HasColumnType("int");
 
-                    b.Property<string>("reasonsId")
+                    b.PrimitiveCollection<string>("reasonsId")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int?>("typeWeight1")
-                        .IsRequired()
+                    b.Property<int>("typeWeight1")
                         .HasColumnType("int");
 
-                    b.Property<int?>("typeWeight2")
-                        .IsRequired()
+                    b.Property<int>("typeWeight2")
                         .HasColumnType("int");
 
-                    b.Property<int?>("typeWeight3")
-                        .IsRequired()
+                    b.Property<int>("typeWeight3")
                         .HasColumnType("int");
 
-                    b.Property<int?>("typeWeight4")
-                        .IsRequired()
+                    b.Property<int>("typeWeight4")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -123,25 +103,51 @@ namespace Katena.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("cb83a258-54e1-4b2a-a58f-24fe95a357bc"),
-                            Action = "Начну звонить соседям и выяснять у всех ли отключили",
-                            Weight = 0,
+                            Id = new Guid("0033a8fa-5096-4218-88b5-e982ae9cf885"),
+                            Action = "Предложу ему свою помощь",
+                            Weight = 1,
                             Weight1 = 0,
-                            Weight10 = 0,
+                            Weight10 = 1,
                             Weight11 = 0,
                             Weight12 = 0,
-                            Weight13 = 0,
-                            Weight14 = 0,
-                            Weight15 = 0,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight15 = 1,
                             Weight2 = 0,
                             Weight3 = 0,
                             Weight4 = 0,
                             Weight5 = 0,
                             Weight6 = 0,
-                            Weight7 = 0,
-                            Weight8 = 0,
-                            Weight9 = 0,
-                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]",
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            reasonsId = "[\"542c5b83-3d7a-4157-804a-fec7c7f32c17\",\"f8dfade8-1e5a-4b5b-b866-0b5c3953fd76\",\"0bfc79dd-5bb0-4817-ba21-0ba838c9b545\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("01786293-47e4-407e-9c24-66591aa9e099"),
+                            Action = "Постараюсь, не привлекая внимания окружающих, удалить пятно подручными средствами, а если это не получится, продолжу веселиться вместе с пятном",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight15 = 1,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            reasonsId = "[\"0ba6f7c0-cd20-48dc-836c-f3ddc825605a\",\"c97493b0-9616-4f2d-8f24-773f51f60dd6\",\"ce8e5fbd-138c-4370-a9f1-bb5543f10bcf\"]",
                             typeWeight1 = 0,
                             typeWeight2 = 0,
                             typeWeight3 = 0,
@@ -151,23 +157,725 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("03b5d02c-aa7f-47b9-8b80-4bd984ce7906"),
                             Action = "Начну искать телефоны снабжающих организаций и выяснять причину отключения",
-                            Weight = 0,
+                            Weight = 1,
                             Weight1 = 0,
                             Weight10 = 0,
-                            Weight11 = 0,
+                            Weight11 = 1,
                             Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight15 = 0,
+                            Weight2 = 1,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            reasonsId = "[\"97d69ebb-66ae-412c-8ccc-dfdc910e080b\",\"a3f7aa1a-fd06-48ba-9427-21f7e6503bab\",\"5127c013-8026-430c-9773-fffec765e49f\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("0602c2f0-826b-499f-8248-68563ae32729"),
+                            Action = "Напишу жалобу куда следует",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight15 = 0,
+                            Weight2 = 1,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            reasonsId = "[\"b3d2b465-6c85-469e-831c-40c1317baa95\",\"89c19957-d134-48c4-a628-d4e8c9dae98c\",\"82fcd984-f475-42b2-bacc-2c948001c01c\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("081ce27a-1ea3-4af4-8faf-57a4bbedb888"),
+                            Action = "Вмешаюсь в процесс продажи и постараюсь не допустить инцидента",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 1,
+                            Weight15 = 0,
+                            Weight2 = 0,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            reasonsId = "[\"1ceb5f0e-363d-4eec-8c04-c9b078f3a8da\",\"000a06a1-4cd6-4d85-8347-8eb5f5f2aa85\",\"69114935-091c-4c7a-825f-bde4a2efd381\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("0a3da123-ff86-4f54-9a96-83ed4258a4a7"),
+                            Action = "Как много творится страшного в этом мире",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight15 = 0,
+                            Weight2 = 0,
+                            Weight3 = 1,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 0,
+                            Weight9 = 1,
+                            reasonsId = "[\"f481437f-5d66-4183-b041-f60302ac0fa2\",\"bf265f0c-bdba-42e9-9d02-039ed2d98b2e\",\"256658ef-f816-48f7-a6bf-6a70ac079b47\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("0c5ba408-6941-4f62-a216-1376625cad92"),
+                            Action = "Я вкусный, свежий и душистый хлеб с красивой золотистой корочкой. И будь, что будет!",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight15 = 0,
+                            Weight2 = 1,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            reasonsId = "[\"8502cde7-19a4-4535-b5f4-e1de7d85660e\",\"87313919-1f8e-4ccd-bf1f-ab86120fed88\",\"18e43e9d-eb02-4075-9076-b26b3803c963\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("0e2bc63b-4249-438f-ab4c-ed52551de3f6"),
+                            Action = "Я - не хлеб, и никогда им не буду!",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 1,
                             Weight13 = 0,
                             Weight14 = 0,
                             Weight15 = 0,
+                            Weight2 = 1,
+                            Weight3 = 1,
+                            Weight4 = 1,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            reasonsId = "[\"6378221f-b3cc-478a-be4d-9aa76a443872\",\"5a3d67d7-08d3-4656-bc21-833842100b03\",\"f70515d3-c89c-42f1-81be-47de0db3143e\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("0f3e9b80-9ca9-49d4-b825-526f99fa6177"),
+                            Action = "Промолчу, но постараюсь как можно реже посещать данный магазин",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight15 = 1,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 0,
+                            Weight9 = 1,
+                            reasonsId = "[\"770ae718-1ac8-4975-ad4e-5be8f0c747e0\",\"191565ba-f698-44eb-bf55-9db48c0ad9a7\",\"466a8851-1cd3-453f-89bf-d728ebc07d00\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("0f6e2260-ef66-4da1-9e5a-c0c6802ab24b"),
+                            Action = "Люди даже не представляют, какой ящик Пандоры они открывают!",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight15 = 0,
+                            Weight2 = 1,
+                            Weight3 = 1,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 0,
+                            Weight9 = 1,
+                            reasonsId = "[\"60e556cd-e2f0-44e0-885a-37cf26e373bd\",\"a169eb49-7103-4eb9-b23c-1f8f5722550d\",\"7557a105-a89c-4420-9d90-4b51854c4a2d\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("10fc872b-81ff-488b-a4e3-a83e20399575"),
+                            Action = "Что-то новое всегда пробивается через череду ошибок",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight15 = 0,
+                            Weight2 = 1,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            reasonsId = "[\"5e792610-baa6-4dc5-bc05-2a3bb131b0fd\",\"6f8f4142-33eb-4fe9-95e2-f73e7570671a\",\"7c151077-39a0-4ced-bd8c-9303de968ead\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("1431e81d-95d2-4e75-98f2-583c0f42a2e9"),
+                            Action = "Ничего не буду предпринимать. Это не моё дело",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 1,
+                            Weight15 = 0,
+                            Weight2 = 0,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            reasonsId = "[\"968de2eb-4bde-422c-8ce2-59a71b9b1936\",\"67a0d081-2b25-4db0-b150-1f1f3ad7dd9a\",\"d3568b6a-c200-476d-8292-a2d227b81320\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("22db7305-82f0-4db2-8725-a02b8c63b263"),
+                            Action = "Громко выругаюсь, но преследовать наглеца не буду",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight15 = 1,
                             Weight2 = 0,
                             Weight3 = 0,
                             Weight4 = 0,
                             Weight5 = 0,
                             Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            reasonsId = "[\"15f35581-9ca5-4622-a5e6-d784925e7124\",\"3ef4e2c9-746e-4ec9-9ad7-a3023f8c51bd\",\"8eb4aedb-7de1-4b4d-b2fe-2298b08aca6b\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("260ee899-5854-43c2-b1c0-a20161583216"),
+                            Action = "Скорей всего, отвечу взаимностью, если человек мне симпатичен",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight15 = 1,
+                            Weight2 = 1,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
                             Weight7 = 0,
                             Weight8 = 0,
                             Weight9 = 0,
-                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]",
+                            reasonsId = "[\"cb9a9358-434f-4f99-ba79-78e5c9dc2953\",\"25dbf84c-5371-44b9-ba26-f6f17cb9f5fe\",\"f1e3ce54-dca2-4f95-a5d3-281107afef9e\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("26cb16cd-0cd8-48b4-a13d-2551eead53cb"),
+                            Action = "Все войны из-за больших денег",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight15 = 0,
+                            Weight2 = 1,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            reasonsId = "[\"76548bc2-eaea-441d-85ab-8630e3a28646\",\"6087eac5-ac4e-41b0-a42b-158636cef8d9\",\"cac0e665-9992-4fc0-b98a-c4c2106a4e3f\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("27a779a0-5338-4b62-bc46-93484d7164b5"),
+                            Action = "Попробую мягко поговорить с ней, чтобы она так не делала",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight15 = 1,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 0,
+                            Weight9 = 1,
+                            reasonsId = "[\"48b9f840-94b7-47c6-9af1-80284b5aa770\",\"c20b6825-163e-4b40-8624-5fbd491477a1\",\"67a8eb08-f9a9-4426-8e15-5b2f6f70d117\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("2f008483-6354-4f50-a434-4cf925415568"),
+                            Action = "Надо будет изучить этот вопрос подробнее",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight15 = 1,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 0,
+                            Weight9 = 1,
+                            reasonsId = "[\"cd87c258-cf5e-4e0e-9f8b-cf01c82ec880\",\"6dd0cd41-c1a9-4c26-be6b-57391cadb830\",\"f83b28c3-c12c-4097-99d6-58da46f6bd9f\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("352e1ae9-486c-4120-b397-00c61d7dc3d9"),
+                            Action = "При удобном случае поставлю его на место перед руководством",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight15 = 0,
+                            Weight2 = 1,
+                            Weight3 = 1,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 0,
+                            Weight9 = 1,
+                            reasonsId = "[\"9d2ca57a-ff4b-46d5-ad6b-14416412efcb\",\"a62254af-21fe-4cca-95cb-9cc5b5aced2b\",\"1d033778-3762-4c22-90a0-51c826dac17d\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("35aaade3-98b1-4a06-9e0e-e0d729b623b7"),
+                            Action = "Буду давить на руководство, чтоб они решили эту проблему в срочном порядке",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight15 = 0,
+                            Weight2 = 1,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            reasonsId = "[\"b925a8e2-9ec2-43bb-b96c-8587d43b2068\",\"a72bf684-2ba3-4523-b398-2fbbd1b15bcb\",\"4714c535-2e82-4bf8-8ffe-aab2a7ebfabb\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("4c748f11-614c-4da8-97f2-eec8dc8ef989"),
+                            Action = "Поеду домой переодеваться, а потом вернусь на вечеринку",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight15 = 1,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            reasonsId = "[\"da5ff667-d385-48fa-951d-6ce8e7fd08bf\",\"20cf563d-bfc5-4c15-aa70-ee91e0de167f\",\"e50ee429-61ab-42e3-99ff-4e7799e0510c\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("56932023-6769-4dc2-8680-484b70e3939a"),
+                            Action = "Сфотографирую этот бардак и, скорей всего, пожалуюсь куда следует",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight15 = 0,
+                            Weight2 = 1,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            reasonsId = "[\"b2efdd67-6c98-49b0-9cc6-bf09b3b27bfa\",\"b1fa7309-783b-48b5-b68a-75bacb94d6a0\",\"ccb12853-2446-4b42-9581-16db2853f079\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("5701ccd4-414d-4b9d-af8c-86deb1a56e45"),
+                            Action = "Поищу другой контейнер",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight15 = 1,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            reasonsId = "[\"4009ec61-081a-4cf1-ab46-f922edc46b1b\",\"01d2e676-63fd-4a93-8ee3-9c4841a23ad1\",\"4dd0651c-3029-4d51-8fcd-46728f49c125\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("58a477c8-22e1-4a5a-8b7a-4ab38ef2c2a1"),
+                            Action = "Сообщу о нарушении в компетентные органы и, возможно даже, направлю запись с видеорегистратора ",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight15 = 0,
+                            Weight2 = 1,
+                            Weight3 = 1,
+                            Weight4 = 1,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            reasonsId = "[\"2735e1da-4808-4b2f-b49b-9121d9bc5417\",\"007daed2-2d3b-49a4-ad0c-d7040d4f7b7c\",\"1450b793-fcc6-4402-bcc0-c91b8631cbfc\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("5cb42bbb-0248-4bfb-a42d-8525e2c3ad70"),
+                            Action = "Останусь после работы и уберусь. Хотя бы вокруг своего рабочего места ",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight15 = 0,
+                            Weight2 = 1,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            reasonsId = "[\"bffe1e1e-7921-4a17-81f8-bf30437b6ccc\",\"462fc8be-9bff-416e-b548-cb8f5b127268\",\"314814f8-f740-4e85-b86c-c2b08cc82679\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("5ed2804d-bc6a-4296-b9a0-cf720271a18a"),
+                            Action = "Накричу на него, заставлю извиняться",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 1,
+                            Weight15 = 0,
+                            Weight2 = 0,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            reasonsId = "[\"5127c013-8026-430c-9773-fffec765e49f\",\"eb49fb72-769c-4cc5-b38d-fa253263f73a\",\"22a4c268-78c2-4888-8680-e903f4419440\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("6586fff5-1f69-4c6a-871a-5330011cd084"),
+                            Action = "Не буду никак реагировать. Пусть все развивается само собой",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 1,
+                            Weight15 = 1,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            reasonsId = "[\"7bd9eaa0-e33c-4f02-a022-5be616e79ce8\",\"f223da69-63f6-468d-b25e-279fd8f11d7b\",\"ca7cfe1e-332c-413a-8ddc-64db7a2642d2\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("6afb4539-1a1c-44d5-ab1e-c8b29fbc2ddc"),
+                            Action = "Настроение испорчено, уеду с вечеринки",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight15 = 0,
+                            Weight2 = 1,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            reasonsId = "[\"d07501c8-e224-4500-87a9-2d1d75c3cc48\",\"4c594e6d-9108-481e-b0bf-2343970b731f\",\"1ca5ebc2-35ec-4784-8523-d62fcbbf2f4c\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("6ca56951-b7c8-4fc5-ae95-d308cbb9606b"),
+                            Action = "Прикинусь черствым и невкусным",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight15 = 1,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            reasonsId = "[\"eff0158e-f158-4e0f-81c9-5f5c62326cf3\",\"bb6d3939-359f-464a-af39-820c1cf5188a\",\"94141d88-aeb5-4c21-9d20-22e50879a756\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("7cb16f18-ebd1-4835-ab50-92bedbe2e56c"),
+                            Action = "Поеду дальше, как ни в чем не бывало",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight15 = 1,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            reasonsId = "[\"cb49c8e2-ff11-4e2e-ac7d-181d9f588223\",\"852df161-1900-4e68-8445-9451296d2d67\",\"9f39e031-554e-4edb-a1c7-00216ce24cc5\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("87b20356-54b0-4b72-9281-e5a300580f2b"),
+                            Action = "Положу мусор рядом с контейнерами",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 1,
+                            Weight15 = 0,
+                            Weight2 = 0,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            reasonsId = "[\"ef3eff5f-9193-44fa-8ee4-95d8885d9cd5\",\"3ed7376c-35fb-41f8-a2ca-0778f6f8ba06\",\"9fe0df1f-8a80-4368-9150-852e4a5441dd\"]",
                             typeWeight1 = 0,
                             typeWeight2 = 0,
                             typeWeight3 = 0,
@@ -178,22 +886,282 @@ namespace Katena.Migrations
                             Id = new Guid("9102a12d-2845-4224-939e-913ab96524ab"),
                             Action = "Плевать, не велика проблема",
                             Weight = 0,
-                            Weight1 = 0,
-                            Weight10 = 0,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 0,
+                            Weight14 = 1,
+                            Weight15 = 1,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            reasonsId = "[\"2f63ea8f-38e3-4e40-87aa-9cd1af13c882\",\"adc457f7-cb29-4fe1-838e-9a8038c0aa58\",\"56455b12-df9c-4db6-862f-577b05cf24e6\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("a011f3b9-c355-43a7-8840-41d32b3cc0f5"),
+                            Action = "Ну и пусть себе разгорается, ни первый и не последний",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
                             Weight11 = 0,
                             Weight12 = 0,
                             Weight13 = 0,
-                            Weight14 = 0,
-                            Weight15 = 0,
+                            Weight14 = 1,
+                            Weight15 = 1,
                             Weight2 = 0,
                             Weight3 = 0,
                             Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            reasonsId = "[\"56bcf2b7-0f52-443e-a955-332832eb9e34\",\"df6d9cc1-5bb2-4271-b1b7-574c951840da\",\"38dc2cdc-59be-4676-9126-40afb29596a2\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("ac212308-36a3-4810-8948-9c3b973838a2"),
+                            Action = "Организую субботник, постараюсь вовлечь всех в этот процесс",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight15 = 0,
+                            Weight2 = 1,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            reasonsId = "[\"b720be24-7f05-4b84-b916-615099596d71\",\"fdaff6ee-c481-45c5-bf2c-98fec53c8640\",\"a647e8f1-9eb2-46b0-a86b-8ecf338ba124\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("bc99bedd-0c29-43a2-834e-b7cb53dfb462"),
+                            Action = "Очень сильно напугаюсь. Надеюсь, что мокрый хлеб есть не будут",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight15 = 0,
+                            Weight2 = 0,
+                            Weight3 = 1,
+                            Weight4 = 1,
                             Weight5 = 0,
                             Weight6 = 0,
                             Weight7 = 0,
                             Weight8 = 0,
+                            Weight9 = 1,
+                            reasonsId = "[\"380c9dc0-f8fb-4b2e-8aa5-548c5ea43a67\",\"1b849154-df58-440b-a6f5-b1005e1b8483\",\"d4eb06ea-6c59-4a7a-8bbb-7adf041ce4c8\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("c2c60436-e42c-440f-a0d5-9b2266655cdb"),
+                            Action = "Брошу в багажник и выброшу в контейнер возле работы",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight15 = 0,
+                            Weight2 = 1,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            reasonsId = "[\"4009ec61-081a-4cf1-ab46-f922edc46b1b\",\"01d2e676-63fd-4a93-8ee3-9c4841a23ad1\",\"4dd0651c-3029-4d51-8fcd-46728f49c125\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("c8458104-a5f3-46bb-bda8-859f6826662e"),
+                            Action = "Пусть все идет, как идет. Что, мне больше всех надо?",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 0,
+                            Weight14 = 1,
+                            Weight15 = 1,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 0,
                             Weight9 = 0,
-                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]",
+                            reasonsId = "[\"07c4753f-0e75-4516-b222-99ccf583cb1f\",\"d647ba58-9482-43ce-830f-7d8ce0f917ed\",\"a48abfe5-42c4-472a-b97e-f52dba9b6da6\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("c9bbd0e8-b648-419b-8bc8-c8dc6d0f2732"),
+                            Action = "Буду вспоминать, не живет ли кто поблизости из моих знакомых",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight15 = 1,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 0,
+                            Weight9 = 1,
+                            reasonsId = "[\"3bed62f7-0488-4f66-9020-588d2d048f48\",\"f908af7a-2f84-4fdf-a400-1510a68c62b8\",\"7c2eb83e-5d2e-4f99-a34f-fb269d2dd482\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("cb83a258-54e1-4b2a-a58f-24fe95a357bc"),
+                            Action = "Начну звонить соседям и выяснять у всех ли отключили",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight15 = 1,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            reasonsId = "[\"661db458-5cea-431e-b8ba-6a91ed2854a6\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"f70fca13-268b-4e2e-9906-066b455d2081\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("d33624b4-49b2-46c3-a2f0-b30a0abcb1e8"),
+                            Action = "Догоню его и постараюсь поставить на место",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight15 = 0,
+                            Weight2 = 1,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            reasonsId = "[\"1013fefd-d505-4b34-bef2-3c08e83f5030\",\"9b024278-7390-4678-9d0b-bdd93cc7d8a6\",\"800651bd-3270-4e0c-b65a-7fabdfbfb81f\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("d518b8ae-1c2c-49fb-8053-b7dac72f60bb"),
+                            Action = "Позлорадствую над происходящим, чувствуя своё превосходство",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 1,
+                            Weight15 = 0,
+                            Weight2 = 0,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            reasonsId = "[\"86f2026a-30bf-44b2-8483-12745611937d\",\"c325ad59-ce45-4225-b563-bcc74c529ced\",\"24673a02-eb1d-403d-9668-fe0187654b0d\"]",
+                            typeWeight1 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("d9ca6c53-525c-4a1e-8d57-07b24a6f6655"),
+                            Action = "Буду делать вид, что ничего не происходит",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 0,
+                            Weight14 = 1,
+                            Weight15 = 1,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            reasonsId = "[\"523db197-19ee-43a2-9438-0fffe55341fa\",\"c59dd14c-0cd9-4b38-9ac6-b2fc7e49ad45\",\"95b174c0-a5b3-4134-85f9-2f94467b23c1\"]",
                             typeWeight1 = 0,
                             typeWeight2 = 0,
                             typeWeight3 = 0,
@@ -204,22 +1172,22 @@ namespace Katena.Migrations
                             Id = new Guid("e82f0359-d505-49f3-9292-f3877a9a844f"),
                             Action = "Это знак свыше, можно никуда сегодня не ходить, пойду спать дальше",
                             Weight = 0,
-                            Weight1 = 0,
-                            Weight10 = 0,
+                            Weight1 = 1,
+                            Weight10 = 1,
                             Weight11 = 0,
-                            Weight12 = 0,
+                            Weight12 = 1,
                             Weight13 = 0,
-                            Weight14 = 0,
-                            Weight15 = 0,
+                            Weight14 = 1,
+                            Weight15 = 1,
                             Weight2 = 0,
                             Weight3 = 0,
-                            Weight4 = 0,
-                            Weight5 = 0,
+                            Weight4 = 1,
+                            Weight5 = 1,
                             Weight6 = 0,
-                            Weight7 = 0,
+                            Weight7 = 1,
                             Weight8 = 0,
                             Weight9 = 0,
-                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]",
+                            reasonsId = "[\"c5018ed3-8b72-4f59-8f82-0fcfe0dcdb91\",\"b56c26c6-2de6-468c-98e2-dfc5fc35c436\",\"9fe7069a-f8a9-48ae-b63e-68e0ad6e683a\"]",
                             typeWeight1 = 0,
                             typeWeight2 = 0,
                             typeWeight3 = 0,
@@ -227,25 +1195,25 @@ namespace Katena.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5ed2804d-bc6a-4296-b9a0-cf720271a18a"),
-                            Action = "Накричу на него, заставлю извиняться",
+                            Id = new Guid("ecba0443-d733-4a15-9791-bc62cd6d2a7e"),
+                            Action = "Меня это вообще никак не касается, я далёк от этого",
                             Weight = 0,
-                            Weight1 = 0,
-                            Weight10 = 0,
-                            Weight11 = 0,
-                            Weight12 = 0,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 1,
                             Weight13 = 0,
-                            Weight14 = 0,
+                            Weight14 = 1,
                             Weight15 = 0,
                             Weight2 = 0,
-                            Weight3 = 0,
-                            Weight4 = 0,
-                            Weight5 = 0,
+                            Weight3 = 1,
+                            Weight4 = 1,
+                            Weight5 = 1,
                             Weight6 = 0,
                             Weight7 = 0,
                             Weight8 = 0,
                             Weight9 = 0,
-                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]",
+                            reasonsId = "[\"d1078e15-f779-452e-b72c-fde1b835c639\",\"35035162-c41a-47c9-aa9f-0d6b7cf16b60\",\"ac770c37-03bc-40d4-9ac1-8067134763d9\"]",
                             typeWeight1 = 0,
                             typeWeight2 = 0,
                             typeWeight3 = 0,
@@ -253,82 +1221,152 @@ namespace Katena.Migrations
                         },
                         new
                         {
-                            Id = new Guid("4c748f11-614c-4da8-97f2-eec8dc8ef989"),
-                            Action = "Поеду домой переодеваться, а потом вернусь на вечеринку",
-                            Weight = 0,
+                            Id = new Guid("efb2240f-df9f-40da-bf19-c4da4a518034"),
+                            Action = "Выскажу ей в резкой форме свое негодование и, возможно даже, пригрожу жалобой руководству",
+                            Weight = 1,
                             Weight1 = 0,
                             Weight10 = 0,
-                            Weight11 = 0,
+                            Weight11 = 1,
                             Weight12 = 0,
-                            Weight13 = 0,
+                            Weight13 = 1,
                             Weight14 = 0,
                             Weight15 = 0,
-                            Weight2 = 0,
-                            Weight3 = 0,
+                            Weight2 = 1,
+                            Weight3 = 1,
                             Weight4 = 0,
                             Weight5 = 0,
-                            Weight6 = 0,
+                            Weight6 = 1,
                             Weight7 = 0,
-                            Weight8 = 0,
-                            Weight9 = 0,
-                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]",
-                            typeWeight1 = 0,
-                            typeWeight2 = 0,
-                            typeWeight3 = 0,
-                            typeWeight4 = 0
-                        },
-                        new
-                        {
-                            Id = new Guid("01786293-47e4-407e-9c24-66591aa9e099"),
-                            Action = "Постараюсь, не привлекая внимания окружающих, удалить пятно подручными средствами, а если это не получится, продолжу веселиться вместе с пятном",
-                            Weight = 0,
-                            Weight1 = 0,
-                            Weight10 = 0,
-                            Weight11 = 0,
-                            Weight12 = 0,
-                            Weight13 = 0,
-                            Weight14 = 0,
-                            Weight15 = 0,
-                            Weight2 = 0,
-                            Weight3 = 0,
-                            Weight4 = 0,
-                            Weight5 = 0,
-                            Weight6 = 0,
-                            Weight7 = 0,
-                            Weight8 = 0,
-                            Weight9 = 0,
-                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]",
-                            typeWeight1 = 0,
-                            typeWeight2 = 0,
-                            typeWeight3 = 0,
-                            typeWeight4 = 0
-                        },
-                        new
-                        {
-                            Id = new Guid("6afb4539-1a1c-44d5-ab1e-c8b29fbc2ddc"),
-                            Action = "Настроение испорчено, уеду с вечеринки",
-                            Weight = 0,
-                            Weight1 = 0,
-                            Weight10 = 0,
-                            Weight11 = 0,
-                            Weight12 = 0,
-                            Weight13 = 0,
-                            Weight14 = 0,
-                            Weight15 = 0,
-                            Weight2 = 0,
-                            Weight3 = 0,
-                            Weight4 = 0,
-                            Weight5 = 0,
-                            Weight6 = 0,
-                            Weight7 = 0,
-                            Weight8 = 0,
-                            Weight9 = 0,
-                            reasonsId = "[\"f70fca13-268b-4e2e-9906-066b455d2081\",\"c2ea7376-d1fb-466d-91b3-a6efb2fb0063\",\"661db458-5cea-431e-b8ba-6a91ed2854a6\"]",
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            reasonsId = "[\"c5e88078-2957-4255-9f69-209868b59cbc\",\"d578a565-d33c-4f77-abad-d9a7b0c6f748\",\"4e0eb8ed-e5e7-4b4c-b2c8-3fc4dc68e74b\"]",
                             typeWeight1 = 0,
                             typeWeight2 = 0,
                             typeWeight3 = 0,
                             typeWeight4 = 0
                         });
+                });
+
+            modelBuilder.Entity("Katena.Domain.Entities.ApplicationUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("FirmId")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("longtext");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("longtext");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256)");
+
+                    b.Property<string>("UserRole")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FirmId");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex");
+
+                    b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("Katena.Domain.Entities.FeedbackBase", b =>
+                {
+                    b.Property<Guid>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("mail")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("message")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Feedbacks");
+
+                    b.HasData(
+                        new
+                        {
+                            id = new Guid("6c18e483-3d24-4f06-90c4-63a49f547b1d"),
+                            mail = "igoryan@mail.ru",
+                            message = "Super site",
+                            name = "Игорь"
+                        });
+                });
+
+            modelBuilder.Entity("Katena.Domain.Entities.Firm", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Firms");
                 });
 
             modelBuilder.Entity("Katena.Domain.Entities.NewsBase", b =>
@@ -355,10 +1393,38 @@ namespace Katena.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("c8be520d-1590-41b1-9376-7a8d2c05f797"),
+                            Id = new Guid("963cc6a3-4918-4306-9059-a2b958a30c4d"),
                             Text = "Теперь можно добавлять картинки!",
                             Title = "Новость дня",
                             TitleImagePath = ""
+                        },
+                        new
+                        {
+                            Id = new Guid("9414bbc9-1b41-4f39-bfa4-6acdd011feee"),
+                            Text = "Было собраноо уже 6 вопросов",
+                            Title = "Новость полудня",
+                            TitleImagePath = "2f9a623372f47bb6a0fc9b42c87bde91.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("a08c6941-e8ae-40f1-8f4d-0374065a876d"),
+                            Text = "Очередное заполнение БД и тестирование новостей",
+                            Title = "Новость дня 17.04.2024",
+                            TitleImagePath = "2f9a623372f47bb6a0fc9b42c87bde91.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("843e46b5-69fc-4450-bd12-263ecee19541"),
+                            Text = "Курс молодого бойца. Наводнение продолжается!!!",
+                            Title = "Новость дня 16.04.2024",
+                            TitleImagePath = "11c53ebb6fe575943e75dca3a72b0bf9.jpg"
+                        },
+                        new
+                        {
+                            Id = new Guid("32cc8c0c-c498-41a6-a8c1-d117cfe63669"),
+                            Text = "Заполянем базу данных",
+                            Title = "Новость дня 15.04,2024",
+                            TitleImagePath = "2f9a623372f47bb6a0fc9b42c87bde91.jpg"
                         });
                 });
 
@@ -368,8 +1434,7 @@ namespace Katena.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("char(36)");
 
-                    b.Property<string>("AnswerId")
-                        .IsRequired()
+                    b.PrimitiveCollection<string>("AnswerId")
                         .HasColumnType("longtext");
 
                     b.Property<string>("Name")
@@ -389,9 +1454,63 @@ namespace Katena.Migrations
                         },
                         new
                         {
+                            Id = new Guid("2a40bd98-2b1a-47ae-8e61-fe54352357e4"),
+                            AnswerId = "[\"d33624b4-49b2-46c3-a2f0-b30a0abcb1e8\",\"7cb16f18-ebd1-4835-ab50-92bedbe2e56c\",\"22db7305-82f0-4db2-8725-a02b8c63b263\",\"58a477c8-22e1-4a5a-8b7a-4ab38ef2c2a1\"]",
+                            Name = "На светофоре какой-то лихач, проехав на красный свет, нагло подрезает вас, едва не спровоцировав аварию. Ваши действия?"
+                        },
+                        new
+                        {
                             Id = new Guid("2b8ad992-d4aa-4c3f-a65e-aaf036260807"),
                             AnswerId = "[\"5ed2804d-bc6a-4296-b9a0-cf720271a18a\",\"4c748f11-614c-4da8-97f2-eec8dc8ef989\",\"01786293-47e4-407e-9c24-66591aa9e099\",\"6afb4539-1a1c-44d5-ab1e-c8b29fbc2ddc\"]",
                             Name = "На корпоративе, к которому вы давно готовились, сосед случайно проливает на вас красное вино. Ваша первая реакция?"
+                        },
+                        new
+                        {
+                            Id = new Guid("4862fb3b-5603-4073-8aa4-29b4d324c266"),
+                            AnswerId = "[\"6ca56951-b7c8-4fc5-ae95-d308cbb9606b\",\"bc99bedd-0c29-43a2-834e-b7cb53dfb462\",\"0c5ba408-6941-4f62-a216-1376625cad92\",\"0e2bc63b-4249-438f-ab4c-ed52551de3f6\"]",
+                            Name = "Напоследок вопрос-шутка. Представьте себе, что вы - хлеб. Вас подали на стол и вот-вот употребят в пищу. Вам необходимо что-то срочно предпринять, чтобы спастись. Что вы будете делать?"
+                        },
+                        new
+                        {
+                            Id = new Guid("4e2dd4fa-6422-4ac3-b5ae-8c2a4b0de52f"),
+                            AnswerId = "[\"081ce27a-1ea3-4af4-8faf-57a4bbedb888\",\"0602c2f0-826b-499f-8248-68563ae32729\",\"0f3e9b80-9ca9-49d4-b825-526f99fa6177\",\"1431e81d-95d2-4e75-98f2-583c0f42a2e9\"]",
+                            Name = "Вы увидели, как в магазине продавец продала спиртное лицу, которому, очевидно, ещё далеко до совершеннолетия. Каковы будут ваши действия?"
+                        },
+                        new
+                        {
+                            Id = new Guid("6d6ffb66-cb93-421f-bb20-9b866482a037"),
+                            AnswerId = "[\"2f008483-6354-4f50-a434-4cf925415568\",\"0f6e2260-ef66-4da1-9e5a-c0c6802ab24b\",\"10fc872b-81ff-488b-a4e3-a83e20399575\",\"ecba0443-d733-4a15-9791-bc62cd6d2a7e\"]",
+                            Name = "В соцсетях вы прочитали, что в где-то, скажем, в Японии, робот, созданный на основе искусственного интеллекта (ИИ), вышел из под контроля и покалечил человека. О чем вы в этот момент подумаете?"
+                        },
+                        new
+                        {
+                            Id = new Guid("856dc1f5-0d38-43d1-87b5-805c0a35aa2b"),
+                            AnswerId = "[\"d9ca6c53-525c-4a1e-8d57-07b24a6f6655\",\"260ee899-5854-43c2-b1c0-a20161583216\",\"27a779a0-5338-4b62-bc46-93484d7164b5\",\"efb2240f-df9f-40da-bf19-c4da4a518034\"]",
+                            Name = "Одна из ваших коллег по работе явно оказывает вам знаки внимания. Ваши действия?"
+                        },
+                        new
+                        {
+                            Id = new Guid("91f9520e-caed-409a-b9de-4b6b31de6159"),
+                            AnswerId = "[\"5701ccd4-414d-4b9d-af8c-86deb1a56e45\",\"87b20356-54b0-4b72-9281-e5a300580f2b\",\"c2c60436-e42c-440f-a0d5-9b2266655cdb\",\"56932023-6769-4dc2-8680-484b70e3939a\"]",
+                            Name = "Вы утром выносите мусор, но подойдя к контейнерам, видите, что они переполнены. Ваши действия?"
+                        },
+                        new
+                        {
+                            Id = new Guid("c5fb7286-90d3-403d-a4b9-ffa775e32ec8"),
+                            AnswerId = "[\"0a3da123-ff86-4f54-9a96-83ed4258a4a7\",\"a011f3b9-c355-43a7-8840-41d32b3cc0f5\",\"c9bbd0e8-b648-419b-8bc8-c8dc6d0f2732\",\"26cb16cd-0cd8-48b4-a13d-2551eead53cb\"]",
+                            Name = "В новостях вы услышали, что где-то в мире разгорелся новый вооруженный конфликт. Каковы ваши мысли в этот момент?"
+                        },
+                        new
+                        {
+                            Id = new Guid("d863f251-3f53-42b8-86b9-c24e868cba16"),
+                            AnswerId = "[\"0033a8fa-5096-4218-88b5-e982ae9cf885\",\"d518b8ae-1c2c-49fb-8053-b7dac72f60bb\",\"352e1ae9-486c-4120-b397-00c61d7dc3d9\",\"6586fff5-1f69-4c6a-871a-5330011cd084\"]",
+                            Name = "Один из ваших коллег, с которым вы не особо дружите, никак не может разобраться в вопросе, в котором вы уже давно стали большим специалистом. Каким будет ваше поведение?"
+                        },
+                        new
+                        {
+                            Id = new Guid("e4ece256-cc81-457d-8e8d-e12c7358c3b2"),
+                            AnswerId = "[\"ac212308-36a3-4810-8948-9c3b973838a2\",\"35aaade3-98b1-4a06-9e0e-e0d729b623b7\",\"5cb42bbb-0248-4bfb-a42d-8525e2c3ad70\",\"c8458104-a5f3-46bb-bda8-859f6826662e\"]",
+                            Name = "Представьте ситуацию, что уборщица, которая много лет мыла полы в вашем офисе, внезапно заболела. Офис уже несколько недель обрастает грязью. Ваши коллеги на это никак не реагируют. Ваши действия?"
                         });
                 });
 
@@ -401,22 +1520,26 @@ namespace Katena.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("char(36)");
 
+                    b.Property<string>("Background")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Instructions")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("QuestionsIds")
+                    b.Property<string>("Pictures")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("ResaultsId")
+                    b.PrimitiveCollection<string>("QuestionsIds")
+                        .HasColumnType("longtext");
+
+                    b.PrimitiveCollection<string>("ResaultsId")
                         .HasColumnType("longtext");
 
                     b.Property<string>("TitleImagePath")
@@ -429,12 +1552,14 @@ namespace Katena.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("0ed29a4b-ea2d-426d-add2-22753c7bf8cb"),
-                            Description = "A good test to get to know yourself",
-                            Instructions = "Think",
-                            Name = "Personality test",
-                            QuestionsIds = "[\"0dc6e45e-ba94-4f54-a59e-53caa1eea73c\",\"2b8ad992-d4aa-4c3f-a65e-aaf036260807\"]",
-                            ResaultsId = "[\"959f07c9-5bd1-402c-9d29-c0cd3b5f954d\",\"cbed2409-359d-4425-9505-7434d6f75d79\",\"6662ee7c-34c8-4811-b3f3-ada6618dc47b\"]"
+                            Id = new Guid("eb79ddbd-e199-436d-a722-ee2e6e87b8c3"),
+                            Background = "background1,background2,background3,background4,background5,background6,background7,background8,background9,background10,background11,background12",
+                            Description = "Этот тест предназначен для лучшей  жизни ))",
+                            Instructions = "Рекомендации по прохождению тестирования.\r\n1. Прохождение теста займет не более 15-20 минут. Постарайтесь найти время, чтобы вас никто не отвлекал от прохождения теста. По возможности, выключите телефон и минимизируйте посторонние шумы. \r\n2. Перед прохождением теста найдите 1-2 минуты, чтобы расслабиться и привести мысли в порядок.\r\n3. Если ни один из предлагаемых ответов на поставленные в тесте вопросы полностью не совпадает с вашим, то выбирайте ответ, наиболее близкий к вашему ощущению.\r\n4. Если вы ни разу не попадали в ситуацию, описанную в вопросе теста, то руководствуйтес своими ощущениями, как если бы вы в ней оказались.\r\n5. В целом, прохождение теста не должно вызывать сложности, но мы рекомендуем ознакомиться с нижеприведенным алгоритмом. \r\nАлгоритм прохождения теста.\r\n1. Если вы - женщина, то перейдите во вкладку \"Тест Женщины\". Если вы - мужчина, то, соответственно, перейдите во вкладку \"Тест Мужчины\"\r\n2. Прочитайте вопрос и выберите один из четырёх вариантов ответов, расположенных сразу под вопросом, справа от ячейки \"Действие\". Под выбранным ответом, в ячейке, окрашенной серым цветом поставьте \"1\" или выберите \"1\" из выпадающего списка, нажав на стрелочку в правом нижнем углу выбранной ячейки (примечание: ячейка запрограммирована таким образом, что другую цифру поставить не даст).\r\nЕсли вы ошиблись, просто кликните левой клавишей мыши на нужной ячейке и удалите ваш выбор кнопкой \"Delete\".\r\nВ случае, если вы выберете более одного ответа на вопрос, то строка ответов будет подсвечена красным цветом. В случае, если вы не выберете ни одного ответа, строка останется серой. В случае правильного заполнения, строка будет подсвечена зелёным цветом.\r\n3. После выбора одного из четырёх ответов, вам необходимо выбрать один из трёх мотивов, расположенных под ответом, которыми вы руководствовались. Важно выбирать мотив именно под нужным ответом (при ответе блок с мотивами для наглядности будет подсвечиваться желтым цветом), и так же поставить в нём \"1\". \r\nПринцип заполнения аналогичен п.2.\r\n4. При правильном прохождении теста, все строки, имеющие заливку, должны быть подсвечены зелёным цветом. Если вы видите, что присутствуют другие цвета, то это значит, что в ответе допущена ошибка.\r\n5. После прохождения теста внизу вы увидите ваши показатели по стилю управления и основному гендерному дистрибутиву.\r\n6. Ознакомиться с результатами тестирования можно на вкладке \"Результаты\". Ваш результат будет подсвечен зелёным цветом.\r\n\r\nСпасибо за прохождение теста!",
+                            Name = "Тест начало",
+                            Pictures = "picture1,picture2,picture3,picture4,picture5,picture6,picture7,picture8,picture9,picture10,picture11",
+                            QuestionsIds = "[\"0dc6e45e-ba94-4f54-a59e-53caa1eea73c\",\"2b8ad992-d4aa-4c3f-a65e-aaf036260807\",\"2a40bd98-2b1a-47ae-8e61-fe54352357e4\",\"856dc1f5-0d38-43d1-87b5-805c0a35aa2b\",\"d863f251-3f53-42b8-86b9-c24e868cba16\",\"91f9520e-caed-409a-b9de-4b6b31de6159\",\"c5fb7286-90d3-403d-a4b9-ffa775e32ec8\",\"6d6ffb66-cb93-421f-bb20-9b866482a037\",\"e4ece256-cc81-457d-8e8d-e12c7358c3b2\",\"4e2dd4fa-6422-4ac3-b5ae-8c2a4b0de52f\",\"4862fb3b-5603-4073-8aa4-29b4d324c266\"]",
+                            ResaultsId = "[\"12a7faba-5904-4bcb-949a-f71224190e43\",\"13ebde4b-5e7e-44cf-834e-b6cdfa0ef02c\",\"363b07c0-5f2d-430a-8e96-7f9c700532c1\",\"39c860f6-b6bc-4c3e-b1fc-6f5dead8fe75\",\"6d981101-05f0-4e4f-b62a-f49a1e1edaa3\",\"6e071be6-3d6a-4f1d-adad-dcd1f77db403\",\"70baef4c-2aea-4b84-ad1b-3099dc968b86\",\"85430d7d-aa48-41d5-823d-625cdabbb7d9\",\"991c17b5-7165-46cc-96f2-3811798622c3\",\"b29b2152-b6f1-45d7-a49d-902ca3530268\",\"b72c0d38-0fe3-4a00-bef2-acb32789e086\",\"e2fb7ee4-614b-4cd5-b11e-e522a2d75e94\",\"0d6ba570-1721-4d51-83c4-fa990a69b728\",\"2da33b3a-e685-4dd9-a1a1-55121d31d136\",\"2e77f1b9-a436-4c15-be4b-b581c10bec2c\",\"46af2f80-adf6-4fa3-88a4-4c9d9703a914\",\"64552b30-4c93-4a69-b305-10f4d7db6cb4\",\"81393ae6-9b6f-462f-a189-bb421d430bff\",\"8bb5e5c9-14c4-4dd1-b695-d144aaa8f7d2\",\"a548a1f0-b437-41ad-b5ef-6e8e4e5064ed\",\"b1954ccf-f1d0-495a-928d-0099701a9518\",\"bc01dd89-601d-4c4e-969f-2082b6833ffc\",\"c299418c-9304-4fa0-a681-ec09a95b123c\",\"e6eb1f77-a620-488a-aea7-ec2dba777a66\"]"
                         });
                 });
 
@@ -448,104 +1573,79 @@ namespace Katena.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int?>("Weight")
-                        .IsRequired()
+                    b.Property<int>("Weight")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight1")
-                        .IsRequired()
+                    b.Property<int>("Weight1")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight10")
-                        .IsRequired()
+                    b.Property<int>("Weight10")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight11")
-                        .IsRequired()
+                    b.Property<int>("Weight11")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight12")
-                        .IsRequired()
+                    b.Property<int>("Weight12")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight13")
-                        .IsRequired()
+                    b.Property<int>("Weight13")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight14")
-                        .IsRequired()
+                    b.Property<int>("Weight14")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight2")
-                        .IsRequired()
+                    b.Property<int>("Weight2")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight3")
-                        .IsRequired()
+                    b.Property<int>("Weight3")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight4")
-                        .IsRequired()
+                    b.Property<int>("Weight4")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight5")
-                        .IsRequired()
+                    b.Property<int>("Weight5")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight6")
-                        .IsRequired()
+                    b.Property<int>("Weight6")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight7")
-                        .IsRequired()
+                    b.Property<int>("Weight7")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight8")
-                        .IsRequired()
+                    b.Property<int>("Weight8")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Weight9")
-                        .IsRequired()
+                    b.Property<int>("Weight9")
                         .HasColumnType("int");
 
-                    b.Property<int?>("typeWeight1")
-                        .IsRequired()
+                    b.Property<int>("typeWeight1")
                         .HasColumnType("int");
 
-                    b.Property<int?>("typeWeight10")
-                        .IsRequired()
+                    b.Property<int>("typeWeight10")
                         .HasColumnType("int");
 
-                    b.Property<int?>("typeWeight2")
-                        .IsRequired()
+                    b.Property<int>("typeWeight2")
                         .HasColumnType("int");
 
-                    b.Property<int?>("typeWeight3")
-                        .IsRequired()
+                    b.Property<int>("typeWeight3")
                         .HasColumnType("int");
 
-                    b.Property<int?>("typeWeight4")
-                        .IsRequired()
+                    b.Property<int>("typeWeight4")
                         .HasColumnType("int");
 
-                    b.Property<int?>("typeWeight5")
-                        .IsRequired()
+                    b.Property<int>("typeWeight5")
                         .HasColumnType("int");
 
-                    b.Property<int?>("typeWeight6")
-                        .IsRequired()
+                    b.Property<int>("typeWeight6")
                         .HasColumnType("int");
 
-                    b.Property<int?>("typeWeight7")
-                        .IsRequired()
+                    b.Property<int>("typeWeight7")
                         .HasColumnType("int");
 
-                    b.Property<int?>("typeWeight8")
-                        .IsRequired()
+                    b.Property<int>("typeWeight8")
                         .HasColumnType("int");
 
-                    b.Property<int?>("typeWeight9")
-                        .IsRequired()
+                    b.Property<int>("typeWeight9")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -555,21 +1655,21 @@ namespace Katena.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("f70fca13-268b-4e2e-9906-066b455d2081"),
-                            Reason = "Reason",
+                            Id = new Guid("000a06a1-4cd6-4d85-8347-8eb5f5f2aa85"),
+                            Reason = "Если не вмешаться, то это повториться снова",
                             Weight = 0,
-                            Weight1 = 0,
+                            Weight1 = 1,
                             Weight10 = 0,
                             Weight11 = 0,
                             Weight12 = 0,
                             Weight13 = 0,
                             Weight14 = 0,
                             Weight2 = 0,
-                            Weight3 = 0,
-                            Weight4 = 0,
-                            Weight5 = 0,
+                            Weight3 = 1,
+                            Weight4 = 1,
+                            Weight5 = 1,
                             Weight6 = 0,
-                            Weight7 = 0,
+                            Weight7 = 1,
                             Weight8 = 0,
                             Weight9 = 0,
                             typeWeight1 = 0,
@@ -578,6 +1678,36 @@ namespace Katena.Migrations
                             typeWeight3 = 0,
                             typeWeight4 = 0,
                             typeWeight5 = 0,
+                            typeWeight6 = 2,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("007daed2-2d3b-49a4-ad0c-d7040d4f7b7c"),
+                            Reason = "Порядок превыше всего! Правила написаны кровью!",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 2,
                             typeWeight6 = 0,
                             typeWeight7 = 0,
                             typeWeight8 = 0,
@@ -585,20 +1715,320 @@ namespace Katena.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c2ea7376-d1fb-466d-91b3-a6efb2fb0063"),
-                            Reason = "Second reason",
-                            Weight = 0,
-                            Weight1 = 0,
-                            Weight10 = 0,
+                            Id = new Guid("01d2e676-63fd-4a93-8ee3-9c4841a23ad1"),
+                            Reason = "Горы мусора вокруг контейнеров - это отвратительно!",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
                             Weight11 = 0,
                             Weight12 = 0,
-                            Weight13 = 0,
-                            Weight14 = 0,
+                            Weight13 = 1,
+                            Weight14 = 1,
                             Weight2 = 0,
                             Weight3 = 0,
                             Weight4 = 0,
                             Weight5 = 0,
                             Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 2,
+                            typeWeight6 = 0,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("07c4753f-0e75-4516-b222-99ccf583cb1f"),
+                            Reason = "Рано или поздно кто-то решит эту проблему",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 1,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 0,
+                            typeWeight6 = 0,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("0ba6f7c0-cd20-48dc-836c-f3ddc825605a"),
+                            Reason = "Точно помню, что видела в интернете, что пятно можно вывести",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 0,
+                            typeWeight6 = 0,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("0bfc79dd-5bb0-4817-ba21-0ba838c9b545"),
+                            Reason = "Может быть, и он мне когда-нибудь пригодится",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 1,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("1013fefd-d505-4b34-bef2-3c08e83f5030"),
+                            Reason = "Такое нельзя оставлять безнаказанным, пусть задумается",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 1,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 1,
+                            typeWeight6 = 2,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("1450b793-fcc6-4402-bcc0-c91b8631cbfc"),
+                            Reason = "Почему ему можно, а мне нельзя?",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 1,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("15f35581-9ca5-4622-a5e6-d784925e7124"),
+                            Reason = "Просто не могу смолчать, когда такое со мной происходит",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 2,
+                            typeWeight5 = 0,
+                            typeWeight6 = 1,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("18e43e9d-eb02-4075-9076-b26b3803c963"),
+                            Reason = "Все там будем",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 0,
+                            typeWeight6 = 0,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("191565ba-f698-44eb-bf55-9db48c0ad9a7"),
+                            Reason = "Я не конфликтный человек, но подобные вещи прощать нельзя",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 2,
+                            typeWeight5 = 0,
+                            typeWeight6 = 1,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("1b849154-df58-440b-a6f5-b1005e1b8483"),
+                            Reason = "Это нормальная реакция в подобной ситуации",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 2,
+                            typeWeight5 = 0,
+                            typeWeight6 = 0,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("1ca5ebc2-35ec-4784-8523-d62fcbbf2f4c"),
+                            Reason = "Никто не должен видеть меня в таком виде",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 0,
+                            Weight14 = 1,
+                            Weight2 = 1,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
                             Weight7 = 0,
                             Weight8 = 0,
                             Weight9 = 0,
@@ -607,7 +2037,997 @@ namespace Katena.Migrations
                             typeWeight2 = 0,
                             typeWeight3 = 0,
                             typeWeight4 = 0,
+                            typeWeight5 = 2,
+                            typeWeight6 = 0,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("1ceb5f0e-363d-4eec-8c04-c9b078f3a8da"),
+                            Reason = "Нельзя игнорировать процесс спаивания наших детей!",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 0,
+                            Weight14 = 1,
+                            Weight2 = 1,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 1,
+                            typeWeight6 = 2,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("1d033778-3762-4c22-90a0-51c826dac17d"),
+                            Reason = "Может быть, теперь руководство поймет, что процессы выстроены не правильно",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 1,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 1,
+                            typeWeight6 = 0,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("20cf563d-bfc5-4c15-aa70-ee91e0de167f"),
+                            Reason = "Без меня вечеринка - не вечеринка. Все внимание сосредоточено на мне",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 2,
                             typeWeight5 = 0,
+                            typeWeight6 = 1,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("22a4c268-78c2-4888-8680-e903f4419440"),
+                            Reason = "Может быть, это будет ему уроком",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 1,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 1,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("24673a02-eb1d-403d-9668-fe0187654b0d"),
+                            Reason = "Он мне не конкурент, и пусть он это поймет",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 0,
+                            typeWeight6 = 2,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("256658ef-f816-48f7-a6bf-6a70ac079b47"),
+                            Reason = "Надеюсь, у власть имущих хватит ума остановить это кровопролитие",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 1,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("2735e1da-4808-4b2f-b49b-9121d9bc5417"),
+                            Reason = "Я хочу сделать этот мир немного справедливее. Зло должно быть наказано!",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 2,
+                            typeWeight6 = 0,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("2f63ea8f-38e3-4e40-87aa-9cd1af13c882"),
+                            Reason = "У меня всегда есть стратегический запас воды, а причину выясню потом",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 0,
+                            typeWeight6 = 0,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("314814f8-f740-4e85-b86c-c2b08cc82679"),
+                            Reason = "Это поможет мне комфортнее работать в дальнейшем",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 1,
+                            typeWeight6 = 0,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("35035162-c41a-47c9-aa9f-0d6b7cf16b60"),
+                            Reason = "Задолбали уже со своим ИИ, лучше бы о людях думали!",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 2,
+                            typeWeight6 = 0,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("380c9dc0-f8fb-4b2e-8aa5-548c5ea43a67"),
+                            Reason = "Флюиды страха не раз выручали меня",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 2,
+                            typeWeight5 = 0,
+                            typeWeight6 = 1,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("38dc2cdc-59be-4676-9126-40afb29596a2"),
+                            Reason = "В мире и так много несправедливости, зачем обращать внимание на плохое?",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 0,
+                            typeWeight6 = 2,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("3bed62f7-0488-4f66-9020-588d2d048f48"),
+                            Reason = "Может быть кому-то нужна моя помощь",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 1,
+                            Weight4 = 1,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 2,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("3ed7376c-35fb-41f8-a2ca-0778f6f8ba06"),
+                            Reason = "Не хочу тратить свое драгоценное время на поиски другого решения",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 2,
+                            typeWeight5 = 1,
+                            typeWeight6 = 0,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("3ef4e2c9-746e-4ec9-9ad7-a3023f8c51bd"),
+                            Reason = "Какой смысл играть в догоняшки с идиотом?",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 1,
+                            typeWeight6 = 0,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("4009ec61-081a-4cf1-ab46-f922edc46b1b"),
+                            Reason = "Зачем добавлять работу специалистам?",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 1,
+                            Weight4 = 1,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 2,
+                            typeWeight5 = 1,
+                            typeWeight6 = 0,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("462fc8be-9bff-416e-b548-cb8f5b127268"),
+                            Reason = "Покажу пример коллегам",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 0,
+                            typeWeight6 = 2,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("466a8851-1cd3-453f-89bf-d728ebc07d00"),
+                            Reason = "Надо ещё всем знакомым рассказать, чтоб тоже туда не ходили",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 1,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 1,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("4714c535-2e82-4bf8-8ffe-aab2a7ebfabb"),
+                            Reason = "Мне не привыкать бороться с системой",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 2,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("48b9f840-94b7-47c6-9af1-80284b5aa770"),
+                            Reason = "У меня есть любимый человек, я не нуждаюсь в подобных знакомствах",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 2,
+                            typeWeight6 = 1,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("4c594e6d-9108-481e-b0bf-2343970b731f"),
+                            Reason = "Такие ситуации выбивают меня из колеи, все равно уже не смогу веселиться",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 2,
+                            typeWeight6 = 0,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("4dd0651c-3029-4d51-8fcd-46728f49c125"),
+                            Reason = "Мне не сложно",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 0,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 0,
+                            typeWeight6 = 2,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("4e0eb8ed-e5e7-4b4c-b2c8-3fc4dc68e74b"),
+                            Reason = "Пусть знает своё место!",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 2,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("5127c013-8026-430c-9773-fffec765e49f"),
+                            Reason = "Важно, чтоб он осознавал, что его поступок не остался безнаказанным",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 1,
+                            Weight2 = 0,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 1,
+                            typeWeight6 = 2,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("523db197-19ee-43a2-9438-0fffe55341fa"),
+                            Reason = "Это вообще не моё дело, что она там себе надумала",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 2,
+                            typeWeight6 = 0,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("542c5b83-3d7a-4157-804a-fec7c7f32c17"),
+                            Reason = "Главное, чтобы все в команде работали эффективно",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 0,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 0,
+                            typeWeight6 = 0,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("56455b12-df9c-4db6-862f-577b05cf24e6"),
+                            Reason = "Сейчас важнее не опоздать, а остальное -  мелочи",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 2,
+                            typeWeight5 = 0,
+                            typeWeight6 = 1,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("56bcf2b7-0f52-443e-a955-332832eb9e34"),
+                            Reason = "Меня это особо не касается",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 2,
+                            typeWeight5 = 0,
+                            typeWeight6 = 0,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("5a3d67d7-08d3-4656-bc21-833842100b03"),
+                            Reason = "Сам ты хлеб!",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 2,
+                            typeWeight6 = 1,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("5e792610-baa6-4dc5-bc05-2a3bb131b0fd"),
+                            Reason = "за ИИ будущее, а развитие без ошибок невозможно",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 1,
+                            Weight4 = 1,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 2,
+                            typeWeight5 = 0,
+                            typeWeight6 = 1,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("6087eac5-ac4e-41b0-a42b-158636cef8d9"),
+                            Reason = "Кому война, а кому - мать родна",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 2,
+                            typeWeight5 = 0,
+                            typeWeight6 = 1,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("60e556cd-e2f0-44e0-885a-37cf26e373bd"),
+                            Reason = "Мы все уже зависим от ИИ",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 0,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 2,
+                            typeWeight5 = 0,
+                            typeWeight6 = 1,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("6378221f-b3cc-478a-be4d-9aa76a443872"),
+                            Reason = "Что за глупости?  Ну какой я хлеб?",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 2,
+                            typeWeight5 = 1,
                             typeWeight6 = 0,
                             typeWeight7 = 0,
                             typeWeight8 = 0,
@@ -616,19 +3036,2539 @@ namespace Katena.Migrations
                         new
                         {
                             Id = new Guid("661db458-5cea-431e-b8ba-6a91ed2854a6"),
-                            Reason = "Third reason",
+                            Reason = "Может, кто-то знает причину отключения",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 1,
+                            typeWeight6 = 0,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("67a0d081-2b25-4db0-b150-1f1f3ad7dd9a"),
+                            Reason = "Это выбор продавца, меня это никак не касается",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 2,
+                            typeWeight5 = 0,
+                            typeWeight6 = 0,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("67a8eb08-f9a9-4426-8e15-5b2f6f70d117"),
+                            Reason = "В целом, я не против, но только не на работе!",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 1,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 2,
+                            typeWeight5 = 0,
+                            typeWeight6 = 0,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("69114935-091c-4c7a-825f-bde4a2efd381"),
+                            Reason = "Мне вот, например, в таком возрасте не продавали",
                             Weight = 0,
                             Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 2,
+                            typeWeight6 = 0,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("6dd0cd41-c1a9-4c26-be6b-57391cadb830"),
+                            Reason = "Интересно, кто-то сможет это остановить?",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 1,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 1,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("6f8f4142-33eb-4fe9-95e2-f73e7570671a"),
+                            Reason = "Надеюсь, что подобных случаев будет как можно меньше",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 2,
+                            typeWeight6 = 0,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("74ba8aca-8b6e-41b4-91d0-f43919655d02"),
+                            Reason = "Мне не сложно",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 0,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 0,
+                            typeWeight6 = 2,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("7557a105-a89c-4420-9d90-4b51854c4a2d"),
+                            Reason = "Надо подумать, как использовать ИИ в своей работе",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 1,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("76548bc2-eaea-441d-85ab-8630e3a28646"),
+                            Reason = "Мировая экономика опять пострадает",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 1,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 2,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("770ae718-1ac8-4975-ad4e-5be8f0c747e0"),
+                            Reason = "Пусть они потеряют в моем лице постоянного покупателя",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 1,
+                            typeWeight6 = 0,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("7bd9eaa0-e33c-4f02-a022-5be616e79ce8"),
+                            Reason = "Я занимаюсь своей работой, а остальное меня не касается",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 2,
+                            typeWeight5 = 0,
+                            typeWeight6 = 1,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("7c151077-39a0-4ced-bd8c-9303de968ead"),
+                            Reason = "Все зависит от умения людей, которые создают подобные вещи",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 2,
+                            typeWeight5 = 0,
+                            typeWeight6 = 1,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("7c2eb83e-5d2e-4f99-a34f-fb269d2dd482"),
+                            Reason = "Надо порасспрашивать друзей и родственников, может, кто-то прояснит обстановку",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 1,
+                            typeWeight6 = 2,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("800651bd-3270-4e0c-b65a-7fabdfbfb81f"),
+                            Reason = "Правила на дороге для всех одинаковы",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 2,
+                            typeWeight6 = 0,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("82fcd984-f475-42b2-bacc-2c948001c01c"),
+                            Reason = "Справедливость в моем мире превыше всего!",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 2,
+                            typeWeight6 = 0,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("8502cde7-19a4-4535-b5f4-e1de7d85660e"),
+                            Reason = "Я буду только рад, что кто-то смог насытиться мною!",
+                            Weight = 0,
+                            Weight1 = 1,
                             Weight10 = 0,
                             Weight11 = 0,
                             Weight12 = 0,
                             Weight13 = 0,
                             Weight14 = 0,
                             Weight2 = 0,
+                            Weight3 = 1,
+                            Weight4 = 1,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 1,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("852df161-1900-4e68-8445-9451296d2d67"),
+                            Reason = "Такие мелочи не могут меня отвлечь от процесса вождения",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 1,
                             Weight3 = 0,
                             Weight4 = 0,
                             Weight5 = 0,
                             Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 2,
+                            typeWeight6 = 0,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("86f2026a-30bf-44b2-8483-12745611937d"),
+                            Reason = "Пусть добивается всего сам, как я в свое время",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 2,
+                            typeWeight6 = 1,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("87313919-1f8e-4ccd-bf1f-ab86120fed88"),
+                            Reason = "Возможно, это моя миссия!",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 1,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("89c19957-d134-48c4-a628-d4e8c9dae98c"),
+                            Reason = "Надо, чтоб такого продавца обязательно наказали, а ещё лучше уволили",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 1,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 2,
+                            typeWeight6 = 1,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("8eb4aedb-7de1-4b4d-b2fe-2298b08aca6b"),
+                            Reason = "Я испытываю негодование от количества дураков в моей жизни!",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 2,
+                            typeWeight6 = 0,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("94141d88-aeb5-4c21-9d20-22e50879a756"),
+                            Reason = "На столе много другой еды, надеюсь, что на меня не обратят внимания",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 0,
+                            typeWeight6 = 0,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("95b174c0-a5b3-4134-85f9-2f94467b23c1"),
+                            Reason = "Возможно, это ещё больше подогреет её интерес",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 1,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("968de2eb-4bde-422c-8ce2-59a71b9b1936"),
+                            Reason = "Мало ли, может, кто-то не может сам сходить и отправил ребенка",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 0,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 0,
+                            typeWeight6 = 0,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("97d69ebb-66ae-412c-8ccc-dfdc910e080b"),
+                            Reason = "Надоел этот бардак в стране, за что я плачу деньги?",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 2,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("9b024278-7390-4678-9d0b-bdd93cc7d8a6"),
+                            Reason = "Не на того нарвался, и я ему это докажу",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 2,
+                            typeWeight5 = 0,
+                            typeWeight6 = 1,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("9d2ca57a-ff4b-46d5-ad6b-14416412efcb"),
+                            Reason = "Может быть, руководство, наконец, заметит, что я компетентнее во многих вопросах",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 2,
+                            typeWeight5 = 0,
+                            typeWeight6 = 1,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("9f39e031-554e-4edb-a1c7-00216ce24cc5"),
+                            Reason = "Жизнь его обязательно накажет",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 2,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("9fe0df1f-8a80-4368-9150-852e4a5441dd"),
+                            Reason = "Всем можно, почему мне нельзя?",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 2,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("9fe7069a-f8a9-48ae-b63e-68e0ad6e683a"),
+                            Reason = "Я свободный человек, что хочу, то и делаю",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 2,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("a169eb49-7103-4eb9-b23c-1f8f5722550d"),
+                            Reason = "Это только начало необратимого процесса",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 2,
+                            typeWeight6 = 0,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("a3f7aa1a-fd06-48ba-9427-21f7e6503bab"),
+                            Reason = "Надо вывалить на кого-то все зло, которое у меня накопилось",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 2,
+                            typeWeight5 = 0,
+                            typeWeight6 = 1,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("a48abfe5-42c4-472a-b97e-f52dba9b6da6"),
+                            Reason = "Это никак не влияет на мою основную деятельность",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 2,
+                            typeWeight5 = 0,
+                            typeWeight6 = 0,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("a62254af-21fe-4cca-95cb-9cc5b5aced2b"),
+                            Reason = "Почему только мне прилетает от начальства, пусть и ему прилетит",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 2,
+                            typeWeight6 = 1,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("a647e8f1-9eb2-46b0-a86b-8ecf338ba124"),
+                            Reason = "Потом ещё спасибо скажут",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 1,
+                            typeWeight6 = 0,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("a72bf684-2ba3-4523-b398-2fbbd1b15bcb"),
+                            Reason = "Надо запустить этот процесс, а коллеги меня поддержат",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 1,
+                            Weight4 = 1,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 0,
+                            typeWeight6 = 2,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("ac770c37-03bc-40d4-9ac1-8067134763d9"),
+                            Reason = "В мой мир это ещё не скоро придет",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 1,
+                            typeWeight6 = 0,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("adc457f7-cb29-4fe1-838e-9a8038c0aa58"),
+                            Reason = "Можно и неумытой поехать, а умыться, скажем, в офисе",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 0,
+                            typeWeight6 = 2,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("b1fa7309-783b-48b5-b68a-75bacb94d6a0"),
+                            Reason = "Может быть бардака в моем мире будет меньше",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 2,
+                            typeWeight6 = 0,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("b2efdd67-6c98-49b0-9cc6-bf09b3b27bfa"),
+                            Reason = "Кто-то должен за это ответить!",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 1,
+                            Weight2 = 0,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 2,
+                            typeWeight6 = 1,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("b3d2b465-6c85-469e-831c-40c1317baa95"),
+                            Reason = "Нельзя допускать подобного беспредела!",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 1,
+                            typeWeight6 = 2,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("b56c26c6-2de6-468c-98e2-dfc5fc35c436"),
+                            Reason = "Есть веская причина, которую поймет начальство",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 2,
+                            typeWeight6 = 0,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("b720be24-7f05-4b84-b916-615099596d71"),
+                            Reason = "Чистота важна для всех в равной степени",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 2,
+                            typeWeight6 = 0,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("b925a8e2-9ec2-43bb-b96c-8587d43b2068"),
+                            Reason = "Обеспечение достойных условий труда - обязанность работодателя!",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 2,
+                            typeWeight6 = 0,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("bb6d3939-359f-464a-af39-820c1cf5188a"),
+                            Reason = "Никто не любит черствый хлеб!",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 0,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 2,
+                            typeWeight6 = 0,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("bf265f0c-bdba-42e9-9d02-039ed2d98b2e"),
+                            Reason = "Почему это происходит в моем мире?",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 2,
+                            typeWeight5 = 1,
+                            typeWeight6 = 0,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("bffe1e1e-7921-4a17-81f8-bf30437b6ccc"),
+                            Reason = "Мне важна чистота в моем мире",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 2,
+                            typeWeight6 = 0,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("c05a605d-d244-48c2-866c-011327f6d8fe"),
+                            Reason = "Зачем добавлять работу специалистам?",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 1,
+                            Weight4 = 1,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 2,
+                            typeWeight5 = 1,
+                            typeWeight6 = 0,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("c20b6825-163e-4b40-8624-5fbd491477a1"),
+                            Reason = "Меня так просто не добиться!",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 1,
+                            typeWeight6 = 2,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("c2ea7376-d1fb-466d-91b3-a6efb2fb0063"),
+                            Reason = "Может быть, кто-то уже предпринял действия для устранения проблемы",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 2,
+                            typeWeight6 = 1,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("c325ad59-ce45-4225-b563-bcc74c529ced"),
+                            Reason = "В следующий раз сам ко мне придет за помощью",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 2,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("c5018ed3-8b72-4f59-8f82-0fcfe0dcdb91"),
+                            Reason = "Вот, наконец-то, повод отлежаться дома",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 2,
+                            typeWeight5 = 0,
+                            typeWeight6 = 0,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("c59dd14c-0cd9-4b38-9ac6-b2fc7e49ad45"),
+                            Reason = "Чем меньше я обращаю на это внимание, тем быстрее это закончится",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 2,
+                            typeWeight5 = 0,
+                            typeWeight6 = 0,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("c5e88078-2957-4255-9f69-209868b59cbc"),
+                            Reason = "Я дорожу своей безупречной репутацией",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 2,
+                            typeWeight6 = 1,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("c97493b0-9616-4f2d-8f24-773f51f60dd6"),
+                            Reason = "Не велика проблема, можно и с пятном быть харизматичной",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 2,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("ca7cfe1e-332c-413a-8ddc-64db7a2642d2"),
+                            Reason = "Зачем мне что-то предпринимать? Это ведь никак не отразится на моей зарплате",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 2,
+                            typeWeight6 = 0,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("cac0e665-9992-4fc0-b98a-c4c2106a4e3f"),
+                            Reason = "Пока кто-то зарабатывает, люди страдают",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 0,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 2,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("cb49c8e2-ff11-4e2e-ac7d-181d9f588223"),
+                            Reason = "Мало ли дураков за рулем, зачем обращать внимание на каждого?",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 0,
+                            typeWeight6 = 0,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("cb9a9358-434f-4f99-ba79-78e5c9dc2953"),
+                            Reason = "Я никогда не против новой интрижки",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 2,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("ccb12853-2446-4b42-9581-16db2853f079"),
+                            Reason = "Я не раз видел, что такие действия могут помочь в решении проблемы",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 0,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 1,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("cd87c258-cf5e-4e0e-9f8b-cf01c82ec880"),
+                            Reason = "Очень скоро всем нам придется столкнуться с чем-то подобным",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 0,
+                            Weight14 = 1,
+                            Weight2 = 1,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 0,
+                            typeWeight6 = 2,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("ce8e5fbd-138c-4370-a9f1-bb5543f10bcf"),
+                            Reason = "Не думаю, что на подобной вечеринке мой конфуз будет сильно бросаться в глаза",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 2,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("d07501c8-e224-4500-87a9-2d1d75c3cc48"),
+                            Reason = "В конце концов, найду чем позаниматься дома",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 0,
+                            typeWeight6 = 2,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("d1078e15-f779-452e-b72c-fde1b835c639"),
+                            Reason = "Надо ходить по земле и зарабатывать на физических продуктах",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 2,
+                            typeWeight5 = 0,
+                            typeWeight6 = 1,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("d3568b6a-c200-476d-8292-a2d227b81320"),
+                            Reason = "У продавца есть начальство, у ребенка - родители, пусть сами разбираются",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 2,
+                            typeWeight6 = 0,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("d4eb06ea-6c59-4a7a-8bbb-7adf041ce4c8"),
+                            Reason = "Я не трус, но иногда боюсь",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 1,
+                            typeWeight6 = 0,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("d578a565-d33c-4f77-abad-d9a7b0c6f748"),
+                            Reason = "Любые отношения мешают рабочему процессу",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 1,
+                            Weight2 = 0,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 2,
+                            typeWeight5 = 1,
+                            typeWeight6 = 0,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("d647ba58-9482-43ce-830f-7d8ce0f917ed"),
+                            Reason = "У меня и так много забот",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 2,
+                            typeWeight6 = 1,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("da5ff667-d385-48fa-951d-6ce8e7fd08bf"),
+                            Reason = "Такие вылазки для меня редкость, поэтому надо вернуться и обязательно догулять",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 1,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("df6d9cc1-5bb2-4271-b1b7-574c951840da"),
+                            Reason = "Это естественный процесс эволюции",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 1,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 1,
+                            typeWeight6 = 0,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("e50ee429-61ab-42e3-99ff-4e7799e0510c"),
+                            Reason = "Я всегда выгляжу идеально и должен быть примером для других",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 0,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 1,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 2,
+                            typeWeight6 = 0,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("eb49fb72-769c-4cc5-b38d-fa253263f73a"),
+                            Reason = "Если бы подобных людей в моей жизни было бы меньше, я бы чувствовала себя лучше",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 2,
+                            typeWeight6 = 0,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("ef3eff5f-9193-44fa-8ee4-95d8885d9cd5"),
+                            Reason = "Сами виноваты, что не убирают вовремя",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 2,
+                            typeWeight6 = 1,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("eff0158e-f158-4e0f-81c9-5f5c62326cf3"),
+                            Reason = "Раз я могу представить, что я - хлеб, то могу  представить себя и черствым",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 2,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("f1e3ce54-dca2-4f95-a5d3-281107afef9e"),
+                            Reason = "Само провидение её мне посылает",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 1,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("f223da69-63f6-468d-b25e-279fd8f11d7b"),
+                            Reason = "Придет время, и он сам всему научится",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 1,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 0,
+                            typeWeight6 = 0,
+                            typeWeight7 = 2,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("f481437f-5d66-4183-b041-f60302ac0fa2"),
+                            Reason = "Того и гляди, до нас докатится",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 2,
+                            typeWeight6 = 0,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("f5b4d3f8-e602-4da0-802d-f20430da0342"),
+                            Reason = "Горы мусора вокруг контейнеров - это отвратительно!",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 2,
+                            typeWeight6 = 0,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("f70515d3-c89c-42f1-81be-47de0db3143e"),
+                            Reason = "Я, скорее, апельсин",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 0,
+                            typeWeight5 = 0,
+                            typeWeight6 = 2,
+                            typeWeight7 = 1,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("f70fca13-268b-4e2e-9906-066b455d2081"),
+                            Reason = "А вдруг это у меня только что-то сломалось?",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 0,
+                            Weight14 = 1,
+                            Weight2 = 1,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 0,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 2,
+                            typeWeight5 = 1,
+                            typeWeight6 = 0,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("f83b28c3-c12c-4097-99d6-58da46f6bd9f"),
+                            Reason = "Наверняка, люди сами наделали ошибок, при конструировании робота",
+                            Weight = 1,
+                            Weight1 = 0,
+                            Weight10 = 1,
+                            Weight11 = 1,
+                            Weight12 = 0,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 0,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 1,
+                            Weight7 = 1,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 2,
+                            typeWeight6 = 0,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("f8dfade8-1e5a-4b5b-b866-0b5c3953fd76"),
+                            Reason = "Пусть увидит, что я компетентнее в этом вопросе",
+                            Weight = 1,
+                            Weight1 = 1,
+                            Weight10 = 1,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 1,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 0,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 0,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 2,
+                            typeWeight5 = 1,
+                            typeWeight6 = 0,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("f908af7a-2f84-4fdf-a400-1510a68c62b8"),
+                            Reason = "Я давно предчувствую беду",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 1,
+                            typeWeight5 = 2,
+                            typeWeight6 = 0,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("fdaff6ee-c481-45c5-bf2c-98fec53c8640"),
+                            Reason = "Кто-то должен взять это на себя, если не я, то кто?",
+                            Weight = 0,
+                            Weight1 = 1,
+                            Weight10 = 0,
+                            Weight11 = 0,
+                            Weight12 = 1,
+                            Weight13 = 1,
+                            Weight14 = 0,
+                            Weight2 = 1,
+                            Weight3 = 0,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 0,
+                            Weight7 = 0,
+                            Weight8 = 1,
+                            Weight9 = 1,
+                            typeWeight1 = 0,
+                            typeWeight10 = 0,
+                            typeWeight2 = 0,
+                            typeWeight3 = 0,
+                            typeWeight4 = 2,
+                            typeWeight5 = 0,
+                            typeWeight6 = 1,
+                            typeWeight7 = 0,
+                            typeWeight8 = 0,
+                            typeWeight9 = 0
+                        },
+                        new
+                        {
+                            Id = new Guid("25dbf84c-5371-44b9-ba26-f6f17cb9f5fe"),
+                            Reason = "Хорошие люди на дороге не валяются",
+                            Weight = 0,
+                            Weight1 = 0,
+                            Weight10 = 0,
+                            Weight11 = 1,
+                            Weight12 = 1,
+                            Weight13 = 0,
+                            Weight14 = 1,
+                            Weight2 = 1,
+                            Weight3 = 1,
+                            Weight4 = 0,
+                            Weight5 = 1,
+                            Weight6 = 1,
                             Weight7 = 0,
                             Weight8 = 0,
                             Weight9 = 0,
@@ -638,8 +5578,8 @@ namespace Katena.Migrations
                             typeWeight3 = 0,
                             typeWeight4 = 0,
                             typeWeight5 = 0,
-                            typeWeight6 = 0,
-                            typeWeight7 = 0,
+                            typeWeight6 = 1,
+                            typeWeight7 = 2,
                             typeWeight8 = 0,
                             typeWeight9 = 0
                         });
@@ -663,6 +5603,9 @@ namespace Katena.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<string>("TrigerImage")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -674,28 +5617,255 @@ namespace Katena.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("959f07c9-5bd1-402c-9d29-c0cd3b5f954d"),
-                            Gender = "Male",
-                            Resault = "Megamen",
-                            Style = "Producer",
-                            Type = "Mentor"
+                            Id = new Guid("0d6ba570-1721-4d51-83c4-fa990a69b728"),
+                            Gender = "woman",
+                            Resault = "Сильная, уверенная в себе личность, взор которой устремлен в далекое безоблачное будущее. Несмотря на то, что её цели не сформулированы конкретно, будет настойчиво двигаться вперёд и активно вовлекать в это движение окружающих. Ей не нужны партнёры, но она нуждается в сподвижниках, которые поверят в неё и пойдут за ней. При этом, она не только не стремится конкретизировать будущее, но и особо не позволяет это сделать другим. Будущее - её территория, на которую она неохотно пускает посторонних. При этом, её не особо интересует что происходит в настоящем, и уж тем более то, что произошло в прошлом.\r\nХороший стратег и неплохой аналитик, но, опять же, когда речь идёт об анализе какого-то будущего. Если для неё собрать и обобщить фактические данные, то она сможет разработать несколько вариантов стратегического развития, выбрать из них наиболее эффективный и обосновать свой выбор с помощью веских аргументов.\r\nТакие люди сильны в стратегическом маркетинге, их советы могут быть очень ценными, например, при позиционировании компании на рынке.",
+                            Style = "Интегратор",
+                            TrigerImage = "охотник-Интегратор",
+                            Type = "Хранительница"
                         },
                         new
                         {
-                            Id = new Guid("cbed2409-359d-4425-9505-7434d6f75d79"),
-                            Gender = "Female",
-                            Resault = "Megawomen",
-                            Style = "Producer",
-                            Type = "Mentor"
+                            Id = new Guid("12a7faba-5904-4bcb-949a-f71224190e43"),
+                            Gender = "man",
+                            Resault = "Сотрудник, обладающий неплохим набором деловых качеств, но не карьерист. Ему гораздо комфортнее работать под чьим-то началом. Вообще, его руководителю нужно нащупать тот идеальный баланс, при котором данный тип сотрудника будет под контролем, но при этом будет обладать относительной свободой действий. Можно, например, дать ему свободу в проведении переговоров среднего уровня, в процессах заключения сделок, но при этом поручить оформление сопроводительных документов другому лицу. \r\nОн очень хорошо обучаем всему тому, что даёт посыл к действию. И в этом же он хорош и на деле. Обозначьте ему границы его полномочий и смело бросайте в бой - он не подведёт. В крайнем случае, обратится к вам за советом.  Однако, при неправильной постановке задач, может проявить неуместную самостоятельность, так как не всегда осознает уровень своей ответственности. Даже если вы будете навязывать ему эту ответственность, пугая санкциями, скорей всего, он этого просто не услышит. Если создать вокруг него условия, в которых будет как можно меньше внештатных ситуаций, то он будет чувствовать себя, как рыба в воде, и сможет показывать очень хорошие результаты",
+                            Style = "Предприниматель",
+                            TrigerImage = "ишуший-предпренематель",
+                            Type = "Ищущий"
                         },
                         new
                         {
-                            Id = new Guid("6662ee7c-34c8-4811-b3f3-ada6618dc47b"),
-                            Gender = "Female",
-                            Resault = "Strongwomen",
-                            Style = "Entrepreneur",
-                            Type = "Guardian"
+                            Id = new Guid("13ebde4b-5e7e-44cf-834e-b6cdfa0ef02c"),
+                            Gender = "man",
+                            Resault = "Довольно адская смесь доминирующего мужского начала с административным стилем управления процессами. Не терпят бардака ни в чем. Если им приходится постоянно сталкиваться с чем-то непонятным и непредсказуемым, с чем-то, что плохо оцифровывается и классифицируется в их мире, то они могут в какой-то момент просто уйти, не сказав ни слова. Это проявляется на работе и дома. Если, например, в семье заведено садиться ужинать в семь часов, а жена, по природе своей мать-интегратор, несколько дней подряд нарушила это правило, то она может искренне удивиться, когда он однажды хлопнет дверью, не объяснив причин ухода, ведь в ее мире не произошло ничего страшного, а для него это сродни предательству.\r\nНе терпим он также и к подобным, казалось бы, пустяковым, ошибкам коллег и друзей. \r\nС удовольствием проводит время в одиночестве, не сторонник шумных компаний и громких вечеринок. Не частый гость на корпоративах и различных тимбилдингах.",
+                            Style = "Администратор",
+                            TrigerImage = "охотник-админестратор",
+                            Type = "Охотник"
+                        },
+                        new
+                        {
+                            Id = new Guid("2da33b3a-e685-4dd9-a1a1-55121d31d136"),
+                            Gender = "woman",
+                            Resault = "Жесткий и требовательный модератор процессов. Требовательный как к другим, так и к себе. Идеальный порядок сопутствует ей во всех проявлениях личности: на работе, в семье и даже в хобби. На рабочем столе идеальный порядок, дома всё лежит по своим полочкам, любимый пирог печется строго по рецепту. Не приемлет вмешательства в свои идеальные порядки. Прислушивается исключительно к тем источникам, которые сама считает авторитетными. Так что, если вам достался сотрудник с таким набором скиллов, то неплохо было бы понимать, какие ценности на самом деле являются для неё жизнеутверждающими. И уж совсем хорошо, когда её руководитель эти ценности периодически транслирует в жизнь.  Только тогда она готова пускать вас на свою территорию и проявлять к вам лояльность. \r\nХорошие юристы, следователи, адвокаты, врачи, заведующие складами и хозяйствами, диспетчеры и IT-специалисты - вот далеко не полный список профессий, в которых могут ярко проявляться люди данного типа",
+                            Style = "Администратор",
+                            TrigerImage = "охотник-админестратор",
+                            Type = "Хранительница"
+                        },
+                        new
+                        {
+                            Id = new Guid("2e77f1b9-a436-4c15-be4b-b581c10bec2c"),
+                            Gender = "woman",
+                            Resault = "Если этому человеку близки корпоративные ценности, то он хорошо подойдет для выполнения производственных функций. В четко отлаженных процессах она незаменима. Во многих вопросах она проявляет консервативность, и это качество помогает ей \"хранить и приумножать\". Четко видит границы своего мира, в котором ей комфортно и понятно, и в который оне не очень охотно впускает любые изменения. В растущем или масштабируемом бизнесе, где постоянно появляются новые вводные и задачи, ей может быть некомфортно на передовых ролях, но ей вполне по силам выполнение понятных производственных функций, которые нельзя обделять вниманием, увлекаясь развитием. Она - та самая рабочая лошадка, которая будет тащить эти процессы на себе, не требуя дополнительных бонусов. Тем не менее, любая похвала ей приятна и может являться хорошим мотивирующим фактором. Ей гораздо комфортнее работать в мужском коллективе и даже управлять им. Если же в работе её окружают преимущественно женщины, то следует особое внимание уделить вопросам её корректной мотивации, во избежание возникновения нездоровой конкуренции в коллективе.",
+                            Style = "Производитель",
+                            TrigerImage = "охотник-производитель",
+                            Type = "Хранительница"
+                        },
+                        new
+                        {
+                            Id = new Guid("363b07c0-5f2d-430a-8e96-7f9c700532c1"),
+                            Gender = "man",
+                            Resault = "Почти идеальный руководитель отдела продаж. Хороший наставник для менеджеров, знающий свое дело. Однако стратегическое мышление ему не всегда присуще, и именно это мешает ему стать коммерческим директором. Если в компании есть кому заниматься стратегическими вопросами, а перед отделом продаж стоят понятные задачи, то цены ему в роли РОПа не будет. Возьмет на себя переговоры любой сложности и научит этому подопечных. Вытащит любую, даже самую безнадёжную сделку. \r\nТаких людей любят в коллективе и в семье. У них много друзей. Они, как правило, очень начитаны и образованы. Иногда чересчур требовательны к окружающим, но не более, чем к себе. \r\nИм нужно создавать постоянное движение, и именно этого они хотят от своего окружения. Покой их  немного угнетает. Они готовы к действию во время выходных и праздников и будут вовлекать в работу весь коллектив. И коллектив, как правило, их поддержит.\r\nЛюдей данного типа не смущает работа в жестких условиях, как временнЫх, так и финансовых. Важно хвалить даже небольшие их достижения, особенно организационные.",
+                            Style = "Предприниматель",
+                            TrigerImage = "Наставник-предпренематель",
+                            Type = "Наставник"
+                        },
+                        new
+                        {
+                            Id = new Guid("39c860f6-b6bc-4c3e-b1fc-6f5dead8fe75"),
+                            Gender = "man",
+                            Resault = "Одинокий волк, способный проворачивать серьёзные сделки самостоятельно. Любой внешний контроль воспринимает, как вторжение на свою территорию. Сам ставит себе задачи и сам их решает. Попробуйте дать такому человеку свободу действий, и он непременно покажет результат. Люди этой категории – хорошие предприниматели, менеджеры и даже руководители отделов продаж. Однако, если в команде присутствуют сильные, доминирующие продажники, то им сложно будет ужиться вместе. \r\nКак правило, такие люди сосредоточены на моменте \"здесь и сейчас\" и смотрят в будущее только в краткосрочном периоде, поэтому при решении стратегических задач их интерес быстро угасает. Это люди действия и, как правило, сильные личности, способные быстро и решительно достигать практически любые цели, становясь примером для менее опытных коллег. Их не смущают переговоры на любом уровне. Они, что называются, за словом в карман не полезут. \r\nНе жалуют бумажную и любую монотонную работу и могут допускать примитивные ошибки, если им доверить процесс сделки полностью, поэтому во вторичных, обеспечивающих процессах нуждаются в ненавязчивом контроле. Правильнее всего договориться с ним \"на берегу\"",
+                            Style = "Предприниматель",
+                            TrigerImage = "охотник-предпренематель",
+                            Type = "Охотник"
+                        },
+                        new
+                        {
+                            Id = new Guid("46af2f80-adf6-4fa3-88a4-4c9d9703a914"),
+                            Gender = "woman",
+                            Resault = "Любознательный и, как правило, прилежный производитель, однако не горящий желанием играть \"первую скрипку\". Внештатные ситуации могут выбить ее из колеи, даже если в голове у неё есть варианты их разрешения. Может хорошо проявлять себя в различном функционале, если задачи и цели ей понятны. Даже в финансовом блоке, если работа связана не со стратегическим планированием, а, например, с расчетом себестоимости или нормированием труда, может показать себя, как эффективный сотрудник. Лучше всего себя проявляет под руководством \"мужчины-наставника\" или \"заботливой женщины\". Но если таковые отсутствуют в подразделении, где она работает, то может на протяжении долгого времени не раскрывать свой потенциал, при этом усердно работая. Тем не менее, это один из немногих производителей, способных быстро адаптироваться к изменениям. Это уникальное сочетание может быть незаменимым в процессах растущего бизнеса или при переориентации производства. ",
+                            Style = "Производитель",
+                            TrigerImage = "ишуший-производитель",
+                            Type = "Познающая"
+                        },
+                        new
+                        {
+                            Id = new Guid("64552b30-4c93-4a69-b305-10f4d7db6cb4"),
+                            Gender = "woman",
+                            Resault = "Имея главного бухгалтера не путать с финансовым директором с таким набором компетенций, ни одна компания не прогадает. Порядок в цифрах будет обеспечен на сто процентов.\r\nЛюбая ошибка в цифрах может восприниматься ею, как личное оскорбление, благо, что этих ошибок она практически не допускает. Ни своих, ни своих подчиненных: она будет проверять их работу до тех пор, пока не убедится в том, что результат будет верным. А когда убедится - продолжит проверять. Умеет анализировать, но так как фокус ее внимания сосредоточен на мелочах, ее анализ не будет распространяться на глобальные процессы. Иными словами, она сможет быстро и с легкостью выявить ошибку в расчетах, но не будет ломать голову, как упростить процесс расчета. Или, например, видя, что выручка компании снижается из периода в период, она может быстро и четко, как \"Отче наш\"",
+                            Style = "Администратор",
+                            TrigerImage = "Наставник-админестратор",
+                            Type = "Заботливая "
+                        },
+                        new
+                        {
+                            Id = new Guid("6d981101-05f0-4e4f-b62a-f49a1e1edaa3"),
+                            Gender = "man",
+                            Resault = "Редкое сочетание жизненных настроек. Способен управлять коллективом, при этом оставаясь незаменимой рабочей лошадкой. Однако в незаменимости часто и есть основная проблема. Стоит ему уйти в отпуск а на больничный он, как правило, не ходит, как система начинает давать сбои, словно у многотонного грузовика вдруг отказал гидроусилитель руля. \r\nЭто идеальный заместитель начальника производственного подразделения, который возьмет на себя всю работу и не будет пытаться выдавить из кресла вышестоящего руководителя.  Скорей наоборот: если вдруг это кресло зашатается, он будет поддерживать его, даже в чем-то жертвуя собой. Может найти себя в любом направлении деятельности и адаптироваться практически в любом коллективе, но ближе всего ему производственные бизнес-процессы, хорошо описанные, а ещё лучше нарисованные на бумаге, с понятным и достижимом результатом. Сложнее всего ему дается стратегическое планирование. Не сказать, что он с ним не справляется, но он тратит на это намного больше сил и энергии, чем люди с управленческим типом \"I\".",
+                            Style = "Производитель",
+                            TrigerImage = "Наставник-производитель",
+                            Type = "Наставник"
+                        },
+                        new
+                        {
+                            Id = new Guid("6e071be6-3d6a-4f1d-adad-dcd1f77db403"),
+                            Gender = "man",
+                            Resault = "Отличный руководитель большой компании и даже корпорации. Его решения мудры и стратегически выверены. Работать под началом такого человека - одно удовольствие. Он справедлив и щедр. Практически всегда найдет решение любой проблемы и любого конфликта. Причем, решением этим будут удовлетворены все стороны. Хороший аналитик, но посредственный финансист. Однако, если даже перед ним стоит задача, решение которой лежит за пределами его компетенций, он вникнет во все нюансы и тонкости и постарается её решить. \r\nСреди таких людей много выпускников-медалистов, кандидатов и докторов наук, преподавателей и авторов научных статей. Они интеллигентны, интеллектуальны и приятны в общении. \r\nКрасноречивы и умеют выступать на публике. \r\nВесьма требовательны к себе. Зачастую, намного больше, чем к окружающим. Это часто мешает им принимать быстрые решения.\r\nЕсли у них в подчинении есть администраторы, производители и предприниматели, то они могут так выстроить работу команды, что она будет максимально эффективна. Но делать они будут это очень медленно, выверяя каждый шаг.",
+                            Style = "Интегратор",
+                            TrigerImage = "Наставник-Интегратор",
+                            Type = "Наставник"
+                        },
+                        new
+                        {
+                            Id = new Guid("70baef4c-2aea-4b84-ad1b-3099dc968b86"),
+                            Gender = "man",
+                            Resault = "Идеальный производитель, но часто не сторонник командной работы. Волк-одиночка, который ставит перед собой задачу и доводит ее решение до конца. Знает себе цену, поэтому им непросто управлять, но это часто и не нужно. Гораздо проще с ним договориться, признав его авторитет и объяснив какой результат от него ждут. При достижении долгосрочных целей может тихо выгорать, не говоря никому об этом, так как для него важно видеть результат в обозримом настоящем. Но видимые ему цели готов достигать любой ценой. Такие люди незаменимы в условиях дедлайна: он не уйдет с работы, пока заказ не будет выполнен. Он обычно ощущает эту незаменимость, порой, настолько, что, попадая в условия комфортных временных рамок, может даже искусственно создавать ситуации цейтнота. \r\nНе всегда ладит с коллективом. Нетерпим к халявщикам и ленивым сослуживцам. Искренне не понимает, чем занимаются \"так много человек\" где-нибудь, например, в бухгалтерии или в отделе маркетинга.",
+                            Style = "Производитель",
+                            TrigerImage = "охотник-производитель",
+                            Type = "Охотник"
+                        },
+                        new
+                        {
+                            Id = new Guid("81393ae6-9b6f-462f-a189-bb421d430bff"),
+                            Gender = "woman",
+                            Resault = "Добрая, мягкая, отзывчивая - неполный перечень эпитетов, характеризующий данный тип личности. С этим человеком уютно и тепло. Она всегда придёт на помощь в трудную минуту, и будет готова отдать всю себя без остатка. \r\nВ работе это тот человек, который будет всегда вкручивать в текущую деятельность элементы стратегического планирования, устраивать мозговые штурмы и стратегические сессии и вовлекать в них весь коллектив. И у неё всегда найдутся веские аргументы, для чего это необходимо делать. Фокус её внимание почти всегда направлен в далёкое будущее, в котором всё должно быть светло и радостно. Это часто мешает ей сосредоточиться на настоящем моменте и проанализировать текущую ситуацию. Хотя, она очень сильна в аналитике. Иными словами, если сделать для нее анализ текущей ситуации, то она с большой долей вероятности предскажет, как будут развиваться события в дальнейшем.\r\nЕсли ей поручить управление коллективом, то она станет добрым и чутким наставником, способным двигать людей вперёд. \r\nДля полноценной работы ей в команде не помешает парочка производителей и администратор.",
+                            Style = "Интегратор",
+                            TrigerImage = "Наставник-Интегратор",
+                            Type = "Заботливая "
+                        },
+                        new
+                        {
+                            Id = new Guid("85430d7d-aa48-41d5-823d-625cdabbb7d9"),
+                            Gender = "man",
+                            Resault = "Весьма взыскательный и компетентный наставник. У такого не забалуешь. Поставьте такого у руля отдела, работа которого связана с четкими и понятными целями, и он идеально выстроит в нем все процессы. Если же цели размыты или часто меняются, то он все равно выстроит процессы идеально, но это будет работа ради работы. Тут важно понимать, почему так происходит. Само понятие цели для него вторично, он сфокусирован на процессах и алгоритмах, которые в них заложены.  При этом, если цели кем-то сформулированы, ему вполне по силам выстроить процессы и распределить задачи между людьми для качественного выполнения работы. \r\nОтличный главный инженер, технолог, механик, руководитель отдела контроля качества, специалист по кадровой работе, зачастую, хороший, но требовательный и принципиальный преподаватель.\r\nУ него могут непросто складываться отношения со склонными к быстрым действиям предпринимателями и витающими в облаках интеграторами, но если знать, в чем они могут дополнять друг друга и распределить глобальные процессы между ними правильно, то это может существенно повысить эффективность процессов, в которых они задействованы.",
+                            Style = "Администратор",
+                            TrigerImage = "Наставник-админестратор",
+                            Type = "Наставник"
+                        },
+                        new
+                        {
+                            Id = new Guid("8bb5e5c9-14c4-4dd1-b695-d144aaa8f7d2"),
+                            Gender = "woman",
+                            Resault = "Самостоятельный до эгоистичности архетип. Добиться максимальной эффективности от нее можно, только выстроив с ней партнерские отношения. В роли исполнителя своенравна и будет постоянно показывать характер. В роли руководителя зачастую склонна к авторитарности на грани тирании. У такого начальника не забалуешь. Ей по душе роль свободного агента, именно в ней она будет наиболее эффективна. Любой контроль может вывести её из себя. Заберите у неё те процессы, которые ей не нравятся, а в остальном дайте ей свободу действий, и она может показать ошеломительные результаты. \r\nНесмотря на присущие ей коммуникативные навыки, не всегда ладит с коллективом. Особенно с тем, где она не является безоговорочным лидером. Если мотивационная система включает соревновательный момент, то, вероятней всего, она будет одним из постоянных лидеров любого состязания. Поражения же, напротив, её угнетают и могут существенно снижать её эффективность в краткосрочном периоде. Лидер в семье и на работе, но лидер - одиночка. Если будет назревать революция, то она может стать одной из первых, кто полезет на баррикады, и ей не важно, пойдут ли за ней соратники",
+                            Style = "Предприниматель",
+                            TrigerImage = "охотник-продпренематель",
+                            Type = "Хранительница"
+                        },
+                        new
+                        {
+                            Id = new Guid("991c17b5-7165-46cc-96f2-3811798622c3"),
+                            Gender = "man",
+                            Resault = "ВедОмый, но исполнительный и аккуратный. Редко готов брать на себя главную роль, но работает всегда со знанием дела. На растущем предприятии, где ещё очень много хаотичных и новых процессов, ему будет не очень комфортно, но зато в управлении сложившимися процессами ему нет равных. Благодаря математическому складу ума, он быстро обучаем высокотехнологичным алгоритмам. Ему по силам освоить сложную систему автоматизации или работу с установками ЧПУ, но ровно до того момента, где не будет требоваться творческое вмешательство. Он искуснее и филиграннее сделает то, что было сделано до него уже не раз, но не нужно заставлять его придумывать что-то новое.\r\nКульт качества для таких людей превыше многого другого, но если у них нет эталона, то это может уводить их от цели. Гораздо проще, чем администраторы-охотники, относятся к своим ошибком, но, тем не менее, некорректное указание им на эти ошибки может стать для них существенным демотивирующим фактором",
+                            Style = "Администратор",
+                            TrigerImage = "ишуший-админестратор",
+                            Type = "Ищущий"
+                        },
+                        new
+                        {
+                            Id = new Guid("a548a1f0-b437-41ad-b5ef-6e8e4e5064ed"),
+                            Gender = "woman",
+                            Resault = "Не очень распространенный и весьма противоречивый тип личности. Нередко подвисает между прошлым и будущим. И речь тут не про настоящее, а именно про внутренне разногласие при восприятии действительности. Её устремление в будущее нередко натыкается на глубокий внутренний конфликт, часто связанный с детскими триггерами. Особенно это характерно для людей, прошедших в жизни много испытаний. Без мудрого и опытного наставника могут периодически терять смысл в происходящих вокруг процессах, вплоть до депрессивных состояний. Однако, при правильной мотивации под руководством грамотного ментора, могут раскрыть свой потенциал. Хорошо генерирует идеи и умеет донести их смысл до окружающих. Довольно легко сходится с людьми. Не сказать, что становится прям душой компании, но с ней легко и приятно общаться: она всегда выслушает с любовью и искренним сочувствием. \r\nС радостью и энтузиазмом берется за аналитическую работу, но, если эта деятельность связана исключительно с анализом понятных данных и не требует стратегического мышления, её пыл быстро угасает, и она может допускать ошибки.",
+                            Style = "Интегратор",
+                            TrigerImage = "ишуший-Интегратор",
+                            Type = "Познающая"
+                        },
+                        new
+                        {
+                            Id = new Guid("b1954ccf-f1d0-495a-928d-0099701a9518"),
+                            Gender = "woman",
+                            Resault = "Этому типажу, как и другим, обладающим предпринимательским стилем управления процессами, свойственна склонность к действию. Не сторонник долгих рассуждений о том, а получится ли? Ей проще проверить на деле. Старается всем и всегда помочь, причем, не словом, а делом. Хороший руководитель любого отдела, чья работа направлена на действия. Анализ же деятельности ей дается непросто. Как правило, люди данной категории обаятельны и добродушны. Легки на подъем и могут увлечь за собой коллектив. Легко находят общий язык с коллегами и родными. Однако очень эмоциональны, и это может делать их обидчивыми. Но очень отходчивы и готовы к самопожертвованию.\r\nОбожают детей и животных. \r\nВ работе, как правило, исполнительны, но немного своенравны, когда не до конца понимают смысл поставленной задачи. Немного робеют перед обладателями ярко выраженных гендерных дистрибутивов, но именно среди них часто находят друзей. Обладают хорошим чувством вкуса и стиля. Им можно доверить креативную и творческую работу, но это потребует дополнительного контроля, так как их быстрый и склонный к действиям ум может уводить их от  целей",
+                            Style = "Предприниматель",
+                            TrigerImage = "Наставник-предпренематель",
+                            Type = "Заботливая "
+                        },
+                        new
+                        {
+                            Id = new Guid("b29b2152-b6f1-45d7-a49d-902ca3530268"),
+                            Gender = "man",
+                            Resault = "Основой нестабильности данного типа личности является тот факт, что мысли его устремлены в будущее, но для уверенности в себе ему необходимо опираться на какие-то факты из прошлого. Это противоречие часто выбивает у него почву из-под ног. Если ещё рядом нет мудрого и отзывчивого наставника, то жизненный путь его может быть наполнен несправедливостью. Нестабильность эта также влияет и на усидчивость. Он может часто менять места работы в поисках чего-то лучшего. \r\nЛюбознателен и обладает живым умом. Зачастую, это творческая и любознательная натура, порой излишне сентиментальная и ранимая. Его не сложно обидеть, но он отходчив и добродушен. Может простить практически всё, иногда даже предательство.\r\nОчень исполнителен и готов браться за любую работу, но не всякая работа доставляет ему удовольствие. Не очень по душе ему бумажная работа, если она не носит творческий характер, или, например, процесс прямых продаж, когда нужно в чем-то убеждать клиента. Но он охотно взаимодействует с клиентами, когда дело касается, например, получения обратной связи или выявления потребности. И сделает он это весьма профессионально.",
+                            Style = "Интегратор",
+                            TrigerImage = "ишуший-Интегратор",
+                            Type = "Ищущий"
+                        },
+                        new
+                        {
+                            Id = new Guid("b72c0d38-0fe3-4a00-bef2-acb32789e086"),
+                            Gender = "man",
+                            Resault = "Талантлив, начитан, умён, но часто асоциален. Не любит больших компаний и шумных вечеринок. Пользуется успехом у женщин, но не особо увлекается новыми знакомствами. Загадочная и непредсказуемая личность. В его голове всегда есть далеко идущие планы, но о них он почти никогда не говорит. \r\nМожет с большой долей вероятности прогнозировать будущее, но делиться своими выводами не очень торопится, так как опасается, что кто-то может присвоить всю славу себе. \r\nДля него важно внешнее подтверждение его компетенций, но присущая ему скрытность мешает этому процессу реализоваться. И в этом противоречии его главный бич.\r\nЕсли перед компанией стоят стратегические задачи, которые не требуют командной работы, то он будет почти идеальным кандидатом для решения таких задач.\r\nНо не загоняйте его в жесткие временные или формулярные рамки, так как это может существенным образом снизить его эффективность.",
+                            Style = "Интегратор",
+                            TrigerImage = "охотник-Интегратор",
+                            Type = "Охотник"
+                        },
+                        new
+                        {
+                            Id = new Guid("bc01dd89-601d-4c4e-969f-2082b6833ffc"),
+                            Gender = "woman",
+                            Resault = "Исполнительный и старательный сотрудник, не часто проявляющий амбиции. Ей комфортнее усердно работать под чьим-то началом, нежели принимать решения и давать указания. Свободный график, скорее, будет ее угнетать, чем радовать. Но это очень дотошный исполнитель, поэтому в условиях цейтнота ее эффективность может снижаться. Ей обязательно нужно время, чтобы на несколько раз себя перепроверить. Процесс для нее гораздо важнее результата, поэтому ей гораздо комфортнее выполнять функции, ориентированные именно на процесс.  Учитывая любовь к порядку и зачастую природный навык работы с большим количеством данных, из людей такого типа получаются хорошие аудиторы, бухгалтеры, финансовые аналитики, а также программисты, задачи которых ориентированы преимущественно не на разработку нового кода, а на обработку большого количества информации. Вероятность ошибки в работе таких сотрудников крайне мала, поэтому если ей понятна задача, её работу можно не перепроверять.  По этой же причине лучшей похвалой для неё будет оценка её аккуратности, внимательности или, скажем, свойственной ей пунктуальности. Всё это может лечь в основу её нематериальной мотивации.",
+                            Style = "Администратор",
+                            TrigerImage = "ишуший-админестратор",
+                            Type = "Познающая"
+                        },
+                        new
+                        {
+                            Id = new Guid("c299418c-9304-4fa0-a681-ec09a95b123c"),
+                            Gender = "woman",
+                            Resault = "\"Заботливый производитель\" - что может быть лучше для выполнения производственных функций? Будь это связано с производством продукта либо услуги - любой процесс, имеющий в своей основе \"делание\" чего-то, что приносит понятный ей результат, будет отработан качественно и в срок. Однако, если результат или процесс его достижения до конца ей непонятен, то рабочий энтузиазм ее может значительно поугаснуть.\r\nЕсли доверить этому человеку управление производственным коллективом, работающим по заданному алгоритму и имеющим четкие задачи, то можно быть уверенным в том, что она создаст в нем душевную атмосферу, что, безусловно, повысит корпоративный дух, а соответственно, и эффективность труда. Однако следует понимать, что в случае разногласий между руководством и персоналом, вероятней всего, она встанет на сторону коллектива и будет усердно отстаивать его позицию.\r\nЭтот человек может помочь в создании действительно бережливого производства, но если ей доверить выполнение функций, не связанных непосредственно с производственными процессами, то важно также объяснить ей цели и задачи её деятельности. В процессах же, связанных, например, с творчеством, креативом, генерацией новых идей, или иных, не имеющих четких задач и целей, она, скорей всего, будет постоянно смещать фокус своего внимания на что-то ей понятное, где она может показать хоть какой-то результат.",
+                            Style = "Производитель",
+                            TrigerImage = "Наставник-производитель",
+                            Type = "Заботливая "
+                        },
+                        new
+                        {
+                            Id = new Guid("e2fb7ee4-614b-4cd5-b11e-e522a2d75e94"),
+                            Gender = "man",
+                            Resault = "Послушный и дисциплинированный сотрудник, особо не стремящийся к карьерному росту. Не то, чтобы карьера его совсем не интересовала, просто ему важнее другие вещи. Он может долго и досконально разбираться в процессах, в которых ему приходится вариться, пока не достигнет вершин мастерства. Среди таких типажей чаще всего встречаются люди, способные \"подковать блоху\". \r\nОщущает свою уникальность, но ещё сильнее ощущение того, что он может ещё лучше, и это часто мешает ему показать свой настоящий потенциал. Усерден в учении и хорош в бою, но не в качестве командира. Зачастую, именно таких ставят во главу небольших подразделений, но это, скорей, ограничивает его, чем мотивирует. Если такой человек попадает в продажи, то он может стать хорошим менеджером в процессах, алгоритмы которых понятны и просты, например, в оформлении сделок или обработке входящих заявок, но непредсказуемость в переговорах, к примеру, может ставить его в тупик. Тем не менее, это человек дела. Для него главное - ринуться быстрее в бой. Любые падения для него - настоящий вызов, поэтому предпочитает учиться на собственных ошибках",
+                            Style = "Производитель",
+                            TrigerImage = "ишуший-производитель",
+                            Type = "Ищущий"
+                        },
+                        new
+                        {
+                            Id = new Guid("e6eb1f77-a620-488a-aea7-ec2dba777a66"),
+                            Gender = "woman",
+                            Resault = "Хороший, исполнительный \"продажник\". Любит учиться всему, что подталкивает её к действию. Не приемлет жесткого контроля, но с удовольствием отдаст в чье-то ведение процессы, которые ей не по душе. Например, администрирование, связанное с оформлением сопроводительных и бухгалтерских документов. \r\nАналитика её утомляет, но она бессознательно понимает и принимает её важность. Однако, если её саму заставлять заниматься только аналитическими процессами, быстро теряет интерес и начинает выгорать. \r\nНеплохо чувствует себя в команде, где есть лидер, умеющий ставить задачи. Начинает действовать сразу, как только видит ближайшую цель. Ей постоянно нужно ощущение результата, поэтому на короткой дистанции она незаменима. Эдакий спринтер в продажах. Но длительный марафон её утомляет. Если цель далека и призрачна, то, вероятней всего, она будет действовать хаотично. В таком случае лучше разбить путь на этапы с промежуточными результатами, которые ей будут понятны. \r\nКоммуникабельна и всегда открыта к диалогу. Не выпячивает себя и поэтому неплохо уживается с любым коллективом. Порой, излишне проактивна, поэтому важно направить эту активность в правильное русло, и тогда можно добиться максимальной эффективности в её деятельности.",
+                            Style = "Предприниматель",
+                            TrigerImage = "ишуший-предпренематель",
+                            Type = "Познающая"
                         });
+                });
+
+            modelBuilder.Entity("Katena.Domain.Entities.TestResult", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("DetailedScoresJson")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("FirmId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("StyleResult")
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("TestDate")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("TypeResult")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FirmId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("TestResults");
                 });
 
             modelBuilder.Entity("Katena.Domain.Entities.TextField", b =>
@@ -731,31 +5901,31 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"),
                             CodeWord = "PageIndex",
-                            DateAdded = new DateTime(2024, 4, 18, 6, 33, 3, 859, DateTimeKind.Utc).AddTicks(1779),
-                            Text = "Содержание заполняется администратором",
-                            Title = "Главная"
+                            DateAdded = new DateTime(2026, 9, 20, 17, 14, 9, 586, DateTimeKind.Utc).AddTicks(6155),
+                            Text = "Мы искренне рады видеть тебя и приглашаем в свое пространство! Спасибо, что откликнулся пройти наш авторский тест. Мы старались, чтобы тебе было комфортно и интересно Устраивайся поудобнее, включай любимую волну, поехали!",
+                            Title = "Дорогой друг,"
                         },
                         new
                         {
                             Id = new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"),
                             CodeWord = "PageTests",
-                            DateAdded = new DateTime(2024, 4, 18, 6, 33, 3, 859, DateTimeKind.Utc).AddTicks(1826),
+                            DateAdded = new DateTime(2026, 9, 20, 17, 14, 9, 586, DateTimeKind.Utc).AddTicks(8788),
                             Text = "Содержание заполняется администратором",
                             Title = "Тесты"
                         },
                         new
                         {
                             Id = new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"),
-                            CodeWord = "PageAbilities",
-                            DateAdded = new DateTime(2024, 4, 18, 6, 33, 3, 859, DateTimeKind.Utc).AddTicks(1854),
+                            CodeWord = "PageDescription",
+                            DateAdded = new DateTime(2026, 9, 20, 17, 14, 9, 586, DateTimeKind.Utc).AddTicks(8834),
                             Text = "Содержание заполняется администратором",
-                            Title = "Возможности"
+                            Title = "Описание теста"
                         },
                         new
                         {
                             Id = new Guid("8eae0a63-8f52-4160-a14e-b405e431a13b"),
                             CodeWord = "PageContacts",
-                            DateAdded = new DateTime(2024, 4, 18, 6, 33, 3, 859, DateTimeKind.Utc).AddTicks(1882),
+                            DateAdded = new DateTime(2026, 9, 20, 17, 14, 9, 586, DateTimeKind.Utc).AddTicks(8869),
                             Text = "Содержание заполняется администратором",
                             Title = "Контакты"
                         });
@@ -829,12 +5999,10 @@ namespace Katena.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Email")
-                        .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
+                        .HasColumnType("longtext");
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("tinyint(1)");
@@ -846,12 +6014,10 @@ namespace Katena.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("NormalizedEmail")
-                        .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("NormalizedUserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("PasswordHash")
                         .HasColumnType("longtext");
@@ -869,32 +6035,24 @@ namespace Katena.Migrations
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("UserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
+                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("NormalizedEmail")
-                        .HasDatabaseName("EmailIndex");
-
-                    b.HasIndex("NormalizedUserName")
-                        .IsUnique()
-                        .HasDatabaseName("UserNameIndex");
-
-                    b.ToTable("AspNetUsers", (string)null);
+                    b.ToTable("IdentityUser");
 
                     b.HasData(
                         new
                         {
                             Id = "ef37a3c2-7c96-4405-a971-7abcc91ac333",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "26f0f05e-1e9e-4589-8ef8-a8e5d1bd7a4f",
+                            ConcurrencyStamp = "f8ab69f5-fbd1-4308-98f7-5d6bd989eba3",
                             Email = "my@email.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "MY@EMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEEzwAQ4G2V8xJKDX1dOpm0N6qIYXfw0gueWFP9EUYHv87L1AnJnRc1MjiaHwMu97vA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEKaBIZo7GEukM7HUJQFVQ/DGcISgXj088d8cVQIHD3e6wbEaGjCGXv4TdP0VedfK5Q==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -990,6 +6148,34 @@ namespace Katena.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Katena.Domain.Entities.ApplicationUser", b =>
+                {
+                    b.HasOne("Katena.Domain.Entities.Firm", "Firm")
+                        .WithMany("Users")
+                        .HasForeignKey("FirmId");
+
+                    b.Navigation("Firm");
+                });
+
+            modelBuilder.Entity("Katena.Domain.Entities.TestResult", b =>
+                {
+                    b.HasOne("Katena.Domain.Entities.Firm", "Firm")
+                        .WithMany("TestResults")
+                        .HasForeignKey("FirmId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Katena.Domain.Entities.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Firm");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -1001,7 +6187,7 @@ namespace Katena.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("Katena.Domain.Entities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1010,7 +6196,7 @@ namespace Katena.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("Katena.Domain.Entities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1025,7 +6211,7 @@ namespace Katena.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("Katena.Domain.Entities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1034,11 +6220,18 @@ namespace Katena.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("Katena.Domain.Entities.ApplicationUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Katena.Domain.Entities.Firm", b =>
+                {
+                    b.Navigation("TestResults");
+
+                    b.Navigation("Users");
                 });
 #pragma warning restore 612, 618
         }

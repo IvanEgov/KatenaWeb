@@ -1,4 +1,5 @@
 using Katena.Domain;
+using Katena.Domain.Entities;
 using Katena.Domain.Repositories.Abstruct;
 using Katena.Domain.Repositories.EntietyFramework;
 using Katena.Domain.Repositories.EntityFramework;
@@ -19,6 +20,7 @@ builder.Services.AddScoped<IAnswers, EFAnswersBase>();
 builder.Services.AddScoped<IResaults, EFResaultsBase>();
 builder.Services.AddScoped<IReason, EFReasonBase>();
 builder.Services.AddScoped<INews, EFNewsBase>();
+builder.Services.AddScoped<IFeedback, EFFeedbackBase>();
 builder.Services.AddScoped<DataManager>();
 
 //Подключаем контекст БД
@@ -27,7 +29,7 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 //Настройка Identity системы
-builder.Services.AddIdentity<IdentityUser, IdentityRole>(opts =>
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(opts =>
 {
 	opts.User.RequireUniqueEmail = true;
 	opts.Password.RequiredLength = 6;
@@ -54,7 +56,7 @@ builder.Services.AddSession();
 //Настраиваем политику авторизации для Admin area
 builder.Services.AddAuthorization(x =>
 {
-	x.AddPolicy("AdminArea", policy => { policy.RequireRole("admin"); });
+    x.AddPolicy("AdminArea", policy => { policy.RequireRole("admin"); });
 });
 
 //Добавляем сервисы для контроллеров и представлений (MVC)

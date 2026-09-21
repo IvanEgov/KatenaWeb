@@ -1,7 +1,30 @@
-﻿<div class ="container-sidebar">
+﻿@* <div class ="container-sidebar">
     <div class="col-4 col-12-medium">
         <cache>
             @(await Component.InvokeAsync("Sidebar"))
         </cache>
     </div>
+</div> *@
+
+<div class="inner">
+	<nav>
+		<ul>
+			<li><a href="#intro" style="font-family:'Firenight-Regular'; font-style:normal; font-size:x-large; letter-spacing: 2px;">Главная</a></li>
+			<li><a href="#one" style="font-family:'Firenight-Regular'; font-style:normal; font-size:x-large; letter-spacing: 2px;">Тесты</a></li>
+			<li><a href="#two" style="font-family:'Firenight-Regular'; font-style:normal; font-size:x-large; letter-spacing: 2px;">Все психотипы</a></li>
+			<li><a href="#five" style="font-family:'Firenight-Regular'; font-style:normal; font-size:x-large; letter-spacing: 2px;">Проект</a></li>
+
+			@* УМНОЕ МЕНЮ: меняется в зависимости от того, вошел пользователь или нет *@
+			@if (User.Identity.IsAuthenticated)
+			{
+				<li><a asp-controller="Cabinet" asp-action="Index" style="font-family:'Firenight-Regular'; font-style:normal; font-size:x-large; letter-spacing: 2px; color: #f6781f;">Личный кабинет</a></li>
+				<li><a asp-controller="Account" asp-action="Logout" style="font-family:'Firenight-Regular'; font-style:normal; font-size:x-large; letter-spacing: 2px;">Выход</a></li>
+			}
+			else
+			{
+				<li><a asp-controller="Account" asp-action="Login" style="font-family:'Firenight-Regular'; font-style:normal; font-size:x-large; letter-spacing: 2px;">Вход</a></li>
+				<li><a asp-controller="Account" asp-action="Register" style="font-family:'Firenight-Regular'; font-style:normal; font-size:x-large; letter-spacing: 2px;">Регистрация</a></li>
+			}
+		</ul>
+	</nav>
 </div>

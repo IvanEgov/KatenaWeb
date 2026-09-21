@@ -1,22 +1,105 @@
 ﻿@using Katena.Domain
 @inject DataManager datamanager;
-<div style="display:flex;">
-	<div id="Name" style="display:inline-block; width:500px;">
-		<h2>@ViewBag.pack.Name</h2>
-		<h2>@ViewBag.pack.Description</h2>
-	</div>
-	<div id="testwelcome" style="display:inline-block; margin-left:100px; margin-top:50px;">
-		<div id="picture">
-			<div style="margin-bottom:20px;">
-				<img class="img-block" src="~/images/@ViewBag.pack.TitleImagePath" />
+@* <div id="wrapper" style="width:100%; height:100%; background-color:#1c918c;">
+	<section id="intro" class="wrapper style1 fullscreen fade-up">
+		<div class="inner">
+			<h1>@ViewBag.pack.Name</h1>
+			<p>
+				@ViewBag.pack.Description
+			</p>
+			<p>
+				Выберите пол. После чего начнется прохождение теста. Желаем удачи!
+			</p>
+			<ul class="actions">
+				<li>
+					<form style="display: inline-block;" id="form-@ViewBag.pack.Id" asp-controller="Tests" asp-action="NextQuestion">
+						<input type="hidden" name="pack" value="@ViewBag.pack.Id">
+						<input type="hidden" name="index" value="-1">
+						<input type="hidden" name="gender" value="man">
+						<input type="submit" name="bottom" value="Мужчина">
+					</form>
+				</li>
+				<li>
+					<form style="display: inline-block;" id="form-@ViewBag.pack.Id" asp-controller="Tests" asp-action="NextQuestion">
+						<input type="hidden" name="pack" value="@ViewBag.pack.Id">
+						<input type="hidden" name="index" value="-1">
+						<input type="hidden" name="gender" value="woman">
+						<input type="submit" name="bottom" value="Женщина">
+					</form>
+				</li>
+				<li>
+					<div style="display:inline-block;">
+						<button class="button" id="homeButton"><a asp-area="" asp-controller="Home" asp-action="Index">Вернуться на главную</a></button>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</section>
+</div> *@
+
+<div class="welcome-wrapper">
+	<div class="welcome-main">
+		<div class="welcome-name">
+			<h2>ОПИСАНИЕ ТЕСТА. ЭКСПЕРИМЕНТ.</h2>
+		</div>
+		<div class="welcome-description">
+			<div class="left-description">
+				<div class="left-text">
+					<h3>Представь себе <span class="special-word">БУДУЩЕЕ</span>, которое  уже наступило.  <span class="special-word">МИР</span>, где компании сами активно исследуют <span class="special-word">ТАЛАНТЫ</span> людей, в поисках идеальных сотрудников</h3>
+				</div>
+				<div class="left-line-text">
+					<h3 style="font-weight:400;">И КОМПАНИИ И СОТРУДНИКИ</h3>
+				</div>
+				<div class="line-wrapper">
+					<span class="line"></span>
+				</div>
+			</div>
+			<div class="central-line-wrapper">
+				<span class="central-line"></span>
+			</div>
+			<div class="right-description">
+				<div class="right-text">
+					<h3>Получив данные из теста, они могут точно предложить вакансии, соответствующие <span class="special-word">ЛУЧШИМ КАЧЕСТВАМ</span> кандидата.  Это как нарисованная картина будущего, где каждый находит свое место в мире работы</h3>
+				</div>
+				<div class="right-line-text">
+					<h3 style="font-weight:400; color:darkcyan;">СЧАСТЛИВЫ ДРУГ С ДРУГОМ</h3>
+				</div>
+				<div class="line-wrapper">
+					<span class="line"></span>
+				</div>
 			</div>
 		</div>
-		<form style="display: inline-block;" id="form-@ViewBag.pack.Id" asp-controller="Tests" asp-action="NextQuestion">
-			<input type="hidden" name="pack" value="@ViewBag.pack.Id">
-			<input type="hidden" name="index" value="-1">
-			<div class="button">
-				<input type="submit" name="bottom" value="Начать тест">
-			</div>
-		</form>
+		<div class="description">
+			<h4 style="margin-bottom:5%;">ЧЕЛОВЕК имеет возможность рассмотреть предложенную вакансию и решить, соответствует ли она его ожиданиям и интересам. Он может согласиться на работу, увидев в этом шанс раскрыть свой потенциал в компании и развиваться в выбранной области.<h4/>
+			<h4>Или не принимать предложение, если оно вызвано нежеланием работать в найме или не соответствует его целям или жизненным обстоятельствам, демонстрируя важность осознанного выбора в карьере, где каждый имеет право на свой собственный путь.<h4/>
+		</div>
+		<div class="go-word">
+			<h4>Поехали?</h4>
+		</div>
+		<div class="go-buttons">
+			<ul class="actions">
+				<li>
+					<form style="display: inline-block;" id="form-@ViewBag.pack.Id" asp-controller="Tests" asp-action="NextQuestion">
+						<input type="hidden" name="pack" value="@ViewBag.pack.Id">
+						<input type="hidden" name="index" value="-1">
+						<input type="hidden" name="gender" value="man">
+						<input type="submit" name="bottom" value="Мужчина">
+					</form>
+				</li>
+				<li>
+					<form style="display: inline-block;" id="form-@ViewBag.pack.Id" asp-controller="Tests" asp-action="NextQuestion">
+						<input type="hidden" name="pack" value="@ViewBag.pack.Id">
+						<input type="hidden" name="index" value="-1">
+						<input type="hidden" name="gender" value="woman">
+						<input type="submit" name="bottom" value="Женщина">
+					</form>
+				</li>
+				<li>
+					<div style="display:inline-block;">
+						<button class="button" id="homeButton"><a asp-area="" asp-controller="Home" asp-action="Index">Вернуться на главную</a></button>
+					</div>
+				</li>
+			</ul>
+		</div>
 	</div>
 </div>

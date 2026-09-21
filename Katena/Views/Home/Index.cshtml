@@ -4,12 +4,276 @@
 	ViewBag.Text = Model.Text;
 	ViewBag.TitleImagePath = Model.TitleImagePath;
 }
+@using Katena.Domain
+@inject DataManager datamanager;
 
-<div>
-	@Html.Raw(Model.Text)
-	<div id="picture" style="margin-left:650px;">
-		<div>
-			<img class="img-block" src="~/images/@ViewBag.TitleImagePath" />
+
+<section id="sidebar">
+	@await Html.PartialAsync("SidebarPartial")
+</section>
+
+<!-- Главная -->
+<div id="wrapper">
+	<section id="intro" class="wrapper style1 fullscreen fade-up">
+		<div class="inner">
+			<h1 style="font-family:'Firenight-Regular';">@Html.Raw(Model.Title)</h1>
+			<p>
+				<h3 style="font-family:'Firenight-Regular';">@Html.Raw(Model.Text)</h3>
+			</p>
+			<ul class="actions">
+				<li><a asp-area="" asp-controller="FeedBack" asp-actio="Index" asp-route-id="" class="button scrolly">Связаться с нами</a></li>
+				<li><a asp-area="" asp-controller="Tests" asp-action="Index" asp-route-id="" class="button scrolly">Пройти тест</a></li>
+			</ul>
+			@* <audio preload="auto" controls="controls">
+				<source src="~/jazzMusic/3f4097ac04d1117.mp3" type="audio/mpeg">
+				Тег audio не поддерживается вашим браузером.
+			</audio> *@
 		</div>
+	</section>
+
+	<!-- Тесты -->
+	<section id="one" class="wrapper style2 spotlights">
+		<section style="background-color:#1c918c">
+			<a href="#" class="image"><img src="~/images/image1.jpg" alt="" data-position="center center" /></a>
+			<div class="content">
+				<div class="inner">
+					<h2 style="font-family:'Firenight-Regular'">ОПИСАНИЕ ТЕСТА</h2>
+					<p>Твоя роль в сценарии</p>
+					<ul class="actions">
+						<li><a asp-area="" asp-controller="Description" asp-action="Index" asp-route-id="" class="button scrolly" style="font-family:'Firenight-Regular'"><h2 style="line-height:2.5;">Learn more</h2></a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section style="background-color:#3395b0">
+			<a href="#" class="image"><img src="~/images/image2.jpg" alt="" data-position="top center" /></a>
+			<div class="content">
+				<div class="inner">
+					<h2 style="font-family:'Firenight-Regular'">ПРОЙТИ ТЕСТ</h2>
+					<p>13 ситуаций, 52 варианта действий, 42 мотива</p>
+					<ul class="actions">
+						<li><a asp-area="" asp-controller="Tests" asp-action="Index" asp-route-id="" class="button" style="font-family:'Firenight-Regular'"><h2 style="line-height:2.5;">LEARN MORE</h2></a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</section>
+	<!--Все психотипы-->
+	<section id="two" class="wrapper style2 spotlights">
+		<section style="background-color:#1c918c">
+			<a href="#" class="image"><img src="~/images/image1.jpg" alt="" data-position="center center" /></a>
+			<div class="content">
+				<div class="inner">
+					<h2 style="font-family:'Firenight-Regular'">ЖЕНЩИНЫ</h2>
+					<p>Описание всех женских психотипов</p>
+					<ul class="actions">
+						<li>
+							<form asp-controller="ResultDescription" asp-action="Index">
+								<input type="hidden" name="gender" value="female">
+								<input type="submit" class="main-button" value="LEARN MORE">
+							</form>
+						</li>
+						@* <li><a asp-area="" asp-controller="Description" asp-action="Index" asp-route-id="" class="button scrolly" style="font-family:'Firenight-Regular'"><h2 style="line-height:2.5;">Learn more</h2></a></li> *@
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section style="background-color:#3395b0">
+			<a href="#" class="image"><img src="~/images/image2.jpg" alt="" data-position="top center" /></a>
+			<div class="content">
+				<div class="inner">
+					<h2 style="font-family:'Firenight-Regular'">МУЖЧИНЫ</h2>
+					<p>Описание всех мужских психотипов</p>
+					<ul class="actions">
+						<li>
+							<form asp-controller="ResultDescription" asp-action="Index">
+								<input type="hidden" name="gender" value="male">
+								<input type="submit" class="main-button" value="LEARN MORE">
+							</form>
+						</li>
+						@* <li><a asp-area="" asp-controller="Tests" asp-action="Index" asp-route-id="" class="button scrolly" style="font-family:'Firenight-Regular'"><h2 style="line-height:2.5;">LEARN MORE</h2></a></li> *@
+					</ul>
+				</div>
+			</div>
+		</section>
+	</section>
+	<div id="results" hidden>
+		@foreach (ResaultsBase result in datamanager.Resaults.GetAllResaults())
+		{
+			<section id="two" class="wrapper style1 fullscreen fade-up">
+				<div class="inner">
+					@if (result.Gender == "man")
+					{
+						<h1>@result.Type @result.Style Мужчина</h1>
+					}
+					@if (result.Gender == "woman")
+					{
+						<h1>@result.Type @result.Style Женщина</h1>
+					}
+					<p>
+						@Html.Raw(result.Resault)
+					</p>
+					<ul class="actions">
+						<li><a href="#three" onclick="showResults()" class="button scrolly">Скрыть результаты</a></li>
+					</ul>
+				</div>
+			</section>
+		}
 	</div>
+	<!-- Возможности -->
+	@* <section id="three" class="wrapper style3 fade-up">
+		<div class="inner">
+			<h2>Возможности</h2>
+			<p>Зачем вам мы?.</p>
+			<div class="features">
+				<section>
+					<span class="icon solid major fa-code"></span>
+					<h3>Развитие</h3>
+					<p>Вы станете круче.</p>
+				</section>
+				<section>
+					<span class="icon solid major fa-lock"></span>
+					<h3>Доход</h3>
+					<p>Вы станете богаче.</p>
+				</section>
+				<section>
+					<span class="icon solid major fa-cog"></span>
+					<h3>Статус</h3>
+					<p>Ну тут все понятно.</p>
+				</section>
+				<section>
+					<span class="icon solid major fa-desktop"></span>
+					<h3>Осмысление и принятие себя.</h3>
+					<p>Ну это сложно, придется думать.</p>
+				</section>
+				<section>
+					<span class="icon solid major fa-link"></span>
+					<h3>Работа над собой</h3>
+					<p>Тоже сложно, без нас никуда.</p>
+				</section>
+				<section>
+					<span class="icon major fa-gem"></span>
+					<h3>Другой уровень жизни</h3>
+					<p>Сказка.</p>
+				</section>
+			</div>
+			<ul class="actions">
+				<li><a a asp-area="" asp-controller="Abilities" asp-action="Index" asp-route-id="" class="button">Узнать больше о своих возможностях</a></li>
+			</ul>
+		</div>
+	</section> *@
+
+	<!--Новости-->
+	<!--Разворачиваем новости, чтобы вывести в актуальном порядке-->
+	@* @{
+		IQueryable<NewsBase> allNews = datamanager.News.GetNews();
+		List<NewsBase> reversedNews = allNews.ToList();
+		reversedNews.Reverse();
+	}
+	@foreach (NewsBase news in reversedNews)
+	{
+		<section id="five" class="wrapper style2 spotlights">
+			<section>
+				@if (news.TitleImagePath != null)
+				{
+					<a href="#" class="image"><img src="~/images/@news.TitleImagePath" alt="" data-position="center center" /></a>
+				}
+				<div class="content">
+					<div class="inner">
+						<h2>@news.Title</h2>
+						<p>@Html.Raw(news.Text)</p>
+					</div>
+				</div>
+			</section>
+		</section>
+	} *@
+	<!--Проект-->
+	<section id="five" class="wrapper project spa fullscreen fade-up">
+		<div id="five" class="spa">
+			<img class="image spa" src="~/images/spaImage.png" />
+			<div class="spa-text">
+				<div class="spa-left-text">Синергетический анализ личности</div>
+				<div class="spa-right-text">ЦИФРОВАЯ ПЛАТФОРМА</div>
+			</div>
+		</div>
+	</section>
+	<section id="five" class="wrapper project fullscreen fade-up">
+		<div id="five" class="project-page-one">
+			<div class="left-blocks">
+				<div class="block-text">
+					<div class="block">
+						<h3>Что такое SPA?</h3>
+					</div>
+					<div class="text">
+						<p><span class="first-word">SPA</span>- это система разработана  для российского рынка, которая помогает управлять процессами в компании и повышать вовлеченность сотрудников, автоматически выявлять потребности и согласовывать их с целями компании</p>
+					</div>
+				</div>
+				<div class="block-text">
+					<div class="hand-image">
+						<img class="image hand" src="~/images/project-image.png" />
+					</div>
+					<div class="text">
+						<p><span class="first-word">Функционал </span>системы предусматривает взаимодействие с юридическими и физическими лицами посредством интернет-платформы. После регистрации у пользователя появляется свое <span class="first-word">онлайн-пространство</span>, включающее различные инструменты</p>
+					</div>
+				</div>
+				<div class="block-text third">
+					<div class="block">
+						<h3>Первое касание</h3>
+					</div>
+					<div class="text empty">
+						<p><span class="first-word">Первое касание</span>- бесплатный авторский ТЕСТ, который с большой долей вероятности определит какими мотивами к действиям он чаще всего руководствуется, и к какому стилю управления он склонен.</p>
+					</div>
+					<div class="project-description-block">
+						<div class="test-description">
+							<h5 style="color:black; font-weight:600;"><p style="margin: 0 0 1em 0;">ТЕСТ состоит из 13 простых бытовых ситуаций: позитивных, негативных, шутливых, порой нелепых, которые могут произойти или периодически происходят в реальной жизни</p> <p style="margin:0 0 0 0;">Человеку в расслабленной обстановке поэтапно предлагается на выбор разрешить ситуацию через свое  действие и обоснованный мотив, как чаще всего он в поступает в жизни.</p></h5>
+						</div>
+						<div class="test-blocks">
+							<div class="name-block">
+								<h3 style="font-weight:600;">Авторский тест А.Саркисова</h3>
+							</div>
+							<div class="statistic-blocks-up">
+								<div class="left-block up">
+									<h3 style="font-weight:600;">13 ситуаций</h3>
+								</div>
+								<div class="right-block up">
+									<h3 style="font-weight:600;">15 мин</h3>
+								</div>
+							</div>
+							<div class="statistic-blocks-down">
+								<div class="right-block">
+									<h3 style="font-weight:600;">Мгновенный результат</h3>
+								</div>
+								<div class="left-block">
+									<h3 style="font-weight:600;">95% респондентов согласились с результатами теста</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="five" class="wrapper project fullscreen fade-up">
+		<div id="five" class="project-page-two">
+			<img class="image daily" src="~/images/daily.png" />
+		</div>
+	</section>
 </div>
+
+<script>
+	function showResults() {
+		if (document.getElementById("results").hidden == false) {
+			document.getElementById("results").hidden = true;
+		}
+		else {
+			document.getElementById("results").hidden = false;
+		}
+		
+		if (document.getElementById("sidebarResult").hidden == false) {
+			document.getElementById("sidebarResult").hidden = true;
+		}
+		else {
+			document.getElementById("sidebarResult").hidden = false;
+		}
+	}
+</script>

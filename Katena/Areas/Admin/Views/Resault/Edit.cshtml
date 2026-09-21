@@ -29,13 +29,21 @@
                 <span asp-validation-for="Type"></span>
             </div>
             <div class="div-box">
+                <label asp-for="TrigerImage"></label>
+                <textarea asp-for="TrigerImage"></textarea>
+                <span asp-validation-for="TrigerImage"></span>
+            </div>
+            <div class="div-box">
                 <label asp-for="Resault"></label>
                 <textarea asp-for="Resault"></textarea>
                 <span asp-validation-for="Resault"></span>
             </div>
             <input type="submit" value="Сохранить" />
         </form>
-        <button onclick="window.history.back()">Вернуться к тесту</button>
+
+        <form style="display: inline-block;" id="form-@Model.Id" asp-area="Admin" asp-controller="TestItems" asp-action="ReturnHome" method="post">
+            <input type="submit" value="Вернуться на главную страницу">
+        </form>
     </div>
 </div>
 

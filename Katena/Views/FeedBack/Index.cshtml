@@ -1,0 +1,62 @@
+﻿@model FeedbackBase
+
+<div id="wrapper">
+	<!-- Обратная связь -->
+	<section id="four" class="wrapper style1 fade-up">
+		<div class="inner">
+			<h2>Как с нами связаться?</h2>
+			<p>Конструктивная критика и разумные предложения приветствуются.</p>
+			<div class="split style1">
+				<section>
+					<form asp-controller="FeedBack" asp-action="Edit" method="post" enctype="multipart/form-data">
+						<div class="fields">
+							<div class="field half">
+								<label asp-for="name">Name</label>
+								<input type="text" asp-for="name" id="name" />
+							</div>
+							<div class="field half">
+								<label asp-for="mail">Email</label>
+								<input type="text" asp-for="mail" id="mail" />
+							</div>
+							<div class="field">
+								<label asp-for="message">Message</label>
+								<textarea asp-for="message" id="message" rows="5"></textarea>
+							</div>
+						</div>
+						<ul class="actions">
+							<li><input type="submit"></li>
+							<li><a asp-area="" asp-controller="Home" asp-action="Index" class="button scrolly">Вернуться на главную</a></li>
+						</ul>
+					</form>
+				</section>
+				<section>
+					<ul class="contact">
+						@* <li>
+							<h3>Address</h3>
+							<span>
+								Томск<br />
+								Улица Пушкина<br />
+								Дом Колотушкина
+							</span>
+						</li> *@
+						<li>
+							<h3>Email</h3>
+							<a href="#">ulit_tomsk@mail.ru</a>
+						</li>
+						<li>
+							<h3>Phone</h3>
+							<span>8-923-457-70-30</span>
+						</li>
+						<li>
+							<h3>Social</h3>
+							<ul class="icons">
+								<li><a href="#" class="icon brands fa-vk"><span class="label">Vk</span></a></li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+			</div>
+		</div>
+	</section>
+</div>
+

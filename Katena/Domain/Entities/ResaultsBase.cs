@@ -9,19 +9,22 @@ namespace Katena.Domain.Entities
         public Guid Id { get; set; }
 
         //Пол
-        [Required] 
-        public string Gender { get; set; }
+        [Required]
+        public string? Gender { get; set; }
 
         //Стиль
         [Required]
-        public string Style { get; set; }
-        
+        public string? Style { get; set; }
+
         //Тип личности
         [Required]
-        public string Type { get; set; }
+        public string? Type { get; set; }
 
         //Результат(описание)
         [Required]
-        public string Resault { get; set; }
+        public string? Resault { get; set; }
+
+        //Триггеры результата
+        public string? TrigerImage { get; set; }
     }
 }

@@ -24,7 +24,7 @@ namespace Katena.Areas.Admin.Controllers
 			{
 				entity = new QuestionBase();
 				entity.Name = string.Empty;
-				entity.AnswerId = new List<Guid> {Guid.Empty};
+				entity.AnswerId = new List<Guid> { Guid.Empty };
 				dataManager.QuestionBase.SaveQuestion(entity);
 			}
 			else
@@ -35,7 +35,7 @@ namespace Katena.Areas.Admin.Controllers
 		}
 
         [HttpPost]
-        public IActionResult Edit(QuestionBase model)
+        public IActionResult Edit(QuestionBase model, IFormFile? backgroundImageFile)
         {
             dataManager.QuestionBase.SaveQuestion(model);
             return View(model);

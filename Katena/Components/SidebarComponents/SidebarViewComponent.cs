@@ -1,4 +1,5 @@
 ﻿using Katena.Domain;
+using Katena.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Katena.Components.SidebarComponents
@@ -14,7 +15,10 @@ namespace Katena.Components.SidebarComponents
 
         public Task<IViewComponentResult> InvokeAsync()
         {
-            return Task.FromResult((IViewComponentResult)View("Default", dataManager.News.GetNews()));
+            IQueryable<NewsBase> news = dataManager.News.GetNews();
+            List<NewsBase> reversedNews = news.ToList();
+            reversedNews.Reverse();
+            return Task.FromResult((IViewComponentResult)View("Default", reversedNews));
         }
     }
 }

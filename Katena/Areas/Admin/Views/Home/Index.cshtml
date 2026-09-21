@@ -52,8 +52,12 @@
         <h3>Редактировать страницы сайта</h3>
         <a asp-area="Admin" asp-controller="TextField" asp-action="Edit" asp-route-codeWord="PageIndex">Главная</a>
         <a asp-area="Admin" asp-controller="TextField" asp-action="Edit" asp-route-codeWord="PageTests">Тесты</a>
-        <a asp-area="Admin" asp-controller="TextField" asp-action="Edit" asp-route-codeWord="PageAbilities">Возможности</a>
+        <a asp-area="Admin" asp-controller="TextField" asp-action="Edit" asp-route-codeWord="PageDescription">Описание теста</a>
         <a asp-area="Admin" asp-controller="TextField" asp-action="Edit" asp-route-codeWord="PageContacts">Контакты</a>
+    </div>
+    <div class="div-box">
+        <h3>Отзывы пользователей</h3>
+        <button><a asp-area="Admin" asp-controller="FeedBack" asp-action="Index">Посмотреть отзывы пользователей</a></button>
     </div>
     <div class="div-box">
         <form asp-area="" asp-controller="Account" asp-action="Logout" method="post">
