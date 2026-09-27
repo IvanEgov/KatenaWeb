@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Katena.Migrations
 {
     /// <inheritdoc />
-    public partial class AddCreatedAtToUsers : Migration
+    public partial class AddTasksAndNotifications : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -457,6 +457,66 @@ namespace Katena.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "FirmTasks",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
+                    Title = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Description = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Deadline = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    Status = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    FirmId = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    CreatorId = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FirmTasks", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_FirmTasks_AspNetUsers_CreatorId",
+                        column: x => x.CreatorId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_FirmTasks_Firms_FirmId",
+                        column: x => x.FirmId,
+                        principalTable: "Firms",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Notifications",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
+                    UserId = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Message = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    IsRead = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    TaskId = table.Column<Guid>(type: "char(36)", nullable: true, collation: "ascii_general_ci")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Notifications", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Notifications_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "TestResults",
                 columns: table => new
                 {
@@ -486,6 +546,34 @@ namespace Katena.Migrations
                         name: "FK_TestResults_Firms_FirmId",
                         column: x => x.FirmId,
                         principalTable: "Firms",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "TaskAssignees",
+                columns: table => new
+                {
+                    TaskId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
+                    UserId = table.Column<string>(type: "varchar(255)", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Status = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TaskAssignees", x => new { x.TaskId, x.UserId });
+                    table.ForeignKey(
+                        name: "FK_TaskAssignees_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_TaskAssignees_FirmTasks_TaskId",
+                        column: x => x.TaskId,
+                        principalTable: "FirmTasks",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 })
@@ -550,23 +638,23 @@ namespace Katena.Migrations
             migrationBuilder.InsertData(
                 table: "Feedbacks",
                 columns: new[] { "id", "mail", "message", "name" },
-                values: new object[] { new Guid("6c18e483-3d24-4f06-90c4-63a49f547b1d"), "igoryan@mail.ru", "Super site", "Игорь" });
+                values: new object[] { new Guid("8099d1ff-10d5-490b-a526-2c7bb4ad3b4b"), "igoryan@mail.ru", "Super site", "Игорь" });
 
             migrationBuilder.InsertData(
                 table: "IdentityUser",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "ef37a3c2-7c96-4405-a971-7abcc91ac333", 0, "f8ab69f5-fbd1-4308-98f7-5d6bd989eba3", "my@email.com", true, false, null, "MY@EMAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAEKaBIZo7GEukM7HUJQFVQ/DGcISgXj088d8cVQIHD3e6wbEaGjCGXv4TdP0VedfK5Q==", null, false, "", false, "admin" });
+                values: new object[] { "ef37a3c2-7c96-4405-a971-7abcc91ac333", 0, "42d8feb0-457c-47b0-83a8-9494e384af36", "my@email.com", true, false, null, "MY@EMAIL.COM", "ADMIN", "AQAAAAIAAYagAAAAEDw1CkbqFPBO48/qaIFGLbewhsDC1xT5atpNTAPE6H1+PLFhtqpiFpJWwsZxUJ28DA==", null, false, "", false, "admin" });
 
             migrationBuilder.InsertData(
                 table: "News",
                 columns: new[] { "Id", "Text", "Title", "TitleImagePath" },
                 values: new object[,]
                 {
-                    { new Guid("32cc8c0c-c498-41a6-a8c1-d117cfe63669"), "Заполянем базу данных", "Новость дня 15.04,2024", "2f9a623372f47bb6a0fc9b42c87bde91.jpg" },
-                    { new Guid("843e46b5-69fc-4450-bd12-263ecee19541"), "Курс молодого бойца. Наводнение продолжается!!!", "Новость дня 16.04.2024", "11c53ebb6fe575943e75dca3a72b0bf9.jpg" },
-                    { new Guid("9414bbc9-1b41-4f39-bfa4-6acdd011feee"), "Было собраноо уже 6 вопросов", "Новость полудня", "2f9a623372f47bb6a0fc9b42c87bde91.jpg" },
-                    { new Guid("963cc6a3-4918-4306-9059-a2b958a30c4d"), "Теперь можно добавлять картинки!", "Новость дня", "" },
-                    { new Guid("a08c6941-e8ae-40f1-8f4d-0374065a876d"), "Очередное заполнение БД и тестирование новостей", "Новость дня 17.04.2024", "2f9a623372f47bb6a0fc9b42c87bde91.jpg" }
+                    { new Guid("53b0635c-577a-4ac7-911d-611d17dd67af"), "Теперь можно добавлять картинки!", "Новость дня", "" },
+                    { new Guid("6df5a529-b7a2-4f7b-a023-b976ff1cb437"), "Заполянем базу данных", "Новость дня 15.04,2024", "2f9a623372f47bb6a0fc9b42c87bde91.jpg" },
+                    { new Guid("e2c7a367-4280-4edf-b141-b7b3f251d4c9"), "Курс молодого бойца. Наводнение продолжается!!!", "Новость дня 16.04.2024", "11c53ebb6fe575943e75dca3a72b0bf9.jpg" },
+                    { new Guid("eb1e16b7-5080-4bee-9f0b-cb04685ca675"), "Очередное заполнение БД и тестирование новостей", "Новость дня 17.04.2024", "2f9a623372f47bb6a0fc9b42c87bde91.jpg" },
+                    { new Guid("eccc57ef-a5b4-4e62-bcf8-347ffdefa31b"), "Было собраноо уже 6 вопросов", "Новость полудня", "2f9a623372f47bb6a0fc9b42c87bde91.jpg" }
                 });
 
             migrationBuilder.InsertData(
@@ -766,10 +854,10 @@ namespace Katena.Migrations
                 columns: new[] { "Id", "CodeWord", "DateAdded", "Text", "Title", "TitleImagePath" },
                 values: new object[,]
                 {
-                    { new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"), "PageDescription", new DateTime(2026, 9, 20, 17, 14, 9, 586, DateTimeKind.Utc).AddTicks(8834), "Содержание заполняется администратором", "Описание теста", null },
-                    { new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"), "PageIndex", new DateTime(2026, 9, 20, 17, 14, 9, 586, DateTimeKind.Utc).AddTicks(6155), "Мы искренне рады видеть тебя и приглашаем в свое пространство! Спасибо, что откликнулся пройти наш авторский тест. Мы старались, чтобы тебе было комфортно и интересно Устраивайся поудобнее, включай любимую волну, поехали!", "Дорогой друг,", null },
-                    { new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"), "PageTests", new DateTime(2026, 9, 20, 17, 14, 9, 586, DateTimeKind.Utc).AddTicks(8788), "Содержание заполняется администратором", "Тесты", null },
-                    { new Guid("8eae0a63-8f52-4160-a14e-b405e431a13b"), "PageContacts", new DateTime(2026, 9, 20, 17, 14, 9, 586, DateTimeKind.Utc).AddTicks(8869), "Содержание заполняется администратором", "Контакты", null }
+                    { new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"), "PageDescription", new DateTime(2026, 9, 27, 5, 14, 16, 480, DateTimeKind.Utc).AddTicks(7552), "Содержание заполняется администратором", "Описание теста", null },
+                    { new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"), "PageIndex", new DateTime(2026, 9, 27, 5, 14, 16, 480, DateTimeKind.Utc).AddTicks(4370), "Мы искренне рады видеть тебя и приглашаем в свое пространство! Спасибо, что откликнулся пройти наш авторский тест. Мы старались, чтобы тебе было комфортно и интересно Устраивайся поудобнее, включай любимую волну, поехали!", "Дорогой друг,", null },
+                    { new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"), "PageTests", new DateTime(2026, 9, 27, 5, 14, 16, 480, DateTimeKind.Utc).AddTicks(7507), "Содержание заполняется администратором", "Тесты", null },
+                    { new Guid("8eae0a63-8f52-4160-a14e-b405e431a13b"), "PageContacts", new DateTime(2026, 9, 27, 5, 14, 16, 480, DateTimeKind.Utc).AddTicks(7584), "Содержание заполняется администратором", "Контакты", null }
                 });
 
             migrationBuilder.InsertData(
@@ -820,6 +908,26 @@ namespace Katena.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_FirmTasks_CreatorId",
+                table: "FirmTasks",
+                column: "CreatorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_FirmTasks_FirmId",
+                table: "FirmTasks",
+                column: "FirmId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Notifications_UserId",
+                table: "Notifications",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TaskAssignees_UserId",
+                table: "TaskAssignees",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_TestResults_FirmId",
                 table: "TestResults",
                 column: "FirmId");
@@ -861,6 +969,9 @@ namespace Katena.Migrations
                 name: "News");
 
             migrationBuilder.DropTable(
+                name: "Notifications");
+
+            migrationBuilder.DropTable(
                 name: "Packs");
 
             migrationBuilder.DropTable(
@@ -873,6 +984,9 @@ namespace Katena.Migrations
                 name: "Resaults");
 
             migrationBuilder.DropTable(
+                name: "TaskAssignees");
+
+            migrationBuilder.DropTable(
                 name: "TestResults");
 
             migrationBuilder.DropTable(
@@ -880,6 +994,9 @@ namespace Katena.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
+
+            migrationBuilder.DropTable(
+                name: "FirmTasks");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

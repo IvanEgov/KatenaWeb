@@ -1,121 +1,531 @@
 ﻿@{
-    ViewData["Title"] = "Личный кабинет";
+    ViewData["Title"] = "Панель управления";
+    var employees = ViewBag.Employees as List<Katena.Domain.Entities.ApplicationUser>;
+    var selectedEmployee = ViewBag.SelectedEmployee as Katena.Domain.Entities.ApplicationUser;
+    var employeeResults = ViewBag.EmployeeTestResults as List<Katena.Domain.Entities.TestResult>;
+    var activeTasksList = ViewBag.ActiveTasksList as List<Katena.Domain.Entities.FirmTask>;
 }
 
-<h2>Личный кабинет</h2>
+<style>
+    :root {
+        --bg-dark: #0a2540;
+        --bg-card: rgba(30, 41, 59, 0.75);
+        --border-color: rgba(255, 255, 255, 0.1);
+        --text-primary: #ffffff;
+        --text-secondary: #94a3b8;
+        --accent-cyan: #22d3ee;
+        --accent-blue: #3b82f6;
+        --gradient-btn: linear-gradient(135deg, #0891b2 0%, #2563eb 100%);
+        --gradient-header: linear-gradient(135deg, #0e7490 0%, #1d4ed8 100%);
+    }
 
-@if (ViewBag.IsDirector == true)
-{
-    <h3>Управление сотрудниками</h3>
-    <a asp-action="AddEmployee" class="btn btn-primary">Добавить сотрудника</a>
+    .dashboard-wrapper {
+        background: linear-gradient(135deg, #0a2540 0%, #1a3a5c 50%, #0f2840 100%);
+        color: var(--text-primary);
+        min-height: 100vh;
+        padding: 20px 0;
+    }
 
-    <hr />
+    .glass-card {
+        background: var(--bg-card);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        margin-bottom: 20px;
+    }
 
-    <h4>Список сотрудников</h4>
-    @if (ViewBag.Employees != null && ViewBag.Employees.Count > 0)
-    {
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Email</th>
-                    <th>Дата регистрации</th>
-                    <th>Действия</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var employee in ViewBag.Employees)
+    .glass-card-header {
+        background: var(--gradient-header);
+        color: white;
+        padding: 16px 20px;
+        border-radius: 16px 16px 0 0;
+        border-bottom: 1px solid var(--border-color);
+        font-weight: 700;
+        font-size: 1.1rem;
+        letter-spacing: 0.5px;
+    }
+
+    .text-cyan {
+        color: var(--accent-cyan) !important;
+    }
+
+    .text-muted-custom {
+        color: var(--text-secondary) !important;
+    }
+
+    .btn-cyan {
+        background: var(--gradient-btn);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 20px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+    }
+
+        .btn-cyan:hover {
+            box-shadow: 0 0 15px rgba(34, 211, 238, 0.4);
+            transform: translateY(-2px);
+            color: white;
+        }
+
+    .btn-outline-custom {
+        background: transparent;
+        color: var(--text-primary);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 10px 20px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+    }
+
+        .btn-outline-custom:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan);
+        }
+
+    .employee-item {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 10px;
+        transition: all 0.3s;
+        color: var(--text-primary);
+        text-decoration: none;
+        display: block;
+    }
+
+        .employee-item:hover {
+            background: rgba(34, 211, 238, 0.1);
+            border-color: var(--accent-cyan);
+            transform: translateX(4px);
+        }
+
+        .employee-item.active {
+            background: rgba(34, 211, 238, 0.2);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 10px rgba(34, 211, 238, 0.2);
+        }
+
+    .task-item {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 10px;
+    }
+
+    .form-control-dark {
+        background: rgba(15, 23, 42, 0.6);
+        border: 1px solid var(--border-color);
+        color: white;
+        border-radius: 8px;
+        padding: 10px 15px;
+    }
+
+        .form-control-dark:focus {
+            background: rgba(15, 23, 42, 0.8);
+            border-color: var(--accent-cyan);
+            color: white;
+            box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.2);
+        }
+
+        .form-control-dark::placeholder {
+            color: var(--text-secondary);
+        }
+
+    .form-check-input-dark {
+        background-color: rgba(15, 23, 42, 0.6);
+        border: 1px solid var(--border-color);
+    }
+
+        .form-check-input-dark:checked {
+            background-color: var(--accent-blue);
+            border-color: var(--accent-blue);
+        }
+
+    .table-dark-custom {
+        color: var(--text-primary);
+        border-color: var(--border-color);
+    }
+
+        .table-dark-custom th {
+            color: var(--accent-cyan);
+            border-color: var(--border-color);
+            font-weight: 600;
+        }
+
+        .table-dark-custom td {
+            border-color: var(--border-color);
+            color: var(--text-primary);
+        }
+</style>
+
+<div class="dashboard-wrapper">
+    <div class="container-fluid px-4">
+
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-8">
+                    <div class="glass-card p-4 text-center" style="border-color: var(--accent-cyan);">
+                        <h5 class="text-cyan mb-0 fw-bold">@Html.Raw(TempData["SuccessMessage"])</h5>
+                    </div>
+                </div>
+            </div>
+        }
+
+        @if (ViewBag.IsDirector == true)
+        {
+            <div class="row g-4">
+                <!-- ЛЕВАЯ КОЛОНКА: Сотрудники -->
+                <div class="col-lg-3">
+                    <div class="glass-card h-100">
+                        <div class="glass-card-header">👥 СОТРУДНИКИ</div>
+                        <div class="p-3">
+                            <a asp-action="AddEmployee" class="btn btn-cyan w-100 mb-4">➕ Добавить сотрудника</a>
+
+                            @if (employees != null && employees.Any())
+                            {
+                                foreach (var emp in employees)
+                                {
+                                    <a asp-action="Index" asp-route-selectedUserId="@emp.Id"
+                                       class="employee-item @(ViewBag.SelectedUserId == emp.Id && ViewBag.Mode != "createTask" ? "active" : "")">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="mb-1 fw-bold">@emp.Email</h6>
+                                                <small class="text-muted-custom">Открыть карточку</small>
+                                            </div>
+                                            <span class="text-cyan">→</span>
+                                        </div>
+                                    </a>
+                                }
+                            }
+                            else
+                            {
+                                <div class="text-center py-4 text-muted-custom">
+                                    <small>Сотрудников пока нет.<br>Добавьте первого!</small>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ЦЕНТРАЛЬНАЯ КОЛОНКА: Контент -->
+                <div class="col-lg-6">
+                    @if (ViewBag.Mode == "createTask")
+                    {
+                        <div class="glass-card h-100">
+                            <div class="glass-card-header">🛠️ КОНСТРУКТОР ЗАДАЧИ</div>
+                            <div class="p-4">
+                                <form asp-action="CreateTask" method="post">
+                                    <div class="mb-3">
+                                        <label class="form-label fw-bold text-cyan">Название задачи</label>
+                                        <input type="text" name="title" class="form-control form-control-dark" required placeholder="Например: Подготовить отчет" />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label fw-bold text-cyan">Описание</label>
+                                        <textarea name="description" class="form-control form-control-dark" rows="3" placeholder="Подробности..."></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label fw-bold text-cyan">Срок выполнения</label>
+                                        <input type="datetime-local" name="deadline" class="form-control form-control-dark" required />
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="form-label fw-bold text-cyan">Исполнители</label>
+                                        <div class="border rounded p-3" style="background: rgba(15, 23, 42, 0.6); border-color: var(--border-color) !important; max-height: 200px; overflow-y: auto;">
+                                            @if (employees != null && employees.Any())
+                                            {
+                                                foreach (var emp in employees)
+                                                {
+                                                    <div class="form-check mb-2">
+                                                        <input class="form-check-input form-check-input-dark" type="checkbox" name="selectedEmployees" value="@emp.Id" id="emp_@emp.Id" />
+                                                        <label class="form-check-label text-white" for="emp_@emp.Id">@emp.Email</label>
+                                                    </div>
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+                                    <div class="d-grid gap-2">
+                                        <button type="submit" class="btn btn-cyan btn-lg">🚀 Создать и уведомить</button>
+                                        <a asp-action="Index" class="btn btn-outline-custom">Отмена</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    }
+                    else if (selectedEmployee != null)
+                    {
+                        <div class="glass-card h-100">
+                            <div class="glass-card-header d-flex justify-content-between align-items-center">
+                                <span>👤 КАРТОЧКА: @selectedEmployee.Email</span>
+                                <a asp-action="Index" class="btn btn-sm btn-outline-custom" style="padding: 4px 12px; font-size: 0.85rem;">✕ Закрыть</a>
+                            </div>
+                            <div class="p-4">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <div>
+                                        <h5 class="text-white mb-1">Роль: <span class="badge" style="background: var(--accent-blue); color: white;">Сотрудник</span></h5>
+                                    </div>
+                                    <form asp-action="ResetEmployeePassword" method="post">
+                                        <input type="hidden" name="userId" value="@selectedEmployee.Id" />
+                                        <button type="submit" class="btn btn-outline-custom" style="border-color: #f59e0b; color: #f59e0b;" onclick="return confirm('Сбросить пароль?');">
+                                            🔄 Сбросить пароль
+                                        </button>
+                                    </form>
+                                </div>
+                                <hr style="border-color: var(--border-color);" />
+                                <h6 class="text-cyan fw-bold mb-3">📊 Результаты тестов:</h6>
+                                @if (employeeResults != null && employeeResults.Any())
+                                {
+                                    <div class="table-responsive">
+                                        <table class="table table-dark-custom">
+                                            <thead>
+                                                <tr>
+                                                    <th>Дата</th>
+                                                    <th>Стиль</th>
+                                                    <th>Тип</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var res in employeeResults)
+                                                {
+                                                    <tr>
+                                                        <td>@res.TestDate.ToString("dd.MM.yyyy")</td>
+                                                        <td><span class="badge" style="background: var(--accent-blue); color: white;">@res.StyleResult</span></td>
+                                                        <td><span class="badge" style="background: #10b981; color: white;">@res.TypeResult</span></td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="p-3 rounded text-muted-custom" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color);">
+                                        Тесты еще не пройдены.
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="glass-card h-100 d-flex flex-column justify-content-center align-items-center text-center p-5">
+                            <h1 class="display-1 text-cyan mb-3">👋</h1>
+                            <h3 class="text-white fw-bold mb-3">Панель управления</h3>
+                            <p class="text-muted-custom fs-5">Выберите сотрудника слева или создайте новую задачу.</p>
+                        </div>
+                    }
+                </div>
+
+                <!-- ПРАВАЯ КОЛОНКА: Действия и Задачи -->
+                <div class="col-lg-3">
+                    <div class="glass-card">
+                        <div class="glass-card-header">⚡ ДЕЙСТВИЯ</div>
+                        <div class="p-3 d-grid gap-2">
+                            <a asp-action="Index" asp-route-mode="createTask" class="btn btn-cyan">➕ Новая задача</a>
+                            <a asp-action="AddEmployee" class="btn btn-cyan">👤 Добавить сотрудника</a>
+                            <a asp-action="Index" class="btn btn-outline-custom">🔄 Обновить</a>
+                        </div>
+                    </div>
+
+                    <div class="glass-card">
+                        <div class="glass-card-header">📋 АКТИВНЫЕ ЗАДАЧИ</div>
+                        <div class="p-3">
+                            @if (activeTasksList != null && activeTasksList.Any())
+                            {
+                                @foreach (var task in activeTasksList)
+                                {
+                                    <div class="task-item">
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <h6 class="mb-0 text-white fw-bold text-truncate" style="max-width: 140px;">@task.Title</h6>
+                                            <small class="text-cyan fw-bold">@task.Deadline.ToString("dd.MM")</small>
+                                        </div>
+                                        <p class="mb-2 text-muted-custom small text-truncate">@task.Description</p>
+                                        <button type="button" class="btn btn-sm btn-outline-custom w-100" data-bs-toggle="modal" data-bs-target="#taskModal_@task.Id">
+                                            🔍 Процесс
+                                        </button>
+
+                                        <div class="modal fade" id="taskModal_@task.Id" tabindex="-1">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content" style="background: #1e293b; border: 1px solid var(--border-color); color: white; border-radius: 16px;">
+                                                    <div class="modal-header" style="border-bottom: 1px solid var(--border-color);">
+                                                        <h5 class="modal-title text-cyan fw-bold">@task.Title</h5>
+                                                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                                                    </div>
+                                                    <div class="modal-body p-4">
+                                                        <p class="mb-2"><strong class="text-cyan">Описание:</strong> @task.Description</p>
+                                                        <p class="mb-2"><strong class="text-cyan">Дедлайн:</strong> @task.Deadline.ToString("dd.MM.yyyy HH:mm")</p>
+                                                        <p class="mb-3"><strong class="text-cyan">Статус:</strong> <span class="badge" style="background: #f59e0b; color: black;">@task.Status</span></p>
+                                                        <hr style="border-color: var(--border-color);" />
+                                                        <h6 class="text-cyan fw-bold mb-3">Исполнители:</h6>
+                                                        <ul class="list-group list-group-flush">
+                                                            @foreach (var assignee in task.Assignees)
+                                                            {
+                                                                <li class="list-group-item d-flex justify-content-between align-items-center" style="background: transparent; color: white; border-color: var(--border-color);">
+                                                                    @assignee.User.Email
+                                                                    <span class="badge" style="background: rgba(255,255,255,0.2); color: white;">@assignee.Status</span>
+                                                                </li>
+                                                            }
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                <div class="text-center py-3 text-muted-custom">
+                                    <small>Нет активных задач</small>
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-3 text-center">
+                        <h6 class="text-cyan fw-bold mb-3">📈 СТАТИСТИКА</h6>
+                        <div class="row">
+                            <div class="col-4">
+                                <h4 class="text-white fw-bold mb-0">@ViewBag.TotalTasks</h4>
+                                <small class="text-muted-custom">Всего</small>
+                            </div>
+                            <div class="col-4">
+                                <h4 class="text-cyan fw-bold mb-0">@ViewBag.ActiveTasks</h4>
+                                <small class="text-muted-custom">Активных</small>
+                            </div>
+                            <div class="col-4">
+                                <h4 class="text-white fw-bold mb-0">@(employees?.Count ?? 0)</h4>
+                                <small class="text-muted-custom">Людей</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <!-- ИНТЕРФЕЙС СОТРУДНИКА (Темный стиль) -->
+            <div class="container">
+                <h2 class="text-white fw-bold mb-4 text-center">👤 Мой рабочий кабинет</h2>
+
+                @if (ViewBag.Notifications != null && ViewBag.Notifications.Count > 0)
                 {
-                    <tr>
-                        <td>@employee.Email</td>
-                        <td>@employee.CreatedAt.ToString("dd.MM.yyyy")</td>
-                        <td>
-                            <a asp-action="EmployeeCard" asp-route-userId="@employee.Id" class="btn btn-info btn-sm">Карточка</a>
-                        </td>
-                    </tr>
+                    <div class="glass-card p-4 mb-4" style="border-color: var(--accent-cyan);">
+                        <h5 class="text-cyan fw-bold mb-3">🔔 Уведомления (@ViewBag.Notifications.Count)</h5>
+                        <ul class="list-unstyled mb-0">
+                            @foreach (var notif in ViewBag.Notifications)
+                            {
+                                <li class="mb-2 p-3 rounded" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color);">
+                                    <span class="text-white">@notif.Message</span>
+                                    <small class="text-muted-custom d-block mt-1">@notif.CreatedAt.ToString("dd.MM.yyyy HH:mm")</small>
+                                </li>
+                            }
+                        </ul>
+                    </div>
                 }
-            </tbody>
-        </table>
-    }
-    else
-    {
-        <p>Сотрудники еще не добавлены.</p>
-    }
 
-    <hr />
+                <div class="row g-4">
+                    <div class="col-lg-8">
+                        <div class="glass-card h-100">
+                            <div class="glass-card-header">📋 МОИ ЗАДАЧИ</div>
+                            <div class="p-4">
+                                @if (ViewBag.MyTasks != null && ViewBag.MyTasks.Count > 0)
+                                {
+                                    <div class="table-responsive">
+                                        <table class="table table-dark-custom">
+                                            <thead>
+                                                <tr>
+                                                    <th>Задача</th>
+                                                    <th>Срок</th>
+                                                    <th>Таймер</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var task in ViewBag.MyTasks)
+                                                {
+                                                    <tr>
+                                                        <td>
+                                                            <strong class="text-white">@task.Task.Title</strong><br>
+                                                            <small class="text-muted-custom">@task.Task.Description</small>
+                                                        </td>
+                                                        <td class="text-white">@task.Task.Deadline.ToString("dd.MM.yyyy HH:mm")</td>
+                                                        <td><span class="timer-badge badge fw-bold" style="background: #ef4444; color: white; padding: 6px 12px; border-radius: 6px;" data-deadline="@task.Task.Deadline.ToString("yyyy-MM-ddTHH:mm:ss")">Загрузка...</span></td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="text-center py-5 text-muted-custom">
+                                        <h5>Задач пока нет</h5>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
 
-    <h4>Последние результаты тестов</h4>
-    @if (ViewBag.TestResults != null && ViewBag.TestResults.Count > 0)
-    {
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Сотрудник</th>
-                    <th>Дата</th>
-                    <th>Стиль</th>
-                    <th>Тип</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var result in ViewBag.TestResults)
-                {
-                    <tr>
-                        <td>@(result.User?.Email ?? "Неизвестно")</td>
-                        <td>@result.TestDate.ToString("dd.MM.yyyy")</td>
-                        <td>@result.StyleResult</td>
-                        <td>@result.TypeResult</td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    }
-    else
-    {
-        <p>Результаты тестов еще не получены.</p>
-    }
-}
+                    <div class="col-lg-4">
+                        <div class="glass-card mb-4">
+                            <div class="glass-card-header" style="background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);">🔐 БЕЗОПАСНОСТЬ</div>
+                            <div class="p-4">
+                                <p class="text-muted-custom mb-3">Измените пароль для безопасности</p>
+                                <a asp-action="ChangePassword" class="btn btn-cyan w-100" style="background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);">Сменить пароль</a>
+                            </div>
+                        </div>
 
-else
-{
-<h3>Мой профиль и результаты</h3>
-
-<!-- КНОПКА ПРОЙТИ ТЕСТ ТЕПЕРЬ ВИДНА ВСЕГДА -->
-<div class="mb-4">
-    <a asp-controller="Tests" asp-action="Index" class="btn btn-primary btn-lg">
-        📝 Пройти тестирование (или обновить результаты)
-    </a>
+                        <div class="glass-card">
+                            <div class="glass-card-header" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%);">📝 РЕЗУЛЬТАТЫ</div>
+                            <div class="p-4">
+                                <a asp-controller="Tests" asp-action="Index" class="btn btn-cyan w-100 mb-3" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%);">Пройти тест</a>
+                                @if (ViewBag.MyResults != null && ViewBag.MyResults.Count > 0)
+                                {
+                                    var last = ViewBag.MyResults[0];
+                                    <div class="p-3 rounded" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color);">
+                                        <p class="mb-2 text-white"><strong>Стиль:</strong> <span class="badge" style="background: var(--accent-blue); color: white;">@last.StyleResult</span></p>
+                                        <p class="mb-0 text-white"><strong>Тип:</strong> <span class="badge" style="background: #10b981; color: white;">@last.TypeResult</span></p>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
 </div>
 
-
-@if (ViewBag.MyResults != null && ViewBag.MyResults.Count > 0)
-{
-    <h4>Мой текущий результат:</h4>
-    <table class="table table-bordered">
-        <thead class="table-light">
-            <tr>
-                <th>Дата прохождения</th>
-                <th>Стиль управления</th>
-                <th>Тип личности</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var result in ViewBag.MyResults)
-            {
-                <tr>
-                    <td>@result.TestDate.ToString("dd.MM.yyyy HH:mm")</td>
-                    <td><span class="badge bg-primary fs-6">@result.StyleResult</span></td>
-                    <td><span class="badge bg-success fs-6">@result.TypeResult</span></td>
-                </tr>
-            }
-        </tbody>
-    </table>
-    <div class="alert alert-info">
-        💡 <strong>Совет:</strong> Если вы хотите изменить результаты, просто нажмите кнопку "Пройти тестирование" выше. Старая карточка будет автоматически обновлена, дубликаты не создадутся.
-    </div>
-}
-else
-{
-    <div class="alert alert-warning">
-        Вы еще не проходили тестирование. Нажмите кнопку выше, чтобы начать.
-    </div>
-}
-}
+<!-- Скрипт таймера -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const timers = document.querySelectorAll('.timer-badge');
+        timers.forEach(timer => {
+            const deadline = new Date(timer.getAttribute('data-deadline')).getTime();
+            setInterval(function() {
+                const distance = deadline - new Date().getTime();
+                if (distance < 0) {
+                    timer.innerHTML = "⏰ Просрочено";
+                    timer.style.background = "#7f1d1d";
+                } else {
+                    const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    timer.innerHTML = `${d}д ${h}ч ${m}м`;
+                }
+            }, 1000);
+        });
+    });
+</script>
