@@ -88,14 +88,14 @@ namespace Katena.Controllers
             return View(model);
         }
 
-
-        [HttpPost]
+        // ЭТОТ метод открывает страницу регистрации (GET запрос при клике на ссылку)
+        [HttpGet]
         [AllowAnonymous]
         public IActionResult Register()
         {
             return View();
         }
-
+        // ЭТОТ метод обрабатывает нажатие кнопки "Зарегистрироваться" (POST запрос)
         [HttpPost]
         [AllowAnonymous]
        // [ValidateAntiForgeryToken]

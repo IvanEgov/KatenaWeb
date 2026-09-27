@@ -19,6 +19,9 @@ namespace Katena.Domain
 		public DbSet<FeedbackBase> Feedbacks { get; set; }
         public DbSet<Firm> Firms { get; set; }
         public DbSet<TestResult> TestResults { get; set; }
+        public DbSet<FirmTask> FirmTasks { get; set; }
+        public DbSet<TaskAssignee> TaskAssignees { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			base.OnModelCreating(modelBuilder);
@@ -5376,6 +5379,27 @@ namespace Katena.Domain
                 .HasForeignKey(tr => tr.FirmId)
                 .OnDelete(DeleteBehavior.Cascade);
 
+            // Связи для задач
+            modelBuilder.Entity<TaskAssignee>()
+                .HasKey(ta => new { ta.TaskId, ta.UserId }); // Составной ключ
+
+            modelBuilder.Entity<TaskAssignee>()
+                .HasOne(ta => ta.Task)
+                .WithMany(t => t.Assignees)
+                .HasForeignKey(ta => ta.TaskId);
+
+            modelBuilder.Entity<TaskAssignee>()
+                .HasOne(ta => ta.User)
+                .WithMany()
+                .HasForeignKey(ta => ta.UserId);
+
+            // Связи для уведомлений
+            modelBuilder.Entity<Notification>()
+                .HasOne(n => n.User)
+                .WithMany()
+                .HasForeignKey(n => n.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
+
 	}
 }

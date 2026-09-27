@@ -1348,7 +1348,7 @@ namespace Katena.Migrations
                     b.HasData(
                         new
                         {
-                            id = new Guid("6c18e483-3d24-4f06-90c4-63a49f547b1d"),
+                            id = new Guid("8099d1ff-10d5-490b-a526-2c7bb4ad3b4b"),
                             mail = "igoryan@mail.ru",
                             message = "Super site",
                             name = "Игорь"
@@ -1367,6 +1367,44 @@ namespace Katena.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Firms");
+                });
+
+            modelBuilder.Entity("Katena.Domain.Entities.FirmTask", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("CreatorId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<DateTime>("Deadline")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("FirmId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatorId");
+
+                    b.HasIndex("FirmId");
+
+                    b.ToTable("FirmTasks");
                 });
 
             modelBuilder.Entity("Katena.Domain.Entities.NewsBase", b =>
@@ -1393,39 +1431,69 @@ namespace Katena.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("963cc6a3-4918-4306-9059-a2b958a30c4d"),
+                            Id = new Guid("53b0635c-577a-4ac7-911d-611d17dd67af"),
                             Text = "Теперь можно добавлять картинки!",
                             Title = "Новость дня",
                             TitleImagePath = ""
                         },
                         new
                         {
-                            Id = new Guid("9414bbc9-1b41-4f39-bfa4-6acdd011feee"),
+                            Id = new Guid("eccc57ef-a5b4-4e62-bcf8-347ffdefa31b"),
                             Text = "Было собраноо уже 6 вопросов",
                             Title = "Новость полудня",
                             TitleImagePath = "2f9a623372f47bb6a0fc9b42c87bde91.jpg"
                         },
                         new
                         {
-                            Id = new Guid("a08c6941-e8ae-40f1-8f4d-0374065a876d"),
+                            Id = new Guid("eb1e16b7-5080-4bee-9f0b-cb04685ca675"),
                             Text = "Очередное заполнение БД и тестирование новостей",
                             Title = "Новость дня 17.04.2024",
                             TitleImagePath = "2f9a623372f47bb6a0fc9b42c87bde91.jpg"
                         },
                         new
                         {
-                            Id = new Guid("843e46b5-69fc-4450-bd12-263ecee19541"),
+                            Id = new Guid("e2c7a367-4280-4edf-b141-b7b3f251d4c9"),
                             Text = "Курс молодого бойца. Наводнение продолжается!!!",
                             Title = "Новость дня 16.04.2024",
                             TitleImagePath = "11c53ebb6fe575943e75dca3a72b0bf9.jpg"
                         },
                         new
                         {
-                            Id = new Guid("32cc8c0c-c498-41a6-a8c1-d117cfe63669"),
+                            Id = new Guid("6df5a529-b7a2-4f7b-a023-b976ff1cb437"),
                             Text = "Заполянем базу данных",
                             Title = "Новость дня 15.04,2024",
                             TitleImagePath = "2f9a623372f47bb6a0fc9b42c87bde91.jpg"
                         });
+                });
+
+            modelBuilder.Entity("Katena.Domain.Entities.Notification", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<bool>("IsRead")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<Guid?>("TaskId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("varchar(255)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Notifications");
                 });
 
             modelBuilder.Entity("Katena.Domain.Entities.QuestionBase", b =>
@@ -5833,6 +5901,25 @@ namespace Katena.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Katena.Domain.Entities.TaskAssignee", b =>
+                {
+                    b.Property<Guid>("TaskId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("TaskId", "UserId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("TaskAssignees");
+                });
+
             modelBuilder.Entity("Katena.Domain.Entities.TestResult", b =>
                 {
                     b.Property<Guid>("Id")
@@ -5901,7 +5988,7 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("63dc8fa6-07ae-4391-8916-e057f71239ce"),
                             CodeWord = "PageIndex",
-                            DateAdded = new DateTime(2026, 9, 20, 17, 14, 9, 586, DateTimeKind.Utc).AddTicks(6155),
+                            DateAdded = new DateTime(2026, 9, 27, 5, 14, 16, 480, DateTimeKind.Utc).AddTicks(4370),
                             Text = "Мы искренне рады видеть тебя и приглашаем в свое пространство! Спасибо, что откликнулся пройти наш авторский тест. Мы старались, чтобы тебе было комфортно и интересно Устраивайся поудобнее, включай любимую волну, поехали!",
                             Title = "Дорогой друг,"
                         },
@@ -5909,7 +5996,7 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("70bf165a-700a-4156-91c0-e83fce0a277f"),
                             CodeWord = "PageTests",
-                            DateAdded = new DateTime(2026, 9, 20, 17, 14, 9, 586, DateTimeKind.Utc).AddTicks(8788),
+                            DateAdded = new DateTime(2026, 9, 27, 5, 14, 16, 480, DateTimeKind.Utc).AddTicks(7507),
                             Text = "Содержание заполняется администратором",
                             Title = "Тесты"
                         },
@@ -5917,7 +6004,7 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("4aa76a4c-c59d-409a-84c1-06e6487a137a"),
                             CodeWord = "PageDescription",
-                            DateAdded = new DateTime(2026, 9, 20, 17, 14, 9, 586, DateTimeKind.Utc).AddTicks(8834),
+                            DateAdded = new DateTime(2026, 9, 27, 5, 14, 16, 480, DateTimeKind.Utc).AddTicks(7552),
                             Text = "Содержание заполняется администратором",
                             Title = "Описание теста"
                         },
@@ -5925,7 +6012,7 @@ namespace Katena.Migrations
                         {
                             Id = new Guid("8eae0a63-8f52-4160-a14e-b405e431a13b"),
                             CodeWord = "PageContacts",
-                            DateAdded = new DateTime(2026, 9, 20, 17, 14, 9, 586, DateTimeKind.Utc).AddTicks(8869),
+                            DateAdded = new DateTime(2026, 9, 27, 5, 14, 16, 480, DateTimeKind.Utc).AddTicks(7584),
                             Text = "Содержание заполняется администратором",
                             Title = "Контакты"
                         });
@@ -6046,13 +6133,13 @@ namespace Katena.Migrations
                         {
                             Id = "ef37a3c2-7c96-4405-a971-7abcc91ac333",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f8ab69f5-fbd1-4308-98f7-5d6bd989eba3",
+                            ConcurrencyStamp = "42d8feb0-457c-47b0-83a8-9494e384af36",
                             Email = "my@email.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "MY@EMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEKaBIZo7GEukM7HUJQFVQ/DGcISgXj088d8cVQIHD3e6wbEaGjCGXv4TdP0VedfK5Q==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDw1CkbqFPBO48/qaIFGLbewhsDC1xT5atpNTAPE6H1+PLFhtqpiFpJWwsZxUJ28DA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -6157,6 +6244,55 @@ namespace Katena.Migrations
                     b.Navigation("Firm");
                 });
 
+            modelBuilder.Entity("Katena.Domain.Entities.FirmTask", b =>
+                {
+                    b.HasOne("Katena.Domain.Entities.ApplicationUser", "Creator")
+                        .WithMany()
+                        .HasForeignKey("CreatorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Katena.Domain.Entities.Firm", "Firm")
+                        .WithMany()
+                        .HasForeignKey("FirmId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Creator");
+
+                    b.Navigation("Firm");
+                });
+
+            modelBuilder.Entity("Katena.Domain.Entities.Notification", b =>
+                {
+                    b.HasOne("Katena.Domain.Entities.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Katena.Domain.Entities.TaskAssignee", b =>
+                {
+                    b.HasOne("Katena.Domain.Entities.FirmTask", "Task")
+                        .WithMany("Assignees")
+                        .HasForeignKey("TaskId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Katena.Domain.Entities.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Task");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Katena.Domain.Entities.TestResult", b =>
                 {
                     b.HasOne("Katena.Domain.Entities.Firm", "Firm")
@@ -6232,6 +6368,11 @@ namespace Katena.Migrations
                     b.Navigation("TestResults");
 
                     b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("Katena.Domain.Entities.FirmTask", b =>
+                {
+                    b.Navigation("Assignees");
                 });
 #pragma warning restore 612, 618
         }
